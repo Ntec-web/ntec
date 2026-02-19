@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - NTEC</title>
+    <link rel="stylesheet" href="theme.css">
+</head>
+<body>
+    <!-- Fondo tecnológico decorativo -->
+    <div class="tech-grid"></div>
+    
+    <header>
+        <img src="logo.png" alt="NTEC Logo" class="header-logo">
+        <h1>NTEC - Servicio Técnico</h1>
+    </header>
+    
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="quienes-somos.html">Quiénes Somos</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="contacto.html" class="active whatsapp-link">Contacto</a>
+    </nav>
+
+    <section class="page-header">
+        <h1>Contacto</h1>
+        <p>Estamos listos para ayudarte</p>
+    </section>
+
+    <section class="contact-section">
+        <div class="contact-card">
+            <h2>¡Escríbenos!</h2>
+            <p>Complete el formulario y nos contactaremos contigo.</p>
+            
+            <form id="whatsapp-form" class="contact-form">
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="dispositivo">Dispositivo / Modelo</label>
+                    <input type="text" id="dispositivo" name="dispositivo" placeholder="Ej: Laptop HP Pavilion...">
+                </div>
+                
+                <div class="form-group">
+                    <label for="mensaje">Descripción del problema</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos qué le pasa a tu equipo..."></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                    <img src="https://img.icons8.com/color/24/000000/whatsapp.png" alt="WhatsApp">
+                    Enviar Consulta
+                </button>
+            </form>
+        </div>
+
+        <div class="contact-card">
+            <h2>Síguenos en Instagram</h2>
+            <p>Conoce nuestro trabajo y últimas noticias en Instagram.</p>
+            
+            <a href="https://www.instagram.com/nservice7ech/" target="_blank" class="instagram-btn">
+                <img src="https://img.icons8.com/color/48/000000/instagram-new.png" alt="Instagram">
+                <span>@nservice7ech</span>
+            </a>
+        </div>
+
+        <div class="contact-card">
+            <h2>Síguenos en YouTube</h2>
+            <p>Descubre tips y consejos técnicos en nuestro canal.</p>
+            
+            <a href="https://www.youtube.com/@Ntecservice" target="_blank" class="youtube-btn">
+                <img src="https://img.icons8.com/color/48/000000/youtube.png" alt="YouTube">
+                <span>@Ntecservice</span>
+            </a>
+        </div>
+
+        <div class="contact-card">
+            <h2>Síguenos en TikTok</h2>
+            <p>Contenido rápido y tips de tecnología.</p>
+            
+            <a href="https://www.tiktok.com/@nathanielrivero310" target="_blank" class="tiktok-btn">
+                <img src="https://img.icons8.com/color/48/000000/tiktok.png" alt="TikTok">
+                <span>@nathanielrivero310</span>
+            </a>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>¿Tienes alguna consulta?</h2>
+        <p>No dudes en escribirnos, te responderemos a la brevedad</p>
+        <a href="https://wa.me/59896616638" target="_blank" class="cta-btn">Contactar por WhatsApp</a>
+    </section>
+
+    <!-- Métodos de Pago -->
+    <section class="payment-methods">
+        <h2>Métodos de Pago</h2>
+        <p class="payment-subtitle">Aceptamos los siguientes métodos de pago</p>
+        <div class="payment-grid">
+            <div class="payment-card" data-icon="💵">
+                <h3>Efectivo</h3>
+                <p>Paga en efectivo al retirar tu equipo</p>
+            </div>
+            <div class="payment-card" data-icon="💳">
+                <h3>Mercado Pago</h3>
+                <p>Paga de forma segura con Mercado Pago</p>
+            </div>
+            <div class="payment-card" data-icon="🏦">
+                <h3>Transferencia</h3>
+                <p>Transferencia bancaria directa</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 NTEC - Servicio Técnico. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.getElementById('whatsapp-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const nombre = document.getElementById('nombre').value;
+            const dispositivo = document.getElementById('dispositivo').value;
+            const mensaje = document.getElementById('mensaje').value;
+            
+            const texto = `*Nueva consulta de:* ${nombre}%0A%0A*Dispositivo:* ${dispositivo}%0A%0A*Problema:* ${mensaje}`;
+            
+            window.open(`https://wa.me/59896616638?text=${texto}`, '_blank');
+        });
+    </script>
+</body>
+</html>
