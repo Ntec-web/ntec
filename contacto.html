@@ -3,16 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto - NTEC</title>
+    <title>Contacto - NTEC | Servicio Técnico Profesional</title>
+    <meta name="description" content="Contácta NTEC - Servicio técnico de confianza. WhatsApp, Instagram, YouTube y más. ¡Escríbenos!">
     <link rel="stylesheet" href="theme.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🖥️</text></svg>">
 </head>
-<body>
+<body style="background: linear-gradient(180deg, #f8f9fc 0%, #eef2f7 100%), url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1920&q=80'); background-size: cover; background-position: center fixed; background-attachment: fixed;">
     <!-- Fondo tecnológico decorativo -->
     <div class="tech-grid"></div>
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
     
     <header>
         <img src="logo.png" alt="NTEC Logo" class="header-logo">
-        <h1>NTEC - Servicio Técnico</h1>
+        <h1>NTEC - Servicio Técnico Profesional</h1>
     </header>
     
     <nav>
@@ -22,74 +29,137 @@
         <a href="contacto.html" class="active whatsapp-link">Contacto</a>
     </nav>
 
+    <!-- Page Header -->
     <section class="page-header">
         <h1>Contacto</h1>
-        <p>Estamos listos para ayudarte</p>
+        <p>Estamos listos para ayudarte con tu equipo</p>
     </section>
 
+    <!-- Banner de acción rápida -->
+    <section style="background: linear-gradient(135deg, #25D366 0%, #20bd5a 100%); padding: 2rem 2rem; text-align: center;">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h2 style="color: white; margin-bottom: 0.5rem; font-size: 1.5rem;">💬 ¿Prefieres WhatsApp?</h2>
+            <p style="color: rgba(255,255,255,0.9); margin-bottom: 1.5rem;">Escríbenos directamente y te respondemos al instante</p>
+            <a href="https://wa.me/59896616638" target="_blank" style="display: inline-flex; align-items: center; gap: 10px; background: white; color: #25D366; padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1.1rem; transition: transform 0.3s; box-shadow: 0 4px 20px rgba(0,0,0,0.2);">
+                <span>📱</span> Escribir por WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto -->
     <section class="contact-section">
+        <!-- Formulario -->
         <div class="contact-card">
-            <h2>¡Escríbenos!</h2>
-            <p>Complete el formulario y nos contactaremos contigo.</p>
+            <h2>📝 Envíanos un Mensaje</h2>
+            <p>Completa el formulario y nos contactaremos contigo a la brevedad.</p>
             
             <form id="whatsapp-form" class="contact-form">
                 <div class="form-group">
-                    <label for="nombre">Nombre</label>
+                    <label for="nombre">Nombre completo *</label>
                     <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
                 </div>
                 
                 <div class="form-group">
-                    <label for="dispositivo">Dispositivo / Modelo</label>
-                    <input type="text" id="dispositivo" name="dispositivo" placeholder="Ej: Laptop HP Pavilion...">
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="Tu número de teléfono">
                 </div>
                 
                 <div class="form-group">
-                    <label for="mensaje">Descripción del problema</label>
+                    <label for="dispositivo">Dispositivo / Modelo</label>
+                    <input type="text" id="dispositivo" name="dispositivo" placeholder="Ej: Laptop HP Pavilion, PC Gamer...">
+                </div>
+                
+                <div class="form-group">
+                    <label for="mensaje">Descripción del problema *</label>
                     <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos qué le pasa a tu equipo..."></textarea>
                 </div>
                 
                 <button type="submit" class="submit-btn">
-                    <img src="https://img.icons8.com/color/24/000000/whatsapp.png" alt="WhatsApp">
-                    Enviar Consulta
+                    <span>💬</span> Enviar Consulta por WhatsApp
                 </button>
             </form>
         </div>
 
+        <!-- Redes Sociales -->
         <div class="contact-card">
-            <h2>Síguenos en Instagram</h2>
-            <p>Conoce nuestro trabajo y últimas noticias en Instagram.</p>
+            <h2>📱 Síguenos en Redes</h2>
+            <p>Conoce nuestro trabajo y últimas noticias en redes sociales.</p>
             
-            <a href="https://www.instagram.com/nservice7ech/" target="_blank" class="instagram-btn">
-                <img src="https://img.icons8.com/color/48/000000/instagram-new.png" alt="Instagram">
-                <span>@nservice7ech</span>
-            </a>
+            <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem;">
+                <a href="https://www.instagram.com/nservice7ech/" target="_blank" class="instagram-btn" style="width: 100%; justify-content: center;">
+                    <img src="https://img.icons8.com/color/48/000000/instagram-new.png" alt="Instagram">
+                    <span>@nservice7ech</span>
+                </a>
+                
+                <a href="https://www.youtube.com/@Ntecservice" target="_blank" class="youtube-btn" style="width: 100%; justify-content: center;">
+                    <img src="https://img.icons8.com/color/48/000000/youtube.png" alt="YouTube">
+                    <span>@Ntecservice</span>
+                </a>
+                
+                <a href="https://www.tiktok.com/@nathanielrivero310" target="_blank" class="tiktok-btn" style="width: 100%; justify-content: center;">
+                    <img src="https://img.icons8.com/color/48/000000/tiktok.png" alt="TikTok">
+                    <span>@nathanielrivero310</span>
+                </a>
+            </div>
         </div>
 
+        <!-- Información de contacto -->
         <div class="contact-card">
-            <h2>Síguenos en YouTube</h2>
-            <p>Descubre tips y consejos técnicos en nuestro canal.</p>
             
-            <a href="https://www.youtube.com/@Ntecservice" target="_blank" class="youtube-btn">
-                <img src="https://img.icons8.com/color/48/000000/youtube.png" alt="YouTube">
-                <span>@Ntecservice</span>
-            </a>
-        </div>
-
-        <div class="contact-card">
-            <h2>Síguenos en TikTok</h2>
-            <p>Contenido rápido y tips de tecnología.</p>
+            <div style="margin-top: 1.5rem; text-align: left;">
+                <div style="padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                    <strong style="color: var(--accent);">📱 WhatsApp</strong>
+                    <p style="color: rgba(255,255,255,0.7); margin-top: 0.25rem;">+598 96 616 638</p>
+                </div>
+                
+                <div style="padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                    <strong style="color: var(--accent);">📧 Email</strong>
+                    <p style="color: rgba(255,255,255,0.7); margin-top: 0.25rem;">ntecservice@gmail.com</p>
+                </div>
+                
+                <div style="padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                    <strong style="color: var(--accent);">🕐 Horario</strong>
+                    <p style="color: rgba(255,255,255,0.7); margin-top: 0.25rem;">Lun - Vie: 9:00 - 18:00<br>Sáb: 9:00 - 13:00</p>
+                </div>
+            </div>
             
-            <a href="https://www.tiktok.com/@nathanielrivero310" target="_blank" class="tiktok-btn">
-                <img src="https://img.icons8.com/color/48/000000/tiktok.png" alt="TikTok">
-                <span>@nathanielrivero310</span>
-            </a>
         </div>
     </section>
 
+    <!-- Preguntas frecuentes de contacto -->
+    <section style="padding: 4rem 2rem; max-width: 900px; margin: 0 auto;">
+        <h2 style="text-align: center; margin-bottom: 2rem;">❓ Preguntas Frecuentes</h2>
+        
+        <div style="display: grid; gap: 1rem;">
+            <div style="background: white; padding: 1.5rem; border-radius: 1rem; box-shadow: var(--shadow-sm);">
+                <h3 style="color: var(--secondary); margin-bottom: 0.5rem; font-size: 1.1rem;">¿Cuánto cuesta el diagnóstico?</h3>
+                <p style="color: var(--foreground-muted);">El diagnóstico es completamente <strong>sin costo</strong>. Solo pagas si decides reparar tu equipo.</p>
+            </div>
+            
+            <div style="background: white; padding: 1.5rem; border-radius: 1rem; box-shadow: var(--shadow-sm);">
+                <h3 style="color: var(--secondary); margin-bottom: 0.5rem; font-size: 1.1rem;">¿Cuánto tiempo toma la reparación?</h3>
+                <p style="color: var(--foreground-muted);">El diagnóstico se entrega en <strong>24 horas</strong>. Las reparaciones típicas takes 2-5 días hábiles.</p>
+            </div>
+            
+            <div style="background: white; padding: 1.5rem; border-radius: 1rem; box-shadow: var(--shadow-sm);">
+                <h3 style="color: var(--secondary); margin-bottom: 0.5rem; font-size: 1.1rem;">¿Dan garantía en las reparaciones?</h3>
+                <p style="color: var(--foreground-muted);">Sí, todas nuestras reparaciones incluyen <strong>garantía escrita</strong> de 30 a 90 días según el tipo de trabajo.</p>
+            </div>
+            
+            <div style="background: white; padding: 1.5rem; border-radius: 1rem; box-shadow: var(--shadow-sm);">
+                <h3 style="color: var(--secondary); margin-bottom: 0.5rem; font-size: 1.1rem;">¿Pueden buscar mi equipo a domicilio?</h3>
+                <p style="color: var(--foreground-muted);">Sí, ofrecemos servicio de <strong>recoleción y entrega</strong> a domicilio sin costo adicional en zona céntrica.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
     <section class="cta-section">
         <h2>¿Tienes alguna consulta?</h2>
         <p>No dudes en escribirnos, te responderemos a la brevedad</p>
-        <a href="https://wa.me/59896616638" target="_blank" class="cta-btn">Contactar por WhatsApp</a>
+        <a href="https://wa.me/59896616638" target="_blank" class="cta-btn">
+            <span>💬 Contactar por WhatsApp</span>
+        </a>
     </section>
 
     <!-- Métodos de Pago -->
@@ -113,7 +183,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2024 NTEC - Servicio Técnico. Todos los derechos reservados.</p>
+        <p>&copy; 2024 NTEC - Servicio Técnico Profesional. Todos los derechos reservados.</p>
     </footer>
 
     <script>
@@ -121,10 +191,11 @@
             e.preventDefault();
             
             const nombre = document.getElementById('nombre').value;
+            const telefono = document.getElementById('telefono').value;
             const dispositivo = document.getElementById('dispositivo').value;
             const mensaje = document.getElementById('mensaje').value;
             
-            const texto = `*Nueva consulta de:* ${nombre}%0A%0A*Dispositivo:* ${dispositivo}%0A%0A*Problema:* ${mensaje}`;
+            const texto = `*Nueva consulta de NTEC:*%0A%0A*Nombre:* ${nombre}%0A*Teléfono:* ${telefono}%0A%0A*Dispositivo:* ${dispositivo}%0A%0A*Problema:* ${mensaje}`;
             
             window.open(`https://wa.me/59896616638?text=${texto}`, '_blank');
         });

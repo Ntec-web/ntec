@@ -3,16 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NTEC - Servicio Técnico</title>
+    <title>NTEC - Servicio Técnico Profesional | Reparación de Computadoras</title>
+    <meta name="description" content="NTEC - Expertos en reparación de computadoras. Servicio técnico profesional con garantía. ¡Contáctanos!">
     <link rel="stylesheet" href="theme.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🖥️</text></svg>">
 </head>
-<body>
+<body style="background: linear-gradient(180deg, #f8f9fc 0%, #eef2f7 100%), url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1920&q=80'); background-size: cover; background-position: center fixed; background-attachment: fixed;">
     <!-- Fondo tecnológico decorativo -->
     <div class="tech-grid"></div>
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
     
     <header>
         <img src="logo.png" alt="NTEC Logo" class="header-logo">
-        <h1>NTEC - Servicio Técnico</h1>
+        <h1>NTEC - Servicio Técnico Profesional</h1>
     </header>
     
     <nav>
@@ -22,58 +31,158 @@
         <a href="contacto.html" class="whatsapp-link">Contacto</a>
     </nav>
 
-    <section class="hero">
-        <h1>Bienvenido a NTEC</h1>
-        <p>Servicio técnico profesional para tus equipos de computación</p>
-        <p>Soluciones rápidas y confiables que necesitas</p>
+    <!-- HERO SECTION -->
+    <section class="hero" style="background: linear-gradient(135deg, rgba(0, 51, 102, 0.85) 0%, rgba(0, 20, 50, 0.9) 100%), url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&q=80'); background-size: cover; background-position: center;">
+        <h1>🔧 Servicio Técnico Profesional</h1>
+        <p>¿Tu equipo no funciona correctamente? ¡Nosotros lo solucionamos!</p>
+        <p>Expertos en reparación de computadoras y dispositivos electrónicos</p>
+        <a href="contacto.html" class="cta-btn">
+            <span>📞 Solicitar Diagnóstico Gratis</span>
+        </a>
     </section>
 
+    <!-- Banner de confianza -->
+    <section style="background: linear-gradient(135deg, #0066cc 0%, #004499 100%); padding: 1.5rem 2rem; text-align: center;">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: center; align-items: center; gap: 2rem; flex-wrap: wrap; color: white;">
+            <span style="display: flex; align-items: center; gap: 8px; font-weight: 600;">
+                ✅ Diagnóstico Sin Costo
+            </span>
+            <span style="display: flex; align-items: center; gap: 8px; font-weight: 600;">
+                🛡️ Garantía Escrita
+            </span>
+            <span style="display: flex; align-items: center; gap: 8px; font-weight: 600;">
+                ⚡ Reparación Express
+            </span>
+            <span style="display: flex; align-items: center; gap: 8px; font-weight: 600;">
+                💎 Técnicos Certificados
+            </span>
+        </div>
+    </section>
+
+    <!-- Sección de Problemas Comunes -->
+    <section class="faq-section">
+        <h2>🔍 ¿Tu Computadora Presenta Estos Problemas?</h2>
+        <p class="faq-subtitle">Estas son las señales de que tu equipo necesita atención profesional inmediata</p>
+        
+        <div class="faq-grid">
+            <div class="faq-card glow-card">
+                <div class="faq-icon">🐌</div>
+                <h3>¿Tu equipo está lento?</h3>
+                <p>Si tu computadora tarda una eternidad en iniciar o abrir programas, es momento de un mantenimiento profesional. Recuperamos la velocidad original.</p>
+            </div>
+            <div class="faq-card glow-card">
+                <div class="faq-icon">🔥</div>
+                <h3>¿Se sobrecalienta?</h3>
+                <p>El calor excesivo puede dañar componentes internos permanentemente. Nosotros limpiamos, aplicamos pasta térmica nueva y optimizamos el sistema de refrigeración.</p>
+            </div>
+            <div class="faq-card glow-card">
+                <div class="faq-icon">🖥️</div>
+                <h3>¿Pantalla con problemas?</h3>
+                <p>Si tienes pantalla negra, líneas extrañas, pixeles muertos o pantalla rota, tenemos la solución que buscas.</p>
+            </div>
+            <div class="faq-card glow-card">
+                <div class="faq-icon">🔊</div>
+                <h3>¿Ruido extraño?</h3>
+                <p>Los ruidos anormales son señal de problemas en ventiladores o disco duro. No lo ignores.</p>
+            </div>
+            <div class="faq-card glow-card">
+                <div class="faq-icon">💀</div>
+                <h3>¿No enciende?</h3>
+                <p>¡No te preocupes! Podemos diagnosticar y arreglar problemas de fuente, motherboard y más. Primera diagnose sin costo.</p>
+            </div>
+            <div class="faq-card glow-card">
+                <div class="faq-icon">💾</div>
+                <h3>¿Problemas de software?</h3>
+                <p>Errores, virus, sistema lento o aplicaciones que no funcionan. Te ayudamos a resolverlo.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destacados / Confianza -->
     <section class="highlights">
-        <div class="highlight-card" data-icon="🛡️">
-            <h3>Garantía</h3>
-            <p>Todos nuestros trabajos garantizados</p>
+        <div class="highlight-card glow-card" data-icon="🛡️">
+            <h3>Garantía Escrita</h3>
+            <p>Todos nuestros trabajos incluyen garantía por escrito. Tu tranquilidad está asegurada.</p>
         </div>
-        <div class="highlight-card" data-icon="⚡">
-            <h3>Rapidez</h3>
-            <p>Diagnóstico y reparación eficiente</p>
+        <div class="highlight-card glow-card" data-icon="⚡">
+            <h3>Reparación Rápida</h3>
+            <p>Diagnóstico en 24hrs y reparación express disponible. Tu tiempo vale.</p>
         </div>
-        <div class="highlight-card" data-icon="💎">
-            <h3>Confianza</h3>
-            <p>Tu satisfacción es nuestra prioridad</p>
+        <div class="highlight-card glow-card" data-icon="💎">
+            <h3>Calidad Garantizada</h3>
+            <p>Repuestos originales y trabajo profesional. Tu satisfacción es nuestra prioridad.</p>
+        </div>
+        <div class="highlight-card glow-card" data-icon="💰">
+            <h3>Precios Justos</h3>
+            <p>Presupuesto sin compromiso. Sin costos ocultos. Pago solo al retirar.</p>
         </div>
     </section>
 
+    <!-- Proceso de Trabajo -->
     <section class="process">
-        <h2>Cómo Trabajamos</h2>
-        <p class="process-subtitle">Proceso simple y transparente</p>
+        <h2>⚙️ Cómo Trabajamos</h2>
+        <p class="process-subtitle">Proceso simple, transparente y sin complicaciones</p>
         
         <div class="process-steps">
-            <div class="process-step">
+            <div class="process-step glow-card">
                 <div class="step-number">1</div>
                 <h3>Diagnóstico</h3>
-                <p>Trae tu equipo. Realizamos un análisis completo para identificar la falla.</p>
+                <p>Trae tu equipo o contáctanos. Realizamos un análisis completo para identificar la falla exactamente.</p>
             </div>
-            <div class="process-step">
+            <div class="process-step glow-card">
                 <div class="step-number">2</div>
                 <h3>Presupuesto</h3>
-                <p>Te enviamos un costo exacto y tiempo de entrega. Tú decides si procedemos.</p>
+                <p>Te enviamos un presupuesto detallado con costo exacto y tiempo de entrega. Tú decides si procedemos.</p>
             </div>
-            <div class="process-step">
+            <div class="process-step glow-card">
                 <div class="step-number">3</div>
                 <h3>Reparación</h3>
-                <p>Reparo tu equipo usando repuestos de calidad.</p>
+                <p>Reparamos tu equipo usando repuestos de calidad. Te mantenemos informado del progreso.</p>
             </div>
-            <div class="process-step">
+            <div class="process-step glow-card">
                 <div class="step-number">4</div>
                 <h3>Entrega</h3>
-                <p>Te notifico cuando esté listo. Lo retiras funcionando como nuevo.</p>
+                <p>Te notificamos cuando esté listo. Lo retiras funcionando como nuevo, probado y garantizado.</p>
             </div>
         </div>
     </section>
 
+    <!-- CTA Section -->
     <section class="cta-section">
-        <h2>¿Necesitas ayuda con tu equipo?</h2>
-        <a href="contacto.html" class="cta-btn">Contáctanos</a>
+        <h2>🤔 ¿Aún tienes dudas sobre tu equipo?</h2>
+        <p>Contáctanos ahora y recibe tu diagnóstico gratuito sin compromiso</p>
+        <a href="contacto.html" class="cta-btn">
+            <span>💬 Escríbenos por WhatsApp</span>
+        </a>
+    </section>
+
+    <!-- Servicios Rápidos -->
+    <section style="padding: 4rem 2rem; max-width: 1300px; margin: 0 auto; text-align: center;">
+        <h2 style="margin-bottom: 0.5rem;">🔧 Nuestros Servicios</h2>
+        <p style="margin-bottom: 3rem; color: var(--foreground-muted);">Soluciones integrales para todas tus necesidades tecnológicas</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+            <div style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: var(--shadow-md); border: 1px solid var(--border-light); transition: all var(--transition-base);" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='var(--shadow-xl)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='var(--shadow-md)'">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">💻</div>
+                <h3 style="margin-bottom: 0.75rem;">Reparación de Computadoras</h3>
+                <p style="color: var(--foreground-muted);">Laptops, notebooks y PC de escritorio. Todas las marcas.</p>
+            </div>
+            <div style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: var(--shadow-md); border: 1px solid var(--border-light); transition: all var(--transition-base);" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='var(--shadow-xl)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='var(--shadow-md)'">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">🧹</div>
+                <h3 style="margin-bottom: 0.75rem;">Mantenimiento</h3>
+                <p style="color: var(--foreground-muted);">Limpieza, pasta térmica y optimización.</p>
+            </div>
+            <div style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: var(--shadow-md); border: 1px solid var(--border-light); transition: all var(--transition-base);" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='var(--shadow-xl)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='var(--shadow-md)'">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">🔧</div>
+                <h3 style="margin-bottom: 0.75rem;">Soporte Técnico</h3>
+                <p style="color: var(--foreground-muted);">Redes, software, viruses y más.</p>
+            </div>
+            <div style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: var(--shadow-md); border: 1px solid var(--border-light); transition: all var(--transition-base);" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='var(--shadow-xl)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='var(--shadow-md)'">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">💡</div>
+                <h3 style="margin-bottom: 0.75rem;">Consultoría Tech</h3>
+                <p style="color: var(--foreground-muted);">Asesoría para compra y mejora de equipos.</p>
+            </div>
+        </div>
     </section>
 
     <!-- Métodos de Pago -->
@@ -97,7 +206,40 @@
     </section>
 
     <footer>
-        <p>&copy; 2024 NTEC - Servicio Técnico. Todos los derechos reservados.</p>
+        <p>&copy; 2024 NTEC - Servicio Técnico Profesional. Todos los derechos reservados.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.85rem;">🔧 Especialistas en reparación de computadoras | Laptops | PC | Todas las marcas</p>
     </footer>
+
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.slider-dot');
+        
+        function showSlide(n) {
+            if (n >= slides.length) slideIndex = 0;
+            if (n < 0) slideIndex = slides.length - 1;
+            
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            slides[slideIndex].classList.add('active');
+            dots[slideIndex].classList.add('active');
+        }
+        
+        function changeSlide(n) {
+            slideIndex += n;
+            showSlide(slideIndex);
+        }
+        
+        function goToSlide(n) {
+            slideIndex = n;
+            showSlide(slideIndex);
+        }
+        
+        // Auto slide every 5 seconds
+        setInterval(() => {
+            changeSlide(1);
+        }, 5000);
+    </script>
 </body>
 </html>

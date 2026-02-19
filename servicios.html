@@ -3,16 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servicios - NTEC</title>
+    <title>Servicios - NTEC | Servicio Técnico Profesional</title>
+    <meta name="description" content="NTEC ofrece servicios de reparación de computadoras, laptops, mantenimiento, soporte técnico y consultoría. ¡Contáctanos!">
     <link rel="stylesheet" href="theme.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🖥️</text></svg>">
 </head>
-<body>
+<body style="background: linear-gradient(180deg, #f8f9fc 0%, #eef2f7 100%), url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1920&q=80'); background-size: cover; background-position: center fixed; background-attachment: fixed;">
     <!-- Fondo tecnológico decorativo -->
     <div class="tech-grid"></div>
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
     
     <header>
         <img src="logo.png" alt="NTEC Logo" class="header-logo">
-        <h1>NTEC - Servicio Técnico</h1>
+        <h1>NTEC - Servicio Técnico Profesional</h1>
     </header>
     
     <nav>
@@ -22,57 +29,118 @@
         <a href="contacto.html" class="whatsapp-link">Contacto</a>
     </nav>
 
+    <!-- Page Header -->
     <section class="page-header">
         <h1>Nuestros Servicios</h1>
-        <p>Soluciones integrales para tus equipos</p>
+        <p>Soluciones integrales para todas tus necesidades tecnológicas</p>
     </section>
 
+    <!-- Banner de confianza -->
+    <section style="background: linear-gradient(135deg, #0066cc 0%, #004499 100%); padding: 1.25rem 2rem; text-align: center;">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: center; align-items: center; gap: 2rem; flex-wrap: wrap; color: white;">
+            <span style="display: flex; align-items: center; gap: 8px; font-weight: 600;">
+                ✅ Diagnóstico Sin Costo
+            </span>
+            <span style="display: flex; align-items: center; gap: 8px; font-weight: 600;">
+                🛡️ Garantía Escrita
+            </span>
+            <span style="display: flex; align-items: center; gap: 8px; font-weight: 600;">
+                ⚡ Reparación Express
+            </span>
+        </div>
+    </section>
+
+    <!-- Servicios -->
     <section class="services">
-        <div class="service-card">
+        <div class="service-card glow-card">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">💻</div>
             <h3>Reparación de Computadoras</h3>
             <p>Diagnóstico y solución de fallas en hardware y software</p>
             <ul>
-                <li>Reparación de laptops y notebooks</li>
-                <li>Reemplazo de componentes dañados</li>
+                <li>Reparación de laptops y notebooks todas las marcas</li>
+                <li>Reemplazo de componentes dañados (pantalla, teclado, batería)</li>
                 <li>Mantenimiento preventivo y correctivo</li>
-                <li>Optimización y diagnóstico</li>
+                <li>Optimización y diagnóstico completo</li>
+                <li>Reparación de motherboards y fuentes</li>
             </ul>
+            <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border-light);">
+                <span class="badge">Servicio Integral</span>
+            </div>
         </div>
-        <div class="service-card">
+        
+        <div class="service-card glow-card">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">🧹</div>
             <h3>Optimización y Mantenimiento</h3>
-            <p>Mantén tu equipo en perfecto estado</p>
+           én tu equipo en <p>Mant perfecto estado de funcionamiento</p>
             <ul>
-                <li>Limpieza interna y externa</li>
+                <li>Limpieza interna y externa profesional</li>
                 <li>Cambio de pasta térmica</li>
-                <li>Actualización de hardware</li>
+                <li>Actualización de hardware (RAM, SSD)</li>
                 <li>Optimización del sistema operativo</li>
+                <li>Instalación de Windows y drivers</li>
             </ul>
+            <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border-light);">
+                <span class="badge">Mantenimiento Express</span>
+            </div>
         </div>
-        <div class="service-card">
+        
+        <div class="service-card glow-card">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">🔧</div>
             <h3>Soporte Técnico</h3>
-            <p>Asistencia profesional para tus consultas</p>
+            <p>Asistencia profesional para todas tus consultas técnicas</p>
             <ul>
                 <li>Configuración de redes domésticas y empresariales</li>
-                <li>Instalación de software y sistemas</li>
+                <li>Instalación de software y sistemas operativos</li>
                 <li>Eliminación de virus y malware</li>
                 <li>Asesoría técnica personalizada</li>
             </ul>
+            <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border-light);">
+                <span class="badge">Soporte Remoto Disponible</span>
+            </div>
         </div>
-        <div class="service-card">
+        
+        <div class="service-card glow-card">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">💡</div>
             <h3>Consultoría Tech</h3>
             <p>Recomendaciones expertas para tu tecnología</p>
             <ul>
                 <li>Recomendaciones para compra de equipos</li>
                 <li>Mejora de rendimiento según tus necesidades</li>
                 <li>Compatibilidad y actualización de componentes</li>
+                <li>Asesoría para empresas</li>
             </ul>
+            <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border-light);">
+                <span class="badge">Consulta Gratuita</span>
+            </div>
         </div>
     </section>
 
+    <!-- Marcas que trabajamos -->
+    <section style="padding: 4rem 2rem; background: white; text-align: center;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 style="margin-bottom: 0.5rem;">🏢 Marcas que Trabajamos</h2>
+            <p style="margin-bottom: 2rem; color: var(--foreground-muted);">Servicio técnico para todas las marcas líderes del mercado</p>
+            
+            <div style="display: flex; justify-content: center; align-items: center; gap: 2rem; flex-wrap: wrap;">
+                <div style="padding: 1rem 2rem; background: var(--background); border-radius: 1rem; font-weight: 600; color: var(--secondary);">HP</div>
+                <div style="padding: 1rem 2rem; background: var(--background); border-radius: 1rem; font-weight: 600; color: var(--secondary);">Dell</div>
+                <div style="padding: 1rem 2rem; background: var(--background); border-radius: 1rem; font-weight: 600; color: var(--secondary);">Lenovo</div>
+                <div style="padding: 1rem 2rem; background: var(--background); border-radius: 1rem; font-weight: 600; color: var(--secondary);">Asus</div>
+                <div style="padding: 1rem 2rem; background: var(--background); border-radius: 1rem; font-weight: 600; color: var(--secondary);">Acer</div>
+                <div style="padding: 1rem 2rem; background: var(--background); border-radius: 1rem; font-weight: 600; color: var(--secondary);">Toshiba</div>
+                <div style="padding: 1rem 2rem; background: var(--background); border-radius: 1rem; font-weight: 600; color: var(--secondary);">Samsung</div>
+                <div style="padding: 1rem 2rem; background: var(--background); border-radius: 1rem; font-weight: 600; color: var(--secondary);">Apple</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
     <section class="cta-section">
         <h2>¿Necesitas algún servicio?</h2>
         <p>Contáctanos y te presupuestamos sin compromiso</p>
-        <a href="contacto.html" class="cta-btn">Solicitar Presupuesto</a>
+        <a href="contacto.html" class="cta-btn">
+            <span>💬 Solicitar Presupuesto</span>
+        </a>
     </section>
 
     <!-- Métodos de Pago -->
@@ -96,7 +164,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2024 NTEC - Servicio Técnico. Todos los derechos reservados.</p>
+        <p>&copy; 2024 NTEC - Servicio Técnico Profesional. Todos los derechos reservados.</p>
     </footer>
 </body>
 </html>
