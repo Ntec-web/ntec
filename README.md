@@ -1,2 +1,0 @@
-# ntec
-Servicio Técnico
