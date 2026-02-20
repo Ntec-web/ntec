@@ -6,12 +6,120 @@
     <title>Quiénes Somos - NTEC | Servicio Técnico Profesional</title>
     <meta name="description" content="Conoce NTEC - Expertos en servicio técnico con años de experiencia. Garantía escrita en todos nuestros trabajos.">
     <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🖥️</text></svg>">
+    <style>
+        /* Animación de fondo dinámico */
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .animated-bg {
+            background: linear-gradient(-45deg, #0a2540, #0f3460, #1a5276, #0a2540);
+            background-size: 400% 400%;
+            animation: gradientMove 15s ease infinite;
+        }
+        
+        .animated-bg-soft {
+            background: linear-gradient(-45deg, #0066cc, #0a2540, #0066cc);
+            background-size: 300% 300%;
+            animation: gradientMove 10s ease infinite;
+        }
+        
+        /* Partículas flotantes */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 20s infinite;
+        }
+        
+        .particle:nth-child(1) { left: 10%; animation-delay: 0s; animation-duration: 25s; }
+        .particle:nth-child(2) { left: 20%; animation-delay: 2s; animation-duration: 20s; }
+        .particle:nth-child(3) { left: 30%; animation-delay: 4s; animation-duration: 22s; }
+        .particle:nth-child(4) { left: 40%; animation-delay: 6s; animation-duration: 18s; }
+        .particle:nth-child(5) { left: 50%; animation-delay: 8s; animation-duration: 24s; }
+        .particle:nth-child(6) { left: 60%; animation-delay: 10s; animation-duration: 21s; }
+        .particle:nth-child(7) { left: 70%; animation-delay: 12s; animation-duration: 19s; }
+        .particle:nth-child(8) { left: 80%; animation-delay: 14s; animation-duration: 23s; }
+        .particle:nth-child(9) { left: 90%; animation-delay: 16s; animation-duration: 17s; }
+        .particle:nth-child(10) { left: 15%; animation-delay: 1s; animation-duration: 26s; }
+        .particle:nth-child(11) { left: 35%; animation-delay: 3s; animation-duration: 20s; }
+        .particle:nth-child(12) { left: 55%; animation-delay: 5s; animation-duration: 22s; }
+        .particle:nth-child(13) { left: 75%; animation-delay: 7s; animation-duration: 18s; }
+        .particle:nth-child(14) { left: 85%; animation-delay: 9s; animation-duration: 24s; }
+        .particle:nth-child(15) { left: 25%; animation-delay: 11s; animation-duration: 21s; }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.5;
+            }
+            90% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .animate-on-scroll.visible {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+    </style>
 </head>
-<body style="background: linear-gradient(180deg, #f8f9fc 0%, #eef2f7 100%), url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1920&q=80'); background-size: cover; background-position: center fixed; background-attachment: fixed;">
-    <!-- Fondo tecnológico decorativo -->
-    <div class="tech-grid"></div>
+<body style="background: #f5f7fa;">
+    
+    <!-- Partículas flotantes -->
     <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
         <div class="particle"></div>
         <div class="particle"></div>
         <div class="particle"></div>
@@ -19,152 +127,222 @@
     
     <header>
         <img src="logo.png" alt="NTEC Logo" class="header-logo">
-        <h1>NTEC - Servicio Técnico Profesional</h1>
+        <h1>NTEC - Servicio Técnico</h1>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="quienes-somos.html" class="active">Quiénes Somos</a>
+            <a href="servicios.html">Servicios</a>
+            <a href="blog.html">Blog</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="https://wa.me/59896616638" target="_blank" class="whatsapp-link">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+        </nav>
     </header>
-    
-    <nav>
-        <a href="index.html">Inicio</a>
-        <a href="quienes-somos.html" class="active">Quiénes Somos</a>
-        <a href="servicios.html">Servicios</a>
-        <a href="contacto.html" class="whatsapp-link">Contacto</a>
-    </nav>
 
     <!-- Page Header -->
-    <section class="page-header">
-        <h1>Quiénes Somos</h1>
-        <p>Conoce nuestra historia y compromiso con la excelencia</p>
+    <section class="animate-on-scroll" style="background: #0a2540; padding: 3.5rem 2rem; text-align: center;">
+        <h1 style="font-size: 2rem; font-weight: 700; color: white; margin-bottom: 0.5rem;">Quiénes Somos</h1>
+        <p style="color: rgba(255, 255, 255, 0.7); font-size: 1rem;">Conoce nuestra historia y compromiso con la excelencia</p>
     </section>
 
     <!-- About Section -->
-    <section class="about-section">
-        <div class="about-content">
-            <div class="about-text">
-                <h2>Nuestra Historia</h2>
-                <p>En <strong>NTEC</strong> nos dedicamos a brindarte el mejor servicio técnico para tus equipos de computación. Somos un emprendimiento comprometido con la excelencia, ofreciendo soluciones rápidas, confiables y de calidad profesional.</p>
-                <p>Nuestro objetivo es que tu equipo funcione como nuevo, brindándote tranquilidad y confianza en cada reparación. Trabajamos con transparencia y honestidad en cada proceso.</p>
+    <section class="animate-on-scroll" style="padding: 3.5rem 2rem; background: white; max-width: 1100px; margin: 0 auto;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;">
+            <div>
+                <h2 style="font-size: 1.5rem; font-weight: 700; color: #1a1a2e; margin-bottom: 1.25rem;">Nuestra Historia</h2>
+                <p style="color: #64748b; font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem;">En <strong>NTEC</strong> nos dedicamos a brindarte el mejor servicio técnico para tus equipos de computación. Somos un emprendimiento comprometido con la excelencia, ofreciendo soluciones rápidas, confiables y de calidad profesional.</p>
+                <p style="color: #64748b; font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.5rem;">Nuestro objetivo es que tu equipo funcione como nuevo, brindándote tranquilidad y confianza en cada reparación. Trabajamos con transparencia y honestidad en cada proceso.</p>
                 
-                <div style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(0, 102, 204, 0.08) 0%, rgba(0, 212, 255, 0.05) 100%); border-radius: 1rem; border-left: 4px solid #0066cc;">
-                    <h3 style="color: var(--primary); margin-bottom: 0.75rem;">🎯 Nuestra Misión</h3>
-                    <p>Brindar soluciones técnicas de alta calidad que devuelvan la funcionalidad y rendimiento óptimo a tus equipos, garantizando la satisfacción total de cada cliente.</p>
+                <div style="margin-top: 1.5rem; padding: 1.25rem; background: #f8fafc; border-radius: 6px; border-left: 3px solid #0066cc;">
+                    <h3 style="color: #0066cc; margin-bottom: 0.5rem; font-size: 1rem; font-weight: 600;">Nuestra Misión</h3>
+                    <p style="color: #64748b; font-size: 0.9rem; line-height: 1.5; margin: 0;">Brindar soluciones técnicas de alta calidad que devuelvan la funcionalidad y rendimiento óptimo a tus equipos, garantizando la satisfacción total de cada cliente.</p>
                 </div>
 
-                <h2 style="margin-top: 2.5rem;">Nuestra Garantía</h2>
-                <p>Te respaldamos con <strong>garantía escrita</strong> en todos nuestros trabajos. Si no quedas satisfecho, nos comprometemos a corregirlo sin costo adicional. Tu tranquilidad es nuestra prioridad número uno.</p>
-                <p>Cada reparación incluye:</p>
-                <ul style="list-style: none; margin-top: 1rem;">
-                    <li style="padding: 0.5rem 0; padding-left: 1.75rem; position: relative; color: var(--foreground-muted);">
-                        <span style="position: absolute; left: 0; color: var(--success);">✓</span> Diagnóstico profesional sin costo
+                <h2 style="font-size: 1.5rem; font-weight: 700; color: #1a1a2e; margin-top: 2rem; margin-bottom: 1.25rem;">Nuestra Garantía</h2>
+                <p style="color: #64748b; font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem;">Te respaldamos con <strong>garantía escrita</strong> en todos nuestros trabajos. Si no quedas satisfecho, nos comprometemos a corregirlo sin costo adicional. Tu tranquilidad es nuestra prioridad.</p>
+                <p style="color: #1a1a2e; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.75rem;">Cada reparación incluye:</p>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="padding: 0.4rem 0; color: #64748b; font-size: 0.9rem;">
+                        <span style="color: #0066cc; margin-right: 0.5rem;">✓</span> Diagnóstico profesional sin costo
                     </li>
-                    <li style="padding: 0.5rem 0; padding-left: 1.75rem; position: relative; color: var(--foreground-muted);">
-                        <span style="position: absolute; left: 0; color: var(--success);">✓</span> Presupuesto detallado y sin compromiso
+                    <li style="padding: 0.4rem 0; color: #64748b; font-size: 0.9rem;">
+                        <span style="color: #0066cc; margin-right: 0.5rem;">✓</span> Presupuesto detallado y sin compromiso
                     </li>
-                    <li style="padding: 0.5rem 0; padding-left: 1.75rem; position: relative; color: var(--foreground-muted);">
-                        <span style="position: absolute; left: 0; color: var(--success);">✓</span> Garantía por escrito en cada trabajo
+                    <li style="padding: 0.4rem 0; color: #64748b; font-size: 0.9rem;">
+                        <span style="color: #0066cc; margin-right: 0.5rem;">✓</span> Garantía por escrito en cada trabajo
                     </li>
-                    <li style="padding: 0.5rem 0; padding-left: 1.75rem; position: relative; color: var(--foreground-muted);">
-                        <span style="position: absolute; left: 0; color: var(--success);">✓</span> Repuestos de calidad garantizados
+                    <li style="padding: 0.4rem 0; color: #64748b; font-size: 0.9rem;">
+                        <span style="color: #0066cc; margin-right: 0.5rem;">✓</span> Repuestos de calidad garantizados
                     </li>
                 </ul>
             </div>
-            <div class="about-image" style="text-align: center;">
-                <!-- Tu foto de equipo de trabajo -->
-                <img src="2G.png" alt="Nuestro equipo de trabajo" class="about-img" style="width: 100%; max-width: 500px; border-radius: 1.5rem; box-shadow: 0 20px 50px rgba(0, 102, 204, 0.25);">
-                
-                <!-- Badge de confianza -->
-                <div style="margin-top: 1.5rem; display: inline-flex; align-items: center; gap: 0.75rem; background: white; padding: 1rem 1.5rem; border-radius: 1rem; box-shadow: var(--shadow-lg);">
-                    <span style="font-size: 2rem;">🏆</span>
-                    <div style="text-align: left;">
-                        <div style="font-weight: 700; color: var(--secondary);">Servicio Premium</div>
-                        <div style="font-size: 0.85rem; color: var(--foreground-muted);">Calidad garantizada</div>
-                    </div>
-                </div>
+            <div style="text-align: center;">
+                <img src="2G.png" alt="Nuestro equipo de trabajo" style="width: 100%; max-width: 450px; border-radius: 8px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);">
             </div>
         </div>
     </section>
 
     <!-- Valores -->
-    <section class="values">
-        <h2>Nuestros Valores</h2>
-        <div class="values-grid">
-            <div class="value-card glow-card">
-                <h3>🛡️ Garantía Escrita</h3>
-                <p>Todos nuestros trabajos incluyen garantía por escrito. Tu satisfacción está asegurada.</p>
-            </div>
-            <div class="value-card glow-card">
-                <h3>💎 Transparencia</h3>
-                <p>Te informamos exactamente qué le pasa a tu equipo. Sin costos ocultos, sin sorpresas.</p>
-            </div>
-            <div class="value-card glow-card">
-                <h3>🤝 Atención Personalizada</h3>
-                <p>Te explicaremos cada paso del proceso. Respondemos todas tus dudas.</p>
-            </div>
-            <div class="value-card glow-card">
-                <h3>⚡ Rapidez</h3>
-                <p>Diagnóstico en 24hrs. Trabajamos rápido sin comprometer la calidad.</p>
+    <section class="animate-on-scroll" style="padding: 3.5rem 2rem; background: #f8fafc;">
+        <div style="max-width: 1100px; margin: 0 auto; text-align: center;">
+            <h2 style="font-size: 1.5rem; font-weight: 700; color: #1a1a2e; margin-bottom: 2rem;">Nuestros Valores</h2>
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem;">
+                <div style="background: white; padding: 1.5rem; border-radius: 6px; border: 1px solid #e2e8f0; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='#0066cc'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#e2e8f0'; this.style.boxShadow='none'">
+                    <div style="font-size: 1.25rem; margin-bottom: 0.5rem; color: #0066cc;">✓</div>
+                    <h3 style="color: #1a1a2e; margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: 600;">Garantía Escrita</h3>
+                    <p style="color: #64748b; font-size: 0.8rem; line-height: 1.5;">Todos nuestros trabajos incluyen garantía por escrito.</p>
+                </div>
+                <div style="background: white; padding: 1.5rem; border-radius: 6px; border: 1px solid #e2e8f0; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='#0066cc'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#e2e8f0'; this.style.boxShadow='none'">
+                    <div style="font-size: 1.25rem; margin-bottom: 0.5rem; color: #0066cc;">✓</div>
+                    <h3 style="color: #1a1a2e; margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: 600;">Transparencia</h3>
+                    <p style="color: #64748b; font-size: 0.8rem; line-height: 1.5;">Te informamos exactamente qué le pasa a tu equipo.</p>
+                </div>
+                <div style="background: white; padding: 1.5rem; border-radius: 6px; border: 1px solid #e2e8f0; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='#0066cc'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#e2e8f0'; this.style.boxShadow='none'">
+                    <div style="font-size: 1.25rem; margin-bottom: 0.5rem; color: #0066cc;">✓</div>
+                    <h3 style="color: #1a1a2e; margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: 600;">Atención Personalizada</h3>
+                    <p style="color: #64748b; font-size: 0.8rem; line-height: 1.5;">Te explicaremos cada paso del proceso.</p>
+                </div>
+                <div style="background: white; padding: 1.5rem; border-radius: 6px; border: 1px solid #e2e8f0; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='#0066cc'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#e2e8f0'; this.style.boxShadow='none'">
+                    <div style="font-size: 1.25rem; margin-bottom: 0.5rem; color: #0066cc;">✓</div>
+                    <h3 style="color: #1a1a2e; margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: 600;">Rapidez</h3>
+                    <p style="color: #64748b; font-size: 0.8rem; line-height: 1.5;">Diagnóstico en 24hrs. Trabajamos rápido.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Por qué elegirnos -->
-    <section style="padding: 5rem 2rem; max-width: 1300px; margin: 0 auto; text-align: center;">
-        <h2 style="margin-bottom: 0.5rem;">🌟 ¿Por Qué Elegirnos?</h2>
-        <p style="margin-bottom: 3rem; color: var(--foreground-muted);">Estas son las razones por las que nuestros clientes confían en nosotros</p>
-        
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.75rem;">
-            <div style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: var(--shadow-md); border: 1px solid var(--border-light); transition: all var(--transition-base);" class="glow-card">
-                <div style="font-size: 3rem; margin-bottom: 1rem;">👨‍🔧</div>
-                <h3 style="margin-bottom: 0.75rem;">Técnicos Expertos</h3>
-                <p style="color: var(--foreground-muted);">Personal capacitado con años de experiencia en todas las marcas y modelos.</p>
-            </div>
-            <div style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: var(--shadow-md); border: 1px solid var(--border-light); transition: all var(--transition-base);" class="glow-card">
-                <div style="font-size: 3rem; margin-bottom: 1rem;">🔬</div>
-                <h3 style="margin-bottom: 0.75rem;">Diagnóstico Preciso</h3>
-                <p style="color: var(--foreground-muted);">Identificamos el problema exactamente para no reemplazar componentes innecesarios.</p>
-            </div>
-            <div style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: var(--shadow-md); border: 1px solid var(--border-light); transition: all var(--transition-base);" class="glow-card">
-                <div style="font-size: 3rem; margin-bottom: 1rem;">📦</div>
-                <h3 style="margin-bottom: 0.75rem;">Repuestos de Calidad</h3>
-                <p style="color: var(--foreground-muted);">Usamos componentes de calidad para garantizar la durabilidad de tu equipo.</p>
-            </div>
-            <div style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: var(--shadow-md); border: 1px solid var(--border-light); transition: all var(--transition-base);" class="glow-card">
-                <div style="font-size: 3rem; margin-bottom: 1rem;">⏱️</div>
-                <h3 style="margin-bottom: 0.75rem;">Tiempo Rápido</h3>
-                <p style="color: var(--foreground-muted);">Entendemos que necesitas tu equipo. Trabajamos con tiempos rápidos.</p>
+    <section class="animate-on-scroll" style="padding: 3.5rem 2rem; background: white;">
+        <div style="max-width: 1100px; margin: 0 auto; text-align: center;">
+            <h2 style="font-size: 1.5rem; font-weight: 700; color: #1a1a2e; margin-bottom: 0.5rem;">¿Por Qué Elegirnos?</h2>
+            <p style="color: #64748b; margin-bottom: 2rem; font-size: 0.95rem;">Estas son las razones por las que nuestros clientes confían en nosotros</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem;">
+                <div style="background: #f8fafc; padding: 1.5rem; border-radius: 6px; border: 1px solid #e2e8f0; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='#0066cc'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#e2e8f0'; this.style.boxShadow='none'">
+                    <div style="font-size: 1.5rem; margin-bottom: 0.75rem;">👨‍🔧</div>
+                    <h3 style="color: #1a1a2e; margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: 600;">Técnicos Expertos</h3>
+                    <p style="color: #64748b; font-size: 0.8rem; line-height: 1.5;">Personal capacitado con años de experiencia.</p>
+                </div>
+                <div style="background: #f8fafc; padding: 1.5rem; border-radius: 6px; border: 1px solid #e2e8f0; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='#0066cc'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#e2e8f0'; this.style.boxShadow='none'">
+                    <div style="font-size: 1.5rem; margin-bottom: 0.75rem;">🔬</div>
+                    <h3 style="color: #1a1a2e; margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: 600;">Diagnóstico Preciso</h3>
+                    <p style="color: #64748b; font-size: 0.8rem; line-height: 1.5;">Identificamos el problema exactamente.</p>
+                </div>
+                <div style="background: #f8fafc; padding: 1.5rem; border-radius: 6px; border: 1px solid #e2e8f0; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='#0066cc'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#e2e8f0'; this.style.boxShadow='none'">
+                    <div style="font-size: 1.5rem; margin-bottom: 0.75rem;">📦</div>
+                    <h3 style="color: #1a1a2e; margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: 600;">Repuestos de Calidad</h3>
+                    <p style="color: #64748b; font-size: 0.8rem; line-height: 1.5;">Usamos componentes de calidad garantizada.</p>
+                </div>
+                <div style="background: #f8fafc; padding: 1.5rem; border-radius: 6px; border: 1px solid #e2e8f0; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='#0066cc'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#e2e8f0'; this.style.boxShadow='none'">
+                    <div style="font-size: 1.5rem; margin-bottom: 0.75rem;">⏱️</div>
+                    <h3 style="color: #1a1a2e; margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: 600;">Tiempo Rápido</h3>
+                    <p style="color: #64748b; font-size: 0.8rem; line-height: 1.5;">Trabajamos con tiempos rápidos.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- CTA -->
-    <section class="cta-section">
-        <h2>¿Tienes algún equipo que necesite revisión?</h2>
-        <p>No esperes a que el problema empeore. Contáctanos y te presupuestamos sin compromiso</p>
-        <a href="contacto.html" class="cta-btn">
-            <span>📞 Solicitar Presupuesto Gratis</span>
+    <section class="animate-on-scroll" style="background: #1a1a2e; color: white; padding: 3rem 2rem; text-align: center;">
+        <h2 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: white;">¿Tienes algún equipo que necesite revisión?</h2>
+        <p style="color: rgba(255, 255, 255, 0.7); margin-bottom: 1.5rem; font-size: 0.9rem;">Contáctanos y te presupuestamos sin compromiso</p>
+        <a href="contacto.html" style="display: inline-flex; align-items: center; gap: 8px; background: #0066cc; color: white; padding: 0.75rem 1.5rem; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: all 0.2s;" onmouseover="this.style.background='#0052a3'; this.style.transform='scale(1.05)'" onmouseout="this.style.background='#0066cc'; this.style.transform='scale(1)'">
+            <span>📞</span> Solicitar Presupuesto
         </a>
     </section>
 
-    <!-- Métodos de Pago -->
-    <section class="payment-methods">
-        <h2>Métodos de Pago</h2>
-        <p class="payment-subtitle">Aceptamos los siguientes métodos de pago</p>
-        <div class="payment-grid">
-            <div class="payment-card" data-icon="💵">
-                <h3>Efectivo</h3>
-                <p>Paga en efectivo al retirar tu equipo</p>
+    <!-- Footer -->
+    <footer style="background: #0f172a; color: #9ca3af; padding: 3rem 2rem 1.5rem; border-top: 1px solid #1f2937;">
+        <div style="max-width: 1100px; margin: 0 auto;">
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-bottom: 2.5rem;">
+                
+                <!-- Brand -->
+                <div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+                        <div style="background: #0066cc; padding: 0.4rem; border-radius: 4px;">
+                            <span style="font-size: 1.25rem;">🖥️</span>
+                        </div>
+                        <span style="font-size: 1.1rem; font-weight: 700; color: white;">
+                            NTEC Uruguay
+                        </span>
+                    </div>
+                    <p style="font-size: 0.8rem; line-height: 1.5;">
+                        Soluciones tecnológicas confiables. Reparamos, optimizamos y asesoramos con garantía.
+                    </p>
+                </div>
+
+                <!-- Links -->
+                <div>
+                    <h4 style="font-size: 0.95rem; font-weight: 600; color: white; margin-bottom: 1rem;">Enlaces</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.8; font-size: 0.8rem;">
+                        <li><a href="index.html" style="color: #9ca3af; text-decoration: none;" onmouseover="this.style.color='#0066cc'" onmouseout="this.style.color='#9ca3af'">Inicio</a></li>
+                        <li><a href="servicios.html" style="color: #9ca3af; text-decoration: none;" onmouseover="this.style.color='#0066cc'" onmouseout="this.style.color='#9ca3af'">Servicios</a></li>
+                        <li><a href="quienes-somos.html" style="color: #9ca3af; text-decoration: none;" onmouseover="this.style.color='#0066cc'" onmouseout="this.style.color='#9ca3af'">Quiénes Somos</a></li>
+                        <li><a href="contacto.html" style="color: #9ca3af; text-decoration: none;" onmouseover="this.style.color='#0066cc'" onmouseout="this.style.color='#9ca3af'">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 style="font-size: 0.95rem; font-weight: 600; color: white; margin-bottom: 1rem;">Servicios</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.8; font-size: 0.8rem;">
+                        <li><a href="servicios.html" style="color: #9ca3af; text-decoration: none;" onmouseover="this.style.color='#0066cc'" onmouseout="this.style.color='#9ca3af'">Reparación de PC</a></li>
+                        <li><a href="servicios.html" style="color: #9ca3af; text-decoration: none;" onmouseover="this.style.color='#0066cc'" onmouseout="this.style.color='#9ca3af'">Limpieza de Virus</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 style="font-size: 0.95rem; font-weight: 600; color: white; margin-bottom: 1rem;">Contáctanos</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.8; font-size: 0.8rem;">
+                        <li style="color: #9ca3af;">
+                            <span style="color: white; font-weight: 500;">Dirección:</span> El Pinar, Ciudad de la Costa
+                        </li>
+                        <li style="color: #9ca3af;">
+                            <span style="color: white; font-weight: 500;">Teléfono:</span> +598 96 616 638
+                        </li>
+                        <li style="color: #9ca3af;">
+                            <span style="color: white; font-weight: 500;">Email:</span> nservice7ech@gmail.com
+                        </li>
+                    </ul>
+                </div>
+
             </div>
-            <div class="payment-card" data-icon="💳">
-                <h3>Mercado Pago</h3>
-                <p>Paga de forma segura con Mercado Pago</p>
-            </div>
-            <div class="payment-card" data-icon="🏦">
-                <h3>Transferencia</h3>
-                <p>Transferencia bancaria directa</p>
+            
+            <div style="border-top: 1px solid #1f2937; padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <p style="color: #6b7280; font-size: 0.75rem; margin: 0;">
+                    © 2026 NTEC. Todos los derechos reservados.
+                </p>
+                <div style="display: flex; gap: 1.5rem;">
+                    <a href="#" style="color: #6b7280; text-decoration: none; font-size: 0.75rem;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#6b7280'">Política de Privacidad</a>
+                    <a href="#" style="color: #6b7280; text-decoration: none; font-size: 0.75rem;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#6b7280'">Términos y Condiciones</a>
+                </div>
             </div>
         </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 NTEC - Servicio Técnico Profesional. Todos los derechos reservados.</p>
     </footer>
+
+    <script>
+        // Animación al hacer scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, index * 100);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
 </body>
 </html>

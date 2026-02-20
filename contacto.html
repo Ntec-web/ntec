@@ -6,12 +6,120 @@
     <title>Contacto - NTEC | Servicio Técnico Profesional</title>
     <meta name="description" content="Contácta NTEC - Servicio técnico de confianza. WhatsApp, Instagram, YouTube y más. ¡Escríbenos!">
     <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🖥️</text></svg>">
+    <style>
+        /* Animación de fondo dinámico */
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .animated-bg {
+            background: linear-gradient(-45deg, #0a2540, #0f3460, #1a5276, #0a2540);
+            background-size: 400% 400%;
+            animation: gradientMove 15s ease infinite;
+        }
+        
+        .animated-bg-soft {
+            background: linear-gradient(-45deg, #0066cc, #0a2540, #0066cc);
+            background-size: 300% 300%;
+            animation: gradientMove 10s ease infinite;
+        }
+        
+        /* Partículas flotantes */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 20s infinite;
+        }
+        
+        .particle:nth-child(1) { left: 10%; animation-delay: 0s; animation-duration: 25s; }
+        .particle:nth-child(2) { left: 20%; animation-delay: 2s; animation-duration: 20s; }
+        .particle:nth-child(3) { left: 30%; animation-delay: 4s; animation-duration: 22s; }
+        .particle:nth-child(4) { left: 40%; animation-delay: 6s; animation-duration: 18s; }
+        .particle:nth-child(5) { left: 50%; animation-delay: 8s; animation-duration: 24s; }
+        .particle:nth-child(6) { left: 60%; animation-delay: 10s; animation-duration: 21s; }
+        .particle:nth-child(7) { left: 70%; animation-delay: 12s; animation-duration: 19s; }
+        .particle:nth-child(8) { left: 80%; animation-delay: 14s; animation-duration: 23s; }
+        .particle:nth-child(9) { left: 90%; animation-delay: 16s; animation-duration: 17s; }
+        .particle:nth-child(10) { left: 15%; animation-delay: 1s; animation-duration: 26s; }
+        .particle:nth-child(11) { left: 35%; animation-delay: 3s; animation-duration: 20s; }
+        .particle:nth-child(12) { left: 55%; animation-delay: 5s; animation-duration: 22s; }
+        .particle:nth-child(13) { left: 75%; animation-delay: 7s; animation-duration: 18s; }
+        .particle:nth-child(14) { left: 85%; animation-delay: 9s; animation-duration: 24s; }
+        .particle:nth-child(15) { left: 25%; animation-delay: 11s; animation-duration: 21s; }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.5;
+            }
+            90% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .animate-on-scroll.visible {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+    </style>
 </head>
-<body style="background: linear-gradient(180deg, #f8f9fc 0%, #eef2f7 100%), url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1920&q=80'); background-size: cover; background-position: center fixed; background-attachment: fixed;">
-    <!-- Fondo tecnológico decorativo -->
-    <div class="tech-grid"></div>
+<body style="background: #f5f7fa;">
+    
+    <!-- Partículas flotantes -->
     <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
         <div class="particle"></div>
         <div class="particle"></div>
         <div class="particle"></div>
@@ -19,174 +127,287 @@
     
     <header>
         <img src="logo.png" alt="NTEC Logo" class="header-logo">
-        <h1>NTEC - Servicio Técnico Profesional</h1>
+        <h1>NTEC - Servicio Técnico</h1>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="quienes-somos.html">Quiénes Somos</a>
+            <a href="servicios.html">Servicios</a>
+            <a href="blog.html">Blog</a>
+            <a href="contacto.html" class="active">Contacto</a>
+            <a href="https://wa.me/59896616638" target="_blank" class="whatsapp-link">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+        </nav>
     </header>
-    
-    <nav>
-        <a href="index.html">Inicio</a>
-        <a href="quienes-somos.html">Quiénes Somos</a>
-        <a href="servicios.html">Servicios</a>
-        <a href="contacto.html" class="active whatsapp-link">Contacto</a>
-    </nav>
 
     <!-- Page Header -->
-    <section class="page-header">
-        <h1>Contacto</h1>
-        <p>Estamos listos para ayudarte con tu equipo</p>
+    <section class="animate-on-scroll" style="background: #0a2540; padding: 3.5rem 2rem; text-align: center;">
+        <h1 style="font-size: 2rem; font-weight: 700; color: white; margin-bottom: 0.5rem;">Contacto</h1>
+        <p style="color: rgba(255, 255, 255, 0.7); font-size: 1rem;">Estamos listos para ayudarte con tu equipo</p>
     </section>
 
     <!-- Banner de acción rápida -->
-    <section style="background: linear-gradient(135deg, #25D366 0%, #20bd5a 100%); padding: 2rem 2rem; text-align: center;">
+    <section class="animate-on-scroll" style="background: #0066cc; padding: 1.5rem 2rem; text-align: center;">
         <div style="max-width: 800px; margin: 0 auto;">
-            <h2 style="color: white; margin-bottom: 0.5rem; font-size: 1.5rem;">💬 ¿Prefieres WhatsApp?</h2>
-            <p style="color: rgba(255,255,255,0.9); margin-bottom: 1.5rem;">Escríbenos directamente y te respondemos al instante</p>
-            <a href="https://wa.me/59896616638" target="_blank" style="display: inline-flex; align-items: center; gap: 10px; background: white; color: #25D366; padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1.1rem; transition: transform 0.3s; box-shadow: 0 4px 20px rgba(0,0,0,0.2);">
-                <span>📱</span> Escribir por WhatsApp
+            <h2 style="color: white; margin-bottom: 0.5rem; font-size: 1.25rem; font-weight: 700;">¿Prefieres WhatsApp?</h2>
+            <p style="color: rgba(255,255,255,0.9); margin-bottom: 1rem; font-size: 0.9rem;">Escríbenos directamente y te respondemos al instante</p>
+            <a href="https://wa.me/59896616638" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; background: white; color: #0066cc; padding: 0.75rem 1.5rem; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+                <i class="fab fa-whatsapp"></i> Escribir por WhatsApp
             </a>
         </div>
     </section>
 
     <!-- Sección de Contacto -->
-    <section class="contact-section">
-        <!-- Formulario -->
-        <div class="contact-card">
-            <h2>📝 Envíanos un Mensaje</h2>
-            <p>Completa el formulario y nos contactaremos contigo a la brevedad.</p>
-            
-            <form id="whatsapp-form" class="contact-form">
-                <div class="form-group">
-                    <label for="nombre">Nombre completo *</label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
-                </div>
+    <section class="animate-on-scroll" style="padding: 3rem 2rem; background: white;">
+        <div style="max-width: 1100px; margin: 0 auto;">
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
                 
-                <div class="form-group">
-                    <label for="telefono">Teléfono</label>
-                    <input type="tel" id="telefono" name="telefono" placeholder="Tu número de teléfono">
+                <!-- Formulario -->
+                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 1.5rem; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='#0066cc'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#e2e8f0'; this.style.boxShadow='none'">
+                    <h2 style="color: #1a1a2e; margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 700;">Envíanos un Mensaje</h2>
+                    <p style="color: #64748b; margin-bottom: 1.25rem; font-size: 0.85rem;">Completa el formulario y nos contactaremos contigo.</p>
+                    
+                    <form id="whatsapp-form">
+                        <div style="margin-bottom: 0.75rem;">
+                            <label for="nombre" style="display: block; color: #1a1a2e; font-weight: 500; font-size: 0.85rem; margin-bottom: 0.25rem;">Nombre completo *</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required style="width: 100%; padding: 0.6rem; border: 1px solid #e2e8f0; border-radius: 4px; font-size: 0.9rem;">
+                        </div>
+                        
+                        <div style="margin-bottom: 0.75rem;">
+                            <label for="telefono" style="display: block; color: #1a1a2e; font-weight: 500; font-size: 0.85rem; margin-bottom: 0.25rem;">Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono" placeholder="Tu número" style="width: 100%; padding: 0.6rem; border: 1px solid #e2e8f0; border-radius: 4px; font-size: 0.9rem;">
+                        </div>
+                        
+                        <div style="margin-bottom: 0.75rem;">
+                            <label for="dispositivo" style="display: block; color: #1a1a2e; font-weight: 500; font-size: 0.85rem; margin-bottom: 0.25rem;">Dispositivo / Modelo</label>
+                            <input type="text" id="dispositivo" name="dispositivo" placeholder="Ej: Laptop HP" style="width: 100%; padding: 0.6rem; border: 1px solid #e2e8f0; border-radius: 4px; font-size: 0.9rem;">
+                        </div>
+                        
+                        <div style="margin-bottom: 1rem;">
+                            <label for="mensaje" style="display: block; color: #1a1a2e; font-weight: 500; font-size: 0.85rem; margin-bottom: 0.25rem;">Descripción del problema *</label>
+                            <textarea id="mensaje" name="mensaje" rows="3" placeholder="Cuéntanos qué le pasa a tu equipo..." style="width: 100%; padding: 0.6rem; border: 1px solid #e2e8f0; border-radius: 4px; font-size: 0.9rem; resize: vertical;"></textarea>
+                        </div>
+                        
+                        <button type="submit" style="width: 100%; background: #0066cc; color: white; padding: 0.75rem; border-radius: 4px; font-weight: 600; font-size: 0.9rem; border: none; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.background='#0052a3'; this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#0066cc'; this.style.transform='translateY(0)'">
+                            <i class="fab fa-whatsapp"></i> Enviar por WhatsApp
+                        </button>
+                    </form>
                 </div>
-                
-                <div class="form-group">
-                    <label for="dispositivo">Dispositivo / Modelo</label>
-                    <input type="text" id="dispositivo" name="dispositivo" placeholder="Ej: Laptop HP Pavilion, PC Gamer...">
-                </div>
-                
-                <div class="form-group">
-                    <label for="mensaje">Descripción del problema *</label>
-                    <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos qué le pasa a tu equipo..."></textarea>
-                </div>
-                
-                <button type="submit" class="submit-btn">
-                    <span>💬</span> Enviar Consulta por WhatsApp
-                </button>
-            </form>
-        </div>
 
-        <!-- Redes Sociales -->
-        <div class="contact-card">
-            <h2>📱 Síguenos en Redes</h2>
-            <p>Conoce nuestro trabajo y últimas noticias en redes sociales.</p>
-            
-            <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem;">
-                <a href="https://www.instagram.com/nservice7ech/" target="_blank" class="instagram-btn" style="width: 100%; justify-content: center;">
-                    <img src="https://img.icons8.com/color/48/000000/instagram-new.png" alt="Instagram">
-                    <span>@nservice7ech</span>
-                </a>
-                
-                <a href="https://www.youtube.com/@Ntecservice" target="_blank" class="youtube-btn" style="width: 100%; justify-content: center;">
-                    <img src="https://img.icons8.com/color/48/000000/youtube.png" alt="YouTube">
-                    <span>@Ntecservice</span>
-                </a>
-                
-                <a href="https://www.tiktok.com/@nathanielrivero310" target="_blank" class="tiktok-btn" style="width: 100%; justify-content: center;">
-                    <img src="https://img.icons8.com/color/48/000000/tiktok.png" alt="TikTok">
-                    <span>@nathanielrivero310</span>
-                </a>
-            </div>
-        </div>
+                <!-- Redes Sociales -->
+                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 1.5rem; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='#0066cc'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#e2e8f0'; this.style.boxShadow='none'">
+                    <h2 style="color: #1a1a2e; margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 700;">Síguenos en Redes</h2>
+                    <p style="color: #64748b; margin-bottom: 1.25rem; font-size: 0.85rem;">Conoce nuestro trabajo y últimas noticias.</p>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                        <a href="https://www.instagram.com/nservice7ech/" target="_blank" style="display: flex; align-items: center; gap: 0.75rem; background: white; padding: 0.75rem; border-radius: 4px; border: 1px solid #e2e8f0; text-decoration: none; transition: all 0.3s;" onmouseover="this.style.borderColor='#0066cc'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+                            <i class="fab fa-instagram" style="font-size: 1.25rem; color: #E4405F;"></i>
+                            <span style="color: #1a1a2e; font-weight: 500; font-size: 0.9rem;">@nservice7ech</span>
+                        </a>
+                        
+                        <a href="https://www.youtube.com/@Ntecservice" target="_blank" style="display: flex; align-items: center; gap: 0.75rem; background: white; padding: 0.75rem; border-radius: 4px; border: 1px solid #e2e8f0; text-decoration: none; transition: all 0.3s;" onmouseover="this.style.borderColor='#0066cc'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+                            <i class="fab fa-youtube" style="font-size: 1.25rem; color: #FF0000;"></i>
+                            <span style="color: #1a1a2e; font-weight: 500; font-size: 0.9rem;">@Ntecservice</span>
+                        </a>
+                        
+                        <a href="https://www.tiktok.com/@nathanielrivero310" target="_blank" style="display: flex; align-items: center; gap: 0.75rem; background: white; padding: 0.75rem; border-radius: 4px; border: 1px solid #e2e8f0; text-decoration: none; transition: all 0.3s;" onmouseover="this.style.borderColor='#0066cc'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+                            <i class="fab fa-tiktok" style="font-size: 1.25rem; color: #000000;"></i>
+                            <span style="color: #1a1a2e; font-weight: 500; font-size: 0.9rem;">@nathanielrivero310</span>
+                        </a>
+                    </div>
+                </div>
 
-        <!-- Información de contacto -->
-        <div class="contact-card">
-            
-            <div style="margin-top: 1.5rem; text-align: left;">
-                <div style="padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
-                    <strong style="color: var(--accent);">📱 WhatsApp</strong>
-                    <p style="color: rgba(255,255,255,0.7); margin-top: 0.25rem;">+598 96 616 638</p>
+                <!-- Información de contacto -->
+                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 1.5rem; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='#0066cc'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#e2e8f0'; this.style.boxShadow='none'">
+                    <h2 style="color: #1a1a2e; margin-bottom: 1rem; font-size: 1.1rem; font-weight: 700;">Información de Contacto</h2>
+                    
+                    <div style="padding: 0.75rem 0; border-bottom: 1px solid #e2e8f0;">
+                        <strong style="color: #0066cc; font-size: 0.9rem;"><i class="fab fa-whatsapp"></i> WhatsApp</strong>
+                        <p style="color: #64748b; margin-top: 0.25rem; font-size: 0.85rem;">+598 96 616 638</p>
+                    </div>
+                    
+                    <div style="padding: 0.75rem 0; border-bottom: 1px solid #e2e8f0;">
+                        <strong style="color: #0066cc; font-size: 0.9rem;"><i class="fas fa-envelope"></i> Email</strong>
+                        <p style="color: #64748b; margin-top: 0.25rem; font-size: 0.85rem;">nservice7ech@gmail.com</p>
+                    </div>
+                    
+                    <div style="padding: 0.75rem 0;">
+                        <strong style="color: #0066cc; font-size: 0.9rem;"><i class="fas fa-clock"></i> Horario</strong>
+                        <p style="color: #64748b; margin-top: 0.25rem; font-size: 0.85rem;">Lun - Vie: 9:00 - 18:00<br>Sáb: 9:00 - 13:00</p>
+                    </div>
                 </div>
-                
-                <div style="padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
-                    <strong style="color: var(--accent);">📧 Email</strong>
-                    <p style="color: rgba(255,255,255,0.7); margin-top: 0.25rem;">ntecservice@gmail.com</p>
-                </div>
-                
-                <div style="padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
-                    <strong style="color: var(--accent);">🕐 Horario</strong>
-                    <p style="color: rgba(255,255,255,0.7); margin-top: 0.25rem;">Lun - Vie: 9:00 - 18:00<br>Sáb: 9:00 - 13:00</p>
-                </div>
-            </div>
-            
-        </div>
-    </section>
-
-    <!-- Preguntas frecuentes de contacto -->
-    <section style="padding: 4rem 2rem; max-width: 900px; margin: 0 auto;">
-        <h2 style="text-align: center; margin-bottom: 2rem;">❓ Preguntas Frecuentes</h2>
-        
-        <div style="display: grid; gap: 1rem;">
-            <div style="background: white; padding: 1.5rem; border-radius: 1rem; box-shadow: var(--shadow-sm);">
-                <h3 style="color: var(--secondary); margin-bottom: 0.5rem; font-size: 1.1rem;">¿Cuánto cuesta el diagnóstico?</h3>
-                <p style="color: var(--foreground-muted);">El diagnóstico es completamente <strong>sin costo</strong>. Solo pagas si decides reparar tu equipo.</p>
-            </div>
-            
-            <div style="background: white; padding: 1.5rem; border-radius: 1rem; box-shadow: var(--shadow-sm);">
-                <h3 style="color: var(--secondary); margin-bottom: 0.5rem; font-size: 1.1rem;">¿Cuánto tiempo toma la reparación?</h3>
-                <p style="color: var(--foreground-muted);">El diagnóstico se entrega en <strong>24 horas</strong>. Las reparaciones típicas takes 2-5 días hábiles.</p>
-            </div>
-            
-            <div style="background: white; padding: 1.5rem; border-radius: 1rem; box-shadow: var(--shadow-sm);">
-                <h3 style="color: var(--secondary); margin-bottom: 0.5rem; font-size: 1.1rem;">¿Dan garantía en las reparaciones?</h3>
-                <p style="color: var(--foreground-muted);">Sí, todas nuestras reparaciones incluyen <strong>garantía escrita</strong> de 30 a 90 días según el tipo de trabajo.</p>
-            </div>
-            
-            <div style="background: white; padding: 1.5rem; border-radius: 1rem; box-shadow: var(--shadow-sm);">
-                <h3 style="color: var(--secondary); margin-bottom: 0.5rem; font-size: 1.1rem;">¿Pueden buscar mi equipo a domicilio?</h3>
-                <p style="color: var(--foreground-muted);">Sí, ofrecemos servicio de <strong>recoleción y entrega</strong> a domicilio sin costo adicional en zona céntrica.</p>
             </div>
         </div>
     </section>
 
-    <!-- CTA Final -->
-    <section class="cta-section">
-        <h2>¿Tienes alguna consulta?</h2>
-        <p>No dudes en escribirnos, te responderemos a la brevedad</p>
-        <a href="https://wa.me/59896616638" target="_blank" class="cta-btn">
-            <span>💬 Contactar por WhatsApp</span>
-        </a>
+    <!-- Preguntas frecuentes -->
+    <section class="animate-on-scroll" style="padding: 3rem 2rem; background: #f8fafc;">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <h2 style="text-align: center; margin-bottom: 1.5rem; font-size: 1.25rem; font-weight: 700; color: #1a1a2e;">Preguntas Frecuentes</h2>
+            
+            <div style="display: grid; gap: 1rem;">
+                <div style="background: white; padding: 1.25rem; border-radius: 6px; border: 1px solid #e2e8f0; transition: all 0.3s;" onmouseover="this.style.borderColor='#0066cc'; this.style.transform='translateX(5px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateX(0)'">
+                    <h3 style="color: #1a1a2e; margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: 600;">¿Cuánto cuesta el diagnóstico?</h3>
+                    <p style="color: #64748b; font-size: 0.85rem;">El diagnóstico es <strong>sin costo</strong>. Solo pagas si decides reparar.</p>
+                </div>
+                
+                <div style="background: white; padding: 1.25rem; border-radius: 6px; border: 1px solid #e2e8f0; transition: all 0.3s;" onmouseover="this.style.borderColor='#0066cc'; this.style.transform='translateX(5px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateX(0)'">
+                    <h3 style="color: #1a1a2e; margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: 600;">¿Cuánto tiempo toma la reparación?</h3>
+                    <p style="color: #64748b; font-size: 0.85rem;">El diagnóstico se entrega en 24 horas. Las reparaciones típicas toman 2-5 días.</p>
+                </div>
+                
+                <div style="background: white; padding: 1.25rem; border-radius: 6px; border: 1px solid #e2e8f0; transition: all 0.3s;" onmouseover="this.style.borderColor='#0066cc'; this.style.transform='translateX(5px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateX(0)'">
+                    <h3 style="color: #1a1a2e; margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: 600;">¿Dan garantía en las reparaciones?</h3>
+                    <p style="color: #64748b; font-size: 0.85rem;">Sí, todas incluyen <strong>garantía escrita</strong> de 30 a 90 días.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mapa de Ubicación -->
+    <section class="animate-on-scroll" style="padding: 3rem 2rem; background: white;">
+        <div style="max-width: 1100px; margin: 0 auto;">
+            <h2 style="text-align: center; margin-bottom: 0.5rem; font-size: 1.25rem; font-weight: 700; color: #1a1a2e;">Nuestra Ubicación</h2>
+            <p style="text-align: center; margin-bottom: 1.5rem; color: #64748b; font-size: 0.9rem;">Zona de El Pinar, Ciudad de la Costa</p>
+            
+            <div style="border-radius: 6px; overflow: hidden; border: 1px solid #e2e8f0;">
+                <div style="background: #0066cc; color: white; padding: 0.75rem; text-align: center; font-weight: 600; font-size: 0.9rem;">
+                    📍 El Pinar, Ciudad de la Costa
+                </div>
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1636.5!2d-55.9667!3d-34.8167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f12!3m3!1m2!1s0x95a0262495c5e5e5%3A0x0!2sEl+Pinar%2C+Ciudad+de+la+Costa%2C+Canelones!5e0!3m2!1ses!2suy!4v1700000000000!5m2!1ses!2suy" 
+                    width="100%" 
+                    height="350" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            
+            <div style="text-align: center; margin-top: 1.5rem; padding: 1rem; background: #f8fafc; border-radius: 6px;">
+                <p style="color: #64748b; font-size: 0.85rem;">Brindamos servicio técnico en toda la zona de Ciudad de la Costa y alrededores.</p>
+            </div>
+        </div>
     </section>
 
     <!-- Métodos de Pago -->
-    <section class="payment-methods">
-        <h2>Métodos de Pago</h2>
-        <p class="payment-subtitle">Aceptamos los siguientes métodos de pago</p>
-        <div class="payment-grid">
-            <div class="payment-card" data-icon="💵">
-                <h3>Efectivo</h3>
-                <p>Paga en efectivo al retirar tu equipo</p>
-            </div>
-            <div class="payment-card" data-icon="💳">
-                <h3>Mercado Pago</h3>
-                <p>Paga de forma segura con Mercado Pago</p>
-            </div>
-            <div class="payment-card" data-icon="🏦">
-                <h3>Transferencia</h3>
-                <p>Transferencia bancaria directa</p>
+    <section class="animate-on-scroll" style="padding: 2.5rem 2rem; background: #f8fafc;">
+        <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+            <h2 style="font-size: 1.1rem; font-weight: 700; color: #1a1a2e; margin-bottom: 0.5rem;">Métodos de Pago</h2>
+            <p style="color: #64748b; margin-bottom: 1.5rem; font-size: 0.85rem;">Aceptamos los siguientes métodos de pago</p>
+            <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                <div style="background: white; padding: 0.75rem 1.25rem; border-radius: 4px; border: 1px solid #e2e8f0; min-width: 120px; transition: all 0.3s;" onmouseover="this.style.borderColor='#0066cc'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+                    <h3 style="font-size: 0.9rem; color: #1a1a2e; margin-bottom: 0.25rem;">Efectivo</h3>
+                    <p style="font-size: 0.75rem; color: #64748b;">Pago al retirar</p>
+                </div>
+                <div style="background: white; padding: 0.75rem 1.25rem; border-radius: 4px; border: 1px solid #e2e8f0; min-width: 120px; transition: all 0.3s;" onmouseover="this.style.borderColor='#0066cc'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+                    <h3 style="font-size: 0.9rem; color: #1a1a2e; margin-bottom: 0.25rem;">Mercado Pago</h3>
+                    <p style="font-size: 0.75rem; color: #64748b;">Pago seguro</p>
+                </div>
+                <div style="background: white; padding: 0.75rem 1.25rem; border-radius: 4px; border: 1px solid #e2e8f0; min-width: 120px; transition: all 0.3s;" onmouseover="this.style.borderColor='#0066cc'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+                    <h3 style="font-size: 0.9rem; color: #1a1a2e; margin-bottom: 0.25rem;">Transferencia</h3>
+                    <p style="font-size: 0.75rem; color: #64748b;">Bancaria</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2024 NTEC - Servicio Técnico Profesional. Todos los derechos reservados.</p>
+    <!-- Footer -->
+    <footer style="background: #0f172a; color: #9ca3af; padding: 3rem 2rem 1.5rem; border-top: 1px solid #1f2937;">
+        <div style="max-width: 1100px; margin: 0 auto;">
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-bottom: 2.5rem;">
+                
+                <!-- Brand -->
+                <div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+                        <div style="background: #0066cc; padding: 0.4rem; border-radius: 4px;">
+                            <span style="font-size: 1.25rem;">🖥️</span>
+                        </div>
+                        <span style="font-size: 1.1rem; font-weight: 700; color: white;">
+                            NTEC Uruguay
+                        </span>
+                    </div>
+                    <p style="font-size: 0.8rem; line-height: 1.5;">
+                        Soluciones tecnológicas confiables. Reparamos, optimizamos y asesoramos con garantía.
+                    </p>
+                </div>
+
+                <!-- Links -->
+                <div>
+                    <h4 style="font-size: 0.95rem; font-weight: 600; color: white; margin-bottom: 1rem;">Enlaces</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.8; font-size: 0.8rem;">
+                        <li><a href="index.html" style="color: #9ca3af; text-decoration: none;" onmouseover="this.style.color='#0066cc'" onmouseout="this.style.color='#9ca3af'">Inicio</a></li>
+                        <li><a href="servicios.html" style="color: #9ca3af; text-decoration: none;" onmouseover="this.style.color='#0066cc'" onmouseout="this.style.color='#9ca3af'">Servicios</a></li>
+                        <li><a href="quienes-somos.html" style="color: #9ca3af; text-decoration: none;" onmouseover="this.style.color='#0066cc'" onmouseout="this.style.color='#9ca3af'">Quiénes Somos</a></li>
+                        <li><a href="contacto.html" style="color: #9ca3af; text-decoration: none;" onmouseover="this.style.color='#0066cc'" onmouseout="this.style.color='#9ca3af'">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 style="font-size: 0.95rem; font-weight: 600; color: white; margin-bottom: 1rem;">Servicios</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.8; font-size: 0.8rem;">
+                        <li><a href="servicios.html" style="color: #9ca3af; text-decoration: none;" onmouseover="this.style.color='#0066cc'" onmouseout="this.style.color='#9ca3af'">Reparación de PC</a></li>
+                        <li><a href="servicios.html" style="color: #9ca3af; text-decoration: none;" onmouseover="this.style.color='#0066cc'" onmouseout="this.style.color='#9ca3af'">Limpieza de Virus</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 style="font-size: 0.95rem; font-weight: 600; color: white; margin-bottom: 1rem;">Contáctanos</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.8; font-size: 0.8rem;">
+                        <li style="color: #9ca3af;">
+                            <span style="color: white; font-weight: 500;">Dirección:</span> El Pinar, Ciudad de la Costa
+                        </li>
+                        <li style="color: #9ca3af;">
+                            <span style="color: white; font-weight: 500;">Teléfono:</span> +598 96 616 638
+                        </li>
+                        <li style="color: #9ca3af;">
+                            <span style="color: white; font-weight: 500;">Email:</span> nservice7ech@gmail.com
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            
+            <div style="border-top: 1px solid #1f2937; padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <p style="color: #6b7280; font-size: 0.75rem; margin: 0;">
+                    © 2026 NTEC. Todos los derechos reservados.
+                </p>
+                <div style="display: flex; gap: 1.5rem;">
+                    <a href="#" style="color: #6b7280; text-decoration: none; font-size: 0.75rem;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#6b7280'">Política de Privacidad</a>
+                    <a href="#" style="color: #6b7280; text-decoration: none; font-size: 0.75rem;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#6b7280'">Términos y Condiciones</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     </footer>
 
     <script>
+        // Animación al hacer scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, index * 100);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Form submission
         document.getElementById('whatsapp-form').addEventListener('submit', function(e) {
             e.preventDefault();
             
