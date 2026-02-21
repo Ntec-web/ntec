@@ -577,6 +577,7 @@
         const dots = document.querySelectorAll('.slider-dot');
         
         function showSlide(n) {
+            if (slides.length === 0 || dots.length === 0) return;
             if (n >= slides.length) slideIndex = 0;
             if (n < 0) slideIndex = slides.length - 1;
             
@@ -598,9 +599,11 @@
         }
         
         // Auto slide every 5 seconds
-        setInterval(() => {
-            changeSlide(1);
-        }, 5000);
+        if (slides.length > 0) {
+            setInterval(() => {
+                changeSlide(1);
+            }, 5000);
+        }
     </script>
 </body>
 </html>

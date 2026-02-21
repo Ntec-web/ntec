@@ -2031,6 +2031,21 @@ footer p {
   }
 }
 
+/* Responsive para grids de valores y elegirnos en quienes-somos */
+@media (max-width: 1024px) {
+  .values-grid,
+  .choose-grid-responsive {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .values-grid,
+  .choose-grid-responsive {
+    grid-template-columns: 1fr !important;
+  }
+}
+
 /* Móvil pequeño */
 @media (max-width: 480px) {
   /* Footer grid */

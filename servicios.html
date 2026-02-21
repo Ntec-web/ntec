@@ -9,98 +9,126 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🖥️</text></svg>">
     <style>
-        /* Animación de fondo dinámico */
-        @keyframes gradientMove {
+        /* Animaciones para contenido expandido */
+        @keyframes webPulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+        
+        @keyframes webFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes gradientShift {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
         
-        .animated-bg {
-            background: linear-gradient(-45deg, #0a2540, #0f3460, #1a5276, #0a2540);
-            background-size: 400% 400%;
-            animation: gradientMove 15s ease infinite;
+        @keyframes floatParticle {
+            0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.3; }
+            50% { transform: translateY(-30px) rotate(180deg); opacity: 0.6; }
         }
         
-        .animated-bg-soft {
-            background: linear-gradient(-45deg, #0066cc, #0a2540, #0066cc);
-            background-size: 300% 300%;
-            animation: gradientMove 10s ease infinite;
+        @keyframes cardFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        
+        @keyframes glowPulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(0, 212, 255, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(0, 212, 255, 0.6); }
+        }
+        
+        /* Fondo del display */
+        .web-display-bg {
+            background: linear-gradient(-45deg, #0a2540, #1a1a2e, #0f3460, #16213e);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .web-display-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
         }
         
         /* Partículas flotantes */
-        .particles {
-            position: fixed;
+        .display-particles {
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             pointer-events: none;
-            z-index: -1;
             overflow: hidden;
         }
         
-        .particle {
+        .display-particle {
             position: absolute;
-            width: 4px;
-            height: 4px;
-            background: rgba(255, 255, 255, 0.1);
+            width: 6px;
+            height: 6px;
+            background: #00d4ff;
             border-radius: 50%;
-            animation: float 20s infinite;
+            animation: floatParticle 6s ease-in-out infinite;
         }
         
-        .particle:nth-child(1) { left: 10%; animation-delay: 0s; animation-duration: 25s; }
-        .particle:nth-child(2) { left: 20%; animation-delay: 2s; animation-duration: 20s; }
-        .particle:nth-child(3) { left: 30%; animation-delay: 4s; animation-duration: 22s; }
-        .particle:nth-child(4) { left: 40%; animation-delay: 6s; animation-duration: 18s; }
-        .particle:nth-child(5) { left: 50%; animation-delay: 8s; animation-duration: 24s; }
-        .particle:nth-child(6) { left: 60%; animation-delay: 10s; animation-duration: 21s; }
-        .particle:nth-child(7) { left: 70%; animation-delay: 12s; animation-duration: 19s; }
-        .particle:nth-child(8) { left: 80%; animation-delay: 14s; animation-duration: 23s; }
-        .particle:nth-child(9) { left: 90%; animation-delay: 16s; animation-duration: 17s; }
-        .particle:nth-child(10) { left: 15%; animation-delay: 1s; animation-duration: 26s; }
-        .particle:nth-child(11) { left: 35%; animation-delay: 3s; animation-duration: 20s; }
-        .particle:nth-child(12) { left: 55%; animation-delay: 5s; animation-duration: 22s; }
-        .particle:nth-child(13) { left: 75%; animation-delay: 7s; animation-duration: 18s; }
-        .particle:nth-child(14) { left: 85%; animation-delay: 9s; animation-duration: 24s; }
-        .particle:nth-child(15) { left: 25%; animation-delay: 11s; animation-duration: 21s; }
+        .display-particle:nth-child(2) { left: 20%; animation-delay: -1s; background: #0066cc; }
+        .display-particle:nth-child(3) { left: 40%; animation-delay: -2s; }
+        .display-particle:nth-child(4) { left: 60%; animation-delay: -3s; background: #7c3aed; }
+        .display-particle:nth-child(5) { left: 80%; animation-delay: -4s; background: #10b981; }
         
-        @keyframes float {
-            0% {
-                transform: translateY(100vh) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.5;
-            }
-            90% {
-                opacity: 0.5;
-            }
-            100% {
-                transform: translateY(-100vh) rotate(720deg);
-                opacity: 0;
-            }
+        /* Cards flotantes */
+        .floating-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
         
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .floating-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
         }
         
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        /* Glassmorphism */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
         }
         
-        .animate-on-scroll.visible {
-            animation: fadeInUp 0.6s ease-out forwards;
+        /* Botón CTA mejorado */
+        .cta-glow {
+            animation: glowPulse 2s ease-in-out infinite;
+        }
+        
+        /* Efecto shine en portafolio */
+        .portfolio-card {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .portfolio-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: shimmer 3s infinite;
         }
     </style>
 </head>
@@ -162,73 +190,226 @@
     </section>
 
     <!-- Servicios -->
-    <section style="padding: 3.5rem 2rem; background: white;">
+    <section style="padding: 3.5rem 2rem; background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);">
         <div style="max-width: 1100px; margin: 0 auto;">
             <div class="services-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
                 <!-- Servicio 1 -->
-                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 1.5rem; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='#0066cc'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#e2e8f0'; this.style.boxShadow='none'">
-                    <div style="font-size: 1.5rem; margin-bottom: 0.75rem;">💻</div>
-                    <h3 style="color: #1a1a2e; margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 600;">Reparación de Computadoras</h3>
-                    <p style="color: #64748b; font-size: 0.85rem; margin-bottom: 1rem; line-height: 1.5;">Diagnóstico y solución de fallas en hardware y software</p>
+                <div style="background: linear-gradient(135deg, #0a2540 0%, #1a3a5c 100%); border: 1px solid rgba(0,102,204,0.3); border-radius: 12px; padding: 1.5rem; transition: all 0.3s; position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-8px)'; this.style.borderColor='#0066cc'; this.style.boxShadow='0 15px 40px rgba(0,102,204,0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(0,102,204,0.3)'; this.style.boxShadow='none'">
+                    <div style="position: absolute; top: -20px; right: -20px; width: 100px; height: 100px; background: radial-gradient(circle, rgba(0,212,255,0.15), transparent 70%); pointer-events: none;"></div>
+                    <div style="font-size: 1.75rem; margin-bottom: 0.75rem;">💻</div>
+                    <h3 style="color: white; margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 600;">Reparación de Computadoras</h3>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 0.85rem; margin-bottom: 1rem; line-height: 1.5;">Diagnóstico y solución de fallas en hardware y software</p>
                     <ul style="list-style: none; padding: 0; margin: 0;">
-                        <li style="padding: 0.3rem 0; color: #64748b; font-size: 0.85rem;">• Reparación de laptops todas las marcas</li>
-                        <li style="padding: 0.3rem 0; color: #64748b; font-size: 0.85rem;">• Reemplazo de componentes</li>
-                        <li style="padding: 0.3rem 0; color: #64748b; font-size: 0.85rem;">• Mantenimiento preventivo</li>
-                        <li style="padding: 0.3rem 0; color: #64748b; font-size: 0.85rem;">• Optimización y diagnóstico</li>
+                        <li style="padding: 0.3rem 0; color: rgba(255,255,255,0.7); font-size: 0.85rem;">• Reparación de laptops todas las marcas</li>
+                        <li style="padding: 0.3rem 0; color: rgba(255,255,255,0.7); font-size: 0.85rem;">• Reemplazo de componentes</li>
+                        <li style="padding: 0.3rem 0; color: rgba(255,255,255,0.7); font-size: 0.85rem;">• Mantenimiento preventivo</li>
+                        <li style="padding: 0.3rem 0; color: rgba(255,255,255,0.7); font-size: 0.85rem;">• Optimización y diagnóstico</li>
                     </ul>
                 </div>
                 
                 <!-- Servicio 2 -->
-                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 1.5rem; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='#0066cc'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#e2e8f0'; this.style.boxShadow='none'">
-                    <div style="font-size: 1.5rem; margin-bottom: 0.75rem;">🧹</div>
-                    <h3 style="color: #1a1a2e; margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 600;">Optimización y Mantenimiento</h3>
-                    <p style="color: #64748b; font-size: 0.85rem; margin-bottom: 1rem; line-height: 1.5;">Mantén tu equipo en perfecto estado</p>
+                <div style="background: linear-gradient(135deg, #0a2540 0%, #1a3a5c 100%); border: 1px solid rgba(0,102,204,0.3); border-radius: 12px; padding: 1.5rem; transition: all 0.3s; position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-8px)'; this.style.borderColor='#0066cc'; this.style.boxShadow='0 15px 40px rgba(0,102,204,0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(0,102,204,0.3)'; this.style.boxShadow='none'">
+                    <div style="position: absolute; top: -20px; right: -20px; width: 100px; height: 100px; background: radial-gradient(circle, rgba(0,212,255,0.15), transparent 70%); pointer-events: none;"></div>
+                    <div style="font-size: 1.75rem; margin-bottom: 0.75rem;">🧹</div>
+                    <h3 style="color: white; margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 600;">Optimización y Mantenimiento</h3>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 0.85rem; margin-bottom: 1rem; line-height: 1.5;">Mantén tu equipo en perfecto estado</p>
                     <ul style="list-style: none; padding: 0; margin: 0;">
-                        <li style="padding: 0.3rem 0; color: #64748b; font-size: 0.85rem;">• Limpieza interna profesional</li>
-                        <li style="padding: 0.3rem 0; color: #64748b; font-size: 0.85rem;">• Cambio de pasta térmica</li>
-                        <li style="padding: 0.3rem 0; color: #64748b; font-size: 0.85rem;">• Actualización de hardware</li>
-                        <li style="padding: 0.3rem 0; color: #64748b; font-size: 0.85rem;">• Instalación de Windows</li>
+                        <li style="padding: 0.3rem 0; color: rgba(255,255,255,0.7); font-size: 0.85rem;">• Limpieza interna profesional</li>
+                        <li style="padding: 0.3rem 0; color: rgba(255,255,255,0.7); font-size: 0.85rem;">• Cambio de pasta térmica</li>
+                        <li style="padding: 0.3rem 0; color: rgba(255,255,255,0.7); font-size: 0.85rem;">• Actualización de hardware</li>
+                        <li style="padding: 0.3rem 0; color: rgba(255,255,255,0.7); font-size: 0.85rem;">• Instalación de Windows</li>
                     </ul>
                 </div>
                 
                 <!-- Servicio 3 -->
-                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 1.5rem; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='#0066cc'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#e2e8f0'; this.style.boxShadow='none'">
-                    <div style="font-size: 1.5rem; margin-bottom: 0.75rem;">🔧</div>
-                    <h3 style="color: #1a1a2e; margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 600;">Soporte Técnico</h3>
-                    <p style="color: #64748b; font-size: 0.85rem; margin-bottom: 1rem; line-height: 1.5;">Asistencia profesional para tus consultas</p>
+                <div style="background: linear-gradient(135deg, #0a2540 0%, #1a3a5c 100%); border: 1px solid rgba(0,102,204,0.3); border-radius: 12px; padding: 1.5rem; transition: all 0.3s; position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-8px)'; this.style.borderColor='#0066cc'; this.style.boxShadow='0 15px 40px rgba(0,102,204,0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(0,102,204,0.3)'; this.style.boxShadow='none'">
+                    <div style="position: absolute; top: -20px; right: -20px; width: 100px; height: 100px; background: radial-gradient(circle, rgba(0,212,255,0.15), transparent 70%); pointer-events: none;"></div>
+                    <div style="font-size: 1.75rem; margin-bottom: 0.75rem;">🔧</div>
+                    <h3 style="color: white; margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 600;">Soporte Técnico</h3>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 0.85rem; margin-bottom: 1rem; line-height: 1.5;">Asistencia profesional para tus consultas</p>
                     <ul style="list-style: none; padding: 0; margin: 0;">
-                        <li style="padding: 0.3rem 0; color: #64748b; font-size: 0.85rem;">• Configuración de redes</li>
-                        <li style="padding: 0.3rem 0; color: #64748b; font-size: 0.85rem;">• Instalación de software</li>
-                        <li style="padding: 0.3rem 0; color: #64748b; font-size: 0.85rem;">• Eliminación de virus</li>
-                        <li style="padding: 0.3rem 0; color: #64748b; font-size: 0.85rem;">• Asesoría técnica</li>
+                        <li style="padding: 0.3rem 0; color: rgba(255,255,255,0.7); font-size: 0.85rem;">• Configuración de redes</li>
+                        <li style="padding: 0.3rem 0; color: rgba(255,255,255,0.7); font-size: 0.85rem;">• Instalación de software</li>
+                        <li style="padding: 0.3rem 0; color: rgba(255,255,255,0.7); font-size: 0.85rem;">• Eliminación de virus</li>
+                        <li style="padding: 0.3rem 0; color: rgba(255,255,255,0.7); font-size: 0.85rem;">• Asesoría técnica</li>
                     </ul>
                 </div>
                 
                 <!-- Servicio 4 -->
-                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 1.5rem; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='#0066cc'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#e2e8f0'; this.style.boxShadow='none'">
-                    <div style="font-size: 1.5rem; margin-bottom: 0.75rem;">💡</div>
-                    <h3 style="color: #1a1a2e; margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 600;">Consultoría Tech</h3>
-                    <p style="color: #64748b; font-size: 0.85rem; margin-bottom: 1rem; line-height: 1.5;">Recomendaciones expertas para tu tecnología</p>
+                <div style="background: linear-gradient(135deg, #0a2540 0%, #1a3a5c 100%); border: 1px solid rgba(0,102,204,0.3); border-radius: 12px; padding: 1.5rem; transition: all 0.3s; position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-8px)'; this.style.borderColor='#0066cc'; this.style.boxShadow='0 15px 40px rgba(0,102,204,0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(0,102,204,0.3)'; this.style.boxShadow='none'">
+                    <div style="position: absolute; top: -20px; right: -20px; width: 100px; height: 100px; background: radial-gradient(circle, rgba(0,212,255,0.15), transparent 70%); pointer-events: none;"></div>
+                    <div style="font-size: 1.75rem; margin-bottom: 0.75rem;">💡</div>
+                    <h3 style="color: white; margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 600;">Consultoría Tech</h3>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 0.85rem; margin-bottom: 1rem; line-height: 1.5;">Recomendaciones expertas para tu tecnología</p>
                     <ul style="list-style: none; padding: 0; margin: 0;">
-                        <li style="padding: 0.3rem 0; color: #64748b; font-size: 0.85rem;">• Recomendaciones de compra</li>
-                        <li style="padding: 0.3rem 0; color: #64748b; font-size: 0.85rem;">• Mejora de rendimiento</li>
-                        <li style="padding: 0.3rem 0; color: #64748b; font-size: 0.85rem;">• Compatibilidad de componentes</li>
-                        <li style="padding: 0.3rem 0; color: #64748b; font-size: 0.85rem;">• Asesoría para empresas</li>
+                        <li style="padding: 0.3rem 0; color: rgba(255,255,255,0.7); font-size: 0.85rem;">• Recomendaciones de compra</li>
+                        <li style="padding: 0.3rem 0; color: rgba(255,255,255,0.7); font-size: 0.85rem;">• Mejora de rendimiento</li>
+                        <li style="padding: 0.3rem 0; color: rgba(255,255,255,0.7); font-size: 0.85rem;">• Compatibilidad de componentes</li>
+                        <li style="padding: 0.3rem 0; color: rgba(255,255,255,0.7); font-size: 0.85rem;">• Asesoría para empresas</li>
                     </ul>
                 </div>
                 
                 <!-- Servicio 5 -->
-                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 1.5rem; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='#0066cc'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#e2e8f0'; this.style.boxShadow='none'">
-                    <div style="font-size: 1.5rem; margin-bottom: 0.75rem;">🌐</div>
-                    <h3 style="color: #1a1a2e; margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 600;">Páginas Web</h3>
-                    <p style="color: #64748b; font-size: 0.85rem; margin-bottom: 1rem; line-height: 1.5;">Presencia digital profesional</p>
+                <div style="background: linear-gradient(135deg, #0a2540 0%, #1a3a5c 100%); border: 1px solid rgba(0,102,204,0.3); border-radius: 12px; padding: 1.5rem; transition: all 0.3s; position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-8px)'; this.style.borderColor='#0066cc'; this.style.boxShadow='0 15px 40px rgba(0,102,204,0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(0,102,204,0.3)'; this.style.boxShadow='none'">
+                    <div style="position: absolute; top: -20px; right: -20px; width: 100px; height: 100px; background: radial-gradient(circle, rgba(0,212,255,0.15), transparent 70%); pointer-events: none;"></div>
+                    <div style="font-size: 1.75rem; margin-bottom: 0.75rem;">🌐</div>
+                    <h3 style="color: white; margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 600;">Páginas Web</h3>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 0.85rem; margin-bottom: 1rem; line-height: 1.5;">Presencia digital profesional</p>
                     <ul style="list-style: none; padding: 0; margin: 0;">
-                        <li style="padding: 0.3rem 0; color: #64748b; font-size: 0.85rem;">• Diseño web responsive</li>
-                        <li style="padding: 0.3rem 0; color: #64748b; font-size: 0.85rem;">• Páginas corporativas</li>
-                        <li style="padding: 0.3rem 0; color: #64748b; font-size: 0.85rem;">• Tiendas online</li>
-                        <li style="padding: 0.3rem 0; color: #64748b; font-size: 0.85rem;">• SEO básico</li>
+                        <li style="padding: 0.3rem 0; color: rgba(255,255,255,0.7); font-size: 0.85rem;">• Diseño web responsive</li>
+                        <li style="padding: 0.3rem 0; color: rgba(255,255,255,0.7); font-size: 0.85rem;">• Páginas corporativas</li>
+                        <li style="padding: 0.3rem 0; color: rgba(255,255,255,0.7); font-size: 0.85rem;">• Tiendas online</li>
+                        <li style="padding: 0.3rem 0; color: rgba(255,255,255,0.7); font-size: 0.85rem;">• SEO básico</li>
                     </ul>
+                    <button onclick="toggleWebDetails()" style="margin-top: 1rem; background: #0066cc; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; font-size: 0.85rem; font-weight: 600;" onmouseover="this.style.background='#0052a3'" onmouseout="this.style.background='#0066cc'">
+                        📖 Saber más
+                    </button>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Display Diseño Web - Estructura como "Por qué elegir NTEC" con iPhone y slider -->
+    <section id="webDesignDisplay" class="animate-on-scroll" style="display: none; padding: 4rem 2rem; background: #0a2540;">
+        <style>
+            /* Responsive para MacBook y grid */
+            @media (max-width: 900px) {
+                #webDesignDisplay .benefits-grid {
+                    grid-template-columns: 1fr !important;
+                    gap: 2rem;
+                }
+                #webDesignDisplay .benefits-cards {
+                    grid-template-columns: 1fr 1fr !important;
+                }
+            }
+            @media (max-width: 500px) {
+                #webDesignDisplay .benefits-cards {
+                    grid-template-columns: 1fr !important;
+                }
+            }
+            
+            @keyframes titlePulse {
+                0%, 100% { filter: drop-shadow(0 2px 10px rgba(0,102,204,0.5)); transform: scale(1); }
+                50% { filter: drop-shadow(0 4px 20px rgba(96,165,250,0.8)); transform: scale(1.02); }
+            }
+            .title-flashy {
+                animation: titlePulse 3s ease-in-out infinite;
+            }
+            @keyframes slidePhone {
+                0% { transform: translateX(0); }
+                25% { transform: translateX(-100%); }
+                50% { transform: translateX(-200%); }
+                75% { transform: translateX(-300%); }
+                100% { transform: translateX(0); }
+            }
+            .phone-slider {
+                animation: slidePhone 16s ease-in-out infinite;
+            }
+        </style>
+        <div style="max-width: 1100px; margin: 0 auto;">
+            <div class="benefits-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+                <!-- Columna izquierda -->
+                <div>
+                    <h2 style="font-size: 2.2rem; font-weight: 800; margin-bottom: 1rem; line-height: 1.15; background: linear-gradient(135deg, #ffffff 0%, #60a5fa 50%, #ffffff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; filter: drop-shadow(0 2px 10px rgba(0,102,204,0.5));" class="title-flashy">
+                         ¿Tienes un emprendimiento y quieres que esté en internet?
+                    </h2>
+                    <p style="font-size: 1.1rem; color: rgba(255, 255, 255, 0.8); margin-bottom: 2rem; line-height: 1.6; font-weight: 500;">
+                        En NTEC diseñamos páginas web claras, rápidas y seguras, adaptadas exactamente a lo que tu negocio necesita.
+                    </p>
+                    
+                    <div class="benefits-cards" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <!-- Beneficio 1 -->
+                        <div class="benefit-card" style="background: linear-gradient(135deg, rgba(0,102,204,0.15) 0%, rgba(10,37,64,0.3) 100%); padding: 1.25rem; border-radius: 8px; border: 1px solid rgba(0,212,255,0.3); transition: all 0.3s; cursor: pointer; position: relative; overflow: hidden;" onmouseover="this.style.background='linear-gradient(135deg, rgba(0,102,204,0.3) 0%, rgba(10,37,64,0.5) 100%)'; this.style.borderColor='#00d4ff'; this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 30px rgba(0,212,255,0.2)'" onmouseout="this.style.background='linear-gradient(135deg, rgba(0,102,204,0.15) 0%, rgba(10,37,64,0.3) 100%)'; this.style.borderColor='rgba(0,212,255,0.3)'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                            <div style="position: absolute; top: 0; right: 0; width: 60px; height: 60px; background: radial-gradient(circle at top right, rgba(0,212,255,0.2), transparent); pointer-events: none;"></div>
+                            <div style="font-size: 1.5rem; margin-bottom: 0.5rem; color: #00d4ff;">✓</div>
+                            <h4 style="font-size: 0.95rem; font-weight: 600; color: white; margin-bottom: 0.5rem;">Diseños Adaptados</h4>
+                            <p style="font-size: 0.8rem; color: rgba(255, 255, 255, 0.7); margin: 0; line-height: 1.5;">
+                                Tu web se adapta perfectamente a PC, tablet y móvil.
+                            </p>
+                        </div>
+                        
+                        <!-- Beneficio 2 -->
+                        <div class="benefit-card" style="background: linear-gradient(135deg, rgba(0,102,204,0.15) 0%, rgba(10,37,64,0.3) 100%); padding: 1.25rem; border-radius: 8px; border: 1px solid rgba(0,212,255,0.3); transition: all 0.3s; cursor: pointer; position: relative; overflow: hidden;" onmouseover="this.style.background='linear-gradient(135deg, rgba(0,102,204,0.3) 0%, rgba(10,37,64,0.5) 100%)'; this.style.borderColor='#00d4ff'; this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 30px rgba(0,212,255,0.2)'" onmouseout="this.style.background='linear-gradient(135deg, rgba(0,102,204,0.15) 0%, rgba(10,37,64,0.3) 100%)'; this.style.borderColor='rgba(0,212,255,0.3)'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                            <div style="position: absolute; top: 0; right: 0; width: 60px; height: 60px; background: radial-gradient(circle at top right, rgba(0,212,255,0.2), transparent); pointer-events: none;"></div>
+                            <div style="font-size: 1.5rem; margin-bottom: 0.5rem; color: #00d4ff;">✓</div>
+                            <h4 style="font-size: 0.95rem; font-weight: 600; color: white; margin-bottom: 0.5rem;">Webs Rápidas</h4>
+                            <p style="font-size: 0.8rem; color: rgba(255, 255, 255, 0.7); margin: 0; line-height: 1.5;">
+                                Carga veloz para mejor experiencia de usuario y SEO.
+                            </p>
+                        </div>
+                        
+                        <!-- Beneficio 3 -->
+                        <div class="benefit-card" style="background: linear-gradient(135deg, rgba(0,102,204,0.15) 0%, rgba(10,37,64,0.3) 100%); padding: 1.25rem; border-radius: 8px; border: 1px solid rgba(0,212,255,0.3); transition: all 0.3s; cursor: pointer; position: relative; overflow: hidden;" onmouseover="this.style.background='linear-gradient(135deg, rgba(0,102,204,0.3) 0%, rgba(10,37,64,0.5) 100%)'; this.style.borderColor='#00d4ff'; this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 30px rgba(0,212,255,0.2)'" onmouseout="this.style.background='linear-gradient(135deg, rgba(0,102,204,0.15) 0%, rgba(10,37,64,0.3) 100%)'; this.style.borderColor='rgba(0,212,255,0.3)'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                            <div style="position: absolute; top: 0; right: 0; width: 60px; height: 60px; background: radial-gradient(circle at top right, rgba(0,212,255,0.2), transparent); pointer-events: none;"></div>
+                            <div style="font-size: 1.5rem; margin-bottom: 0.5rem; color: #00d4ff;">✓</div>
+                            <h4 style="font-size: 0.95rem; font-weight: 600; color: white; margin-bottom: 0.5rem;">Seguridad SSL</h4>
+                            <p style="font-size: 0.8rem; color: rgba(255, 255, 255, 0.7); margin: 0; line-height: 1.5;">
+                                Certificados SSL incluídos para proteger tus datos.
+                            </p>
+                        </div>
+                        
+                        <!-- Beneficio 4 -->
+                        <div class="benefit-card" style="background: linear-gradient(135deg, rgba(0,102,204,0.15) 0%, rgba(10,37,64,0.3) 100%); padding: 1.25rem; border-radius: 8px; border: 1px solid rgba(0,212,255,0.3); transition: all 0.3s; cursor: pointer; position: relative; overflow: hidden;" onmouseover="this.style.background='linear-gradient(135deg, rgba(0,102,204,0.3) 0%, rgba(10,37,64,0.5) 100%)'; this.style.borderColor='#00d4ff'; this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 30px rgba(0,212,255,0.2)'" onmouseout="this.style.background='linear-gradient(135deg, rgba(0,102,204,0.15) 0%, rgba(10,37,64,0.3) 100%)'; this.style.borderColor='rgba(0,212,255,0.3)'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                            <div style="position: absolute; top: 0; right: 0; width: 60px; height: 60px; background: radial-gradient(circle at top right, rgba(0,212,255,0.2), transparent); pointer-events: none;"></div>
+                            <div style="font-size: 1.5rem; margin-bottom: 0.5rem; color: #00d4ff;">✓</div>
+                            <h4 style="font-size: 0.95rem; font-weight: 600; color: white; margin-bottom: 0.5rem;">Soporte Local</h4>
+                            <p style="font-size: 0.8rem; color: rgba(255, 255, 255, 0.7); margin: 0; line-height: 1.5;">
+                                Expertos locales en Ciudad de la Costa con atención personalizada.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Columna derecha - MacBook con diseño.gif -->
+                <div>
+                    <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                    <!-- MacBook Frame -->
+                    <div style="position: relative; width: 100%; max-width: 400px; background: linear-gradient(145deg, #2d2d2d, #1a1a1a); border-radius: 12px 12px 0 0; padding: 10px 10px 0 10px; box-shadow: 0 25px 50px rgba(0,0,0,0.4);">
+                        <!-- Pantalla MacBook -->
+                        <div style="background: #0f172a; border-radius: 8px 8px 0 0; overflow: hidden; position: relative;">
+                            <!-- Barra de título -->
+                            <div style="background: #0a2540; padding: 8px 12px; display: flex; gap: 6px; align-items: center;">
+                                <span style="width: 10px; height: 10px; background: #ef4444; border-radius: 50%;"></span>
+                                <span style="width: 10px; height: 10px; background: #eab308; border-radius: 50%;"></span>
+                                <span style="width: 10px; height: 10px; background: #22c55e; border-radius: 50%;"></span>
+                                <span style="margin-left: auto; color: rgba(255,255,255,0.5); font-size: 0.7rem;">diseño.gif</span>
+                            </div>
+                            <!-- Contenido -->
+                            <img src="diseño.gif" alt="Diseño Web" style="width: 100%; height: auto; aspect-ratio: 16/10; object-fit: cover; display: block;">
+                        </div>
+                    </div>
+                    <!-- Base MacBook -->
+                    <div style="width: 75%; max-width: 300px; height: 14px; background: linear-gradient(180deg, #3d3d3d, #2d2d2d); border-radius: 0 0 8px 8px; position: relative;">
+                        <div style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 100px; height: 6px; background: #1a1a1a; border-radius: 0 0 4px 4px;"></div>
+                    </div>
+                    
+                    <!-- Tarjeta de presupuesto -->
+                    <div style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); margin-top: 1.5rem; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.15)'">
+                        <h3 style="font-size: 1.1rem; font-weight: 700; color: #1a1a2e; margin-bottom: 0.5rem; text-align: center;">
+                            ¿Tu negocio necesita presencia online?
+                        </h3>
+                        <p style="color: #64748b; text-align: center; margin-bottom: 1rem; font-size: 0.85rem;">
+                            Agenda una consulta y descubre cómo llevar tu emprendimiento a internet.
+                        </p>
+                        <a href="contacto.html" style="display: block; width: 100%; background: #0066cc; color: white; text-align: center; padding: 0.75rem; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: all 0.2s;" onmouseover="this.style.background='#0052a3'" onmouseout="this.style.background='#0066cc'">
+                            Solicitar Presupuesto
+                        </a>
+                        <div style="text-align: center; margin-top: 0.75rem;">
+                            <a href="https://wa.me/59896616638" target="_blank" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; color: #25D366; font-weight: 600; text-decoration: none; font-size: 0.85rem;">
+                                <i class="fab fa-whatsapp"></i> +598 96 616 638
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <p style="color: #00d4ff; text-align: center; font-weight: 600; font-size: 0.85rem; margin-top: 1rem;">✓ Responsividad garantizada</p>
+                </div>
+            </div>
+            
+            <!-- Botón para cerrar -->
+            <div style="text-align: center; margin-top: 2rem;">
+                <button onclick="toggleWebDetails()" style="background: transparent; color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.3); padding: 0.75rem 1.5rem; border-radius: 50px; cursor: pointer; font-size: 0.9rem;" onmouseover="this.style.color='white'; this.style.borderColor='white'" onmouseout="this.style.color='rgba(255,255,255,0.7)'; this.style.borderColor='rgba(255,255,255,0.3)'">
+                    ✕ Cerrar
+                </button>
             </div>
         </div>
     </section>
@@ -332,6 +513,38 @@
     </footer>
 
     <script>
+        // Toggle para mostrar/ocultar sección completa de Diseño Web
+        let webDetailsVisible = false;
+        
+        function toggleWebDetails() {
+            const display = document.getElementById('webDesignDisplay');
+            const btn = document.querySelector('button[onclick="toggleWebDetails()"]');
+            
+            if (!display) return;
+            
+            if (webDetailsVisible) {
+                display.style.display = 'none';
+                webDetailsVisible = false;
+                // Actualizar todos los botones
+                document.querySelectorAll('button[onclick*="toggleWebDetails"]').forEach(button => {
+                    if (button.textContent.includes('Ver menos')) {
+                        button.innerHTML = '📖 Saber más';
+                    }
+                });
+                // Scroll hacia arriba
+                display.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                display.style.display = 'block';
+                webDetailsVisible = true;
+                // Actualizar todos los botones
+                document.querySelectorAll('button[onclick*="toggleWebDetails"]').forEach(button => {
+                    button.innerHTML = '📖 Ver menos';
+                });
+                // Scroll hacia la sección
+                display.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+        
         // Animación al hacer scroll
         const observerOptions = {
             threshold: 0.1,

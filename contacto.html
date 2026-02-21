@@ -160,80 +160,87 @@
     <!-- Sección de Contacto -->
     <section class="animate-on-scroll" style="padding: 3rem 2rem; background: white;">
         <div style="max-width: 1100px; margin: 0 auto;">
-            <div class="contact-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
+            <div class="contact-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
                 
-                <!-- Formulario -->
-                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 1.5rem; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='#0066cc'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#e2e8f0'; this.style.boxShadow='none'">
-                    <h2 style="color: #1a1a2e; margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 700;">Envíanos un Mensaje</h2>
-                    <p style="color: #64748b; margin-bottom: 1.25rem; font-size: 0.85rem;">Completa el formulario y nos contactaremos contigo.</p>
-                    
-                    <form id="whatsapp-form">
-                        <div style="margin-bottom: 0.75rem;">
-                            <label for="nombre" style="display: block; color: #1a1a2e; font-weight: 500; font-size: 0.85rem; margin-bottom: 0.25rem;">Nombre completo *</label>
-                            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required style="width: 100%; padding: 0.6rem; border: 1px solid #e2e8f0; border-radius: 4px; font-size: 0.9rem;">
+                <!-- Columna izquierda: iPhone con formulario -->
+                <div style="display: flex; justify-content: center;">
+                    <!-- iPhone Frame -->
+                    <div style="position: relative; width: 300px; background: linear-gradient(145deg, #1a1a1a, #2d2d2d); border-radius: 44px; padding: 14px; box-shadow: 0 25px 60px rgba(0,0,0,0.4), 0 0 0 2px #333;">
+                        <!-- Notch -->
+                        <div style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); width: 110px; height: 28px; background: #1a1a1a; border-radius: 14px; z-index: 10;"></div>
+                        
+                        <!-- Pantalla del iPhone -->
+                        <div style="width: 100%; background: #f8fafc; border-radius: 34px; overflow: hidden;">
+                            <!-- Contenido del formulario en el iPhone -->
+                            <div style="padding: 35px 22px;">
+                                <h2 style="color: #1a1a2e; margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 700; text-align: center;">📱 Envíanos un Mensaje</h2>
+                                <p style="color: #64748b; margin-bottom: 1rem; font-size: 0.75rem; text-align: center;">Escríbenos y te respondemos</p>
+                                
+                                <form id="iphone-whatsapp-form">
+                                    <input type="text" placeholder="Tu nombre" required style="width: 100%; padding: 12px; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 0.8rem; margin-bottom: 10px; box-sizing: border-box;">
+                                    <input type="tel" placeholder="Tu teléfono" style="width: 100%; padding: 12px; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 0.8rem; margin-bottom: 10px; box-sizing: border-box;">
+                                    <input type="text" placeholder="Dispositivo / Modelo" style="width: 100%; padding: 12px; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 0.8rem; margin-bottom: 10px; box-sizing: border-box;">
+                                    <textarea rows="4" placeholder="¿Qué problema tiene tu equipo?" required style="width: 100%; padding: 12px; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 0.8rem; margin-bottom: 14px; resize: vertical; box-sizing: border-box;"></textarea>
+                                    
+                                    <button type="submit" style="width: 100%; background: #25D366; color: white; padding: 14px; border-radius: 8px; font-weight: 600; font-size: 0.85rem; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                                        <i class="fab fa-whatsapp"></i> Enviar Mensaje
+                                    </button>
+                                </form>
+                                
+                                <p style="text-align: center; margin-top: 14px; font-size: 0.65rem; color: #64748b;">
+                                    💬 Respuesta rápida por WhatsApp
+                                </p>
+                            </div>
                         </div>
                         
-                        <div style="margin-bottom: 0.75rem;">
-                            <label for="telefono" style="display: block; color: #1a1a2e; font-weight: 500; font-size: 0.85rem; margin-bottom: 0.25rem;">Teléfono</label>
-                            <input type="tel" id="telefono" name="telefono" placeholder="Tu número" style="width: 100%; padding: 0.6rem; border: 1px solid #e2e8f0; border-radius: 4px; font-size: 0.9rem;">
-                        </div>
-                        
-                        <div style="margin-bottom: 0.75rem;">
-                            <label for="dispositivo" style="display: block; color: #1a1a2e; font-weight: 500; font-size: 0.85rem; margin-bottom: 0.25rem;">Dispositivo / Modelo</label>
-                            <input type="text" id="dispositivo" name="dispositivo" placeholder="Ej: Laptop HP" style="width: 100%; padding: 0.6rem; border: 1px solid #e2e8f0; border-radius: 4px; font-size: 0.9rem;">
-                        </div>
-                        
-                        <div style="margin-bottom: 1rem;">
-                            <label for="mensaje" style="display: block; color: #1a1a2e; font-weight: 500; font-size: 0.85rem; margin-bottom: 0.25rem;">Descripción del problema *</label>
-                            <textarea id="mensaje" name="mensaje" rows="3" placeholder="Cuéntanos qué le pasa a tu equipo..." style="width: 100%; padding: 0.6rem; border: 1px solid #e2e8f0; border-radius: 4px; font-size: 0.9rem; resize: vertical;"></textarea>
-                        </div>
-                        
-                        <button type="submit" style="width: 100%; background: #0066cc; color: white; padding: 0.75rem; border-radius: 4px; font-weight: 600; font-size: 0.9rem; border: none; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.background='#0052a3'; this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#0066cc'; this.style.transform='translateY(0)'">
-                            <i class="fab fa-whatsapp"></i> Enviar por WhatsApp
-                        </button>
-                    </form>
-                </div>
-
-                <!-- Redes Sociales -->
-                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 1.5rem; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='#0066cc'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#e2e8f0'; this.style.boxShadow='none'">
-                    <h2 style="color: #1a1a2e; margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 700;">Síguenos en Redes</h2>
-                    <p style="color: #64748b; margin-bottom: 1.25rem; font-size: 0.85rem;">Conoce nuestro trabajo y últimas noticias.</p>
-                    
-                    <div style="display: flex; flex-direction: column; gap: 0.75rem;">
-                        <a href="https://www.instagram.com/nservice7ech/" target="_blank" style="display: flex; align-items: center; gap: 0.75rem; background: white; padding: 0.75rem; border-radius: 4px; border: 1px solid #e2e8f0; text-decoration: none; transition: all 0.3s;" onmouseover="this.style.borderColor='#0066cc'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
-                            <i class="fab fa-instagram" style="font-size: 1.25rem; color: #E4405F;"></i>
-                            <span style="color: #1a1a2e; font-weight: 500; font-size: 0.9rem;">@nservice7ech</span>
-                        </a>
-                        
-                        <a href="https://www.youtube.com/@Ntecservice" target="_blank" style="display: flex; align-items: center; gap: 0.75rem; background: white; padding: 0.75rem; border-radius: 4px; border: 1px solid #e2e8f0; text-decoration: none; transition: all 0.3s;" onmouseover="this.style.borderColor='#0066cc'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
-                            <i class="fab fa-youtube" style="font-size: 1.25rem; color: #FF0000;"></i>
-                            <span style="color: #1a1a2e; font-weight: 500; font-size: 0.9rem;">@Ntecservice</span>
-                        </a>
-                        
-                        <a href="https://www.tiktok.com/@nathanielrivero310" target="_blank" style="display: flex; align-items: center; gap: 0.75rem; background: white; padding: 0.75rem; border-radius: 4px; border: 1px solid #e2e8f0; text-decoration: none; transition: all 0.3s;" onmouseover="this.style.borderColor='#0066cc'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
-                            <i class="fab fa-tiktok" style="font-size: 1.25rem; color: #000000;"></i>
-                            <span style="color: #1a1a2e; font-weight: 500; font-size: 0.9rem;">@nathanielrivero310</span>
-                        </a>
+                        <!-- Botón home -->
+                        <div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); width: 130px; height: 6px; background: #333; border-radius: 3px;"></div>
                     </div>
                 </div>
-
-                <!-- Información de contacto -->
-                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 1.5rem; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='#0066cc'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#e2e8f0'; this.style.boxShadow='none'">
-                    <h2 style="color: #1a1a2e; margin-bottom: 1rem; font-size: 1.1rem; font-weight: 700;">Información de Contacto</h2>
-                    
-                    <div style="padding: 0.75rem 0; border-bottom: 1px solid #e2e8f0;">
-                        <strong style="color: #0066cc; font-size: 0.9rem;"><i class="fab fa-whatsapp"></i> WhatsApp</strong>
-                        <p style="color: #64748b; margin-top: 0.25rem; font-size: 0.85rem;">+598 96 616 638</p>
+                
+                <!-- Columna derecha: Cards de contacto -->
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    <!-- Redes Sociales -->
+                    <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 1.5rem; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='#0066cc'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#e2e8f0'; this.style.boxShadow='none'">
+                        <h2 style="color: #1a1a2e; margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 700;">Síguenos en Redes</h2>
+                        <p style="color: #64748b; margin-bottom: 1.25rem; font-size: 0.85rem;">Conoce nuestro trabajo y últimas noticias.</p>
+                        
+                        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                            <a href="https://www.instagram.com/nservice7ech/" target="_blank" style="display: flex; align-items: center; gap: 0.75rem; background: white; padding: 0.75rem; border-radius: 4px; border: 1px solid #e2e8f0; text-decoration: none; transition: all 0.3s;" onmouseover="this.style.borderColor='#0066cc'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+                                <i class="fab fa-instagram" style="font-size: 1.25rem; color: #E4405F;"></i>
+                                <span style="color: #1a1a2e; font-weight: 500; font-size: 0.9rem;">@nservice7ech</span>
+                            </a>
+                            
+                            <a href="https://www.youtube.com/@Ntecservice" target="_blank" style="display: flex; align-items: center; gap: 0.75rem; background: white; padding: 0.75rem; border-radius: 4px; border: 1px solid #e2e8f0; text-decoration: none; transition: all 0.3s;" onmouseover="this.style.borderColor='#0066cc'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+                                <i class="fab fa-youtube" style="font-size: 1.25rem; color: #FF0000;"></i>
+                                <span style="color: #1a1a2e; font-weight: 500; font-size: 0.9rem;">@Ntecservice</span>
+                            </a>
+                            
+                            <a href="https://www.tiktok.com/@nathanielrivero310" target="_blank" style="display: flex; align-items: center; gap: 0.75rem; background: white; padding: 0.75rem; border-radius: 4px; border: 1px solid #e2e8f0; text-decoration: none; transition: all 0.3s;" onmouseover="this.style.borderColor='#0066cc'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+                                <i class="fab fa-tiktok" style="font-size: 1.25rem; color: #000000;"></i>
+                                <span style="color: #1a1a2e; font-weight: 500; font-size: 0.9rem;">@nathanielrivero310</span>
+                            </a>
+                        </div>
                     </div>
                     
-                    <div style="padding: 0.75rem 0; border-bottom: 1px solid #e2e8f0;">
-                        <strong style="color: #0066cc; font-size: 0.9rem;"><i class="fas fa-envelope"></i> Email</strong>
-                        <p style="color: #64748b; margin-top: 0.25rem; font-size: 0.85rem;">nservice7ech@gmail.com</p>
-                    </div>
-                    
-                    <div style="padding: 0.75rem 0;">
-                        <strong style="color: #0066cc; font-size: 0.9rem;"><i class="fas fa-clock"></i> Horario</strong>
-                        <p style="color: #64748b; margin-top: 0.25rem; font-size: 0.85rem;">Lun - Vie: 9:00 - 18:00<br>Sáb: 9:00 - 13:00</p>
+                    <!-- Información de contacto -->
+                    <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 1.5rem; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='#0066cc'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='#e2e8f0'; this.style.boxShadow='none'">
+                        <h2 style="color: #1a1a2e; margin-bottom: 1rem; font-size: 1.1rem; font-weight: 700;">Información de Contacto</h2>
+                        
+                        <div style="padding: 0.75rem 0; border-bottom: 1px solid #e2e8f0;">
+                            <strong style="color: #0066cc; font-size: 0.9rem;"><i class="fab fa-whatsapp"></i> WhatsApp</strong>
+                            <p style="color: #64748b; margin-top: 0.25rem; font-size: 0.85rem;">+598 96 616 638</p>
+                        </div>
+                        
+                        <div style="padding: 0.75rem 0; border-bottom: 1px solid #e2e8f0;">
+                            <strong style="color: #0066cc; font-size: 0.9rem;"><i class="fas fa-envelope"></i> Email</strong>
+                            <p style="color: #64748b; margin-top: 0.25rem; font-size: 0.85rem;">nservice7ech@gmail.com</p>
+                        </div>
+                        
+                        <div style="padding: 0.75rem 0;">
+                            <strong style="color: #0066cc; font-size: 0.9rem;"><i class="fas fa-clock"></i> Horario</strong>
+                            <p style="color: #64748b; margin-top: 0.25rem; font-size: 0.85rem;">Lun - Vie: 9:00 - 18:00<br>Sáb: 9:00 - 13:00</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -383,8 +390,6 @@
         </div>
     </footer>
 
-    </footer>
-
     <script>
         // Animación al hacer scroll
         const observerOptions = {
@@ -407,19 +412,24 @@
             observer.observe(section);
         });
 
-        // Form submission
-        document.getElementById('whatsapp-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const nombre = document.getElementById('nombre').value;
-            const telefono = document.getElementById('telefono').value;
-            const dispositivo = document.getElementById('dispositivo').value;
-            const mensaje = document.getElementById('mensaje').value;
-            
-            const texto = `*Nueva consulta de NTEC:*%0A%0A*Nombre:* ${nombre}%0A*Teléfono:* ${telefono}%0A%0A*Dispositivo:* ${dispositivo}%0A%0A*Problema:* ${mensaje}`;
-            
-            window.open(`https://wa.me/59896616638?text=${texto}`, '_blank');
-        });
+        // Form submission - iPhone form
+        const iphoneForm = document.getElementById('iphone-whatsapp-form');
+        if (iphoneForm) {
+            iphoneForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get values from the form inputs
+                const inputs = this.querySelectorAll('input, textarea');
+                const nombre = inputs[0].value;
+                const telefono = inputs[1].value;
+                const dispositivo = inputs[2].value;
+                const mensaje = inputs[3].value;
+                
+                const texto = `*Nueva consulta de NTEC:*%0A%0A*Nombre:* ${nombre}%0A*Teléfono:* ${telefono}%0A%0A*Dispositivo:* ${dispositivo}%0A%0A*Problema:* ${mensaje}`;
+                
+                window.open(`https://wa.me/59896616638?text=${texto}`, '_blank');
+            });
+        }
     </script>
 </body>
 </html>
