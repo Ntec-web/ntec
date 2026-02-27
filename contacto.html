@@ -126,8 +126,8 @@
     </div>
     
     <header>
-        <img src="logo.png" alt="NTEC Logo" class="header-logo">
-        <h1>NTEC - Servicio Técnico</h1>
+        <div class="logo-text">Ntec</div>
+        <h1>Servicio Técnico</h1>
         <nav>
             <a href="index.html">Inicio</a>
             <a href="quienes-somos.html">Quiénes Somos</a>
@@ -137,6 +137,10 @@
             <a href="https://wa.me/59896616638" target="_blank" class="whatsapp-link">
                 <i class="fab fa-whatsapp"></i> WhatsApp
             </a>
+            <button class="dark-mode-toggle" onclick="toggleDarkMode()" aria-label="Cambiar modo oscuro">
+                <i class="fas fa-sun sun-icon"></i>
+                <i class="fas fa-moon moon-icon"></i>
+            </button>
         </nav>
     </header>
 
@@ -430,6 +434,43 @@
                 window.open(`https://wa.me/59896616638?text=${texto}`, '_blank');
             });
         }
+
+        // ========================================
+        // MODO OSCURO (DARK MODE)
+        // ========================================
+        
+        function initDarkMode() {
+            const darkModePreference = localStorage.getItem('darkMode');
+            
+            if (darkModePreference === 'enabled') {
+                document.body.classList.add('dark-mode');
+            } else if (darkModePreference === 'disabled') {
+                document.body.classList.remove('dark-mode');
+            } else {
+                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    document.body.classList.add('dark-mode');
+                }
+            }
+        }
+        
+        function toggleDarkMode() {
+            const isDarkMode = document.body.classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
+        }
+        
+        if (window.matchMedia) {
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+                if (!localStorage.getItem('darkMode')) {
+                    if (e.matches) {
+                        document.body.classList.add('dark-mode');
+                    } else {
+                        document.body.classList.remove('dark-mode');
+                    }
+                }
+            });
+        }
+        
+        initDarkMode();
     </script>
 </body>
 </html>

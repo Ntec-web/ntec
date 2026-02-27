@@ -2074,3 +2074,319 @@ footer p {
     font-size: 16px !important;
   }
 }
+
+/* ====================================
+   MODO OSCURO (DARK MODE)
+   ==================================== */
+
+/* Variables para modo oscuro */
+body.dark-mode {
+  --background: #0f172a;
+  --background-alt: #1e293b;
+  --card: #1e293b;
+  --card-foreground: #f1f5f9;
+  --foreground: #f1f5f9;
+  --foreground-muted: #94a3b8;
+  --border: rgba(255, 255, 255, 0.1);
+  --border-light: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode {
+  background-color: #0a1628;
+  color: #e2e8f0;
+}
+
+/* Fondo decorativo para modo oscuro */
+body.dark-mode::before {
+  background: 
+    radial-gradient(ellipse at 20% 20%, rgba(0, 102, 204, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(124, 58, 237, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(0, 212, 255, 0.06) 0%, transparent 70%);
+}
+
+/* Header en modo oscuro */
+body.dark-mode header {
+  background: rgba(10, 22, 40, 0.98) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Logo de texto */
+.logo-text {
+  font-size: 1.75rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #0066cc 0%, #0891b2 50%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+body.dark-mode .logo-text {
+  background: linear-gradient(135deg, #60a5fa 0%, #22d3ee 50%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Body background override */
+body.dark-mode[style*="background: #f5f7fa"] {
+  background: #0a1628 !important;
+}
+
+/* Secciones con fondo blanco en modo oscuro */
+body.dark-mode section[style*="background: white"] {
+  background: #1a2744 !important;
+}
+
+body.dark-mode section[style*="background: #f8fafc"] {
+  background: #162032 !important;
+}
+
+body.dark-mode section[style*="background: #f5f7fa"] {
+  background: #0a1628 !important;
+}
+
+body.dark-mode section[style*="background: #e2e8f0"] {
+  background: #162032 !important;
+}
+
+/* Textos en modo oscuro */
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4 {
+  color: #e2e8f0 !important;
+}
+
+body.dark-mode p,
+body.dark-mode span:not([style*="color: white"]):not([style*="color: #0066cc"]) {
+  color: #94a3b8 !important;
+}
+
+/* Títulos con color específico */
+body.dark-mode [style*="color: #1a1a2e"] {
+  color: #e2e8f0 !important;
+}
+
+body.dark-mode [style*="color: #64748b"] {
+  color: #94a3b8 !important;
+}
+
+/* Tarjetas en modo oscuro */
+body.dark-mode .service-card,
+body.dark-mode .faq-card,
+body.dark-mode .highlight-card,
+body.dark-mode .process-step,
+body.dark-mode .value-card {
+  background: #1a2744 !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+body.dark-mode .service-card h3,
+body.dark-mode .faq-card h3,
+body.dark-mode .highlight-card h3,
+body.dark-mode .process-step h3,
+body.dark-mode .value-card h3 {
+  color: #e2e8f0 !important;
+}
+
+body.dark-mode .service-card p,
+body.dark-mode .faq-card p,
+body.dark-mode .highlight-card p,
+body.dark-mode .process-step p,
+body.dark-mode .value-card p {
+  color: #94a3b8 !important;
+}
+
+/* Cards con fondo blanco */
+body.dark-mode [style*="background: #f8fafc"] {
+  background: #1a2744 !important;
+}
+
+body.dark-mode [style*="background: white"] {
+  background: #1a2744 !important;
+}
+
+/* Bordes */
+body.dark-mode [style*="border: 1px solid #e2e8f0"] {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+body.dark-mode [style*="border-left: 3px solid #0066cc"] {
+  border-left-color: #3b82f6 !important;
+}
+
+/* Formularios en modo oscuro */
+body.dark-mode input,
+body.dark-mode textarea {
+  background: #1a2744 !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  color: #e2e8f0 !important;
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+  color: #64748b !important;
+}
+
+/* Footer en modo oscuro */
+body.dark-mode footer {
+  background: #050d18 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+body.dark-mode footer p,
+body.dark-mode footer li {
+  color: #64748b !important;
+}
+
+body.dark-mode footer h4 {
+  color: #e2e8f0 !important;
+}
+
+/* Botones de métodos de pago */
+body.dark-mode [style*="background: #f8fafc"][style*="border-radius"] {
+  background: #1a2744 !important;
+}
+
+/* Artículos del blog */
+body.dark-mode article {
+  background: #1a2744 !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+body.dark-mode article h3 {
+  color: #e2e8f0 !important;
+}
+
+/* FAQ cards */
+body.dark-mode [style*="background: white"][style*="border-radius"] {
+  background: #1a2744 !important;
+}
+
+/* Grid de valores */
+body.dark-mode [style*="background: rgba(255,255,255,0.1)"] {
+  background: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Laptop visual en modo oscuro */
+body.dark-mode .laptop-visual > div:first-child {
+  background: linear-gradient(145deg, #1e293b 0%, #0f172a 100%) !important;
+}
+
+body.dark-mode .laptop-visual > div:first-child > div:first-child {
+  background: #0f172a !important;
+}
+
+body.dark-mode .laptop-visual > div:nth-child(2) {
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%) !important;
+}
+
+body.dark-mode .laptop-visual > div:nth-child(3) {
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%) !important;
+}
+
+/* Banner de confianza */
+body.dark-mode [style*="background: #0066cc"] {
+  background: #1e40af !important;
+}
+
+/* CTA Section */
+body.dark-mode [style*="background: #1a1a2e"] {
+  background: #0f172a !important;
+}
+
+/* MacBook frame en servicios */
+body.dark-mode [style*="background: linear-gradient(145deg, #2d2d2d, #1a1a1a)"] {
+  background: linear-gradient(145deg, #1e293b, #0f172a) !important;
+}
+
+/* Pantalla MacBook */
+body.dark-mode [style*="background: #0f172a"] {
+  background: #020617 !important;
+}
+
+/* Tarjeta de presupuesto blanca */
+body.dark-mode [style*="background: white"][style*="box-shadow"] {
+  background: #1a2744 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode [style*="background: white"][style*="box-shadow"] h3 {
+  color: #e2e8f0 !important;
+}
+
+body.dark-mode [style*="background: white"][style*="box-shadow"] p {
+  color: #94a3b8 !important;
+}
+
+/* iPhone frame en contacto */
+body.dark-mode [style*="background: linear-gradient(145deg, #1a1a1a, #2d2d2d)"] {
+  background: linear-gradient(145deg, #0f172a, #1e293b) !important;
+}
+
+body.dark-mode [style*="background: #f8fafc"][style*="border-radius: 34px"] {
+  background: #1a2744 !important;
+}
+
+/* Cards de redes e información */
+body.dark-mode [style*="background: #f8fafc"][style*="border: 1px solid #e2e8f0"] {
+  background: #1a2744 !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+body.dark-mode [style*="background: #f8fafc"][style*="border: 1px solid #e2e8f0"] h2 {
+  color: #e2e8f0 !important;
+}
+
+body.dark-mode [style*="background: #f8fafc"][style*="border: 1px solid #e2e8f0"] p {
+  color: #94a3b8 !important;
+}
+
+/* Divider lines */
+body.dark-mode [style*="border-bottom: 1px solid #e2e8f0"] {
+  border-bottom-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Botón toggle modo oscuro */
+.dark-mode-toggle {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  padding: 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  margin-left: 0.5rem;
+  width: 36px;
+  height: 36px;
+}
+
+.dark-mode-toggle:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.dark-mode-toggle i {
+  color: #fbbf24;
+  font-size: 1rem;
+}
+
+.dark-mode-toggle .moon-icon {
+  display: none;
+}
+
+.dark-mode-toggle .sun-icon {
+  display: block;
+}
+
+body.dark-mode .dark-mode-toggle .sun-icon {
+  display: none;
+}
+
+body.dark-mode .dark-mode-toggle .moon-icon {
+  display: block;
+  color: #94a3b8;
+}

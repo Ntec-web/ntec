@@ -126,8 +126,8 @@
     </div>
     
     <header>
-        <img src="logo.png" alt="NTEC Logo" class="header-logo">
-        <h1>NTEC - Servicio Técnico</h1>
+        <div class="logo-text">Ntec</div>
+        <h1>Servicio Técnico</h1>
         <nav>
             <a href="index.html" class="active">Inicio</a>
             <a href="quienes-somos.html">Quiénes Somos</a>
@@ -137,6 +137,10 @@
             <a href="https://wa.me/59896616638" target="_blank" class="whatsapp-link">
                 <i class="fab fa-whatsapp"></i> WhatsApp
             </a>
+            <button class="dark-mode-toggle" onclick="toggleDarkMode()" aria-label="Cambiar modo oscuro">
+                <i class="fas fa-sun sun-icon"></i>
+                <i class="fas fa-moon moon-icon"></i>
+            </button>
         </nav>
     </header>
 
@@ -571,39 +575,83 @@
             observer.observe(section);
         });
 
-        // Slider functionality
-        let slideIndex = 0;
+        // Slider functionality - Only runs if slides exist
         const slides = document.querySelectorAll('.slide');
         const dots = document.querySelectorAll('.slider-dot');
         
-        function showSlide(n) {
-            if (slides.length === 0 || dots.length === 0) return;
-            if (n >= slides.length) slideIndex = 0;
-            if (n < 0) slideIndex = slides.length - 1;
+        if (slides.length > 0 && dots.length > 0) {
+            let slideIndex = 0;
+        
+            function showSlide(n) {
+                if (n >= slides.length) slideIndex = 0;
+                if (n < 0) slideIndex = slides.length - 1;
+                
+                slides.forEach(slide => slide.classList.remove('active'));
+                dots.forEach(dot => dot.classList.remove('active'));
+                
+                slides[slideIndex].classList.add('active');
+                dots[slideIndex].classList.add('active');
+            }
             
-            slides.forEach(slide => slide.classList.remove('active'));
-            dots.forEach(dot => dot.classList.remove('active'));
+            function changeSlide(n) {
+                slideIndex += n;
+                showSlide(slideIndex);
+            }
             
-            slides[slideIndex].classList.add('active');
-            dots[slideIndex].classList.add('active');
-        }
-        
-        function changeSlide(n) {
-            slideIndex += n;
-            showSlide(slideIndex);
-        }
-        
-        function goToSlide(n) {
-            slideIndex = n;
-            showSlide(slideIndex);
-        }
-        
-        // Auto slide every 5 seconds
-        if (slides.length > 0) {
+            function goToSlide(n) {
+                slideIndex = n;
+                showSlide(slideIndex);
+            }
+            
+            // Auto slide every 5 seconds
             setInterval(() => {
                 changeSlide(1);
             }, 5000);
         }
+
+        // ========================================
+        // MODO OSCURO (DARK MODE)
+        // ========================================
+        
+        // Verificar preferencia guardada
+        function initDarkMode() {
+            const darkModePreference = localStorage.getItem('darkMode');
+            
+            // Si hay preferencia guardada, usarla
+            if (darkModePreference === 'enabled') {
+                document.body.classList.add('dark-mode');
+            } else if (darkModePreference === 'disabled') {
+                document.body.classList.remove('dark-mode');
+            } else {
+                // Si no hay preferencia, verificar preferencia del sistema
+                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    document.body.classList.add('dark-mode');
+                }
+            }
+        }
+        
+        // Alternar modo oscuro
+        function toggleDarkMode() {
+            const isDarkMode = document.body.classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
+        }
+        
+        // Escuchar cambios en la preferencia del sistema
+        if (window.matchMedia) {
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+                // Solo cambiar si el usuario no ha establecido una preferencia
+                if (!localStorage.getItem('darkMode')) {
+                    if (e.matches) {
+                        document.body.classList.add('dark-mode');
+                    } else {
+                        document.body.classList.remove('dark-mode');
+                    }
+                }
+            });
+        }
+        
+        // Inicializar modo oscuro al cargar la página
+        initDarkMode();
     </script>
 </body>
 </html>
