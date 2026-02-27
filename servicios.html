@@ -130,6 +130,19 @@
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
             animation: shimmer 3s infinite;
         }
+        
+        /* Responsive Services Grid */
+        @media (max-width: 900px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .services-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
     </style>
 </head>
 <body style="background: #f5f7fa;">
