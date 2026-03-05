@@ -3,40 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NTEC - Servicio Técnico Profesional | Reparación de Computadoras y Desarrollo Web</title>
-    <meta name="description" content="NTEC - Expertos en reparación de computadoras y desarrollo web. Servicio técnico profesional con garantía. ¡Contáctanos!">
+    <title>NTEC - Desarrollo Web & Servicio Técnico Profesional</title>
+    <meta name="description" content="NTEC - Expertos en desarrollo web profesional y servicio técnico. Páginas web, tiendas online y reparación de computadoras en Ciudad de la Costa.">
     <link rel="stylesheet" href="theme.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🖥️</text></svg>">
     <style>
-        /* Animación de fondo dinámico */
         @keyframes gradientMove {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
         
-        .animated-bg {
-            background: linear-gradient(-45deg, #0a2540, #0f3460, #1a5276, #0a2540);
-            background-size: 400% 400%;
-            animation: gradientMove 15s ease infinite;
-        }
-        
-        .animated-bg-soft {
-            background: linear-gradient(-45deg, #0066cc, #0a2540, #0066cc);
-            background-size: 300% 300%;
-            animation: gradientMove 10s ease infinite;
-        }
-        
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
         }
         
         .animate-on-scroll {
@@ -49,137 +42,160 @@
             animation: fadeInUp 0.6s ease-out forwards;
         }
         
-        /* Partículas flotantes */
-        .particles {
-            position: fixed;
+        .hero-section {
+            background: linear-gradient(135deg, #0a2540 0%, #1a1a2e 50%, #0f3460 100%);
+            background-size: 400% 400%;
+            animation: gradientMove 15s ease infinite;
+            position: relative;
+            overflow: hidden;
+            cursor: none;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+        
+        /* Partículas interactivas */
+        .hero-particles {
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             pointer-events: none;
-            z-index: -1;
             overflow: hidden;
         }
         
-        .particle {
+        .hero-particle {
             position: absolute;
-            width: 4px;
-            height: 4px;
-            background: rgba(255, 255, 255, 0.1);
+            width: 6px;
+            height: 6px;
+            background: rgba(96, 165, 250, 0.6);
             border-radius: 50%;
-            animation: float 20s infinite;
+            transition: transform 0.1s ease-out;
+            box-shadow: 0 0 10px rgba(96, 165, 250, 0.5);
         }
         
-        .particle:nth-child(1) { left: 10%; animation-delay: 0s; animation-duration: 25s; }
-        .particle:nth-child(2) { left: 20%; animation-delay: 2s; animation-duration: 20s; }
-        .particle:nth-child(3) { left: 30%; animation-delay: 4s; animation-duration: 22s; }
-        .particle:nth-child(4) { left: 40%; animation-delay: 6s; animation-duration: 18s; }
-        .particle:nth-child(5) { left: 50%; animation-delay: 8s; animation-duration: 24s; }
-        .particle:nth-child(6) { left: 60%; animation-delay: 10s; animation-duration: 21s; }
-        .particle:nth-child(7) { left: 70%; animation-delay: 12s; animation-duration: 19s; }
-        .particle:nth-child(8) { left: 80%; animation-delay: 14s; animation-duration: 23s; }
-        .particle:nth-child(9) { left: 90%; animation-delay: 16s; animation-duration: 17s; }
-        .particle:nth-child(10) { left: 15%; animation-delay: 1s; animation-duration: 26s; }
-        .particle:nth-child(11) { left: 35%; animation-delay: 3s; animation-duration: 20s; }
-        .particle:nth-child(12) { left: 55%; animation-delay: 5s; animation-duration: 22s; }
-        .particle:nth-child(13) { left: 75%; animation-delay: 7s; animation-duration: 18s; }
-        .particle:nth-child(14) { left: 85%; animation-delay: 9s; animation-duration: 24s; }
-        .particle:nth-child(15) { left: 25%; animation-delay: 11s; animation-duration: 21s; }
+        .hero-particle:nth-child(2) { width: 8px; height: 8px; background: rgba(0, 212, 255, 0.5); }
+        .hero-particle:nth-child(3) { width: 4px; height: 4px; background: rgba(147, 51, 234, 0.4); }
+        .hero-particle:nth-child(4) { width: 10px; height: 10px; background: rgba(16, 185, 129, 0.4); }
+        .hero-particle:nth-child(5) { width: 5px; height: 5px; background: rgba(96, 165, 250, 0.5); }
+        .hero-particle:nth-child(6) { width: 7px; height: 7px; background: rgba(0, 212, 255, 0.4); }
+        .hero-particle:nth-child(7) { width: 6px; height: 6px; background: rgba(147, 51, 234, 0.5); }
+        .hero-particle:nth-child(8) { width: 9px; height: 9px; background: rgba(16, 185, 129, 0.3); }
         
-        @keyframes float {
-            0% {
-                transform: translateY(100vh) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.5;
-            }
-            90% {
-                opacity: 0.5;
-            }
-            100% {
-                transform: translateY(-100vh) rotate(720deg);
-                opacity: 0;
-            }
+        /* Cursor personalizado */
+        .cursor-glow {
+            position: fixed;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(0, 102, 204, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 1;
+            transform: translate(-50%, -50%);
+            transition: opacity 0.3s;
         }
         
-        /* Responsive Hero Section */
+        .service-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: left 0.5s;
+        }
+        
+        .service-card:hover::before {
+            left: 100%;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        }
+        
+        .glow-btn {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .glow-btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.3), transparent 60%);
+            transform: scale(0);
+            transition: transform 0.5s;
+        }
+        
+        .glow-btn:hover::after {
+            transform: scale(1);
+        }
+        
+        .float-icon {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .pulse-icon {
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
         @media (max-width: 900px) {
             .hero-grid {
                 grid-template-columns: 1fr !important;
-                gap: 2rem !important;
-                text-align: center;
             }
-            .hero-content {
-                text-align: center !important;
+            .services-grid {
+                grid-template-columns: 1fr !important;
             }
-            .hero-image {
-                order: -1;
-                max-width: 350px;
-                margin: 0 auto;
-            }
-        }
-        
-        @media (max-width: 600px) {
-            .hero-section {
-                min-height: auto !important;
-                padding: 2rem 1rem !important;
-            }
-            .hero-content h1 {
-                font-size: 1.75rem !important;
-            }
-        }
-        
-        /* Responsive Laptop Visual */
-        @media (max-width: 700px) {
-            .laptop-visual {
-                width: 100% !important;
-                max-width: 400px;
-            }
-        }
-        
-        /* Responsive Benefits Grid */
-        @media (max-width: 900px) {
             .benefits-grid {
                 grid-template-columns: 1fr !important;
-                gap: 2rem !important;
             }
-            .benefits-grid > div:last-child {
-                margin-left: auto !important;
-                margin-right: auto !important;
-            }
-        }
-        
-        @media (max-width: 500px) {
-            .benefits-cards {
-                grid-template-columns: 1fr !important;
-            }
-        }
-        
-        /* Responsive Process Grid */
-        @media (max-width: 768px) {
-            .process-grid {
-                grid-template-columns: repeat(2, 1fr) !important;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .hero-content h1 {
-                font-size: 1.5rem !important;
-            }
-            .hero-content p {
-                font-size: 0.9rem !important;
+            .cursor-glow {
+                display: none;
             }
             .hero-section {
-                padding: 1.5rem 1rem !important;
+                cursor: auto;
             }
-            .process-grid {
+        }
+        
+        @media (max-width: 768px) {
+            .dual-hero {
                 grid-template-columns: 1fr !important;
             }
+        }
+        
+        /* Canvas interactivo */
+        #particlesCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.9;
         }
     </style>
 </head>
-<body style="background: #f5f7fa;">
+<body style="background: #f8fafc;">
     
     <!-- Partículas flotantes -->
     <div class="particles">
@@ -200,14 +216,14 @@
         <div class="particle"></div>
     </div>
     
-    <header>
+    <header style="background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(10px);">
         <div class="logo-img"><img src="Ntec (3).png" alt="NTEC"></div>
-        <h1>Servicio Técnico</h1>
+        <h1>NTEC</h1>
         <nav>
             <a href="index.html" class="active">Inicio</a>
             <a href="quienes-somos.html">Quiénes Somos</a>
-            <a href="servicios.html">Servicios</a>
-            <a href="blog.html">Blog</a>
+            <a href="desarrolloweb.html">Desarrollo Web</a>
+            <a href="serviciotecnico.html">Servicio Técnico</a>
             <a href="contacto.html">Contacto</a>
             <a href="https://wa.me/59896616638" target="_blank" class="whatsapp-link">
                 <i class="fab fa-whatsapp"></i> WhatsApp
@@ -219,417 +235,224 @@
         </nav>
     </header>
 
-    <!-- HERO SECTION -->
-    <section class="animate-on-scroll hero-section" style="background: #0a2540; position: relative; min-height: 600px; display: flex; align-items: center; justify-content: center; padding: 4rem 2rem;">
-        <div class="hero-grid" style="max-width: 1200px; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
-            <!-- Contenido izquierdo -->
-            <div class="hero-content" style="text-align: left;">
-                <div style="display: inline-block; background: rgba(0, 102, 204, 0.2); color: #60a5fa; padding: 0.5rem 1rem; border-radius: 4px; font-weight: 600; font-size: 0.85rem; margin-bottom: 1.25rem; border: 1px solid rgba(0, 102, 204, 0.3);">
-                    📍 El Pinar, Ciudad de la Costa
+    <!-- Cursor glow interactivo -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Hero Principal -->
+    <section class="hero-section" id="heroSection" style="padding: 8rem 2rem; text-align: center; position: relative;">
+        <!-- Canvas interactivo -->
+        <canvas id="particlesCanvas"></canvas>
+        <!-- Partículas interactivas -->
+        <div class="hero-particles" id="heroParticles">
+            <div class="hero-particle" style="top: 20%; left: 20%;"></div>
+            <div class="hero-particle" style="top: 40%; left: 60%;"></div>
+            <div class="hero-particle" style="top: 60%; left: 30%;"></div>
+            <div class="hero-particle" style="top: 30%; left: 80%;"></div>
+            <div class="hero-particle" style="top: 70%; left: 70%;"></div>
+            <div class="hero-particle" style="top: 50%; left: 15%;"></div>
+            <div class="hero-particle" style="top: 80%; left: 45%;"></div>
+            <div class="hero-particle" style="top: 15%; left: 50%;"></div>
+        </div>
+        <div style="max-width: 900px; margin: 0 auto; position: relative; z-index: 1;">
+            
+            <h1 class="animate-on-scroll" style="font-size: 3rem; font-weight: 800; color: white; margin-bottom: 1rem; line-height: 1.15; letter-spacing: -0.02em;">
+                NTEC <span style="color: #60a5fa;">Desarrollo Web</span>
+            </h1>
+            
+            <p class="animate-on-scroll" style="font-size: 1.1rem; color: rgba(255,255,255,0.8); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+                Creamos sitios web profesionales, tiendas online y soluciones digitales que hacen crecer tu negocio.
+            </p>
+            
+            <div class="animate-on-scroll" style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                <a href="contacto.html" class="glow-btn" style="display: inline-flex; align-items: center; gap: 8px; background: #0066cc; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem; transition: all 0.3s;" onmouseover="this.style.background='#0052a3'; this.style.transform='translateY(-3px)'" onmouseout="this.style.background='#0066cc'; this.style.transform='translateY(0)'">
+                    <i class="fas fa-rocket"></i> Comenzar Proyecto
+                </a>
+                <a href="https://wa.me/59896616638" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; background: transparent; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem; border: 2px solid rgba(255,255,255,0.3); transition: all 0.3s;" onmouseover="this.style.background='rgba(255,255,255,0.1)'; this.style.transform='translateY(-3px)'" onmouseout="this.style.background='transparent'; this.style.transform='translateY(0)'">
+                    <i class="fab fa-whatsapp"></i> Consultar
+                </a>
+            </div>
+            
+            <!-- Características clave en el hero -->
+            <div class="animate-on-scroll" style="display: flex; justify-content: center; gap: 2rem; margin-top: 2.5rem; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.8); font-size: 0.9rem;">
+                    <i class="fas fa-mobile-alt" style="color: #60a5fa;"></i>
+                    <span>Diseño Responsive</span>
                 </div>
-                <h1 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; color: white; line-height: 1.2; letter-spacing: -0.01em;">
-                    Servicio Técnico & Desarrollo Web
-                </h1>
-                <p style="font-size: 1.15rem; color: rgba(255, 255, 255, 0.8); margin-bottom: 0.5rem; font-weight: 500;">Reparación de computadoras y dispositivos electrónicos</p>
-                <p style="font-size: 1rem; color: rgba(255, 255, 255, 0.6); margin-bottom: 1.5rem;">Diseño y desarrollo web profesional. Expertos en laptops, PCs y todas las marcas con diagnóstico sin costo.</p>
-                <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.25rem;">
-                    <a href="contacto.html" style="display: inline-flex; align-items: center; gap: 8px; background: #0066cc; color: white; padding: 0.85rem 1.75rem; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: background 0.2s;" onmouseover="this.style.background='#0052a3'" onmouseout="this.style.background='#0066cc'">
-                        <span>📅</span> Agendar Consulta
-                    </a>
-                    <a href="https://wa.me/59896616638" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; background: transparent; color: white; padding: 0.85rem 1.5rem; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 0.95rem; border: 1px solid rgba(255, 255, 255, 0.3); transition: all 0.3s;" onmouseover="this.style.background='rgba(255,255,255,0.1)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.background='transparent'; this.style.transform='translateY(0)'">
-                        <i class="fab fa-whatsapp"></i> WhatsApp
-                    </a>
+                <div style="display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.8); font-size: 0.9rem;">
+                    <i class="fas fa-rocket" style="color: #60a5fa;"></i>
+                    <span>Webs Rápidas</span>
                 </div>
-                <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; color: rgba(255, 255, 255, 0.7); font-size: 0.85rem;">
-                    <span style="display: flex; align-items: center; gap: 5px;">✓ Diagnóstico Sin Costo</span>
-                    <span style="display: flex; align-items: center; gap: 5px;">✓ Garantía Escrita</span>
-                    <span style="display: flex; align-items: center; gap: 5px;">✓ Desarrollo Web</span>
+                <div style="display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.8); font-size: 0.9rem;">
+                    <i class="fas fa-shield-alt" style="color: #60a5fa;"></i>
+                    <span>SSL Seguro</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.8); font-size: 0.9rem;">
+                    <i class="fas fa-search" style="color: #60a5fa;"></i>
+                    <span>SEO Incluido</span>
                 </div>
             </div>
-            <!-- Imagen derecha -->
-            <div class="hero-image" style="position: relative;">
-                <div style="background: #0066cc; padding: 6px; border-radius: 8px;">
-                    <img src="tecnico-reparando.avif" alt="Técnico reparando computadora" style="width: 100%; height: auto; max-height: 320px; object-fit: cover; border-radius: 4px; display: block;">
-                </div>
-            </div>
+            
         </div>
     </section>
 
     <!-- Servicios Destacados -->
-    <section class="animate-on-scroll" style="padding: 4rem 2rem; background: white;">
-        <div style="max-width: 1100px; margin: 0 auto; text-align: center;">
-            <h2 style="font-size: 2rem; margin-bottom: 0.75rem; color: #1a1a2e; font-weight: 700;">Nuestros Servicios</h2>
-            <p style="font-size: 1rem; color: #64748b; max-width: 700px; margin: 0 auto 2.5rem; line-height: 1.6;">
-                Soluciones profesionales para todo tipo de problemas informáticos y desarrollo web.
-            </p>
-            
-            <div style="display: flex; align-items: center; justify-content: center; gap: 3rem; flex-wrap: wrap;">
-                <!-- Laptop detallada -->
-                <div class="laptop-visual" style="position: relative; width: 580px;">
-                    <!-- Laptop lid/opening -->
-                    <div style="background: linear-gradient(145deg, #2d3748 0%, #1a202c 100%); border-radius: 12px 12px 0 0; padding: 10px 10px 0 10px; position: relative;">
-                        <!-- Camera notch -->
-                        <div style="position: absolute; top: 4px; left: 50%; transform: translateX(-50%); width: 8px; height: 8px; background: #4a5568; border-radius: 50%;"></div>
-                        <!-- Screen bezel -->
-                        <div style="background: #0f172a; border-radius: 6px 6px 0 0; padding: 8px; position: relative;">
-                            <!-- Inner screen -->
-                            <div style="background: linear-gradient(180deg, #0a2540 0%, #1e3a5f 100%); border-radius: 4px; overflow: hidden;">
-                                <!-- Slider services -->
-                                <div style="position: relative; overflow: hidden; height: 300px;">
-                                    <div id="services-slider" style="display: flex; transition: transform 0.5s ease;">
-                                        <!-- Servicio 1 -->
-                                        <div style="min-width: 100%; text-align: center; padding: 2rem 1.5rem 1rem;">
-                                            <div style="width: 70px; height: 70px; background: rgba(0,102,204,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-                                                <span style="font-size: 2.5rem;">🔧</span>
-                                            </div>
-                                            <h3 style="color: white; margin-bottom: 0.75rem; font-size: 1.4rem; font-weight: 700;">Reparación de Hardware</h3>
-                                            <p style="color: rgba(255,255,255,0.8); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem;">Diagnóstico y reemplazo de componentes dañados</p>
-                                            <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
-                                                <span style="background: rgba(255,255,255,0.1); padding: 0.3rem 0.75rem; border-radius: 20px; color: white; font-size: 0.8rem;">Pantallas</span>
-                                                <span style="background: rgba(255,255,255,0.1); padding: 0.3rem 0.75rem; border-radius: 20px; color: white; font-size: 0.8rem;">Teclados</span>
-                                                <span style="background: rgba(255,255,255,0.1); padding: 0.3rem 0.75rem; border-radius: 20px; color: white; font-size: 0.8rem;">Discos Duros</span>
-                                            </div>
-                                        </div>
-                                        <!-- Servicio 2 -->
-                                        <div style="min-width: 100%; text-align: center; padding: 2rem 1.5rem 1rem;">
-                                            <div style="width: 70px; height: 70px; background: rgba(0,102,204,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-                                                <span style="font-size: 2.5rem;">🛡️</span>
-                                            </div>
-                                            <h3 style="color: white; margin-bottom: 0.75rem; font-size: 1.4rem; font-weight: 700;">Eliminación de Virus</h3>
-                                            <p style="color: rgba(255,255,255,0.8); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem;">Limpieza profunda de malware y spyware</p>
-                                            <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
-                                                <span style="background: rgba(255,255,255,0.1); padding: 0.3rem 0.75rem; border-radius: 20px; color: white; font-size: 0.8rem;">Antivirus</span>
-                                                <span style="background: rgba(255,255,255,0.1); padding: 0.3rem 0.75rem; border-radius: 20px; color: white; font-size: 0.8rem;">Malware</span>
-                                                <span style="background: rgba(255,255,255,0.1); padding: 0.3rem 0.75rem; border-radius: 20px; color: white; font-size: 0.8rem;">Protección</span>
-                                            </div>
-                                        </div>
-                                        <!-- Servicio 3 -->
-                                        <div style="min-width: 100%; text-align: center; padding: 2rem 1.5rem 1rem;">
-                                            <div style="width: 70px; height: 70px; background: rgba(0,102,204,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-                                                <span style="font-size: 2.5rem;">💿</span>
-                                            </div>
-                                            <h3 style="color: white; margin-bottom: 0.75rem; font-size: 1.4rem; font-weight: 700;">Instalación de Software</h3>
-                                            <p style="color: rgba(255,255,255,0.8); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem;">Configuración completa de sistemas y programas</p>
-                                            <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
-                                                <span style="background: rgba(255,255,255,0.1); padding: 0.3rem 0.75rem; border-radius: 20px; color: white; font-size: 0.8rem;">Windows</span>
-                                                <span style="background: rgba(255,255,255,0.1); padding: 0.3rem 0.75rem; border-radius: 20px; color: white; font-size: 0.8rem;">Office</span>
-                                                <span style="background: rgba(255,255,255,0.1); padding: 0.3rem 0.75rem; border-radius: 20px; color: white; font-size: 0.8rem;">Drivers</span>
-                                            </div>
-                                        </div>
-                                        <!-- Servicio 4 -->
-                                        <div style="min-width: 100%; text-align: center; padding: 2rem 1.5rem 1rem;">
-                                            <div style="width: 70px; height: 70px; background: rgba(0,102,204,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-                                                <span style="font-size: 2.5rem;">🌐</span>
-                                            </div>
-                                            <h3 style="color: white; margin-bottom: 0.75rem; font-size: 1.4rem; font-weight: 700;">Desarrollo Web</h3>
-                                            <p style="color: rgba(255,255,255,0.8); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem;">Páginas web profesionales y tiendas online</p>
-                                            <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
-                                                <span style="background: rgba(255,255,255,0.1); padding: 0.3rem 0.75rem; border-radius: 20px; color: white; font-size: 0.8rem;">Diseño Web</span>
-                                                <span style="background: rgba(255,255,255,0.1); padding: 0.3rem 0.75rem; border-radius: 20px; color: white; font-size: 0.8rem;">SEO</span>
-                                                <span style="background: rgba(255,255,255,0.1); padding: 0.3rem 0.75rem; border-radius: 20px; color: white; font-size: 0.8rem;">Tiendas Online</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Dots de navegación -->
-                                    <div style="display: flex; justify-content: center; gap: 10px; padding: 1rem;">
-                                        <span class="service-dot active" onclick="changeService(0)" style="width: 12px; height: 12px; background: #0066cc; border-radius: 50%; cursor: pointer; display: inline-block; transition: background 0.3s;"></span>
-                                        <span class="service-dot" onclick="changeService(1)" style="width: 12px; height: 12px; background: rgba(255,255,255,0.4); border-radius: 50%; cursor: pointer; display: inline-block; transition: background 0.3s;"></span>
-                                        <span class="service-dot" onclick="changeService(2)" style="width: 12px; height: 12px; background: rgba(255,255,255,0.4); border-radius: 50%; cursor: pointer; display: inline-block; transition: background 0.3s;"></span>
-                                        <span class="service-dot" onclick="changeService(3)" style="width: 12px; height: 12px; background: rgba(255,255,255,0.4); border-radius: 50%; cursor: pointer; display: inline-block; transition: background 0.3s;"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Laptop base -->
-                    <div style="background: linear-gradient(180deg, #2d3748 0%, #1a202c 100%); height: 16px; border-radius: 0 0 8px 8px; position: relative;">
-                        <!-- Trackpad -->
-                        <div style="position: absolute; bottom: 3px; left: 50%; transform: translateX(-50%); width: 100px; height: 6px; background: #1a202c; border-radius: 2px;"></div>
-                    </div>
-                    <!-- Keyboard hints -->
-                    <div style="background: linear-gradient(180deg, #2d3748 0%, #1a202c 100%); height: 8px; margin-top: 2px; border-radius: 0 0 12px 12px; display: flex; justify-content: center; gap: 3px;">
-                        <div style="width: 4px; height: 4px; background: #4a5568; border-radius: 1px;"></div>
-                        <div style="width: 4px; height: 4px; background: #4a5568; border-radius: 1px;"></div>
-                        <div style="width: 4px; height: 4px; background: #4a5568; border-radius: 1px;"></div>
-                        <div style="width: 4px; height: 4px; background: #4a5568; border-radius: 1px;"></div>
-                        <div style="width: 4px; height: 4px; background: #4a5568; border-radius: 1px;"></div>
-                    </div>
-                </div>
-                
-                <!-- Botón -->
-                <div>
-                    <a href="contacto.html" style="display: inline-flex; align-items: center; gap: 8px; background: #0066cc; color: white; padding: 0.85rem 1.75rem; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: background 0.2s;" onmouseover="this.style.background='#0052a3'" onmouseout="this.style.background='#0066cc'">
-                        <span>📅</span> Ver Todos los Servicios
-                    </a>
-                </div>
+    <section class="animate-on-scroll" style="padding: 5rem 2rem; background: white;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2 style="font-size: 2.25rem; font-weight: 700; color: #1a1a2e; margin-bottom: 0.75rem;">Nuestros Servicios</h2>
+                <p style="font-size: 1.1rem; color: #64748b; max-width: 600px; margin: 0 auto;">Soluciones integrales para impulsar tu negocio</p>
             </div>
-        </div>
-    </section>
-
-    <!-- Beneficios -->
-    <section class="animate-on-scroll" style="padding: 4rem 2rem; background: #0a2540;">
-        <div style="max-width: 1100px; margin: 0 auto;">
-            <div class="benefits-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;">
-                <!-- Columna izquierda -->
-                <div>
-                    <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 1rem; color: white; line-height: 1.3;">
-                        ¿Por qué elegir NTEC?
-                    </h2>
-                    <p style="font-size: 1rem; color: rgba(255, 255, 255, 0.7); margin-bottom: 2rem; line-height: 1.6;">
-                        Nos diferenciamos por la transparencia y la rapidez. No te cobraremos por cosas que no necesitas y te explicaremos el problema claramente.
-                    </p>
+            
+            <div class="services-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;">
+                
+                <!-- Desarrollo Web -->
+                <div class="service-card hvr-float animate__animated animate__fadeInUp" style="background: linear-gradient(135deg, #0a2540 0%, #1a3a5c 100%); border-radius: 20px; padding: 2.5rem; border: 1px solid rgba(0,102,204,0.3); position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(0,212,255,0.2), transparent 70%); pointer-events: none;"></div>
                     
-                    <div class="benefits-cards" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-                        <!-- Garantía -->
-                        <div class="benefit-card" style="background: rgba(255, 255, 255, 0.05); padding: 1.25rem; border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s; cursor: pointer;" onmouseover="this.style.background='rgba(0,102,204,0.2)'; this.style.borderColor='#0066cc'; this.style.transform='translateY(-5px)'" onmouseout="this.style.background='rgba(255,255,255,0.05)'; this.style.borderColor='rgba(255,255,255,0.1)'; this.style.transform='translateY(0)'">
-                            <div style="font-size: 1.5rem; margin-bottom: 0.5rem; color: #0066cc;">✓</div>
-                            <h4 style="font-size: 0.95rem; font-weight: 600; color: white; margin-bottom: 0.5rem;">Garantía Asegurada</h4>
-                            <p style="font-size: 0.8rem; color: rgba(255, 255, 255, 0.6); margin: 0; line-height: 1.5;">
-                                Todas nuestras reparaciones cuentan con 90 días de garantía por escrito.
-                            </p>
-                        </div>
-                        
-                        <!-- Diagnóstico -->
-                        <div class="benefit-card" style="background: rgba(255, 255, 255, 0.05); padding: 1.25rem; border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s; cursor: pointer;" onmouseover="this.style.background='rgba(0,102,204,0.2)'; this.style.borderColor='#0066cc'; this.style.transform='translateY(-5px)'" onmouseout="this.style.background='rgba(255,255,255,0.05)'; this.style.borderColor='rgba(255,255,255,0.1)'; this.style.transform='translateY(0)'">
-                            <div style="font-size: 1.5rem; margin-bottom: 0.5rem; color: #0066cc;">✓</div>
-                            <h4 style="font-size: 0.95rem; font-weight: 600; color: white; margin-bottom: 0.5rem;">Diagnóstico Sin Costo</h4>
-                            <p style="font-size: 0.8rem; color: rgba(255, 255, 255, 0.6); margin: 0; line-height: 1.5;">
-                                Revisamos tu equipo sin costo antes de cualquier reparación.
-                            </p>
-                        </div>
-                        
-                        <!-- Atención Rápida -->
-                        <div class="benefit-card" style="background: rgba(255, 255, 255, 0.05); padding: 1.25rem; border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s; cursor: pointer;" onmouseover="this.style.background='rgba(0,102,204,0.2)'; this.style.borderColor='#0066cc'; this.style.transform='translateY(-5px)'" onmouseout="this.style.background='rgba(255,255,255,0.05)'; this.style.borderColor='rgba(255,255,255,0.1)'; this.style.transform='translateY(0)'">
-                            <div style="font-size: 1.5rem; margin-bottom: 0.5rem; color: #0066cc;">✓</div>
-                            <h4 style="font-size: 0.95rem; font-weight: 600; color: white; margin-bottom: 0.5rem;">Atención Rápida</h4>
-                            <p style="font-size: 0.8rem; color: rgba(255, 255, 255, 0.6); margin: 0; line-height: 1.5;">
-                                La mayoría de las reparaciones se completan en 24-48 horas.
-                            </p>
-                        </div>
-                        
-                        <!-- Servicio Local -->
-                        <div class="benefit-card" style="background: rgba(255, 255, 255, 0.05); padding: 1.25rem; border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s; cursor: pointer;" onmouseover="this.style.background='rgba(0,102,204,0.2)'; this.style.borderColor='#0066cc'; this.style.transform='translateY(-5px)'" onmouseout="this.style.background='rgba(255,255,255,0.05)'; this.style.borderColor='rgba(255,255,255,0.1)'; this.style.transform='translateY(0)'">
-                            <div style="font-size: 1.5rem; margin-bottom: 0.5rem; color: #0066cc;">✓</div>
-                            <h4 style="font-size: 0.95rem; font-weight: 600; color: white; margin-bottom: 0.5rem;">Servicio Local</h4>
-                            <p style="font-size: 0.8rem; color: rgba(255, 255, 255, 0.6); margin: 0; line-height: 1.5;">
-                                Expertos locales en Ciudad de la Costa con retiro a domicilio.
-                            </p>
+                    <div style="display: flex; align-items: flex-start; gap: 1.5rem;">
+                        <div class="float-icon" style="font-size: 3rem;">🌐</div>
+                        <div>
+                            <h3 style="color: white; margin-bottom: 0.75rem; font-size: 1.5rem; font-weight: 700;">Desarrollo Web</h3>
+                            <p style="color: rgba(255,255,255,0.8); margin-bottom: 1.25rem; line-height: 1.6;">Creamos páginas web profesionales, tiendas online y soluciones digitales que hacen crecer tu negocio.</p>
+                            
+                            <ul style="list-style: none; padding: 0; margin: 0 0 1.5rem 0;">
+                                <li style="color: rgba(255,255,255,0.8); padding: 0.4rem 0; font-size: 0.95rem;"><span style="color: #60a5fa; margin-right: 8px;">✓</span> Páginas Web Corporativas</li>
+                                <li style="color: rgba(255,255,255,0.8); padding: 0.4rem 0; font-size: 0.95rem;"><span style="color: #60a5fa; margin-right: 8px;">✓</span> Tiendas Online</li>
+                                <li style="color: rgba(255,255,255,0.8); padding: 0.4rem 0; font-size: 0.95rem;"><span style="color: #60a5fa; margin-right: 8px;">✓</span> SEO & Marketing Digital</li>
+                            </ul>
+                            
+                            <a href="desarrolloweb.html" style="display: inline-flex; align-items: center; gap: 8px; background: #0066cc; color: white; padding: 0.75rem 1.5rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: all 0.3s;" onmouseover="this.style.background='#0052a3'" onmouseout="this.style.background='#0066cc'">
+                                Ver Servicios <i class="fas fa-arrow-right"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Columna derecha - Tarjeta blanca -->
-                <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); max-width: 400px; margin-left: auto; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.15)'">
-                    <h3 style="font-size: 1.25rem; font-weight: 700; color: #1a1a2e; margin-bottom: 0.75rem; text-align: center;">
-                        ¿Tu PC está lenta?
-                    </h3>
-                    <p style="color: #64748b; text-align: center; margin-bottom: 1.25rem; font-size: 0.9rem;">
-                        Agenda una revisión hoy mismo y recupera la velocidad de tu equipo.
-                    </p>
-                    <ul style="list-style: none; margin-bottom: 1.25rem; font-size: 0.9rem; color: #1a1a2e; line-height: 1.8;">
-                        <li style="display: flex; align-items: center; gap: 0.5rem;">
-                            <span style="color: #0066cc;">✓</span> Optimización de sistema operativo
-                        </li>
-                        <li style="display: flex; align-items: center; gap: 0.5rem;">
-                            <span style="color: #0066cc;">✓</span> Eliminación de archivos basura
-                        </li>
-                        <li style="display: flex; align-items: center; gap: 0.5rem;">
-                            <span style="color: #0066cc;">✓</span> Actualización de drivers
-                        </li>
-                    </ul>
-                    <a href="contacto.html" style="display: block; width: 100%; background: #0066cc; color: white; text-align: center; padding: 0.75rem; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: all 0.2s;" onmouseover="this.style.background='#0052a3'; this.style.transform='scale(1.02)'" onmouseout="this.style.background='#0066cc'; this.style.transform='scale(1)'">
-                        Solicitar Presupuesto
-                    </a>
+                <!-- Servicio Técnico -->
+                <div class="service-card hvr-float animate__animated animate__fadeInUp" style="background: linear-gradient(135deg, #1a1a2e 0%, #2d3748 100%); border-radius: 20px; padding: 2.5rem; border: 1px solid rgba(255,255,255,0.1); position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(255,255,255,0.1), transparent 70%); pointer-events: none;"></div>
+                    
+                    <div style="display: flex; align-items: flex-start; gap: 1.5rem;">
+                        <div class="float-icon" style="font-size: 3rem;">🔧</div>
+                        <div>
+                            <h3 style="color: white; margin-bottom: 0.75rem; font-size: 1.5rem; font-weight: 700;">Servicio Técnico</h3>
+                            <p style="color: rgba(255,255,255,0.8); margin-bottom: 1.25rem; line-height: 1.6;">Reparación profesional de computadoras, laptops y dispositivos electrónicos con garantía escrita.</p>
+                            
+                            <ul style="list-style: none; padding: 0; margin: 0 0 1.5rem 0;">
+                                <li style="color: rgba(255,255,255,0.8); padding: 0.4rem 0; font-size: 0.95rem;"><span style="color: #60a5fa; margin-right: 8px;">✓</span> Reparación de Laptops/PCs</li>
+                                <li style="color: rgba(255,255,255,0.8); padding: 0.4rem 0; font-size: 0.95rem;"><span style="color: #60a5fa; margin-right: 8px;">✓</span> Mantenimiento & Optimización</li>
+                                <li style="color: rgba(255,255,255,0.8); padding: 0.4rem 0; font-size: 0.95rem;"><span style="color: #60a5fa; margin-right: 8px;">✓</span> Eliminación de Virus</li>
+                            </ul>
+                            
+                            <a href="serviciotecnico.html" style="display: inline-flex; align-items: center; gap: 8px; background: transparent; color: white; padding: 0.75rem 1.5rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem; border: 1px solid rgba(255,255,255,0.4); transition: all 0.3s;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='transparent'">
+                                Ver Servicios <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Proceso de Trabajo -->
-    <section class="animate-on-scroll" style="padding: 4rem 2rem; background: #f8fafc;">
+    <!-- Por qué elegirnos -->
+    <section class="animate-on-scroll" style="padding: 5rem 2rem; background: #f8fafc;">
         <div style="max-width: 1100px; margin: 0 auto;">
-            <div style="text-align: center; margin-bottom: 2.5rem;">
-                <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 0.5rem; color: #1a1a2e; line-height: 1.3;">
-                    ¿Cómo Trabajamos?
-                </h2>
-                <p style="font-size: 1rem; color: #64748b; max-width: 600px; margin: 0 auto; line-height: 1.6;">
-                    Proceso simple, transparente y sin complicaciones
-                </p>
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2 style="font-size: 2.25rem; font-weight: 700; color: #1a1a2e; margin-bottom: 0.75rem;">¿Por qué elegir NTEC?</h2>
+                <p style="font-size: 1.1rem; color: #64748b; max-width: 600px; margin: 0 auto;">Nos diferencia la calidad, transparencia y compromiso</p>
             </div>
             
-            <div class="process-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;">
-                <!-- Paso 1 -->
-                <div style="text-align: center;">
-                    <div style="width: 60px; height: 60px; background: #0066cc; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-                        <span style="font-size: 1.25rem; font-weight: 700; color: white;">1</span>
-                    </div>
-                    <h4 style="font-size: 1rem; color: #1a1a2e; margin-bottom: 0.5rem; font-weight: 600;">Diagnóstico</h4>
-                    <p style="color: #64748b; font-size: 0.85rem; line-height: 1.5; margin: 0;">Trae tu equipo o contáctanos. Realizamos un análisis completo.</p>
+            <div class="benefits-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;">
+                <div class="service-card" style="background: white; padding: 2rem; border-radius: 16px; text-align: center; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    <div class="pulse-icon" style="font-size: 2.5rem; margin-bottom: 1rem; color: #0066cc;">✓</div>
+                    <h4 style="font-size: 1.1rem; font-weight: 600; color: #1a1a2e; margin-bottom: 0.5rem;">Garantía Escrita</h4>
+                    <p style="font-size: 0.9rem; color: #64748b; margin: 0; line-height: 1.5;">Todas nuestras reparaciones y proyectos cuentan con garantía.</p>
                 </div>
                 
-                <!-- Paso 2 -->
-                <div style="text-align: center;">
-                    <div style="width: 60px; height: 60px; background: #0066cc; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-                        <span style="font-size: 1.25rem; font-weight: 700; color: white;">2</span>
-                    </div>
-                    <h4 style="font-size: 1rem; color: #1a1a2e; margin-bottom: 0.5rem; font-weight: 600;">Presupuesto</h4>
-                    <p style="color: #64748b; font-size: 0.85rem; line-height: 1.5; margin: 0;">Te enviamos un presupuesto detallado con costo exacto.</p>
+                <div class="service-card" style="background: white; padding: 2rem; border-radius: 16px; text-align: center; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    <div class="pulse-icon" style="font-size: 2.5rem; margin-bottom: 1rem; color: #0066cc;">⚡</div>
+                    <h4 style="font-size: 1.1rem; font-weight: 600; color: #1a1a2e; margin-bottom: 0.5rem;">Atención Rápida</h4>
+                    <p style="font-size: 0.9rem; color: #64748b; margin: 0; line-height: 1.5;">Respuesta rápida y soluciones en tiempo record.</p>
                 </div>
                 
-                <!-- Paso 3 -->
-                <div style="text-align: center;">
-                    <div style="width: 60px; height: 60px; background: #0066cc; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-                        <span style="font-size: 1.25rem; font-weight: 700; color: white;">3</span>
-                    </div>
-                    <h4 style="font-size: 1rem; color: #1a1a2e; margin-bottom: 0.5rem; font-weight: 600;">Reparación</h4>
-                    <p style="color: #64748b; font-size: 0.85rem; line-height: 1.5; margin: 0;">Reparamos tu equipo usando repuestos de calidad.</p>
+                <div class="service-card" style="background: white; padding: 2rem; border-radius: 16px; text-align: center; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    <div class="pulse-icon" style="font-size: 2.5rem; margin-bottom: 1rem; color: #0066cc;">💰</div>
+                    <h4 style="font-size: 1.1rem; font-weight: 600; color: #1a1a2e; margin-bottom: 0.5rem;">Precio Justo</h4>
+                    <p style="font-size: 0.9rem; color: #64748b; margin: 0; line-height: 1.5;">Presupuestos claros sin costos ocultos.</p>
                 </div>
                 
-                <!-- Paso 4 -->
-                <div style="text-align: center;">
-                    <div style="width: 60px; height: 60px; background: #0066cc; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-                        <span style="font-size: 1.25rem; font-weight: 700; color: white;">4</span>
-                    </div>
-                    <h4 style="font-size: 1rem; color: #1a1a2e; margin-bottom: 0.5rem; font-weight: 600;">Entrega</h4>
-                    <p style="color: #64748b; font-size: 0.85rem; line-height: 1.5; margin: 0;">Te notificamos cuando esté listo. Lo retiras funcionando.</p>
+                <div class="service-card" style="background: white; padding: 2rem; border-radius: 16px; text-align: center; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    <div class="pulse-icon" style="font-size: 2.5rem; margin-bottom: 1rem; color: #0066cc;">📍</div>
+                    <h4 style="font-size: 1.1rem; font-weight: 600; color: #1a1a2e; margin-bottom: 0.5rem;">Servicio Local</h4>
+                    <p style="font-size: 0.9rem; color: #64748b; margin: 0; line-height: 1.5;">En Ciudad de la Costa, atención personalizada.</p>
                 </div>
-            </div>
-            
-            <div style="text-align: center; margin-top: 2rem;">
-                <a href="contacto.html" style="display: inline-flex; align-items: center; gap: 8px; background: #0066cc; color: white; padding: 0.75rem 1.5rem; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: background 0.2s;" onmouseover="this.style.background='#0052a3'" onmouseout="this.style.background='#0066cc'">
-                    <span>📅</span> Contactar Ahora
-                </a>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="animate-on-scroll" style="background: #1a1a2e; color: white; padding: 3.5rem 2rem; text-align: center;">
-        <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.75rem; color: white;">¿Aún tienes dudas sobre tu equipo?</h2>
-        <p style="color: rgba(255, 255, 255, 0.7); margin-bottom: 1.5rem; font-size: 0.95rem;">Contáctanos ahora y recibe tu diagnóstico gratuito sin compromiso</p>
-        <a href="contacto.html" style="display: inline-flex; align-items: center; gap: 8px; background: #0066cc; color: white; padding: 0.75rem 1.5rem; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: all 0.3s;" onmouseover="this.style.background='#0052a3'; this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#0066cc'; this.style.transform='translateY(0)'">
-            <i class="fab fa-whatsapp"></i> Escríbenos por WhatsApp
-        </a>
-    </section>
-
-    <!-- Métodos de Pago -->
-    <section class="animate-on-scroll" style="padding: 3rem 2rem; background: white;">
-        <div style="max-width: 900px; margin: 0 auto; text-align: center;">
-            <h2 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; color: #1a1a2e;">Métodos de Pago</h2>
-            <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 1.5rem;">Aceptamos los siguientes métodos de pago</p>
-            <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
-                <div style="background: #f8fafc; padding: 1rem 1.5rem; border-radius: 6px; border: 1px solid #e2e8f0; min-width: 150px;">
-                    <h3 style="font-size: 0.95rem; color: #1a1a2e; margin-bottom: 0.25rem;">Efectivo</h3>
-                    <p style="font-size: 0.8rem; color: #64748b;">Pago al retirar</p>
-                </div>
-                <div style="background: #f8fafc; padding: 1rem 1.5rem; border-radius: 6px; border: 1px solid #e2e8f0; min-width: 150px;">
-                    <h3 style="font-size: 0.95rem; color: #1a1a2e; margin-bottom: 0.25rem;">Mercado Pago</h3>
-                    <p style="font-size: 0.8rem; color: #64748b;">Pago seguro</p>
-                </div>
-                <div style="background: #f8fafc; padding: 1rem 1.5rem; border-radius: 6px; border: 1px solid #e2e8f0; min-width: 150px;">
-                    <h3 style="font-size: 0.95rem; color: #1a1a2e; margin-bottom: 0.25rem;">Transferencia</h3>
-                    <p style="font-size: 0.8rem; color: #64748b;">Bancaria</p>
-                </div>
-            </div>
+    <!-- CTA Final -->
+    <section class="hero-section" style="padding: 4rem 2rem; text-align: center;">
+        <div style="max-width: 700px; margin: 0 auto; position: relative; z-index: 1;">
+            <h2 style="font-size: 2rem; font-weight: 700; color: white; margin-bottom: 1rem;">¿Listo para transformar tu negocio?</h2>
+            <p style="color: rgba(255,255,255,0.8); margin-bottom: 2rem; font-size: 1.1rem;">Contáctanos hoy y te brindamos la mejor solución</p>
+            <a href="contacto.html" class="glow-btn" style="display: inline-flex; align-items: center; gap: 8px; background: #0066cc; color: white; padding: 1rem 2.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: all 0.3s;" onmouseover="this.style.background='#0052a3'; this.style.transform='translateY(-3px)'" onmouseout="this.style.background='#0066cc'; this.style.transform='translateY(0)'">
+                <i class="fab fa-whatsapp"></i> Contáctanos
+            </a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer style="background: #0f172a; color: #9ca3af; padding: 3rem 2rem 1.5rem; border-top: 1px solid #1f2937;">
         <div style="max-width: 1100px; margin: 0 auto;">
-            <div class="footer-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-bottom: 2.5rem;">
-                
-                <!-- Brand -->
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-bottom: 2.5rem;">
                 <div>
                     <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
                         <div style="background: #0066cc; padding: 0.4rem; border-radius: 4px;">
                             <span style="font-size: 1.25rem;">🖥️</span>
                         </div>
-                        <span style="font-size: 1.1rem; font-weight: 700; color: white;">
-                            NTEC Uruguay
-                        </span>
+                        <span style="font-size: 1.1rem; font-weight: 700; color: white;">NTEC Uruguay</span>
                     </div>
-                    <p style="font-size: 0.8rem; line-height: 1.5;">
-                        Soluciones tecnológicas confiables. Reparamos, optimizamos, desarrollamos web y asesoramos con garantía.
-                    </p>
+                    <p style="font-size: 0.85rem; line-height: 1.6;">Expertos en desarrollo web y servicio técnico profesional.</p>
                 </div>
 
-                <!-- Links -->
                 <div>
                     <h4 style="font-size: 0.95rem; font-weight: 600; color: white; margin-bottom: 1rem;">Enlaces</h4>
-                    <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.8; font-size: 0.8rem;">
+                    <ul style="list-style: none; padding: 0; margin: 0; line-height: 2; font-size: 0.85rem;">
                         <li><a href="index.html" style="color: #9ca3af; text-decoration: none;" onmouseover="this.style.color='#0066cc'" onmouseout="this.style.color='#9ca3af'">Inicio</a></li>
-                        <li><a href="servicios.html" style="color: #9ca3af; text-decoration: none;" onmouseover="this.style.color='#0066cc'" onmouseout="this.style.color='#9ca3af'">Servicios</a></li>
                         <li><a href="quienes-somos.html" style="color: #9ca3af; text-decoration: none;" onmouseover="this.style.color='#0066cc'" onmouseout="this.style.color='#9ca3af'">Quiénes Somos</a></li>
                         <li><a href="contacto.html" style="color: #9ca3af; text-decoration: none;" onmouseover="this.style.color='#0066cc'" onmouseout="this.style.color='#9ca3af'">Contacto</a></li>
                     </ul>
                 </div>
 
-                <!-- Services -->
                 <div>
                     <h4 style="font-size: 0.95rem; font-weight: 600; color: white; margin-bottom: 1rem;">Servicios</h4>
-                    <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.8; font-size: 0.8rem;">
-                        <li><a href="servicios.html" style="color: #9ca3af; text-decoration: none;" onmouseover="this.style.color='#0066cc'" onmouseout="this.style.color='#9ca3af'">Reparación de PC</a></li>
-                        <li><a href="servicios.html" style="color: #9ca3af; text-decoration: none;" onmouseover="this.style.color='#0066cc'" onmouseout="this.style.color='#9ca3af'">Desarrollo Web</a></li>
+                    <ul style="list-style: none; padding: 0; margin: 0; line-height: 2; font-size: 0.85rem;">
+                        <li><a href="desarrolloweb.html" style="color: #9ca3af; text-decoration: none;" onmouseover="this.style.color='#0066cc'" onmouseout="this.style.color='#9ca3af'">Desarrollo Web</a></li>
+                        <li><a href="serviciotecnico.html" style="color: #9ca3af; text-decoration: none;" onmouseover="this.style.color='#0066cc'" onmouseout="this.style.color='#9ca3af'">Servicio Técnico</a></li>
                     </ul>
                 </div>
 
-                <!-- Contact -->
                 <div>
-                    <h4 style="font-size: 0.95rem; font-weight: 600; color: white; margin-bottom: 1rem;">Contáctanos</h4>
-                    <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.8; font-size: 0.8rem;">
-                        <li style="color: #9ca3af;">
-                            <span style="color: white; font-weight: 500;">Dirección:</span> El Pinar, Ciudad de la Costa
-                        </li>
-                        <li style="color: #9ca3af;">
-                            <span style="color: white; font-weight: 500;">Teléfono:</span> +598 96 616 638
-                        </li>
-                        <li style="color: #9ca3af;">
-                            <span style="color: white; font-weight: 500;">Email:</span> nservice7ech@gmail.com
-                        </li>
+                    <h4 style="font-size: 0.95rem; font-weight: 600; color: white; margin-bottom: 1rem;">Contacto</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0; line-height: 2; font-size: 0.85rem;">
+                        <li style="color: #9ca3af;"><span style="color: white; font-weight: 500;">📍</span> El Pinar, Ciudad de la Costa</li>
+                        <li><a href="https://wa.me/59896616638" style="color: #9ca3af; text-decoration: none;" onmouseover="this.style.color='#0066cc'" onmouseout="this.style.color='#9ca3af'"><span style="color: white; font-weight: 500;">📱</span> +598 96 616 638</a></li>
+                        <li style="color: #9ca3af;"><span style="color: white; font-weight: 500;">✉️</span> nservice7ech@gmail.com</li>
                     </ul>
                 </div>
-
             </div>
             
             <div style="border-top: 1px solid #1f2937; padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-                <p style="color: #6b7280; font-size: 0.75rem; margin: 0;">
-                    © 2026 NTEC. Todos los derechos reservados.
-                </p>
+                <p style="color: #6b7280; font-size: 0.8rem; margin: 0;">© 2026 NTEC. Todos los derechos reservados.</p>
                 <div style="display: flex; gap: 1.5rem;">
-                    <a href="#" style="color: #6b7280; text-decoration: none; font-size: 0.75rem;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#6b7280'">Política de Privacidad</a>
-                    <a href="#" style="color: #6b7280; text-decoration: none; font-size: 0.75rem;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#6b7280'">Términos y Condiciones</a>
+                    <a href="#" style="color: #6b7280; text-decoration: none; font-size: 0.8rem;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#6b7280'">Política de Privacidad</a>
+                    <a href="#" style="color: #6b7280; text-decoration: none; font-size: 0.8rem;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#6b7280'">Términos y Condiciones</a>
                 </div>
             </div>
         </div>
     </footer>
 
     <script>
-        // Cambio de servicios en el slider
-        let currentService = 0;
-        const totalServices = 4;
-
-        function changeService(index) {
-            currentService = index;
-            const slider = document.getElementById('services-slider');
-            slider.style.transform = 'translateX(-' + (currentService * 100) + '%)';
-            
-            // Actualizar dots
-            document.querySelectorAll('.service-dot').forEach((dot, i) => {
-                if (i === currentService) {
-                    dot.style.background = '#0066cc';
-                } else {
-                    dot.style.background = 'rgba(255,255,255,0.3)';
-                }
-            });
-        }
-
-        // Auto slide cada 4 segundos
-        setInterval(() => {
-            currentService = (currentService + 1) % totalServices;
-            changeService(currentService);
-        }, 4000);
-
         // Animación al hacer scroll
         const observerOptions = {
             threshold: 0.1,
@@ -651,71 +474,27 @@
             observer.observe(section);
         });
 
-        // Slider functionality - Only runs if slides exist
-        const slides = document.querySelectorAll('.slide');
-        const dots = document.querySelectorAll('.slider-dot');
-        
-        if (slides.length > 0 && dots.length > 0) {
-            let slideIndex = 0;
-        
-            function showSlide(n) {
-                if (n >= slides.length) slideIndex = 0;
-                if (n < 0) slideIndex = slides.length - 1;
-                
-                slides.forEach(slide => slide.classList.remove('active'));
-                dots.forEach(dot => dot.classList.remove('active'));
-                
-                slides[slideIndex].classList.add('active');
-                dots[slideIndex].classList.add('active');
-            }
-            
-            function changeSlide(n) {
-                slideIndex += n;
-                showSlide(slideIndex);
-            }
-            
-            function goToSlide(n) {
-                slideIndex = n;
-                showSlide(slideIndex);
-            }
-            
-            // Auto slide every 5 seconds
-            setInterval(() => {
-                changeSlide(1);
-            }, 5000);
-        }
-
-        // ========================================
-        // MODO OSCURO (DARK MODE)
-        // ========================================
-        
-        // Verificar preferencia guardada
+        // Dark Mode
         function initDarkMode() {
             const darkModePreference = localStorage.getItem('darkMode');
-            
-            // Si hay preferencia guardada, usarla
             if (darkModePreference === 'enabled') {
                 document.body.classList.add('dark-mode');
             } else if (darkModePreference === 'disabled') {
                 document.body.classList.remove('dark-mode');
             } else {
-                // Si no hay preferencia, verificar preferencia del sistema
                 if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
                     document.body.classList.add('dark-mode');
                 }
             }
         }
         
-        // Alternar modo oscuro
         function toggleDarkMode() {
             const isDarkMode = document.body.classList.toggle('dark-mode');
             localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
         }
         
-        // Escuchar cambios en la preferencia del sistema
         if (window.matchMedia) {
             window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-                // Solo cambiar si el usuario no ha establecido una preferencia
                 if (!localStorage.getItem('darkMode')) {
                     if (e.matches) {
                         document.body.classList.add('dark-mode');
@@ -726,8 +505,287 @@
             });
         }
         
-        // Inicializar modo oscuro al cargar la página
         initDarkMode();
+        
+        // Partículas que siguen al cursor
+        const heroSection = document.getElementById('heroSection');
+        const cursorGlow = document.getElementById('cursorGlow');
+        const particles = document.querySelectorAll('.hero-particle');
+        
+        let mouseX = 0;
+        let mouseY = 0;
+        
+        // Posiciones objetivo para cada partícula
+        const particleTargets = Array.from(particles).map(particle => ({
+            element: particle,
+            baseX: parseFloat(particle.style.left),
+            baseY: parseFloat(particle.style.top),
+            offsetX: (Math.random() - 0.5) * 30,
+            offsetY: (Math.random() - 0.5) * 30
+        }));
+        
+        // Mover el glow del cursor
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            
+            // Mover el glow
+            if (cursorGlow) {
+                cursorGlow.style.left = mouseX + 'px';
+                cursorGlow.style.top = mouseY + 'px';
+            }
+            
+            // Calcular posición relativa en el hero
+            const rect = heroSection.getBoundingClientRect();
+            const isInHero = mouseX >= rect.left && mouseX <= rect.right && 
+                           mouseY >= rect.top && mouseY <= rect.bottom;
+            
+            if (isInHero) {
+                const relX = ((mouseX - rect.left) / rect.width) * 100;
+                const relY = ((mouseY - rect.top) / rect.height) * 100;
+                
+                // Mover partículas hacia el cursor con offset
+                particleTargets.forEach((target, index) => {
+                    const moveX = (relX - target.baseX) * 0.3 + target.offsetX;
+                    const moveY = (relY - target.baseY) * 0.3 + target.offsetY;
+                    target.element.style.transform = `translate(${moveX}px, ${moveY}px)`;
+                });
+                
+                cursorGlow.style.opacity = '1';
+            } else {
+                // Restaurar partículas a su posición original
+                particleTargets.forEach(target => {
+                    target.element.style.transform = 'translate(0, 0)';
+                });
+                
+                cursorGlow.style.opacity = '0';
+            }
+        });
+        
+        // Ocultar cursor glow cuando sale de la ventana
+        document.addEventListener('mouseleave', () => {
+            if (cursorGlow) {
+                cursorGlow.style.opacity = '0';
+            }
+        });
+        
+        document.addEventListener('mouseenter', () => {
+            if (cursorGlow) {
+                cursorGlow.style.opacity = '1';
+            }
+        });
+        
+        // =============================================
+        // CANVAS INTERACTIVE PARTICLES EFFECT - ENHANCED
+        // =============================================
+        (function() {
+            var stage = document.getElementById('particlesCanvas'),
+                cb = stage.getBoundingClientRect(),
+                ctx = stage.getContext('2d'),
+                ratio = window.devicePixelRatio || 1,
+                mouse = { x: 0, y: 0 },
+                dots = [],
+                wide = 36,
+                high = Math.floor(wide / 2.2),
+                size = 40,
+                padding = 40;
+
+            // Color palette for particles - adapt to dark/light mode
+            var colors = document.body.classList.contains('dark-mode') ? [
+                'rgba(96, 165, 250, 0.95)',  // blue-400 - más brillante para modo oscuro
+                'rgba(147, 197, 253, 0.95)',  // blue-300
+                'rgba(0, 212, 255, 0.95)',   // cyan
+                'rgba(56, 189, 248, 0.95)',  // sky-400
+                'rgba(165, 180, 252, 0.95)'  // indigo-300
+            ] : [
+                'rgba(96, 165, 250, 0.95)',  // blue-400
+                'rgba(147, 197, 253, 0.95)',  // blue-300
+                'rgba(0, 212, 255, 0.95)',   // cyan
+                'rgba(56, 189, 248, 0.95)'   // sky-400
+            ];
+
+            // Update colors when dark mode changes
+            function updateParticleColors() {
+                if (document.body.classList.contains('dark-mode')) {
+                    colors = [
+                        'rgba(96, 165, 250, 0.95)',
+                        'rgba(147, 197, 253, 0.95)',
+                        'rgba(0, 212, 255, 0.95)',
+                        'rgba(56, 189, 248, 0.95)',
+                        'rgba(165, 180, 252, 0.95)'
+                    ];
+                } else {
+                    colors = [
+                        'rgba(96, 165, 250, 0.95)',
+                        'rgba(147, 197, 253, 0.95)',
+                        'rgba(0, 212, 255, 0.95)',
+                        'rgba(56, 189, 248, 0.95)'
+                    ];
+                }
+            }
+            
+            // Listen for dark mode changes
+            var darkModeObserver = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    if (mutation.attributeName === 'class') {
+                        updateParticleColors();
+                    }
+                });
+            });
+            
+            darkModeObserver.observe(document.body, { attributes: true });
+            
+            // Initialize with correct colors
+            updateParticleColors();
+            window.onmousemove = function(e) {
+                var rect = stage.getBoundingClientRect();
+                mouse.x = (e.clientX - rect.left) * ratio;
+                mouse.y = (e.clientY - rect.top) * ratio;
+            };
+
+            window.onresize = function() {
+                resizeCanvas();
+            };
+
+            function resizeCanvas() {
+                var rect = stage.parentElement.getBoundingClientRect();
+                ctx.canvas.width = rect.width * ratio;
+                ctx.canvas.height = rect.height * ratio;
+                cb = stage.getBoundingClientRect();
+                create();
+            }
+
+            // Setup
+            function create() {
+                dots = [];
+                var canvasWidth = ctx.canvas.width;
+                var canvasHeight = ctx.canvas.height;
+                
+                for (var i = -1; ++i < wide;) {
+                    var x = Math.floor((((canvasWidth - padding * 2) / (wide - 1)) * i) + padding) * ratio;
+
+                    for (var j = -1; ++j < high;) {
+                        var y = Math.floor((((canvasHeight - padding * 2) / (high - 1)) * j) + padding) * ratio;
+
+                        dots.push({
+                            x: x,
+                            y: y,
+                            ox: x,
+                            oy: y,
+                            size: 1
+                        });
+                    }
+                }
+            }
+
+            // Rendering and frame calculations
+            function render() {
+                ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+
+                // Draw glow effect first - larger and more visible
+                for (var i = 0; i < dots.length; i++) {
+                    var s = dots[i];
+                    var v = getV(s);
+                    
+                    // Dynamic color based on position
+                    var colorIndex = Math.floor((s.x / ctx.canvas.width) * colors.length);
+                    ctx.fillStyle = colors[colorIndex % colors.length].replace('0.95', '0.15');
+                    
+                    ctx.beginPath();
+                    ctx.arc(s.x + v.x, s.y + v.y, s.size * 3 * ratio, 0, 2 * Math.PI, false);
+                    ctx.fill();
+                }
+
+                // Draw dots with gradient colors
+                for (var i = 0; i < dots.length; i++) {
+                    var s = dots[i];
+                    var v = getV(s);
+                    
+                    // Different colors for variety
+                    var colorIndex = Math.floor((s.y / ctx.canvas.height) * colors.length);
+                    ctx.fillStyle = colors[colorIndex % colors.length];
+
+                    // Draw particle with size variation
+                    ctx.beginPath();
+                    ctx.arc(s.x + v.x, s.y + v.y, s.size * ratio, 0, 2 * Math.PI, false);
+                    ctx.fill();
+                }
+
+                // Draw connections with gradient effect
+                for (var i = 0; i < dots.length; i++) {
+                    var s = dots[i];
+                    var v = getV(s);
+                    var px = s.x + v.x;
+                    var py = s.y + v.y;
+                    
+                    // Connect to nearby dots
+                    for (var j = i + 1; j < dots.length; j++) {
+                        var s2 = dots[j];
+                        var v2 = getV(s2);
+                        var px2 = s2.x + v2.x;
+                        var py2 = s2.y + v2.y;
+                        
+                        var dist = getDistance({x: px, y: py}, {x: px2, y: py2});
+                        
+                        // Connection distance threshold
+                        if (dist < 120 * ratio) {
+                            // Opacity based on distance
+                            var opacity = (1 - dist / (120 * ratio)) * 0.25;
+                            ctx.strokeStyle = `rgba(96, 165, 250, ${opacity})`;
+                            ctx.lineWidth = (1 - dist / (120 * ratio)) * 1.5 * ratio;
+                            
+                            ctx.beginPath();
+                            ctx.moveTo(px, py);
+                            ctx.lineTo(px2, py2);
+                            ctx.stroke();
+                        }
+                    }
+                }
+            }
+
+            function getV(dot) {
+                var d = getDistance(dot, mouse);
+                
+                // Size based on distance - more dramatic effect
+                dot.size = (200 - d) / 35;
+                dot.size = dot.size < 1 ? 1 : dot.size;
+                dot.size = dot.size > 8 ? 8 : dot.size;
+
+                // Angle to mouse
+                dot.angle = getAngle(dot, mouse);
+
+                // Movement amount based on distance - smoother animation
+                var moveAmount = d > 25 ? 25 : d;
+                
+                return {
+                    x: moveAmount * Math.cos(dot.angle * Math.PI / 180),
+                    y: moveAmount * Math.sin(dot.angle * Math.PI / 180)
+                };
+            }
+
+            function getAngle(obj1, obj2) {
+                var dX = obj2.x - obj1.x;
+                var dY = obj2.y - obj1.y;
+                var angleDeg = Math.atan2(dY, dX) / Math.PI * 180;
+                return angleDeg;
+            }
+
+            function getDistance(obj1, obj2) {
+                var dx = obj1.x - obj2.x;
+                var dy = obj1.y - obj2.y;
+                return Math.sqrt(dx * dx + dy * dy);
+            }
+
+            // Animation
+            function animloop() {
+                render();
+                requestAnimationFrame(animloop);
+            }
+
+            // Initialize
+            resizeCanvas();
+            animloop();
+        })();
     </script>
 </body>
 </html>

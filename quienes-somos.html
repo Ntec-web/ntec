@@ -7,6 +7,8 @@
     <meta name="description" content="Conoce NTEC - Expertos en servicio técnico con años de experiencia. Garantía escrita en todos nuestros trabajos.">
     <link rel="stylesheet" href="theme.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🖥️</text></svg>">
     <style>
         /* Animación de fondo dinámico */
@@ -102,6 +104,27 @@
         .animate-on-scroll.visible {
             animation: fadeInUp 0.6s ease-out forwards;
         }
+        
+        /* Canvas interactivo */
+        #particlesCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.9;
+        }
+        
+        @media (max-width: 900px) {
+            .values-grid, .services-split {
+                grid-template-columns: 1fr !important;
+            }
+            .about-content {
+                grid-template-columns: 1fr !important;
+            }
+        }
     </style>
 </head>
 <body style="background: #f5f7fa;">
@@ -131,8 +154,8 @@
         <nav>
             <a href="index.html">Inicio</a>
             <a href="quienes-somos.html" class="active">Quiénes Somos</a>
-            <a href="servicios.html">Servicios</a>
-            <a href="blog.html">Blog</a>
+            <a href="desarrolloweb.html">Desarrollo Web</a>
+            <a href="serviciotecnico.html">Servicio Técnico</a>
             <a href="contacto.html">Contacto</a>
             <a href="https://wa.me/59896616638" target="_blank" class="whatsapp-link">
                 <i class="fab fa-whatsapp"></i> WhatsApp
@@ -145,123 +168,147 @@
     </header>
 
     <!-- Page Header -->
-    <section class="animate-on-scroll" style="background: #0a2540; padding: 3.5rem 2rem; text-align: center;">
-        <h1 style="font-size: 2rem; font-weight: 700; color: white; margin-bottom: 0.5rem;">Quiénes Somos</h1>
-        <p style="color: rgba(255, 255, 255, 0.7); font-size: 1rem;">Conoce nuestra historia y compromiso con la excelencia</p>
+    <section class="animate-on-scroll" style="background: #0a2540; padding: 8rem 2rem; text-align: center; position: relative;">
+        <canvas id="particlesCanvas"></canvas>
+        <h1 style="font-size: 2rem; font-weight: 700; color: white; margin-bottom: 0.5rem; position: relative; z-index: 1;">Quiénes Somos</h1>
+        <p style="color: rgba(255, 255, 255, 0.7); font-size: 1rem; position: relative; z-index: 1;">Conoce nuestra historia y compromiso con la excelencia</p>
     </section>
 
-    <!-- About Section -->
-    <section class="animate-on-scroll" style="padding: 3.5rem 2rem; background: white; max-width: 1100px; margin: 0 auto;">
-        <div class="about-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;">
-            <div>
-                <h2 style="font-size: 1.5rem; font-weight: 700; color: #1a1a2e; margin-bottom: 1.25rem;">Nuestra Historia</h2>
-                <p style="color: #64748b; font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem;">En <strong>NTEC</strong> nos dedicamos a brindarte el mejor servicio técnico para tus equipos de computación. Somos un emprendimiento comprometido con la excelencia, ofreciendo soluciones rápidas, confiables y de calidad profesional.</p>
-                <p style="color: #64748b; font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.5rem;">Nuestro objetivo es que tu equipo funcione como nuevo, brindándote tranquilidad y confianza en cada reparación. Trabajamos con transparencia y honestidad en cada proceso.</p>
-                
-                <div style="margin-top: 1.5rem; padding: 1.25rem; background: #f8fafc; border-radius: 6px; border-left: 3px solid #0066cc;">
-                    <h3 style="color: #0066cc; margin-bottom: 0.5rem; font-size: 1rem; font-weight: 600;">Nuestra Misión</h3>
-                    <p style="color: #64748b; font-size: 0.9rem; line-height: 1.5; margin: 0;">Brindar soluciones técnicas de alta calidad que devuelvan la funcionalidad y rendimiento óptimo a tus equipos, garantizando la satisfacción total de cada cliente.</p>
-                </div>
-
-                <h2 style="font-size: 1.5rem; font-weight: 700; color: #1a1a2e; margin-top: 2rem; margin-bottom: 1.25rem;">Nuestra Garantía</h2>
-                <p style="color: #64748b; font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem;">Te respaldamos con <strong>garantía escrita</strong> en todos nuestros trabajos. Si no quedas satisfecho, nos comprometemos a corregirlo sin costo adicional. Tu tranquilidad es nuestra prioridad.</p>
-                <p style="color: #1a1a2e; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.75rem;">Cada reparación incluye:</p>
-                <ul style="list-style: none; padding: 0; margin: 0;">
-                    <li style="padding: 0.4rem 0; color: #64748b; font-size: 0.9rem;">
-                        <span style="color: #0066cc; margin-right: 0.5rem;">✓</span> Diagnóstico profesional sin costo
-                    </li>
-                    <li style="padding: 0.4rem 0; color: #64748b; font-size: 0.9rem;">
-                        <span style="color: #0066cc; margin-right: 0.5rem;">✓</span> Presupuesto detallado y sin compromiso
-                    </li>
-                    <li style="padding: 0.4rem 0; color: #64748b; font-size: 0.9rem;">
-                        <span style="color: #0066cc; margin-right: 0.5rem;">✓</span> Garantía por escrito en cada trabajo
-                    </li>
-                    <li style="padding: 0.4rem 0; color: #64748b; font-size: 0.9rem;">
-                        <span style="color: #0066cc; margin-right: 0.5rem;">✓</span> Repuestos de calidad garantizados
-                    </li>
-                </ul>
-            </div>
-            <div style="text-align: center;">
-                <img src="2G.png" alt="Nuestro equipo de trabajo" style="width: 100%; max-width: 450px; border-radius: 8px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);">
-            </div>
+    <!-- Encabezado con propósito -->
+    <section class="animate-on-scroll" style="padding: 4rem 2rem; background: white;">
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <h2 style="font-size: 1.75rem; font-weight: 700; color: #1a1a2e; margin-bottom: 1.5rem; line-height: 1.4;">
+                Transformamos ideas en soluciones digitales confiables para empresas y personas en Uruguay.
+            </h2>
+            <p style="color: #64748b; font-size: 1.1rem; line-height: 1.7;">
+                Nacimos para acompañar a emprendedores y empresas en su crecimiento, ofreciendo soporte técnico y desarrollo web con cercanía y transparencia.
+            </p>
         </div>
     </section>
 
-    <!-- Valores -->
-    <section class="animate-on-scroll" style="padding: 3.5rem 2rem; background: #0a2540;">
-        <div style="max-width: 1100px; margin: 0 auto; text-align: center;">
-            <h2 style="font-size: 1.5rem; font-weight: 700; color: white; margin-bottom: 2rem;">Nuestros Valores</h2>
-            <div class="values-grid-inline" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem;" class="values-grid">
-                <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.background='rgba(0,102,204,0.3)'; this.style.borderColor='#0066cc';" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'; this.style.borderColor='rgba(255,255,255,0.2)'">
-                    <div style="font-size: 1.25rem; margin-bottom: 0.5rem; color: #60a5fa;">✓</div>
-                    <h3 style="color: white; margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: 600;">Garantía Escrita</h3>
-                    <p style="color: rgba(255,255,255,0.7); font-size: 0.8rem; line-height: 1.5;">Todos nuestros trabajos incluyen garantía por escrito.</p>
-                </div>
-                <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.background='rgba(0,102,204,0.3)'; this.style.borderColor='#0066cc';" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'; this.style.borderColor='rgba(255,255,255,0.2)'">
-                    <div style="font-size: 1.25rem; margin-bottom: 0.5rem; color: #60a5fa;">✓</div>
-                    <h3 style="color: white; margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: 600;">Transparencia</h3>
-                    <p style="color: rgba(255,255,255,0.7); font-size: 0.8rem; line-height: 1.5;">Te informamos exactamente qué le pasa a tu equipo.</p>
-                </div>
-                <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.background='rgba(0,102,204,0.3)'; this.style.borderColor='#0066cc';" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'; this.style.borderColor='rgba(255,255,255,0.2)'">
-                    <div style="font-size: 1.25rem; margin-bottom: 0.5rem; color: #60a5fa;">✓</div>
-                    <h3 style="color: white; margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: 600;">Atención Personalizada</h3>
-                    <p style="color: rgba(255,255,255,0.7); font-size: 0.8rem; line-height: 1.5;">Te explicaremos cada paso del proceso.</p>
-                </div>
-                <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.background='rgba(0,102,204,0.3)'; this.style.borderColor='#0066cc';" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'; this.style.borderColor='rgba(255,255,255,0.2)'">
-                    <div style="font-size: 1.25rem; margin-bottom: 0.5rem; color: #60a5fa;">✓</div>
-                    <h3 style="color: white; margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: 600;">Rapidez</h3>
-                    <p style="color: rgba(255,255,255,0.7); font-size: 0.8rem; line-height: 1.5;">Diagnóstico en 24hrs. Trabajamos rápido.</p>
-                </div>
+    <!-- Valores centrales -->
+    <section class="animate-on-scroll" style="padding: 4rem 2rem; background: #f8fafc;">
+        <div style="max-width: 1100px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 2.5rem;">
+                <h2 style="font-size: 1.5rem; font-weight: 700; color: #1a1a2e; margin-bottom: 0.5rem;">Nuestros Valores</h2>
             </div>
-        </div>
-    </section>
-
-    <!-- Por qué elegirnos -->
-    <section class="animate-on-scroll" style="padding: 3.5rem 2rem; background: #0a2540;">
-        <div style="max-width: 1100px; margin: 0 auto; text-align: center;">
-            <h2 style="font-size: 1.5rem; font-weight: 700; color: white; margin-bottom: 0.5rem;">¿Por Qué Elegirnos?</h2>
-            <p style="color: rgba(255,255,255,0.7); margin-bottom: 2rem; font-size: 0.95rem;">Estas son las razones por las que nuestros clientes confían en nosotros</p>
             
-            <div class="choose-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem;" class="choose-grid-responsive">
-                <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.background='rgba(0,102,204,0.3)'; this.style.borderColor='#0066cc';" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'; this.style.borderColor='rgba(255,255,255,0.2)'">
-                    <div style="font-size: 1.5rem; margin-bottom: 0.75rem;">👨‍🔧</div>
-                    <h3 style="color: white; margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: 600;">Técnicos Expertos</h3>
-                    <p style="color: rgba(255,255,255,0.7); font-size: 0.8rem; line-height: 1.5;">Personal capacitado con años de experiencia.</p>
+            <div class="values-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;">
+                <div class="hvr-float animate__animated animate__fadeInUp" style="background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%); padding: 2rem; border-radius: 16px; text-align: center; border: 1px solid rgba(0,102,204,0.15); box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #0066cc 0%, #0ea5e9 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                        <i class="fas fa-handshake" style="font-size: 1.5rem; color: white;"></i>
+                    </div>
+                    <h3 style="color: #1e293b; margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 700;">Confianza</h3>
+                    <p style="color: #64748b; font-size: 0.85rem; margin: 0; line-height: 1.6;">Transparencia total en cada proceso y presupuesto detallado.</p>
                 </div>
-                <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.background='rgba(0,102,204,0.3)'; this.style.borderColor='#0066cc';" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'; this.style.borderColor='rgba(255,255,255,0.2)'">
-                    <div style="font-size: 1.5rem; margin-bottom: 0.75rem;">🔬</div>
-                    <h3 style="color: white; margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: 600;">Diagnóstico Preciso</h3>
-                    <p style="color: rgba(255,255,255,0.7); font-size: 0.8rem; line-height: 1.5;">Identificamos el problema exactamente.</p>
+                
+                <div class="hvr-float animate__animated animate__fadeInUp" style="background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%); padding: 2rem; border-radius: 16px; text-align: center; border: 1px solid rgba(0,102,204,0.15); box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #0066cc 0%, #0ea5e9 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                        <i class="fas fa-bullseye" style="font-size: 1.5rem; color: white;"></i>
+                    </div>
+                    <h3 style="color: #1e293b; margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 700;">Enfoque Personalizado</h3>
+                    <p style="color: #64748b; font-size: 0.85rem; margin: 0; line-height: 1.6;">Soluciones adaptadas específicamente a tus necesidades.</p>
                 </div>
-                <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.background='rgba(0,102,204,0.3)'; this.style.borderColor='#0066cc';" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'; this.style.borderColor='rgba(255,255,255,0.2)'">
-                    <div style="font-size: 1.5rem; margin-bottom: 0.75rem;">📦</div>
-                    <h3 style="color: white; margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: 600;">Repuestos de Calidad</h3>
-                    <p style="color: rgba(255,255,255,0.7); font-size: 0.8rem; line-height: 1.5;">Usamos componentes de calidad garantizada.</p>
+                
+                <div class="hvr-float animate__animated animate__fadeInUp" style="background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%); padding: 2rem; border-radius: 16px; text-align: center; border: 1px solid rgba(0,102,204,0.15); box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #0066cc 0%, #0ea5e9 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                        <i class="fas fa-lightbulb" style="font-size: 1.5rem; color: white;"></i>
+                    </div>
+                    <h3 style="color: #1e293b; margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 700;">Innovación</h3>
+                    <p style="color: #64748b; font-size: 0.85rem; margin: 0; line-height: 1.6;">Tecnología moderna para keeping your negocio ahead.</p>
                 </div>
-                <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.background='rgba(0,102,204,0.3)'; this.style.borderColor='#0066cc';" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.1)'; this.style.borderColor='rgba(255,255,255,0.2)'">
-                    <div style="font-size: 1.5rem; margin-bottom: 0.75rem;">⏱️</div>
-                    <h3 style="color: white; margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: 600;">Tiempo Rápido</h3>
-                    <p style="color: rgba(255,255,255,0.7); font-size: 0.8rem; line-height: 1.5;">Trabajamos con tiempos rápidos.</p>
+                
+                <div class="hvr-float animate__animated animate__fadeInUp" style="background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%); padding: 2rem; border-radius: 16px; text-align: center; border: 1px solid rgba(0,102,204,0.15); box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #0066cc 0%, #0ea5e9 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                        <i class="fas fa-bolt" style="font-size: 1.5rem; color: white;"></i>
+                    </div>
+                    <h3 style="color: #1e293b; margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 700;">Agilidad</h3>
+                    <p style="color: #64748b; font-size: 0.85rem; margin: 0; line-height: 1.6;">Respuesta rápida y soluciones eficientes.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA -->
-    <section class="animate-on-scroll" style="background: #1a1a2e; color: white; padding: 3rem 2rem; text-align: center;">
-        <h2 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: white;">¿Tienes algún equipo que necesite revisión?</h2>
-        <p style="color: rgba(255, 255, 255, 0.7); margin-bottom: 1.5rem; font-size: 0.9rem;">Contáctanos y te presupuestamos sin compromiso</p>
-        <a href="contacto.html" style="display: inline-flex; align-items: center; gap: 8px; background: #0066cc; color: white; padding: 0.75rem 1.5rem; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: all 0.2s;" onmouseover="this.style.background='#0052a3'; this.style.transform='scale(1.05)'" onmouseout="this.style.background='#0066cc'; this.style.transform='scale(1)'">
-            <span>📞</span> Solicitar Presupuesto
-        </a>
+    <!-- Servicios principales (dos bloques) -->
+    <section class="animate-on-scroll" style="padding: 4rem 2rem; background: white;">
+        <div style="max-width: 1100px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 2.5rem;">
+                <h2 style="font-size: 1.5rem; font-weight: 700; color: #1a1a2e; margin-bottom: 0.5rem;">Lo que hacemos</h2>
+            </div>
+            
+            <div class="services-split" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
+                <!-- Desarrollo Web -->
+                <div style="background: linear-gradient(135deg, #0a2540 0%, #1a3a5c 100%); border-radius: 16px; padding: 2.5rem; border: 1px solid rgba(0,102,204,0.3);">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🌐</div>
+                    <h3 style="color: white; margin-bottom: 1rem; font-size: 1.5rem; font-weight: 700;">Desarrollo Web</h3>
+                    <p style="color: rgba(255,255,255,0.8); margin-bottom: 1.5rem; line-height: 1.6;">Creamos presencia digital que genera resultados.</p>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="color: rgba(255,255,255,0.8); padding: 0.5rem 0; font-size: 0.95rem;"><span style="color: #60a5fa; margin-right: 8px;">✓</span> Diseño adaptable y responsive</li>
+                        <li style="color: rgba(255,255,255,0.8); padding: 0.5rem 0; font-size: 0.95rem;"><span style="color: #60a5fa; margin-right: 8px;">✓</span> Infraestructura escalable</li>
+                        <li style="color: rgba(255,255,255,0.8); padding: 0.5rem 0; font-size: 0.95rem;"><span style="color: #60a5fa; margin-right: 8px;">✓</span> Identidad visual profesional</li>
+                        <li style="color: rgba(255,255,255,0.8); padding: 0.5rem 0; font-size: 0.95rem;"><span style="color: #60a5fa; margin-right: 8px;">✓</span> SEO y posicionamiento</li>
+                    </ul>
+                    <a href="desarrolloweb.html" style="display: inline-block; margin-top: 1.5rem; background: #0066cc; color: white; padding: 0.75rem 1.5rem; border-radius: 6px; text-decoration: none; font-weight: 600;">Ver Servicios Web</a>
+                </div>
+                
+                <!-- Servicio Técnico -->
+                <div style="background: linear-gradient(135deg, #1a1a2e 0%, #2d3748 100%); border-radius: 16px; padding: 2.5rem; border: 1px solid rgba(255,255,255,0.1);">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🔧</div>
+                    <h3 style="color: white; margin-bottom: 1rem; font-size: 1.5rem; font-weight: 700;">Servicio Técnico</h3>
+                    <p style="color: rgba(255,255,255,0.8); margin-bottom: 1.5rem; line-height: 1.6;">Mantén tus equipos funcionando como nuevos.</p>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="color: rgba(255,255,255,0.8); padding: 0.5rem 0; font-size: 0.95rem;"><span style="color: #60a5fa; margin-right: 8px;">✓</span> Soporte integral para empresas</li>
+                        <li style="color: rgba(255,255,255,0.8); padding: 0.5rem 0; font-size: 0.95rem;"><span style="color: #60a5fa; margin-right: 8px;">✓</span> Optimización de equipos</li>
+                        <li style="color: rgba(255,255,255,0.8); padding: 0.5rem 0; font-size: 0.95rem;"><span style="color: #60a5fa; margin-right: 8px;">✓</span> Asesoramiento práctico</li>
+                        <li style="color: rgba(255,255,255,0.8); padding: 0.5rem 0; font-size: 0.95rem;"><span style="color: #60a5fa; margin-right: 8px;">✓</span> Garantía por escrito</li>
+                    </ul>
+                    <a href="serviciotecnico.html" style="display: inline-block; margin-top: 1.5rem; background: transparent; color: white; padding: 0.75rem 1.5rem; border-radius: 6px; text-decoration: none; font-weight: 600; border: 1px solid rgba(255,255,255,0.4);">Ver Servicios Técnicos</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Equipo / Filosofía de trabajo -->
+    <section class="animate-on-scroll" style="padding: 4rem 2rem; background: #f8fafc;">
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <h2 style="font-size: 1.5rem; font-weight: 700; color: #1a1a2e; margin-bottom: 1.5rem;">Nuestra Filosofía</h2>
+            <p style="color: #64748b; font-size: 1.1rem; line-height: 1.8;">
+                Nuestro enfoque combina experiencia técnica con empatía hacia cada cliente: no solo resolvemos problemas, construimos relaciones duraderas. Cada proyecto es una oportunidad de generar valor real para tu negocio.
+            </p>
+            <div style="margin-top: 2rem; display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+                <div style="text-align: center;">
+                    <div style="font-size: 2.5rem; font-weight: 700; color: #0066cc;">100%</div>
+                    <div style="color: #64748b; font-size: 0.9rem;">Garantía Escrita</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 2.5rem; font-weight: 700; color: #0066cc;">24h</div>
+                    <div style="color: #64748b; font-size: 0.9rem;">Tiempo Promedio</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 2.5rem; font-weight: 700; color: #0066cc;">500+</div>
+                    <div style="color: #64748b; font-size: 0.9rem;">Clientes Satisfechos</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cierre con llamada a la acción -->
+    <section class="animate-on-scroll" style="background: linear-gradient(135deg, #0a2540 0%, #1a1a2e 100%); padding: 4rem 2rem; text-align: center;">
+        <div style="max-width: 700px; margin: 0 auto;">
+            <h2 style="font-size: 1.75rem; font-weight: 700; color: white; margin-bottom: 1rem;">¿Listo para potenciar tu proyecto?</h2>
+            <p style="color: rgba(255,255,255,0.8); margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.6;">
+                Conversemos sobre cómo podemos ayudarte. Estamos listos para acompañarte desde la idea hasta la implementación.
+            </p>
+            <a href="contacto.html" style="display: inline-flex; align-items: center; gap: 8px; background: #0066cc; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem; transition: all 0.3s;" onmouseover="this.style.background='#0052a3'; this.style.transform='translateY(-3px)'" onmouseout="this.style.background='#0066cc'; this.style.transform='translateY(0)'">
+                <i class="fab fa-whatsapp"></i> Conversemos
+            </a>
+        </div>
     </section>
 
     <!-- Footer -->
     <footer style="background: #0f172a; color: #9ca3af; padding: 3rem 2rem 1.5rem; border-top: 1px solid #1f2937;">
         <div style="max-width: 1100px; margin: 0 auto;">
-            <div class="footer-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-bottom: 2.5rem;">
-                
-                <!-- Brand -->
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-bottom: 2.5rem;">
                 <div>
                     <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
                         <div style="background: #0066cc; padding: 0.4rem; border-radius: 4px;">
@@ -276,42 +323,31 @@
                     </p>
                 </div>
 
-                <!-- Links -->
                 <div>
                     <h4 style="font-size: 0.95rem; font-weight: 600; color: white; margin-bottom: 1rem;">Enlaces</h4>
                     <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.8; font-size: 0.8rem;">
                         <li><a href="index.html" style="color: #9ca3af; text-decoration: none;" onmouseover="this.style.color='#0066cc'" onmouseout="this.style.color='#9ca3af'">Inicio</a></li>
-                        <li><a href="servicios.html" style="color: #9ca3af; text-decoration: none;" onmouseover="this.style.color='#0066cc'" onmouseout="this.style.color='#9ca3af'">Servicios</a></li>
                         <li><a href="quienes-somos.html" style="color: #9ca3af; text-decoration: none;" onmouseover="this.style.color='#0066cc'" onmouseout="this.style.color='#9ca3af'">Quiénes Somos</a></li>
                         <li><a href="contacto.html" style="color: #9ca3af; text-decoration: none;" onmouseover="this.style.color='#0066cc'" onmouseout="this.style.color='#9ca3af'">Contacto</a></li>
                     </ul>
                 </div>
 
-                <!-- Services -->
                 <div>
                     <h4 style="font-size: 0.95rem; font-weight: 600; color: white; margin-bottom: 1rem;">Servicios</h4>
                     <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.8; font-size: 0.8rem;">
-                        <li><a href="servicios.html" style="color: #9ca3af; text-decoration: none;" onmouseover="this.style.color='#0066cc'" onmouseout="this.style.color='#9ca3af'">Reparación de PC</a></li>
-                        <li><a href="servicios.html" style="color: #9ca3af; text-decoration: none;" onmouseover="this.style.color='#0066cc'" onmouseout="this.style.color='#9ca3af'">Limpieza de Virus</a></li>
+                        <li><a href="desarrolloweb.html" style="color: #9ca3af; text-decoration: none;" onmouseover="this.style.color='#0066cc'" onmouseout="this.style.color='#9ca3af'">Desarrollo Web</a></li>
+                        <li><a href="serviciotecnico.html" style="color: #9ca3af; text-decoration: none;" onmouseover="this.style.color='#0066cc'" onmouseout="this.style.color='#9ca3af'">Servicio Técnico</a></li>
                     </ul>
                 </div>
 
-                <!-- Contact -->
                 <div>
-                    <h4 style="font-size: 0.95rem; font-weight: 600; color: white; margin-bottom: 1rem;">Contáctanos</h4>
+                    <h4 style="font-size: 0.95rem; font-weight: 600; color: white; margin-bottom: 1rem;">Contacto</h4>
                     <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.8; font-size: 0.8rem;">
-                        <li style="color: #9ca3af;">
-                            <span style="color: white; font-weight: 500;">Dirección:</span> El Pinar, Ciudad de la Costa
-                        </li>
-                        <li style="color: #9ca3af;">
-                            <span style="color: white; font-weight: 500;">Teléfono:</span> +598 96 616 638
-                        </li>
-                        <li style="color: #9ca3af;">
-                            <span style="color: white; font-weight: 500;">Email:</span> nservice7ech@gmail.com
-                        </li>
+                        <li style="color: #9ca3af;"><span style="color: white; font-weight: 500;">📍</span> El Pinar, Ciudad de la Costa</li>
+                        <li><a href="https://wa.me/59896616638" style="color: #9ca3af; text-decoration: none;" onmouseover="this.style.color='#0066cc'" onmouseout="this.style.color='#9ca3af'"><span style="color: white; font-weight: 500;">📱</span> +598 96 616 638</a></li>
+                        <li style="color: #9ca3af;"><span style="color: white; font-weight: 500;">✉️</span> nservice7ech@gmail.com</li>
                     </ul>
                 </div>
-
             </div>
             
             <div style="border-top: 1px solid #1f2937; padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
@@ -348,13 +384,9 @@
             observer.observe(section);
         });
 
-        // ========================================
-        // MODO OSCURO (DARK MODE)
-        // ========================================
-        
+        // Dark Mode
         function initDarkMode() {
             const darkModePreference = localStorage.getItem('darkMode');
-            
             if (darkModePreference === 'enabled') {
                 document.body.classList.add('dark-mode');
             } else if (darkModePreference === 'disabled') {
@@ -384,6 +416,161 @@
         }
         
         initDarkMode();
+        
+        // =============================================
+        // CANVAS INTERACTIVE PARTICLES EFFECT
+        // =============================================
+        (function() {
+            var stage = document.getElementById('particlesCanvas');
+            if (!stage) return;
+            
+            var cb = stage.getBoundingClientRect(),
+                ctx = stage.getContext('2d'),
+                ratio = window.devicePixelRatio || 1,
+                mouse = { x: 0, y: 0 },
+                dots = [],
+                wide = 30,
+                high = 15,
+                padding = 60;
+
+            window.onmousemove = function(e) {
+                var rect = stage.getBoundingClientRect();
+                mouse.x = (e.clientX - rect.left) * ratio;
+                mouse.y = (e.clientY - rect.top) * ratio;
+            };
+
+            window.onresize = function() {
+                resizeCanvas();
+            };
+
+            function resizeCanvas() {
+                var rect = stage.parentElement.getBoundingClientRect();
+                ctx.canvas.width = rect.width * ratio;
+                ctx.canvas.height = rect.height * ratio;
+                cb = stage.getBoundingClientRect();
+                create();
+            }
+
+            function create() {
+                dots = [];
+                var canvasWidth = ctx.canvas.width;
+                var canvasHeight = ctx.canvas.height;
+                
+                for (var i = -1; ++i < wide;) {
+                    var x = Math.floor((((canvasWidth - padding * 2) / (wide - 1)) * i) + padding) * ratio;
+
+                    for (var j = -1; ++j < high;) {
+                        var y = Math.floor((((canvasHeight - padding * 2) / (high - 1)) * j) + padding) * ratio;
+
+                        dots.push({
+                            x: x,
+                            y: y,
+                            ox: x,
+                            oy: y,
+                            size: 1
+                        });
+                    }
+                }
+            }
+
+            function render() {
+                ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+
+                // Draw glow effect first
+                ctx.fillStyle = 'rgba(96, 165, 250, 0.1)';
+                for (var i = 0; i < dots.length; i++) {
+                    var s = dots[i];
+                    var v = getV(s);
+                    ctx.beginPath();
+                    ctx.arc(s.x + v.x, s.y + v.y, s.size * 2.5 * ratio, 0, 2 * Math.PI, false);
+                    ctx.fill();
+                }
+
+                // Color de las partículas - azul brillante
+                ctx.fillStyle = 'rgba(147, 197, 253, 0.95)';
+
+                // Draw dots
+                for (var i = 0; i < dots.length; i++) {
+                    var s = dots[i];
+                    var v = getV(s);
+
+                    // Draw particle
+                    ctx.beginPath();
+                    ctx.arc(s.x + v.x, s.y + v.y, s.size * ratio, 0, 2 * Math.PI, false);
+                    ctx.fill();
+                }
+
+                // Draw connections
+                ctx.strokeStyle = 'rgba(96, 165, 250, 0.12)';
+                ctx.lineWidth = 1 * ratio;
+                
+                for (var i = 0; i < dots.length; i++) {
+                    var s = dots[i];
+                    var v = getV(s);
+                    var px = s.x + v.x;
+                    var py = s.y + v.y;
+                    
+                    // Connect to nearby dots
+                    for (var j = i + 1; j < dots.length; j++) {
+                        var s2 = dots[j];
+                        var v2 = getV(s2);
+                        var px2 = s2.x + v2.x;
+                        var py2 = s2.y + v2.y;
+                        
+                        var dist = getDistance({x: px, y: py}, {x: px2, y: py2});
+                        if (dist < 100 * ratio) {
+                            ctx.beginPath();
+                            ctx.moveTo(px, py);
+                            ctx.lineTo(px2, py2);
+                            ctx.stroke();
+                        }
+                    }
+                }
+            }
+
+            function getV(dot) {
+                var d = getDistance(dot, mouse);
+                
+                // Size based on distance
+                dot.size = (150 - d) / 30;
+                dot.size = dot.size < 1 ? 1 : dot.size;
+                dot.size = dot.size > 6 ? 6 : dot.size;
+
+                // Angle to mouse
+                dot.angle = getAngle(dot, mouse);
+
+                // Movement amount based on distance
+                var moveAmount = d > 30 ? 30 : d;
+                
+                return {
+                    x: moveAmount * Math.cos(dot.angle * Math.PI / 180),
+                    y: moveAmount * Math.sin(dot.angle * Math.PI / 180)
+                };
+            }
+
+            function getAngle(obj1, obj2) {
+                var dX = obj2.x - obj1.x;
+                var dY = obj2.y - obj1.y;
+                var angleDeg = Math.atan2(dY, dX) / Math.PI * 180;
+                return angleDeg;
+            }
+
+            function getDistance(obj1, obj2) {
+                var dx = obj1.x - obj2.x;
+                var dy = obj1.y - obj2.y;
+                return Math.sqrt(dx * dx + dy * dy);
+            }
+
+            // Animation
+            function animloop() {
+                render();
+                requestAnimationFrame(animloop);
+            }
+
+            // Initialize
+            resizeCanvas();
+            animloop();
+        })();
     </script>
 </body>
 </html>
