@@ -1,791 +1,514 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NTEC - Desarrollo Web & Servicio Técnico Profesional</title>
-    <meta name="description" content="NTEC - Expertos en desarrollo web profesional y servicio técnico. Páginas web, tiendas online y reparación de computadoras en Ciudad de la Costa.">
-    <link rel="stylesheet" href="theme.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🖥️</text></svg>">
-    <style>
-        @keyframes gradientMove {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(40px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-        
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-        
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        
-        .animate-on-scroll.visible {
-            animation: fadeInUp 0.6s ease-out forwards;
-        }
-        
-        .hero-section {
-            background: linear-gradient(135deg, #0a2540 0%, #1a1a2e 50%, #0f3460 100%);
-            background-size: 400% 400%;
-            animation: gradientMove 15s ease infinite;
-            position: relative;
-            overflow: hidden;
-            cursor: none;
-        }
-        
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            pointer-events: none;
-        }
-        
-        /* Partículas interactivas */
-        .hero-particles {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            overflow: hidden;
-        }
-        
-        .hero-particle {
-            position: absolute;
-            width: 6px;
-            height: 6px;
-            background: rgba(96, 165, 250, 0.6);
-            border-radius: 50%;
-            transition: transform 0.1s ease-out;
-            box-shadow: 0 0 10px rgba(96, 165, 250, 0.5);
-        }
-        
-        .hero-particle:nth-child(2) { width: 8px; height: 8px; background: rgba(0, 212, 255, 0.5); }
-        .hero-particle:nth-child(3) { width: 4px; height: 4px; background: rgba(147, 51, 234, 0.4); }
-        .hero-particle:nth-child(4) { width: 10px; height: 10px; background: rgba(16, 185, 129, 0.4); }
-        .hero-particle:nth-child(5) { width: 5px; height: 5px; background: rgba(96, 165, 250, 0.5); }
-        .hero-particle:nth-child(6) { width: 7px; height: 7px; background: rgba(0, 212, 255, 0.4); }
-        .hero-particle:nth-child(7) { width: 6px; height: 6px; background: rgba(147, 51, 234, 0.5); }
-        .hero-particle:nth-child(8) { width: 9px; height: 9px; background: rgba(16, 185, 129, 0.3); }
-        
-        /* Cursor personalizado */
-        .cursor-glow {
-            position: fixed;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(0, 102, 204, 0.15) 0%, transparent 70%);
-            pointer-events: none;
-            z-index: 1;
-            transform: translate(-50%, -50%);
-            transition: opacity 0.3s;
-        }
-        
-        .service-card {
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-            transition: left 0.5s;
-        }
-        
-        .service-card:hover::before {
-            left: 100%;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
-        }
-        
-        .glow-btn {
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .glow-btn::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.3), transparent 60%);
-            transform: scale(0);
-            transition: transform 0.5s;
-        }
-        
-        .glow-btn:hover::after {
-            transform: scale(1);
-        }
-        
-        .float-icon {
-            animation: float 3s ease-in-out infinite;
-        }
-        
-        .pulse-icon {
-            animation: pulse 2s ease-in-out infinite;
-        }
-        
-        @media (max-width: 900px) {
-            .hero-grid {
-                grid-template-columns: 1fr !important;
-            }
-            .services-grid {
-                grid-template-columns: 1fr !important;
-            }
-            .benefits-grid {
-                grid-template-columns: 1fr !important;
-            }
-            .cursor-glow {
-                display: none;
-            }
-            .hero-section {
-                cursor: auto;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .dual-hero {
-                grid-template-columns: 1fr !important;
-            }
-        }
-        
-        /* Canvas interactivo */
-        #particlesCanvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 0;
-            opacity: 0.9;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NTEC - Soluciones Tecnológicas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="animacion.js" defer></script>
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 </head>
-<body style="background: #f8fafc;">
-    
-    <!-- Partículas flotantes -->
-    <div class="particles">
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-    </div>
-    
-    <header style="background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(10px);">
-        <div class="logo-img"><img src="Ntec (3).png" alt="NTEC"></div>
-        <h1>NTEC</h1>
+<body>
+  <!-- Header -->
+  <header id="header">
+    <div class="container">
+      <div class="header-content">
+        <a href="#inicio" class="logo">NTEC</a>
         <nav>
-            <a href="index.html" class="active">Inicio</a>
-            <a href="quienes-somos.html">Quiénes Somos</a>
-            <a href="desarrolloweb.html">Desarrollo Web</a>
-            <a href="serviciotecnico.html">Servicio Técnico</a>
-            <a href="contacto.html">Contacto</a>
-            <a href="https://wa.me/59896616638" target="_blank" class="whatsapp-link">
-                <i class="fab fa-whatsapp"></i> WhatsApp
-            </a>
-            <button class="dark-mode-toggle" onclick="toggleDarkMode()" aria-label="Cambiar modo oscuro">
-                <i class="fas fa-sun sun-icon"></i>
-                <i class="fas fa-moon moon-icon"></i>
-            </button>
+          <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="portafolio.html">Portafolio</a></li>
+            <li><a href="serviciotecnico.html">Servicio Técnico</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="index.html#contacto">Contacto</a></li>
+          </ul>
         </nav>
-    </header>
+        <button class="mobile-menu-btn" onclick="toggleMenu()">
+          <i class="fas fa-bars"></i>
+        </button>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Cambiar tema">
+          <i class="fas fa-moon" id="theme-icon"></i>
+        </button>
+      </div>
+    </div>
+  </header>
 
-    <!-- Cursor glow interactivo -->
-    <div class="cursor-glow" id="cursorGlow"></div>
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#inicio" onclick="toggleMenu()">Inicio</a></li>
+      <li><a href="servicios.html" onclick="toggleMenu()">Servicios</a></li>
+      <li><a href="portafolio.html" onclick="toggleMenu()">Portafolio</a></li>
+      <li><a href="serviciotecnico.html" onclick="toggleMenu()">Servicio Técnico</a></li>
+      <li><a href="nosotros.html" onclick="toggleMenu()">Nosotros</a></li>
+      <li><a href="index.html#contacto" onclick="toggleMenu()">Contacto</a></li>
+    </ul>
+  </div>
 
-    <!-- Hero Principal -->
-    <section class="hero-section" id="heroSection" style="padding: 8rem 2rem; text-align: center; position: relative;">
-        <!-- Canvas interactivo -->
-        <canvas id="particlesCanvas"></canvas>
-        <!-- Partículas interactivas -->
-        <div class="hero-particles" id="heroParticles">
-            <div class="hero-particle" style="top: 20%; left: 20%;"></div>
-            <div class="hero-particle" style="top: 40%; left: 60%;"></div>
-            <div class="hero-particle" style="top: 60%; left: 30%;"></div>
-            <div class="hero-particle" style="top: 30%; left: 80%;"></div>
-            <div class="hero-particle" style="top: 70%; left: 70%;"></div>
-            <div class="hero-particle" style="top: 50%; left: 15%;"></div>
-            <div class="hero-particle" style="top: 80%; left: 45%;"></div>
-            <div class="hero-particle" style="top: 15%; left: 50%;"></div>
-        </div>
-        <div style="max-width: 900px; margin: 0 auto; position: relative; z-index: 1;">
-            
-            <h1 class="animate-on-scroll" style="font-size: 3rem; font-weight: 800; color: white; margin-bottom: 1rem; line-height: 1.15; letter-spacing: -0.02em;">
-                NTEC <span style="color: #60a5fa;">Desarrollo Web</span>
-            </h1>
-            
-            <p class="animate-on-scroll" style="font-size: 1.1rem; color: rgba(255,255,255,0.8); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.6;">
-                Creamos sitios web profesionales, tiendas online y soluciones digitales que hacen crecer tu negocio.
-            </p>
-            
-            <div class="animate-on-scroll" style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-                <a href="contacto.html" class="glow-btn" style="display: inline-flex; align-items: center; gap: 8px; background: #0066cc; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem; transition: all 0.3s;" onmouseover="this.style.background='#0052a3'; this.style.transform='translateY(-3px)'" onmouseout="this.style.background='#0066cc'; this.style.transform='translateY(0)'">
-                    <i class="fas fa-rocket"></i> Comenzar Proyecto
-                </a>
-                <a href="https://wa.me/59896616638" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; background: transparent; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem; border: 2px solid rgba(255,255,255,0.3); transition: all 0.3s;" onmouseover="this.style.background='rgba(255,255,255,0.1)'; this.style.transform='translateY(-3px)'" onmouseout="this.style.background='transparent'; this.style.transform='translateY(0)'">
-                    <i class="fab fa-whatsapp"></i> Consultar
-                </a>
-            </div>
-            
-            <!-- Características clave en el hero -->
-            <div class="animate-on-scroll" style="display: flex; justify-content: center; gap: 2rem; margin-top: 2.5rem; flex-wrap: wrap;">
-                <div style="display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.8); font-size: 0.9rem;">
-                    <i class="fas fa-mobile-alt" style="color: #60a5fa;"></i>
-                    <span>Diseño Responsive</span>
-                </div>
-                <div style="display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.8); font-size: 0.9rem;">
-                    <i class="fas fa-rocket" style="color: #60a5fa;"></i>
-                    <span>Webs Rápidas</span>
-                </div>
-                <div style="display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.8); font-size: 0.9rem;">
-                    <i class="fas fa-shield-alt" style="color: #60a5fa;"></i>
-                    <span>SSL Seguro</span>
-                </div>
-                <div style="display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.8); font-size: 0.9rem;">
-                    <i class="fas fa-search" style="color: #60a5fa;"></i>
-                    <span>SEO Incluido</span>
-                </div>
-            </div>
-            
-        </div>
-    </section>
-
-    <!-- Servicios Destacados -->
-    <section class="animate-on-scroll" style="padding: 5rem 2rem; background: white;">
-        <div style="max-width: 1200px; margin: 0 auto;">
-            <div style="text-align: center; margin-bottom: 3rem;">
-                <h2 style="font-size: 2.25rem; font-weight: 700; color: #1a1a2e; margin-bottom: 0.75rem;">Nuestros Servicios</h2>
-                <p style="font-size: 1.1rem; color: #64748b; max-width: 600px; margin: 0 auto;">Soluciones integrales para impulsar tu negocio</p>
-            </div>
-            
-            <div class="services-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;">
-                
-                <!-- Desarrollo Web -->
-                <div class="service-card hvr-float animate__animated animate__fadeInUp" style="background: linear-gradient(135deg, #0a2540 0%, #1a3a5c 100%); border-radius: 20px; padding: 2.5rem; border: 1px solid rgba(0,102,204,0.3); position: relative; overflow: hidden;">
-                    <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(0,212,255,0.2), transparent 70%); pointer-events: none;"></div>
-                    
-                    <div style="display: flex; align-items: flex-start; gap: 1.5rem;">
-                        <div class="float-icon" style="font-size: 3rem;">🌐</div>
-                        <div>
-                            <h3 style="color: white; margin-bottom: 0.75rem; font-size: 1.5rem; font-weight: 700;">Desarrollo Web</h3>
-                            <p style="color: rgba(255,255,255,0.8); margin-bottom: 1.25rem; line-height: 1.6;">Creamos páginas web profesionales, tiendas online y soluciones digitales que hacen crecer tu negocio.</p>
-                            
-                            <ul style="list-style: none; padding: 0; margin: 0 0 1.5rem 0;">
-                                <li style="color: rgba(255,255,255,0.8); padding: 0.4rem 0; font-size: 0.95rem;"><span style="color: #60a5fa; margin-right: 8px;">✓</span> Páginas Web Corporativas</li>
-                                <li style="color: rgba(255,255,255,0.8); padding: 0.4rem 0; font-size: 0.95rem;"><span style="color: #60a5fa; margin-right: 8px;">✓</span> Tiendas Online</li>
-                                <li style="color: rgba(255,255,255,0.8); padding: 0.4rem 0; font-size: 0.95rem;"><span style="color: #60a5fa; margin-right: 8px;">✓</span> SEO & Marketing Digital</li>
-                            </ul>
-                            
-                            <a href="desarrolloweb.html" style="display: inline-flex; align-items: center; gap: 8px; background: #0066cc; color: white; padding: 0.75rem 1.5rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: all 0.3s;" onmouseover="this.style.background='#0052a3'" onmouseout="this.style.background='#0066cc'">
-                                Ver Servicios <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Servicio Técnico -->
-                <div class="service-card hvr-float animate__animated animate__fadeInUp" style="background: linear-gradient(135deg, #1a1a2e 0%, #2d3748 100%); border-radius: 20px; padding: 2.5rem; border: 1px solid rgba(255,255,255,0.1); position: relative; overflow: hidden;">
-                    <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(255,255,255,0.1), transparent 70%); pointer-events: none;"></div>
-                    
-                    <div style="display: flex; align-items: flex-start; gap: 1.5rem;">
-                        <div class="float-icon" style="font-size: 3rem;">🔧</div>
-                        <div>
-                            <h3 style="color: white; margin-bottom: 0.75rem; font-size: 1.5rem; font-weight: 700;">Servicio Técnico</h3>
-                            <p style="color: rgba(255,255,255,0.8); margin-bottom: 1.25rem; line-height: 1.6;">Reparación profesional de computadoras, laptops y dispositivos electrónicos con garantía escrita.</p>
-                            
-                            <ul style="list-style: none; padding: 0; margin: 0 0 1.5rem 0;">
-                                <li style="color: rgba(255,255,255,0.8); padding: 0.4rem 0; font-size: 0.95rem;"><span style="color: #60a5fa; margin-right: 8px;">✓</span> Reparación de Laptops/PCs</li>
-                                <li style="color: rgba(255,255,255,0.8); padding: 0.4rem 0; font-size: 0.95rem;"><span style="color: #60a5fa; margin-right: 8px;">✓</span> Mantenimiento & Optimización</li>
-                                <li style="color: rgba(255,255,255,0.8); padding: 0.4rem 0; font-size: 0.95rem;"><span style="color: #60a5fa; margin-right: 8px;">✓</span> Eliminación de Virus</li>
-                            </ul>
-                            
-                            <a href="serviciotecnico.html" style="display: inline-flex; align-items: center; gap: 8px; background: transparent; color: white; padding: 0.75rem 1.5rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem; border: 1px solid rgba(255,255,255,0.4); transition: all 0.3s;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='transparent'">
-                                Ver Servicios <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Por qué elegirnos -->
-    <section class="animate-on-scroll" style="padding: 5rem 2rem; background: #f8fafc;">
-        <div style="max-width: 1100px; margin: 0 auto;">
-            <div style="text-align: center; margin-bottom: 3rem;">
-                <h2 style="font-size: 2.25rem; font-weight: 700; color: #1a1a2e; margin-bottom: 0.75rem;">¿Por qué elegir NTEC?</h2>
-                <p style="font-size: 1.1rem; color: #64748b; max-width: 600px; margin: 0 auto;">Nos diferencia la calidad, transparencia y compromiso</p>
-            </div>
-            
-            <div class="benefits-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;">
-                <div class="service-card" style="background: white; padding: 2rem; border-radius: 16px; text-align: center; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-                    <div class="pulse-icon" style="font-size: 2.5rem; margin-bottom: 1rem; color: #0066cc;">✓</div>
-                    <h4 style="font-size: 1.1rem; font-weight: 600; color: #1a1a2e; margin-bottom: 0.5rem;">Garantía Escrita</h4>
-                    <p style="font-size: 0.9rem; color: #64748b; margin: 0; line-height: 1.5;">Todas nuestras reparaciones y proyectos cuentan con garantía.</p>
-                </div>
-                
-                <div class="service-card" style="background: white; padding: 2rem; border-radius: 16px; text-align: center; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-                    <div class="pulse-icon" style="font-size: 2.5rem; margin-bottom: 1rem; color: #0066cc;">⚡</div>
-                    <h4 style="font-size: 1.1rem; font-weight: 600; color: #1a1a2e; margin-bottom: 0.5rem;">Atención Rápida</h4>
-                    <p style="font-size: 0.9rem; color: #64748b; margin: 0; line-height: 1.5;">Respuesta rápida y soluciones en tiempo record.</p>
-                </div>
-                
-                <div class="service-card" style="background: white; padding: 2rem; border-radius: 16px; text-align: center; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-                    <div class="pulse-icon" style="font-size: 2.5rem; margin-bottom: 1rem; color: #0066cc;">💰</div>
-                    <h4 style="font-size: 1.1rem; font-weight: 600; color: #1a1a2e; margin-bottom: 0.5rem;">Precio Justo</h4>
-                    <p style="font-size: 0.9rem; color: #64748b; margin: 0; line-height: 1.5;">Presupuestos claros sin costos ocultos.</p>
-                </div>
-                
-                <div class="service-card" style="background: white; padding: 2rem; border-radius: 16px; text-align: center; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-                    <div class="pulse-icon" style="font-size: 2.5rem; margin-bottom: 1rem; color: #0066cc;">📍</div>
-                    <h4 style="font-size: 1.1rem; font-weight: 600; color: #1a1a2e; margin-bottom: 0.5rem;">Servicio Local</h4>
-                    <p style="font-size: 0.9rem; color: #64748b; margin: 0; line-height: 1.5;">En Ciudad de la Costa, atención personalizada.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Final -->
-    <section class="hero-section" style="padding: 4rem 2rem; text-align: center;">
-        <div style="max-width: 700px; margin: 0 auto; position: relative; z-index: 1;">
-            <h2 style="font-size: 2rem; font-weight: 700; color: white; margin-bottom: 1rem;">¿Listo para transformar tu negocio?</h2>
-            <p style="color: rgba(255,255,255,0.8); margin-bottom: 2rem; font-size: 1.1rem;">Contáctanos hoy y te brindamos la mejor solución</p>
-            <a href="contacto.html" class="glow-btn" style="display: inline-flex; align-items: center; gap: 8px; background: #0066cc; color: white; padding: 1rem 2.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: all 0.3s;" onmouseover="this.style.background='#0052a3'; this.style.transform='translateY(-3px)'" onmouseout="this.style.background='#0066cc'; this.style.transform='translateY(0)'">
-                <i class="fab fa-whatsapp"></i> Contáctanos
+  <!-- Hero Section -->
+  <section id="inicio">
+    <div class="hero-bg"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>Creamos páginas web <span>rápidas, seguras</span> y adaptadas a tu negocio</h1>
+          <p>Diseño y desarrollo web pensado para que tu negocio crezca: rápido, seguro y adaptado a vos.</p>
+          <div class="hero-buttons">
+            <a href="#contacto" class="btn btn-primary">
+              Solicitar Presupuesto
+              <i class="fas fa-arrow-right"></i>
             </a>
+          </div>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer style="background: #0f172a; color: #9ca3af; padding: 3rem 2rem 1.5rem; border-top: 1px solid #1f2937;">
-        <div style="max-width: 1100px; margin: 0 auto;">
-            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-bottom: 2.5rem;">
-                <div>
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
-                        <div style="background: #0066cc; padding: 0.4rem; border-radius: 4px;">
-                            <span style="font-size: 1.25rem;">🖥️</span>
-                        </div>
-                        <span style="font-size: 1.1rem; font-weight: 700; color: white;">NTEC Uruguay</span>
-                    </div>
-                    <p style="font-size: 0.85rem; line-height: 1.6;">Expertos en desarrollo web y servicio técnico profesional.</p>
-                </div>
-
-                <div>
-                    <h4 style="font-size: 0.95rem; font-weight: 600; color: white; margin-bottom: 1rem;">Enlaces</h4>
-                    <ul style="list-style: none; padding: 0; margin: 0; line-height: 2; font-size: 0.85rem;">
-                        <li><a href="index.html" style="color: #9ca3af; text-decoration: none;" onmouseover="this.style.color='#0066cc'" onmouseout="this.style.color='#9ca3af'">Inicio</a></li>
-                        <li><a href="quienes-somos.html" style="color: #9ca3af; text-decoration: none;" onmouseover="this.style.color='#0066cc'" onmouseout="this.style.color='#9ca3af'">Quiénes Somos</a></li>
-                        <li><a href="contacto.html" style="color: #9ca3af; text-decoration: none;" onmouseover="this.style.color='#0066cc'" onmouseout="this.style.color='#9ca3af'">Contacto</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 style="font-size: 0.95rem; font-weight: 600; color: white; margin-bottom: 1rem;">Servicios</h4>
-                    <ul style="list-style: none; padding: 0; margin: 0; line-height: 2; font-size: 0.85rem;">
-                        <li><a href="desarrolloweb.html" style="color: #9ca3af; text-decoration: none;" onmouseover="this.style.color='#0066cc'" onmouseout="this.style.color='#9ca3af'">Desarrollo Web</a></li>
-                        <li><a href="serviciotecnico.html" style="color: #9ca3af; text-decoration: none;" onmouseover="this.style.color='#0066cc'" onmouseout="this.style.color='#9ca3af'">Servicio Técnico</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 style="font-size: 0.95rem; font-weight: 600; color: white; margin-bottom: 1rem;">Contacto</h4>
-                    <ul style="list-style: none; padding: 0; margin: 0; line-height: 2; font-size: 0.85rem;">
-                        <li style="color: #9ca3af;"><span style="color: white; font-weight: 500;">📍</span> El Pinar, Ciudad de la Costa</li>
-                        <li><a href="https://wa.me/59896616638" style="color: #9ca3af; text-decoration: none;" onmouseover="this.style.color='#0066cc'" onmouseout="this.style.color='#9ca3af'"><span style="color: white; font-weight: 500;">📱</span> +598 96 616 638</a></li>
-                        <li style="color: #9ca3af;"><span style="color: white; font-weight: 500;">✉️</span> nservice7ech@gmail.com</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div style="border-top: 1px solid #1f2937; padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-                <p style="color: #6b7280; font-size: 0.8rem; margin: 0;">© 2026 NTEC. Todos los derechos reservados.</p>
-                <div style="display: flex; gap: 1.5rem;">
-                    <a href="#" style="color: #6b7280; text-decoration: none; font-size: 0.8rem;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#6b7280'">Política de Privacidad</a>
-                    <a href="#" style="color: #6b7280; text-decoration: none; font-size: 0.8rem;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#6b7280'">Términos y Condiciones</a>
-                </div>
-            </div>
+        <div class="hero-image">
+          <img src="https://images.unsplash.com/photo-1759884247199-eceeff174430?w=800" alt="Workspace moderno">
         </div>
-    </footer>
+      </div>
+    </div>
+  </section>
 
-    <script>
-        // Animación al hacer scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+  <!-- Services Section -->
+  <section id="servicios">
+    <div class="container">
+      <div class="section-header">
+        <h2>Nuestros <span>Servicios</span></h2>
+        <p>Soluciones digitales completas para llevar tu negocio al siguiente nivel</p>
+        <p style="margin-top: 1rem; font-size: 1.1rem;">En NTEC transformo ideas en herramientas digitales que potencian tu marca. Cada servicio está pensado para resolver problemas concretos y abrir nuevas oportunidades de crecimiento.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon blue">
+            <i class="fas fa-globe"></i>
+          </div>
+          <h3>🌐 Desarrollo Web</h3>
+          <p>Creo sitios corporativos, landing pages y aplicaciones modernas que combinan diseño atractivo con rendimiento técnico.</p>
+          <ul class="service-list">
+            <li>Diseño responsive: tu página se adapta a cualquier dispositivo</li>
+            <li>Optimización SEO: pensada para que te encuentren en Google</li>
+            <li>Carga ultrarrápida y código limpio</li>
+          </ul>
+        </div>
+        <div class="service-card">
+          <div class="service-icon purple">
+            <i class="fas fa-shopping-cart"></i>
+          </div>
+          <h3>🛒 E-Commerce</h3>
+          <p>Construyo tiendas online completas, con pasarelas de pago integradas y gestión sencilla.</p>
+          <ul class="service-list">
+            <li>Mercado Pago, Stripe y PayPal</li>
+            <li>Gestión de inventario y panel administrativo</li>
+          </ul>
+        </div>
+        <div class="service-card">
+          <div class="service-icon green">
+            <i class="fas fa-bullhorn"></i>
+          </div>
+          <h3>📈 Marketing Digital</h3>
+          <p>Diseño estrategias que combinan SEO, redes sociales y campañas publicitarias para aumentar tu visibilidad.</p>
+          <ul class="service-list">
+            <li>SEO on-page y contenido estratégico</li>
+            <li>Google Ads y redes sociales</li>
+            <li>Analytics: medición constante</li>
+          </ul>
+        </div>
+        <div class="service-card">
+          <div class="service-icon orange">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3>📱 Diseño Responsive</h3>
+          <p>Interfaces pensadas para la experiencia del usuario.</p>
+          <ul class="service-list">
+            <li>Mobile-first: tu web prioriza móviles</li>
+            <li>UX optimizada y accesibilidad</li>
+            <li>Performance: velocidad y fluidez</li>
+          </ul>
+        </div>
+        <div class="service-card">
+          <div class="service-icon indigo">
+            <i class="fas fa-search"></i>
+          </div>
+          <h3>🔍 Optimización SEO</h3>
+          <p>Posicionamiento orgánico que te permite competir sin depender solo de la publicidad paga.</p>
+          <ul class="service-list">
+            <li>Keywords research y link building</li>
+            <li>Content strategy: contenido que conecta</li>
+            <li>Reportes mensuales</li>
+          </ul>
+        </div>
+        <div class="service-card">
+          <div class="service-icon teal">
+            <i class="fas fa-headset"></i>
+          </div>
+          <h3>🛠️ Soporte Técnico</h3>
+          <p>No solo creo tu página, también la mantengo viva y segura.</p>
+          <ul class="service-list">
+            <li>Monitoreo 24/7 y backups diarios</li>
+            <li>Actualizaciones constantes</li>
+            <li>Soporte prioritario</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry, index) => {
-                if (entry.isIntersecting) {
-                    setTimeout(() => {
-                        entry.target.classList.add('visible');
-                    }, index * 100);
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
+  <!-- Portfolio Section -->
+  <section id="portafolio">
+    <div class="container">
+      <div class="section-header">
+        <h2>Nuestro <span>Portafolio</span></h2>
+        <p>Proyectos que transformaron negocios</p>
+      </div>
+      <div class="portfolio-grid">
+        <div class="portfolio-card">
+          <div class="portfolio-image">
+            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600" alt="Tienda de Ropa y Alquiler Almajo">
+          </div>
+          <div class="portfolio-content">
+            <span class="portfolio-category">E-Commerce</span>
+            <h3>👗 Tienda de Ropa y Alquiler Almajo</h3>
+            <p>Plataforma simple y clara para mostrar productos. El diseño transmite elegancia y practicidad.</p>
+            <div class="portfolio-metrics">
+              <div class="metric">
+                <i class="fas fa-arrow-up metric-icon"></i>
+                <div>
+                  <div class="metric-value">+150%</div>
+                  <div class="metric-label">Visitas</div>
+                </div>
+              </div>
+              <div class="metric">
+                <i class="fas fa-shopping-bag metric-icon"></i>
+                <div>
+                  <div class="metric-value">+80%</div>
+                  <div class="metric-label">Consultas</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-card">
+          <div class="portfolio-image">
+            <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600" alt="Tienda de Championes y Ropa Deportiva Leskchamps">
+          </div>
+          <div class="portfolio-content">
+            <span class="portfolio-category">E-Commerce Deportivo</span>
+            <h3>⚽ Tienda Leskchamps</h3>
+            <p>Sitio dinámico para amantes del deporte, con enfoque visual que resalta la energía y pasión por el fútbol.</p>
+            <div class="portfolio-metrics">
+              <div class="metric">
+                <i class="fas fa-futbol metric-icon"></i>
+                <div>
+                  <div class="metric-value">+200%</div>
+                  <div class="metric-label">Tráfico</div>
+                </div>
+              </div>
+              <div class="metric">
+                <i class="fas fa-shopping-cart metric-icon"></i>
+                <div>
+                  <div class="metric-value">+120%</div>
+                  <div class="metric-label">Conversiones</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-card">
+          <div class="portfolio-image">
+            <img src="https://images.unsplash.com/photo-1558326567-98ae2405596b?w=600" alt="Tienda de Postres Pilili">
+          </div>
+          <div class="portfolio-content">
+            <span class="portfolio-category">Landing Page</span>
+            <h3>🍰 Tienda de Postres Pilili</h3>
+            <p>Landing page minimalista y cálida diseñada para transmitir confianza y cercanía artesanal.</p>
+            <div class="portfolio-metrics">
+              <div class="metric">
+                <i class="fas fa-heart metric-icon"></i>
+                <div>
+                  <div class="metric-value">+95%</div>
+                  <div class="metric-label">Satisfacción</div>
+                </div>
+              </div>
+              <div class="metric">
+                <i class="fas fa-phone metric-icon"></i>
+                <div>
+                  <div class="metric-value">+100%</div>
+                  <div class="metric-label">Pedidos</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-        document.querySelectorAll('.animate-on-scroll').forEach(section => {
-            observer.observe(section);
-        });
+      <!-- Ver más proyectos -->
+      <div style="text-align: center; margin-top: 3rem;">
+        <a href="portafolio.html" class="btn btn-primary">Ver todos los proyectos <i class="fas fa-arrow-right"></i></a>
+      </div>
 
-        // Dark Mode
-        function initDarkMode() {
-            const darkModePreference = localStorage.getItem('darkMode');
-            if (darkModePreference === 'enabled') {
-                document.body.classList.add('dark-mode');
-            } else if (darkModePreference === 'disabled') {
-                document.body.classList.remove('dark-mode');
-            } else {
-                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                    document.body.classList.add('dark-mode');
-                }
-            }
-        }
-        
-        function toggleDarkMode() {
-            const isDarkMode = document.body.classList.toggle('dark-mode');
-            localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
-        }
-        
-        if (window.matchMedia) {
-            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-                if (!localStorage.getItem('darkMode')) {
-                    if (e.matches) {
-                        document.body.classList.add('dark-mode');
-                    } else {
-                        document.body.classList.remove('dark-mode');
-                    }
-                }
-            });
-        }
-        
-        initDarkMode();
-        
-        // Partículas que siguen al cursor
-        const heroSection = document.getElementById('heroSection');
-        const cursorGlow = document.getElementById('cursorGlow');
-        const particles = document.querySelectorAll('.hero-particle');
-        
-        let mouseX = 0;
-        let mouseY = 0;
-        
-        // Posiciones objetivo para cada partícula
-        const particleTargets = Array.from(particles).map(particle => ({
-            element: particle,
-            baseX: parseFloat(particle.style.left),
-            baseY: parseFloat(particle.style.top),
-            offsetX: (Math.random() - 0.5) * 30,
-            offsetY: (Math.random() - 0.5) * 30
-        }));
-        
-        // Mover el glow del cursor
-        document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-            
-            // Mover el glow
-            if (cursorGlow) {
-                cursorGlow.style.left = mouseX + 'px';
-                cursorGlow.style.top = mouseY + 'px';
-            }
-            
-            // Calcular posición relativa en el hero
-            const rect = heroSection.getBoundingClientRect();
-            const isInHero = mouseX >= rect.left && mouseX <= rect.right && 
-                           mouseY >= rect.top && mouseY <= rect.bottom;
-            
-            if (isInHero) {
-                const relX = ((mouseX - rect.left) / rect.width) * 100;
-                const relY = ((mouseY - rect.top) / rect.height) * 100;
-                
-                // Mover partículas hacia el cursor con offset
-                particleTargets.forEach((target, index) => {
-                    const moveX = (relX - target.baseX) * 0.3 + target.offsetX;
-                    const moveY = (relY - target.baseY) * 0.3 + target.offsetY;
-                    target.element.style.transform = `translate(${moveX}px, ${moveY}px)`;
-                });
-                
-                cursorGlow.style.opacity = '1';
-            } else {
-                // Restaurar partículas a su posición original
-                particleTargets.forEach(target => {
-                    target.element.style.transform = 'translate(0, 0)';
-                });
-                
-                cursorGlow.style.opacity = '0';
-            }
-        });
-        
-        // Ocultar cursor glow cuando sale de la ventana
-        document.addEventListener('mouseleave', () => {
-            if (cursorGlow) {
-                cursorGlow.style.opacity = '0';
-            }
-        });
-        
-        document.addEventListener('mouseenter', () => {
-            if (cursorGlow) {
-                cursorGlow.style.opacity = '1';
-            }
-        });
-        
-        // =============================================
-        // CANVAS INTERACTIVE PARTICLES EFFECT - ENHANCED
-        // =============================================
-        (function() {
-            var stage = document.getElementById('particlesCanvas'),
-                cb = stage.getBoundingClientRect(),
-                ctx = stage.getContext('2d'),
-                ratio = window.devicePixelRatio || 1,
-                mouse = { x: 0, y: 0 },
-                dots = [],
-                wide = 36,
-                high = Math.floor(wide / 2.2),
-                size = 40,
-                padding = 40;
+      <!-- Testimonials -->
+      <div class="testimonials-section">
+        <h3>Lo que dicen nuestros clientes</h3>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="testimonial-text">"Trabajar con Nathaniel fue una experiencia muy clara y cercana. Me explicó cada paso y me dio confianza en todo el proceso. Se nota la dedicación y el compromiso en su trabajo."</p>
+            <div class="testimonial-author">Milka Rivero</div>
+            <div class="testimonial-company">Almajo</div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="testimonial-text">"Lo que más destaco es la transparencia y el profesionalismo. Supo entender lo que necesitaba y me accompagnó con soluciones prácticas y bien pensadas. Recomiendo su servicio sin dudas."</p>
+            <div class="testimonial-author">Alex Lescano</div>
+            <div class="testimonial-company">Leskchamps</div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="testimonial-text">"Nathaniel no solo diseñó la página, también me ayudó a entender cómo aprovecharla mejor. Su trato es humano y paciente, y eso marca la diferencia. Sentí que realmente se preocupó por mi proyecto."</p>
+            <div class="testimonial-author">Camila Lima</div>
+            <div class="testimonial-company">Pilili</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-            // Color palette for particles - adapt to dark/light mode
-            var colors = document.body.classList.contains('dark-mode') ? [
-                'rgba(96, 165, 250, 0.95)',  // blue-400 - más brillante para modo oscuro
-                'rgba(147, 197, 253, 0.95)',  // blue-300
-                'rgba(0, 212, 255, 0.95)',   // cyan
-                'rgba(56, 189, 248, 0.95)',  // sky-400
-                'rgba(165, 180, 252, 0.95)'  // indigo-300
-            ] : [
-                'rgba(96, 165, 250, 0.95)',  // blue-400
-                'rgba(147, 197, 253, 0.95)',  // blue-300
-                'rgba(0, 212, 255, 0.95)',   // cyan
-                'rgba(56, 189, 248, 0.95)'   // sky-400
-            ];
+  <!-- About Section -->
+  <section id="nosotros">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-text">
+          <h2>Sobre <span>NTEC</span></h2>
+          <p>Soy Nathaniel, creador de NTEC, un emprendimiento nacido en Uruguay con la convicción de que cada negocio merece una presencia digital que refleje su esencia y potencie su crecimiento.</p>
+          <p>Mi camino comenzó con la curiosidad por entender cómo la tecnología podía transformar ideas en experiencias reales. Con el tiempo, esa curiosidad se convirtió en pasión: diseñar páginas web que no solo sean visualmente atractivas, sino también funcionales, seguras y capaces de generar resultados.</p>
+          <p>En NTEC no trabajo con fórmulas prefabricadas. Cada proyecto lo abordo como un desafío único: escucho la historia de la marca, analizo sus necesidades y construyo soluciones a medida. Mi objetivo es que cada cliente sienta que su página web es más que un producto: es una herramienta estratégica que transmite confianza, conecta con su audiencia y abre nuevas oportunidades.</p>
+          <p>Aunque mi emprendimiento está en crecimiento y mi cartera de clientes aún es pequeña, cada experiencia ha sido una oportunidad para demostrar que la dedicación, el detalle y la transparencia pueden marcar la diferencia. Lo que ofrezco no es cantidad, sino calidad: un acompañamiento cercano, soluciones claras y un compromiso real con el éxito de quienes confían en mí.</p>
+          <p>NTEC es el reflejo de mi visión: unir tecnología, diseño y marketing para que cada negocio, sin importar su tamaño, pueda destacarse en el mundo digital.</p>
+        </div>
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1739298061740-5ed03045b280?w=800" alt="Equipo trabajando">
+        </div>
+      </div>
 
-            // Update colors when dark mode changes
-            function updateParticleColors() {
-                if (document.body.classList.contains('dark-mode')) {
-                    colors = [
-                        'rgba(96, 165, 250, 0.95)',
-                        'rgba(147, 197, 253, 0.95)',
-                        'rgba(0, 212, 255, 0.95)',
-                        'rgba(56, 189, 248, 0.95)',
-                        'rgba(165, 180, 252, 0.95)'
-                    ];
-                } else {
-                    colors = [
-                        'rgba(96, 165, 250, 0.95)',
-                        'rgba(147, 197, 253, 0.95)',
-                        'rgba(0, 212, 255, 0.95)',
-                        'rgba(56, 189, 248, 0.95)'
-                    ];
-                }
-            }
-            
-            // Listen for dark mode changes
-            var darkModeObserver = new MutationObserver(function(mutations) {
-                mutations.forEach(function(mutation) {
-                    if (mutation.attributeName === 'class') {
-                        updateParticleColors();
-                    }
-                });
-            });
-            
-            darkModeObserver.observe(document.body, { attributes: true });
-            
-            // Initialize with correct colors
-            updateParticleColors();
-            window.onmousemove = function(e) {
-                var rect = stage.getBoundingClientRect();
-                mouse.x = (e.clientX - rect.left) * ratio;
-                mouse.y = (e.clientY - rect.top) * ratio;
-            };
+      <!-- Values -->
+      <div class="values-section">
+        <h3>Nuestros Valores</h3>
+        <p>Los principios que guían cada proyecto y cada relación con nuestros clientes</p>
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="value-icon red">
+              <i class="fas fa-handshake"></i>
+            </div>
+            <h4>🤝 Confianza</h4>
+            <p>Cada proyecto comienza con la transparencia. Creo en relaciones honestas, donde el cliente sabe exactamente qué esperar y cómo avanzamos. La confianza no se construye con promesas vacías, sino con resultados claros y comunicación abierta.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon yellow">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <h4>💡 Innovación</h4>
+            <p>El mundo digital cambia todos los días, y mi compromiso es estar siempre un paso adelante. Utilizo tecnologías de vanguardia y soluciones creativas para que cada negocio tenga una presencia moderna, competitiva y preparada para el futuro.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon blue">
+              <i class="fas fa-heart"></i>
+            </div>
+            <h4>👂 Cercanía</h4>
+            <p>No soy una agencia distante: trabajo de manera personalizada, escuchando cada necesidad y acompañando a mis clientes en todo el proceso. La cercanía me permite entender mejor cada proyecto y convertirlo en una solución que realmente conecta con su público.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon purple">
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>🌟 Excelencia</h4>
+            <p>La calidad no es negociable. Desde el diseño hasta el soporte técnico, cada detalle importa. Mi objetivo es que cada entrega supere expectativas y se convierta en una herramienta que aporte valor real al negocio.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-            window.onresize = function() {
-                resizeCanvas();
-            };
+  <!-- Contact Section -->
+  <section id="contacto">
+    <div class="container">
+      <div class="section-header">
+        <h2>¿Hablamos de tu <span>proyecto</span>?</h2>
+        <p>Solicita un presupuesto sin compromiso o escríbenos para discutir tu idea</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-form">
+          <form id="contactForm" onsubmit="handleSubmit(event)">
+            <div class="form-group">
+              <label for="name">Nombre completo</label>
+              <input type="text" id="name" name="name" required placeholder="Tu nombre">
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required placeholder="tu@email.com">
+            </div>
+            <div class="form-group">
+              <label for="phone">Teléfono (opcional)</label>
+              <input type="tel" id="phone" name="phone" placeholder="+598 96 616 638">
+            </div>
+            <div class="form-group">
+              <label for="message">Mensaje</label>
+              <textarea id="message" name="message" required placeholder="Cuéntanos sobre tu proyecto..."></textarea>
+            </div>
+            <button type="submit" class="btn-submit">
+              <i class="fas fa-paper-plane"></i> Enviar mensaje
+            </button>
+          </form>
+          <div class="payment-methods">
+            <h4>Medios de contacto:</h4>
+            <span>Email</span>
+            <span>WhatsApp</span>
+            <span>Teléfono</span>
+            <span>Email</span>
+            <p>Respondemos todas las consultas en menos de 24 horas hábiles</p>
+          </div>
+        </div>
+        <div class="contact-info">
+          <div class="contact-card">
+            <h3>Información de Contacto</h3>
+            <div class="contact-item">
+              <div class="contact-item-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div>
+                <div class="contact-item-label">Teléfono / WhatsApp</div>
+                <div class="contact-item-value">+598 96 616 638</div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div>
+                <div class="contact-item-label">Email</div>
+                <div class="contact-item-value">nservice7ech@gmail.com</div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div>
+                <div class="contact-item-label">Ubicación</div>
+                <div class="contact-item-value">El Pinar, Ciudad de la Costa</div>
+              </div>
+            </div>
+          </div>
+          <div class="schedule-card">
+            <h3>Horario de Atención</h3>
+            <div class="schedule-item">
+              <span>Lunes a Viernes</span>
+              <span>9:00 - 18:00</span>
+            </div>
+            <div class="schedule-item">
+              <span>Sábados</span>
+              <span>10:00 - 14:00</span>
+            </div>
+            <div class="schedule-item closed">
+              <span>Domingos</span>
+              <span>Cerrado</span>
+            </div>
+          </div>
+          <div class="response-card">
+            <h3>🚀 Respuesta Rápida</h3>
+            <p>Respondemos todas las consultas en menos de 24 horas hábiles</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-            function resizeCanvas() {
-                var rect = stage.parentElement.getBoundingClientRect();
-                ctx.canvas.width = rect.width * ratio;
-                ctx.canvas.height = rect.height * ratio;
-                cb = stage.getBoundingClientRect();
-                create();
-            }
-
-            // Setup
-            function create() {
-                dots = [];
-                var canvasWidth = ctx.canvas.width;
-                var canvasHeight = ctx.canvas.height;
-                
-                for (var i = -1; ++i < wide;) {
-                    var x = Math.floor((((canvasWidth - padding * 2) / (wide - 1)) * i) + padding) * ratio;
-
-                    for (var j = -1; ++j < high;) {
-                        var y = Math.floor((((canvasHeight - padding * 2) / (high - 1)) * j) + padding) * ratio;
-
-                        dots.push({
-                            x: x,
-                            y: y,
-                            ox: x,
-                            oy: y,
-                            size: 1
-                        });
-                    }
-                }
-            }
-
-            // Rendering and frame calculations
-            function render() {
-                ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-
-                // Draw glow effect first - larger and more visible
-                for (var i = 0; i < dots.length; i++) {
-                    var s = dots[i];
-                    var v = getV(s);
-                    
-                    // Dynamic color based on position
-                    var colorIndex = Math.floor((s.x / ctx.canvas.width) * colors.length);
-                    ctx.fillStyle = colors[colorIndex % colors.length].replace('0.95', '0.15');
-                    
-                    ctx.beginPath();
-                    ctx.arc(s.x + v.x, s.y + v.y, s.size * 3 * ratio, 0, 2 * Math.PI, false);
-                    ctx.fill();
-                }
-
-                // Draw dots with gradient colors
-                for (var i = 0; i < dots.length; i++) {
-                    var s = dots[i];
-                    var v = getV(s);
-                    
-                    // Different colors for variety
-                    var colorIndex = Math.floor((s.y / ctx.canvas.height) * colors.length);
-                    ctx.fillStyle = colors[colorIndex % colors.length];
-
-                    // Draw particle with size variation
-                    ctx.beginPath();
-                    ctx.arc(s.x + v.x, s.y + v.y, s.size * ratio, 0, 2 * Math.PI, false);
-                    ctx.fill();
-                }
-
-                // Draw connections with gradient effect
-                for (var i = 0; i < dots.length; i++) {
-                    var s = dots[i];
-                    var v = getV(s);
-                    var px = s.x + v.x;
-                    var py = s.y + v.y;
-                    
-                    // Connect to nearby dots
-                    for (var j = i + 1; j < dots.length; j++) {
-                        var s2 = dots[j];
-                        var v2 = getV(s2);
-                        var px2 = s2.x + v2.x;
-                        var py2 = s2.y + v2.y;
-                        
-                        var dist = getDistance({x: px, y: py}, {x: px2, y: py2});
-                        
-                        // Connection distance threshold
-                        if (dist < 120 * ratio) {
-                            // Opacity based on distance
-                            var opacity = (1 - dist / (120 * ratio)) * 0.25;
-                            ctx.strokeStyle = `rgba(96, 165, 250, ${opacity})`;
-                            ctx.lineWidth = (1 - dist / (120 * ratio)) * 1.5 * ratio;
-                            
-                            ctx.beginPath();
-                            ctx.moveTo(px, py);
-                            ctx.lineTo(px2, py2);
-                            ctx.stroke();
-                        }
-                    }
-                }
-            }
-
-            function getV(dot) {
-                var d = getDistance(dot, mouse);
-                
-                // Size based on distance - more dramatic effect
-                dot.size = (200 - d) / 35;
-                dot.size = dot.size < 1 ? 1 : dot.size;
-                dot.size = dot.size > 8 ? 8 : dot.size;
-
-                // Angle to mouse
-                dot.angle = getAngle(dot, mouse);
-
-                // Movement amount based on distance - smoother animation
-                var moveAmount = d > 25 ? 25 : d;
-                
-                return {
-                    x: moveAmount * Math.cos(dot.angle * Math.PI / 180),
-                    y: moveAmount * Math.sin(dot.angle * Math.PI / 180)
-                };
-            }
-
-            function getAngle(obj1, obj2) {
-                var dX = obj2.x - obj1.x;
-                var dY = obj2.y - obj1.y;
-                var angleDeg = Math.atan2(dY, dX) / Math.PI * 180;
-                return angleDeg;
-            }
-
-            function getDistance(obj1, obj2) {
-                var dx = obj1.x - obj2.x;
-                var dy = obj1.y - obj2.y;
-                return Math.sqrt(dx * dx + dy * dy);
-            }
-
-            // Animation
-            function animloop() {
-                render();
-                requestAnimationFrame(animloop);
-            }
-
-            // Initialize
-            resizeCanvas();
-            animloop();
-        })();
-    </script>
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#inicio" class="logo">NTEC</a>
+          <p>Soluciones tecnológicas que transforman tu negocio</p>
+          <div class="footer-contact">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:nservice7ech@gmail.com">nservice7ech@gmail.com</a>
+          </div>
+        </div>
+        <div>
+          <h3>Enlaces Rápidos</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="portafolio.html">Portafolio</a></li>
+            <li><a href="serviciotecnico.html">Servicio Técnico</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Servicios</h3>
+          <ul class="footer-links">
+            <li><a href="servicios.html">Desarrollo Web</a></li>
+            <li><a href="serviciotecnico.html">Servicio Técnico</a></li>
+            <li><a href="servicios.html">Marketing Digital</a></li>
+            <li><a href="servicios.html">SEO</a></li>
+            <li><a href="servicios.html">Transformación Digital</a></li>
+            <li><a href="servicios.html">Infraestructura IT</a></li>
+          </ul>
+        </div>
+        <div class="newsletter">
+          <h3>Newsletter</h3>
+          <p>Suscríbete para recibir tips, tendencias y ofertas exclusivas</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault()">
+            <input type="email" placeholder="Tu email">
+            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="social-links">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 NTEC. Todos los derechos reservados.</div>
+        <div class="footer-legal">
+          <a href="#">Política de Privacidad</a>
+          <a href="#">Términos y Condiciones</a>
+          <a href="#">Política de Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

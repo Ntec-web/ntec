@@ -1,542 +1,327 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servicio Técnico | NTEC - Reparación de Computadoras</title>
-    <meta name="description" content="NTEC ofrece servicio técnico profesional. Reparación de computadoras, laptops, mantenimiento, soporte técnico y consultoría. ¡Contáctanos!">
-    <link rel="stylesheet" href="theme.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🖥️</text></svg>">
-    <style>
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        
-        @media (max-width: 900px) {
-            .services-grid {
-                grid-template-columns: repeat(2, 1fr) !important;
-            }
-        }
-        
-        @media (max-width: 600px) {
-            .services-grid {
-                grid-template-columns: 1fr !important;
-            }
-        }
-        
-        /* Canvas interactivo */
-        #particlesCanvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 0;
-            opacity: 0.9;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servicio Técnico de Laptops - NTEC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="animacion.js" defer></script>
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 </head>
-<body style="background: #f5f7fa;">
-    
-    <!-- Partículas flotantes -->
-    <div class="particles">
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-    </div>
-    
-    <header>
-        <div class="logo-img"><img src="Ntec (3).png" alt="NTEC"></div>
-        <h1>Servicio Técnico</h1>
+<body>
+  <!-- Header -->
+  <header id="header">
+    <div class="container">
+      <div class="header-content">
+        <a href="index.html" class="logo">NTEC</a>
         <nav>
-            <a href="index.html">Inicio</a>
-            <a href="quienes-somos.html">Quiénes Somos</a>
-            <a href="desarrolloweb.html">Desarrollo Web</a>
-            <a href="serviciotecnico.html" class="active">Servicio Técnico</a>
-            <a href="contacto.html">Contacto</a>
-            <a href="https://wa.me/59896616638" target="_blank" class="whatsapp-link">
-                <i class="fab fa-whatsapp"></i> WhatsApp
-            </a>
-            <button class="dark-mode-toggle" onclick="toggleDarkMode()" aria-label="Cambiar modo oscuro">
-                <i class="fas fa-sun sun-icon"></i>
-                <i class="fas fa-moon moon-icon"></i>
-            </button>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="portafolio.html">Portafolio</a></li>
+            <li><a href="serviciotecnico.html">Servicio Técnico</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="index.html#contacto">Contacto</a></li>
+          </ul>
         </nav>
-    </header>
+        <button class="mobile-menu-btn" onclick="toggleMenu()">
+          <i class="fas fa-bars"></i>
+        </button>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Cambiar tema">
+          <i class="fas fa-moon" id="theme-icon"></i>
+        </button>
+      </div>
+    </div>
+  </header>
 
-    <!-- Page Header -->
-    <section class="animate-on-scroll" style="background: #0a2540; padding: 8rem 2rem; text-align: center; position: relative;">
-        <canvas id="particlesCanvas"></canvas>
-        <h1 style="font-size: 2rem; font-weight: 700; color: white; margin-bottom: 0.5rem; position: relative; z-index: 1;">Servicio Técnico Profesional</h1>
-        <p style="color: rgba(255, 255, 255, 0.7); font-size: 1rem; position: relative; z-index: 1;">Soluciones integrales para todas tus necesidades tecnológicas</p>
-    </section>
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="index.html" onclick="toggleMenu()">Inicio</a></li>
+      <li><a href="servicios.html" onclick="toggleMenu()">Servicios</a></li>
+      <li><a href="portafolio.html" onclick="toggleMenu()">Portafolio</a></li>
+      <li><a href="serviciotecnico.html" onclick="toggleMenu()">Servicio Técnico</a></li>
+      <li><a href="nosotros.html" onclick="toggleMenu()">Nosotros</a></li>
+      <li><a href="index.html#contacto" onclick="toggleMenu()">Contacto</a></li>
+    </ul>
+  </div>
 
-    <!-- Banner de confianza -->
-    <section style="background: #0066cc; padding: 1rem 2rem; text-align: center;">
-        <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: center; align-items: center; gap: 2rem; flex-wrap: wrap; color: white; font-size: 0.9rem;">
-            <span style="display: flex; align-items: center; gap: 6px; font-weight: 500;">
-                ✓ Diagnóstico Sin Costo
-            </span>
-            <span style="display: flex; align-items: center; gap: 6px; font-weight: 500;">
-                ✓ Garantía Escrita
-            </span>
-            <span style="display: flex; align-items: center; gap: 6px; font-weight: 500;">
-                ✓ Reparación Express
-            </span>
-        </div>
-    </section>
-
-    <!-- Servicios de Servicio Técnico -->
-    <section style="padding: 3.5rem 2rem; background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);">
-        <div style="max-width: 1100px; margin: 0 auto;">
-            <div class="services-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
-                <!-- Servicio 1 -->
-                <div class="hvr-float animate__animated animate__fadeInUp" style="background: linear-gradient(135deg, #0a2540 0%, #1a3a5c 100%); border: 1px solid rgba(0,102,204,0.3); border-radius: 12px; padding: 1.5rem; transition: all 0.3s; position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-8px)'; this.style.borderColor='#0066cc'; this.style.boxShadow='0 15px 40px rgba(0,102,204,0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(0,102,204,0.3)'; this.style.boxShadow='none'">
-                    <div style="position: absolute; top: -20px; right: -20px; width: 100px; height: 100px; background: radial-gradient(circle, rgba(0,212,255,0.15), transparent 70%); pointer-events: none;"></div>
-                    <div style="font-size: 1.75rem; margin-bottom: 0.75rem;">💻</div>
-                    <h3 style="color: white; margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 600;">Reparación de Computadoras</h3>
-                    <p style="color: rgba(255,255,255,0.7); font-size: 0.85rem; margin-bottom: 1rem; line-height: 1.5;">Diagnóstico y solución de fallas en hardware y software</p>
-                    <ul style="list-style: none; padding: 0; margin: 0;">
-                        <li style="padding: 0.3rem 0; color: rgba(255,255,255,0.7); font-size: 0.85rem;">• Reparación de laptops todas las marcas</li>
-                        <li style="padding: 0.3rem 0; color: rgba(255,255,255,0.7); font-size: 0.85rem;">• Reemplazo de componentes</li>
-                        <li style="padding: 0.3rem 0; color: rgba(255,255,255,0.7); font-size: 0.85rem;">• Mantenimiento preventivo</li>
-                        <li style="padding: 0.3rem 0; color: rgba(255,255,255,0.7); font-size: 0.85rem;">• Optimización y diagnóstico</li>
-                    </ul>
-                </div>
-                
-                <!-- Servicio 2 -->
-                <div class="hvr-float animate__animated animate__fadeInUp" style="background: linear-gradient(135deg, #0a2540 0%, #1a3a5c 100%); border: 1px solid rgba(0,102,204,0.3); border-radius: 12px; padding: 1.5rem; transition: all 0.3s; position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-8px)'; this.style.borderColor='#0066cc'; this.style.boxShadow='0 15px 40px rgba(0,102,204,0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(0,102,204,0.3)'; this.style.boxShadow='none'">
-                    <div style="position: absolute; top: -20px; right: -20px; width: 100px; height: 100px; background: radial-gradient(circle, rgba(0,212,255,0.15), transparent 70%); pointer-events: none;"></div>
-                    <div style="font-size: 1.75rem; margin-bottom: 0.75rem;">🧹</div>
-                    <h3 style="color: white; margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 600;">Optimización y Mantenimiento</h3>
-                    <p style="color: rgba(255,255,255,0.7); font-size: 0.85rem; margin-bottom: 1rem; line-height: 1.5;">Mantén tu equipo en perfecto estado</p>
-                    <ul style="list-style: none; padding: 0; margin: 0;">
-                        <li style="padding: 0.3rem 0; color: rgba(255,255,255,0.7); font-size: 0.85rem;">• Limpieza interna profesional</li>
-                        <li style="padding: 0.3rem 0; color: rgba(255,255,255,0.7); font-size: 0.85rem;">• Cambio de pasta térmica</li>
-                        <li style="padding: 0.3rem 0; color: rgba(255,255,255,0.7); font-size: 0.85rem;">• Actualización de hardware</li>
-                        <li style="padding: 0.3rem 0; color: rgba(255,255,255,0.7); font-size: 0.85rem;">• Instalación de Windows</li>
-                    </ul>
-                </div>
-                
-                <!-- Servicio 3 -->
-                <div class="hvr-float animate__animated animate__fadeInUp" style="background: linear-gradient(135deg, #0a2540 0%, #1a3a5c 100%); border: 1px solid rgba(0,102,204,0.3); border-radius: 12px; padding: 1.5rem; transition: all 0.3s; position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-8px)'; this.style.borderColor='#0066cc'; this.style.boxShadow='0 15px 40px rgba(0,102,204,0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(0,102,204,0.3)'; this.style.boxShadow='none'">
-                    <div style="position: absolute; top: -20px; right: -20px; width: 100px; height: 100px; background: radial-gradient(circle, rgba(0,212,255,0.15), transparent 70%); pointer-events: none;"></div>
-                    <div style="font-size: 1.75rem; margin-bottom: 0.75rem;">🔧</div>
-                    <h3 style="color: white; margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 600;">Soporte Técnico</h3>
-                    <p style="color: rgba(255,255,255,0.7); font-size: 0.85rem; margin-bottom: 1rem; line-height: 1.5;">Asistencia profesional para tus consultas</p>
-                    <ul style="list-style: none; padding: 0; margin: 0;">
-                        <li style="padding: 0.3rem 0; color: rgba(255,255,255,0.7); font-size: 0.85rem;">• Configuración de redes</li>
-                        <li style="padding: 0.3rem 0; color: rgba(255,255,255,0.7); font-size: 0.85rem;">• Instalación de software</li>
-                        <li style="padding: 0.3rem 0; color: rgba(255,255,255,0.7); font-size: 0.85rem;">• Eliminación de virus</li>
-                        <li style="padding: 0.3rem 0; color: rgba(255,255,255,0.7); font-size: 0.85rem;">• Asesoría técnica</li>
-                    </ul>
-                </div>
-                
-                <!-- Servicio 4 -->
-                <div class="hvr-float animate__animated animate__fadeInUp" style="background: linear-gradient(135deg, #0a2540 0%, #1a3a5c 100%); border: 1px solid rgba(0,102,204,0.3); border-radius: 12px; padding: 1.5rem; transition: all 0.3s; position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-8px)'; this.style.borderColor='#0066cc'; this.style.boxShadow='0 15px 40px rgba(0,102,204,0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(0,102,204,0.3)'; this.style.boxShadow='none'">
-                    <div style="position: absolute; top: -20px; right: -20px; width: 100px; height: 100px; background: radial-gradient(circle, rgba(0,212,255,0.15), transparent 70%); pointer-events: none;"></div>
-                    <div style="font-size: 1.75rem; margin-bottom: 0.75rem;">💡</div>
-                    <h3 style="color: white; margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 600;">Consultoría Tech</h3>
-                    <p style="color: rgba(255,255,255,0.7); font-size: 0.85rem; margin-bottom: 1rem; line-height: 1.5;">Recomendaciones expertas para tu tecnología</p>
-                    <ul style="list-style: none; padding: 0; margin: 0;">
-                        <li style="padding: 0.3rem 0; color: rgba(255,255,255,0.7); font-size: 0.85rem;">• Recomendaciones de compra</li>
-                        <li style="padding: 0.3rem 0; color: rgba(255,255,255,0.7); font-size: 0.85rem;">• Mejora de rendimiento</li>
-                        <li style="padding: 0.3rem 0; color: rgba(255,255,255,0.7); font-size: 0.85rem;">• Compatibilidad de componentes</li>
-                        <li style="padding: 0.3rem 0; color: rgba(255,255,255,0.7); font-size: 0.85rem;">• Asesoría para empresas</li>
-                    </ul>
-                </div>
-                
-                <!-- Servicio 5 -->
-                <div class="hvr-float animate__animated animate__fadeInUp" style="background: linear-gradient(135deg, #0a2540 0%, #1a3a5c 100%); border: 1px solid rgba(0,102,204,0.3); border-radius: 12px; padding: 1.5rem; transition: all 0.3s; position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-8px)'; this.style.borderColor='#0066cc'; this.style.boxShadow='0 15px 40px rgba(0,102,204,0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(0,102,204,0.3)'; this.style.boxShadow='none'">
-                    <div style="position: absolute; top: -20px; right: -20px; width: 100px; height: 100px; background: radial-gradient(circle, rgba(0,212,255,0.15), transparent 70%); pointer-events: none;"></div>
-                    <div style="font-size: 1.75rem; margin-bottom: 0.75rem;">🖥️</div>
-                    <h3 style="color: white; margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 600;">Recuperación de Datos</h3>
-                    <p style="color: rgba(255,255,255,0.7); font-size: 0.85rem; margin-bottom: 1rem; line-height: 1.5;">Recupera tu información importante</p>
-                    <ul style="list-style: none; padding: 0; margin: 0;">
-                        <li style="padding: 0.3rem 0; color: rgba(255,255,255,0.7); font-size: 0.85rem;">• Discos duros dañados</li>
-                        <li style="padding: 0.3rem 0; color: rgba(255,255,255,0.7); font-size: 0.85rem;">• Archivos eliminados</li>
-                        <li style="padding: 0.3rem 0; color: rgba(255,255,255,0.7); font-size: 0.85rem;">• Pendrives y tarjetas</li>
-                        <li style="padding: 0.3rem 0; color: rgba(255,255,255,0.7); font-size: 0.85rem;">• Copias de seguridad</li>
-                    </ul>
-                </div>
-                
-                <!-- Servicio 6 -->
-                <div class="hvr-float animate__animated animate__fadeInUp" style="background: linear-gradient(135deg, #0a2540 0%, #1a3a5c 100%); border: 1px solid rgba(0,102,204,0.3); border-radius: 12px; padding: 1.5rem; transition: all 0.3s; position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-8px)'; this.style.borderColor='#0066cc'; this.style.boxShadow='0 15px 40px rgba(0,102,204,0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(0,102,204,0.3)'; this.style.boxShadow='none'">
-                    <div style="position: absolute; top: -20px; right: -20px; width: 100px; height: 100px; background: radial-gradient(circle, rgba(0,212,255,0.15), transparent 70%); pointer-events: none;"></div>
-                    <div style="font-size: 1.75rem; margin-bottom: 0.75rem;">🔒</div>
-                    <h3 style="color: white; margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 600;">Seguridad y Redes</h3>
-                    <p style="color: rgba(255,255,255,0.7); font-size: 0.85rem; margin-bottom: 1rem; line-height: 1.5;">Protege tu información y conectividad</p>
-                    <ul style="list-style: none; padding: 0; margin: 0;">
-                        <li style="padding: 0.3rem 0; color: rgba(255,255,255,0.7); font-size: 0.85rem;">• Configuración de routers</li>
-                        <li style="padding: 0.3rem 0; color: rgba(255,255,255,0.7); font-size: 0.85rem;">• Redes WiFi</li>
-                        <li style="padding: 0.3rem 0; color: rgba(255,255,255,0.7); font-size: 0.85rem;">• Antivirus y firewall</li>
-                        <li style="padding: 0.3rem 0; color: rgba(255,255,255,0.7); font-size: 0.85rem;">• Backup</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Marcas que trabajamos -->
-    <section style="padding: 3rem 2rem; background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%); text-align: center;">
-        <div style="max-width: 1100px; margin: 0 auto;">
-            <h2 style="font-size: 1.25rem; font-weight: 700; color: #1a1a2e; margin-bottom: 0.5rem;">Marcas que Trabajamos</h2>
-            <p style="color: #64748b; margin-bottom: 1.5rem; font-size: 0.9rem;">Servicio técnico para todas las marcas líderes del mercado</p>
-            
-            <div style="display: flex; justify-content: center; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
-                <div style="padding: 1rem 1.5rem; background: white; border-radius: 8px; border: 1px solid #e2e8f0; transition: all 0.3s; min-width: 100px;" onmouseover="this.style.borderColor='#0066cc'; this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-                    <i class="fas fa-laptop" style="font-size: 1.5rem; color: #0096d3;"></i>
-                    <div style="font-weight: 600; color: #1a1a2e; font-size: 0.8rem; margin-top: 0.5rem;">HP</div>
-                </div>
-                <div style="padding: 1rem 1.5rem; background: white; border-radius: 8px; border: 1px solid #e2e8f0; transition: all 0.3s; min-width: 100px;" onmouseover="this.style.borderColor='#0066cc'; this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-                    <i class="fas fa-desktop" style="font-size: 1.5rem; color: #007db8;"></i>
-                    <div style="font-weight: 600; color: #1a1a2e; font-size: 0.8rem; margin-top: 0.5rem;">Dell</div>
-                </div>
-                <div style="padding: 1rem 1.5rem; background: white; border-radius: 8px; border: 1px solid #e2e8f0; transition: all 0.3s; min-width: 100px;" onmouseover="this.style.borderColor='#0066cc'; this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-                    <i class="fas fa-computer" style="font-size: 1.5rem; color: #e2231a;"></i>
-                    <div style="font-weight: 600; color: #1a1a2e; font-size: 0.8rem; margin-top: 0.5rem;">Lenovo</div>
-                </div>
-                <div style="padding: 1rem 1.5rem; background: white; border-radius: 8px; border: 1px solid #e2e8f0; transition: all 0.3s; min-width: 100px;" onmouseover="this.style.borderColor='#0066cc'; this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-                    <i class="fas fa-microchip" style="font-size: 1.5rem; color: #003399;"></i>
-                    <div style="font-weight: 600; color: #1a1a2e; font-size: 0.8rem; margin-top: 0.5rem;">Asus</div>
-                </div>
-                <div style="padding: 1rem 1.5rem; background: white; border-radius: 8px; border: 1px solid #e2e8f0; transition: all 0.3s; min-width: 100px;" onmouseover="this.style.borderColor='#0066cc'; this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-                    <i class="fas fa-server" style="font-size: 1.5rem; color: #83b81a;"></i>
-                    <div style="font-weight: 600; color: #1a1a2e; font-size: 0.8rem; margin-top: 0.5rem;">Acer</div>
-                </div>
-                <div style="padding: 1rem 1.5rem; background: white; border-radius: 8px; border: 1px solid #e2e8f0; transition: all 0.3s; min-width: 100px;" onmouseover="this.style.borderColor='#0066cc'; this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-                    <i class="fas fa-mobile-alt" style="font-size: 1.5rem; color: #1428a0;"></i>
-                    <div style="font-weight: 600; color: #1a1a2e; font-size: 0.8rem; margin-top: 0.5rem;">Samsung</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Beneficios -->
-    <section class="animate-on-scroll" style="padding: 4rem 2rem; background: #0a2540;">
-        <div style="max-width: 1100px; margin: 0 auto;">
-            <div style="text-align: center; margin-bottom: 2.5rem;">
-                <h2 style="font-size: 1.75rem; font-weight: 700; color: white; margin-bottom: 0.5rem;">¿Por qué elegir NTEC?</h2>
-                <p style="color: rgba(255,255,255,0.7); font-size: 1rem; max-width: 600px; margin: 0 auto;">Nos diferenciamos por la transparencia y la rapidez</p>
-            </div>
-            
-            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;">
-                <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; text-align: center;">
-                    <div style="font-size: 2rem; margin-bottom: 0.75rem; color: #0066cc;">✓</div>
-                    <h4 style="font-size: 1rem; font-weight: 600; color: white; margin-bottom: 0.5rem;">Garantía Asegurada</h4>
-                    <p style="font-size: 0.85rem; color: rgba(255,255,255,0.6); margin: 0;">90 días de garantía por escrito</p>
-                </div>
-                
-                <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; text-align: center;">
-                    <div style="font-size: 2rem; margin-bottom: 0.75rem; color: #0066cc;">✓</div>
-                    <h4 style="font-size: 1rem; font-weight: 600; color: white; margin-bottom: 0.5rem;">Diagnóstico Sin Costo</h4>
-                    <p style="font-size: 0.85rem; color: rgba(255,255,255,0.6); margin: 0;">Revisamos tu equipo sin costo</p>
-                </div>
-                
-                <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; text-align: center;">
-                    <div style="font-size: 2rem; margin-bottom: 0.75rem; color: #0066cc;">✓</div>
-                    <h4 style="font-size: 1rem; font-weight: 600; color: white; margin-bottom: 0.5rem;">Atención Rápida</h4>
-                    <p style="font-size: 0.85rem; color: rgba(255,255,255,0.6); margin: 0;">Reparaciones en 24-48 horas</p>
-                </div>
-                
-                <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; text-align: center;">
-                    <div style="font-size: 2rem; margin-bottom: 0.75rem; color: #0066cc;">✓</div>
-                    <h4 style="font-size: 1rem; font-weight: 600; color: white; margin-bottom: 0.5rem;">Servicio Local</h4>
-                    <p style="font-size: 0.85rem; color: rgba(255,255,255,0.6); margin: 0;">Ciudad de la Costa</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA -->
-    <section style="background: #1a1a2e; color: white; padding: 3rem 2rem; text-align: center;">
-        <h2 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: white;">¿Tu equipo necesita reparación?</h2>
-        <p style="color: rgba(255, 255, 255, 0.7); margin-bottom: 1.5rem; font-size: 0.9rem;">Contáctanos y te presupuestamos sin compromiso</p>
-        <a href="contacto.html" style="display: inline-flex; align-items: center; gap: 8px; background: #0066cc; color: white; padding: 0.75rem 1.5rem; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: all 0.3s;" onmouseover="this.style.background='#0052a3'; this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#0066cc'; this.style.transform='translateY(0)'">
-            <i class="fab fa-whatsapp"></i> Solicitar Presupuesto
+  <!-- Hero Section -->
+  <section id="inicio" style="min-height: 60vh; padding-top: 120px;">
+    <div class="hero-bg"></div>
+    <div class="container">
+      <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+        <h1 style="font-size: 3rem; font-weight: 800; margin-bottom: 1.5rem; color: var(--dark);">
+          Servicio Técnico de <span style="background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Laptops</span>
+        </h1>
+        <p style="font-size: 1.25rem; color: var(--gray); margin-bottom: 2rem;">
+          Reparación, mantenimiento y optimización de laptops de todas las marcas. Servicio rápido, confiable y con garantía.
+        </p>
+        <a href="index.html#contacto" class="btn btn-primary">
+          Solicitar Servicio
+          <i class="fas fa-arrow-right"></i>
         </a>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer style="background: #0f172a; color: #9ca3af; padding: 3rem 2rem 1.5rem; border-top: 1px solid #1f2937;">
-        <div style="max-width: 1100px; margin: 0 auto;">
-            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-bottom: 2.5rem;">
-                <div>
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
-                        <div style="background: #0066cc; padding: 0.4rem; border-radius: 4px;">
-                            <span style="font-size: 1.25rem;">🖥️</span>
-                        </div>
-                        <span style="font-size: 1.1rem; font-weight: 700; color: white;">NTEC Uruguay</span>
-                    </div>
-                    <p style="font-size: 0.8rem; line-height: 1.5;">Expertos en desarrollo web y servicio técnico profesional.</p>
-                </div>
-
-                <div>
-                    <h4 style="font-size: 0.95rem; font-weight: 600; color: white; margin-bottom: 1rem;">Enlaces</h4>
-                    <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.8; font-size: 0.8rem;">
-                        <li><a href="index.html" style="color: #9ca3af; text-decoration: none;" onmouseover="this.style.color='#0066cc'" onmouseout="this.style.color='#9ca3af'">Inicio</a></li>
-                        <li><a href="desarrolloweb.html" style="color: #9ca3af; text-decoration: none;" onmouseover="this.style.color='#0066cc'" onmouseout="this.style.color='#9ca3af'">Desarrollo Web</a></li>
-                        <li><a href="serviciotecnico.html" style="color: #9ca3af; text-decoration: none;" onmouseover="this.style.color='#0066cc'" onmouseout="this.style.color='#9ca3af'">Servicio Técnico</a></li>
-                        <li><a href="contacto.html" style="color: #9ca3af; text-decoration: none;" onmouseover="this.style.color='#0066cc'" onmouseout="this.style.color='#9ca3af'">Contacto</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 style="font-size: 0.95rem; font-weight: 600; color: white; margin-bottom: 1rem;">Servicios</h4>
-                    <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.8; font-size: 0.8rem;">
-                        <li><a href="serviciotecnico.html" style="color: #9ca3af; text-decoration: none;" onmouseover="this.style.color='#0066cc'" onmouseout="this.style.color='#9ca3af'">Reparación PC</a></li>
-                        <li><a href="serviciotecnico.html" style="color: #9ca3af; text-decoration: none;" onmouseover="this.style.color='#0066cc'" onmouseout="this.style.color='#9ca3af'">Limpieza de Virus</a></li>
-                        <li><a href="desarrolloweb.html" style="color: #9ca3af; text-decoration: none;" onmouseover="this.style.color='#0066cc'" onmouseout="this.style.color='#9ca3af'">Páginas Web</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 style="font-size: 0.95rem; font-weight: 600; color: white; margin-bottom: 1rem;">Contáctanos</h4>
-                    <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.8; font-size: 0.8rem;">
-                        <li style="color: #9ca3af;"><span style="color: white; font-weight: 500;">Dirección:</span> El Pinar, Ciudad de la Costa</li>
-                        <li style="color: #9ca3af;"><span style="color: white; font-weight: 500;">Teléfono:</span> +598 96 616 638</li>
-                        <li style="color: #9ca3af;"><span style="color: white; font-weight: 500;">Email:</span> nservice7ech@gmail.com</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div style="border-top: 1px solid #1f2937; padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-                <p style="color: #6b7280; font-size: 0.75rem; margin: 0;">© 2026 NTEC. Todos los derechos reservados.</p>
-                <div style="display: flex; gap: 1.5rem;">
-                    <a href="#" style="color: #6b7280; text-decoration: none; font-size: 0.75rem;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#6b7280'">Política de Privacidad</a>
-                    <a href="#" style="color: #6b7280; text-decoration: none; font-size: 0.75rem;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#6b7280'">Términos y Condiciones</a>
-                </div>
-            </div>
+  <!-- Services Section -->
+  <section id="servicios" style="padding: 4rem 0;">
+    <div class="container">
+      <div class="section-header">
+        <h2>Nuestros <span>Servicios</span></h2>
+        <p>Soluciones completas para tu laptop</p>
+      </div>
+      
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon blue">
+            <i class="fas fa-microchip"></i>
+          </div>
+          <h3>Reparación de Hardware</h3>
+          <p>Cambio de pantallas, teclados, baterías, conectores y componentes dañados</p>
         </div>
-    </footer>
-
-    <script>
-        // Animación al hacer scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry, index) => {
-                if (entry.isIntersecting) {
-                    setTimeout(() => {
-                        entry.target.classList.add('visible');
-                    }, index * 100);
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.animate-on-scroll').forEach(section => {
-            observer.observe(section);
-        });
-
-        // Dark Mode
-        function initDarkMode() {
-            const darkModePreference = localStorage.getItem('darkMode');
-            if (darkModePreference === 'enabled') {
-                document.body.classList.add('dark-mode');
-            } else if (darkModePreference === 'disabled') {
-                document.body.classList.remove('dark-mode');
-            } else {
-                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                    document.body.classList.add('dark-mode');
-                }
-            }
-        }
         
-        function toggleDarkMode() {
-            const isDarkMode = document.body.classList.toggle('dark-mode');
-            localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
-        }
+        <div class="service-card">
+          <div class="service-icon purple">
+            <i class="fas fa-virus-slash"></i>
+          </div>
+          <h3>Limpieza y Virus</h3>
+          <p>Eliminación de virus, malware, limpieza interna y instalación de antivirus</p>
+        </div>
         
-        if (window.matchMedia) {
-            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-                if (!localStorage.getItem('darkMode')) {
-                    if (e.matches) {
-                        document.body.classList.add('dark-mode');
-                    } else {
-                        document.body.classList.remove('dark-mode');
-                    }
-                }
-            });
-        }
+        <div class="service-card">
+          <div class="service-icon green">
+            <i class="fas fa-tachometer-alt"></i>
+          </div>
+          <h3>Optimización</h3>
+          <p>Aumenta la velocidad de tu laptop, limpieza de Windows y macOS</p>
+        </div>
         
-        initDarkMode();
+        <div class="service-card">
+          <div class="service-icon orange">
+            <i class="fas fa-memory"></i>
+          </div>
+          <h3>Upgrade de RAM</h3>
+          <p>Ampliación de memoria RAM y disco SSD para mejor rendimiento</p>
+        </div>
         
-        // =============================================
-        // CANVAS INTERACTIVE PARTICLES EFFECT
-        // =============================================
-        (function() {
-            var stage = document.getElementById('particlesCanvas');
-            if (!stage) return;
-            
-            var cb = stage.getBoundingClientRect(),
-                ctx = stage.getContext('2d'),
-                ratio = window.devicePixelRatio || 1,
-                mouse = { x: 0, y: 0 },
-                dots = [],
-                wide = 30,
-                high = 15,
-                padding = 60;
+        <div class="service-card">
+          <div class="service-icon indigo">
+            <i class="fas fa-windows"></i>
+          </div>
+          <h3>Instalación de SO</h3>
+          <p>Instalación y configuración de Windows, Linux y macOS</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon teal">
+            <i class="fas fa-fan"></i>
+          </div>
+          <h3>Thermal Paste</h3>
+          <p>Cambio de pasta térmica y limpieza de sistema de refrigeración</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-            window.onmousemove = function(e) {
-                var rect = stage.getBoundingClientRect();
-                mouse.x = (e.clientX - rect.left) * ratio;
-                mouse.y = (e.clientY - rect.top) * ratio;
-            };
+  <!-- Brands Section -->
+  <section style="padding: 4rem 0; background: #f8fafc;">
+    <div class="container">
+      <div class="section-header">
+        <h2>Marcas que <span>Reparamos</span></h2>
+      </div>
+      <div style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; font-size: 2rem; color: var(--gray);">
+        <span><i class="fab fa-apple"></i> Apple</span>
+        <span><i class="fab fa-windows"></i> Dell</span>
+        <span><i class="fab fa-windows"></i> HP</span>
+        <span><i class="fab fa-windows"></i> Lenovo</span>
+        <span><i class="fab fa-windows"></i> ASUS</span>
+        <span><i class="fab fa-windows"></i> Acer</span>
+      </div>
+    </div>
+  </section>
 
-            window.onresize = function() {
-                resizeCanvas();
-            };
+  <!-- Process Section -->
+  <section style="padding: 4rem 0;">
+    <div class="container">
+      <div class="section-header">
+        <h2>Cómo <span>Funciona</span></h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;">
+        <div style="text-align: center; padding: 2rem;">
+          <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem; color: white;">
+            <i class="fas fa-phone-alt"></i>
+          </div>
+          <h3 style="margin-bottom: 0.5rem;">1. Contactanos</h3>
+          <p style="color: var(--gray);">Llámanos o escríbenos para describir el problema</p>
+        </div>
+        <div style="text-align: center; padding: 2rem;">
+          <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem; color: white;">
+            <i class="fas fa-tools"></i>
+          </div>
+          <h3 style="margin-bottom: 0.5rem;">2. Diagnóstico</h3>
+          <p style="color: var(--gray);">Evaluamos tu laptop y te informamos el costo</p>
+        </div>
+        <div style="text-align: center; padding: 2rem;">
+          <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem; color: white;">
+            <i class="fas fa-wrench"></i>
+          </div>
+          <h3 style="margin-bottom: 0.5rem;">3. Reparación</h3>
+          <p style="color: var(--gray);">Realizamos la reparación en el menor tiempo posible</p>
+        </div>
+        <div style="text-align: center; padding: 2rem;">
+          <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem; color: white;">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <h3 style="margin-bottom: 0.5rem;">4. Entrega</h3>
+          <p style="color: var(--gray);">Tu laptop lista con garantía del servicio</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-            function resizeCanvas() {
-                var rect = stage.parentElement.getBoundingClientRect();
-                ctx.canvas.width = rect.width * ratio;
-                ctx.canvas.height = rect.height * ratio;
-                cb = stage.getBoundingClientRect();
-                create();
-            }
+  <!-- Contact Section -->
+  <section id="contacto" style="padding: 4rem 0; background: white;">
+    <div class="container">
+      <div class="section-header">
+        <h2>Solicita tu <span>Presupuesto</span></h2>
+        <p>Contáctanos para reparacion de laptops en Uruguay</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-form">
+          <form id="contactForm" onsubmit="handleSubmit(event)">
+            <div class="form-group">
+              <label for="name">Nombre completo</label>
+              <input type="text" id="name" name="name" required placeholder="Tu nombre">
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required placeholder="tu@email.com">
+            </div>
+            <div class="form-group">
+              <label for="phone">Teléfono</label>
+              <input type="tel" id="phone" name="phone" placeholder="+598 96 616 638">
+            </div>
+            <div class="form-group">
+              <label for="service">Tipo de servicio</label>
+              <select id="service" name="service" style="width: 100%; padding: 0.875rem 1rem; border: 1px solid #e2e8f0; border-radius: 0.75rem; font-size: 1rem;">
+                <option value="">Selecciona un servicio</option>
+                <option value="pantalla">Cambio de pantalla</option>
+                <option value="teclado">Cambio de teclado</option>
+                <option value="bateria">Cambio de batería</option>
+                <option value="virus">Limpieza de virus</option>
+                <option value="optimizacion">Optimización</option>
+                <option value="disco">Upgrade de SSD/RAM</option>
+                <option value="otro">Otro problema</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Describe el problema</label>
+              <textarea id="message" name="message" required placeholder="Describe el problema de tu laptop..."></textarea>
+            </div>
+            <button type="submit" class="btn-submit">
+              <i class="fas fa-paper-plane"></i> Enviar solicitud
+            </button>
+          </form>
+        </div>
+        <div class="contact-info">
+          <div class="contact-card">
+            <h3>Información de Contacto</h3>
+            <div class="contact-item">
+              <div class="contact-item-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div>
+                <div class="contact-item-label">Teléfono / WhatsApp</div>
+                <div class="contact-item-value">+598 96 616 638</div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div>
+                <div class="contact-item-label">Email</div>
+                <div class="contact-item-value">nservice7ech@gmail.com</div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div>
+                <div class="contact-item-label">Ubicación</div>
+                <div class="contact-item-value">El Pinar, Ciudad de la Costa</div>
+              </div>
+            </div>
+          </div>
+          <div class="schedule-card">
+            <h3>Horario de Atención</h3>
+            <div class="schedule-item">
+              <span>Lunes a Viernes</span>
+              <span>9:00 - 18:00</span>
+            </div>
+            <div class="schedule-item">
+              <span>Sábados</span>
+              <span>10:00 - 14:00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-            function create() {
-                dots = [];
-                var canvasWidth = ctx.canvas.width;
-                var canvasHeight = ctx.canvas.height;
-                
-                for (var i = -1; ++i < wide;) {
-                    var x = Math.floor((((canvasWidth - padding * 2) / (wide - 1)) * i) + padding) * ratio;
-
-                    for (var j = -1; ++j < high;) {
-                        var y = Math.floor((((canvasHeight - padding * 2) / (high - 1)) * j) + padding) * ratio;
-
-                        dots.push({
-                            x: x,
-                            y: y,
-                            ox: x,
-                            oy: y,
-                            size: 1
-                        });
-                    }
-                }
-            }
-
-            function render() {
-                ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-
-                // Draw glow effect first
-                ctx.fillStyle = 'rgba(96, 165, 250, 0.1)';
-                for (var i = 0; i < dots.length; i++) {
-                    var s = dots[i];
-                    var v = getV(s);
-                    ctx.beginPath();
-                    ctx.arc(s.x + v.x, s.y + v.y, s.size * 2.5 * ratio, 0, 2 * Math.PI, false);
-                    ctx.fill();
-                }
-
-                // Color de las partículas - azul brillante
-                ctx.fillStyle = 'rgba(147, 197, 253, 0.95)';
-
-                // Draw dots
-                for (var i = 0; i < dots.length; i++) {
-                    var s = dots[i];
-                    var v = getV(s);
-
-                    // Draw particle
-                    ctx.beginPath();
-                    ctx.arc(s.x + v.x, s.y + v.y, s.size * ratio, 0, 2 * Math.PI, false);
-                    ctx.fill();
-                }
-
-                // Draw connections
-                ctx.strokeStyle = 'rgba(96, 165, 250, 0.12)';
-                ctx.lineWidth = 1 * ratio;
-                
-                for (var i = 0; i < dots.length; i++) {
-                    var s = dots[i];
-                    var v = getV(s);
-                    var px = s.x + v.x;
-                    var py = s.y + v.y;
-                    
-                    // Connect to nearby dots
-                    for (var j = i + 1; j < dots.length; j++) {
-                        var s2 = dots[j];
-                        var v2 = getV(s2);
-                        var px2 = s2.x + v2.x;
-                        var py2 = s2.y + v2.y;
-                        
-                        var dist = getDistance({x: px, y: py}, {x: px2, y: py2});
-                        if (dist < 100 * ratio) {
-                            ctx.beginPath();
-                            ctx.moveTo(px, py);
-                            ctx.lineTo(px2, py2);
-                            ctx.stroke();
-                        }
-                    }
-                }
-            }
-
-            function getV(dot) {
-                var d = getDistance(dot, mouse);
-                
-                // Size based on distance
-                dot.size = (150 - d) / 30;
-                dot.size = dot.size < 1 ? 1 : dot.size;
-                dot.size = dot.size > 6 ? 6 : dot.size;
-
-                // Angle to mouse
-                dot.angle = getAngle(dot, mouse);
-
-                // Movement amount based on distance
-                var moveAmount = d > 30 ? 30 : d;
-                
-                return {
-                    x: moveAmount * Math.cos(dot.angle * Math.PI / 180),
-                    y: moveAmount * Math.sin(dot.angle * Math.PI / 180)
-                };
-            }
-
-            function getAngle(obj1, obj2) {
-                var dX = obj2.x - obj1.x;
-                var dY = obj2.y - obj1.y;
-                var angleDeg = Math.atan2(dY, dX) / Math.PI * 180;
-                return angleDeg;
-            }
-
-            function getDistance(obj1, obj2) {
-                var dx = obj1.x - obj2.x;
-                var dy = obj1.y - obj2.y;
-                return Math.sqrt(dx * dx + dy * dy);
-            }
-
-            // Animation
-            function animloop() {
-                render();
-                requestAnimationFrame(animloop);
-            }
-
-            // Initialize
-            resizeCanvas();
-            animloop();
-        })();
-    </script>
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">NTEC</a>
+          <p>Desarrollo web y servicio técnico profesional en Uruguay</p>
+        </div>
+        <div>
+          <h3>Enlaces</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="portafolio.html">Portafolio</a></li>
+            <li><a href="index.html#contacto">Contacto</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Servicios</h3>
+          <ul class="footer-links">
+            <li><a href="servicios.html">Desarrollo Web</a></li>
+            <li><a href="serviciotecnico.html">Servicio Técnico</a></li>
+            <li><a href="servicios.html">Marketing Digital</a></li>
+          </ul>
+        </div>
+        <div class="newsletter">
+          <h3>Newsletter</h3>
+          <p>Suscríbete para recibir ofertas</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault()">
+            <input type="email" placeholder="Tu email">
+            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 NTEC. Todos los derechos reservados.</div>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

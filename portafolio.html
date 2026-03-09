@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio - NTEC Soluciones Tecnológicas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="animacion.js" defer></script>
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+</head>
+<body>
+  <!-- Header -->
+  <header id="header">
+    <div class="container">
+      <div class="header-content">
+        <a href="index.html" class="logo">NTEC</a>
+        <nav>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="portafolio.html">Portafolio</a></li>
+            <li><a href="serviciotecnico.html">Servicio Técnico</a></li>
+            <li><a href="index.html#nosotros">Nosotros</a></li>
+            <li><a href="index.html#contacto">Contacto</a></li>
+          </ul>
+        </nav>
+        <button class="mobile-menu-btn" onclick="toggleMenu()">
+          <i class="fas fa-bars"></i>
+        </button>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Cambiar tema">
+          <i class="fas fa-moon" id="theme-icon"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="index.html" onclick="toggleMenu()">Inicio</a></li>
+      <li><a href="servicios.html" onclick="toggleMenu()">Servicios</a></li>
+      <li><a href="portafolio.html" onclick="toggleMenu()">Portafolio</a></li>
+      <li><a href="serviciotecnico.html" onclick="toggleMenu()">Servicio Técnico</a></li>
+      <li><a href="index.html#nosotros" onclick="toggleMenu()">Nosotros</a></li>
+      <li><a href="index.html#contacto" onclick="toggleMenu()">Contacto</a></li>
+    </ul>
+  </div>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Nuestro Portafolio</h1>
+      <p>Proyectos que transformaron negocios y generan resultados reales</p>
+    </div>
+  </section>
+
+  <!-- Portfolio Filter -->
+  <section style="padding: 3rem 0; background: #f8fafc;">
+    <div class="container">
+      <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+        <button class="btn btn-primary" style="background: #2563eb;">Todos</button>
+        <button class="btn" style="background: #e2e8f0; color: #64748b;">Desarrollo Web</button>
+        <button class="btn" style="background: #e2e8f0; color: #64748b;">E-Commerce</button>
+        <button class="btn" style="background: #e2e8f0; color: #64748b;">Apps Mobile</button>
+        <button class="btn" style="background: #e2e8f0; color: #64748b;">Sistemas</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Grid -->
+  <section id="portafolio" style="padding: 4rem 0;">
+    <div class="container">
+      <div class="portfolio-grid">
+        <!-- Proyecto 1: Almajo -->
+        <div class="portfolio-card">
+          <div class="portfolio-image">
+            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600" alt="Tienda de Ropa y Alquiler Almajo">
+          </div>
+          <div class="portfolio-content">
+            <span class="portfolio-category">E-Commerce</span>
+            <h3>👗 Tienda de Ropa y Alquiler Almajo</h3>
+            <p>Una plataforma simple y clara para mostrar productos y facilitar el contacto con clientes. El diseño transmite elegancia y practicidad, adaptado a un público que busca estilo y accesibilidad.</p>
+            <div class="portfolio-metrics">
+              <div class="metric">
+                <i class="fas fa-arrow-up metric-icon"></i>
+                <div>
+                  <div class="metric-value">+150%</div>
+                  <div class="metric-label">Visitas</div>
+                </div>
+              </div>
+              <div class="metric">
+                <i class="fas fa-shopping-bag metric-icon"></i>
+                <div>
+                  <div class="metric-value">+80%</div>
+                  <div class="metric-label">Consultas</div>
+                </div>
+              </div>
+            </div>
+            <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #e2e8f0;">
+              <strong>Características:</strong> Catálogo de productos, WhatsApp contacto, Diseño responsivo
+            </div>
+          </div>
+        </div>
+
+        <!-- Proyecto 2: Leskchamps -->
+        <div class="portfolio-card">
+          <div class="portfolio-image">
+            <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600" alt="Tienda de Championes y Ropa Deportiva Leskchamps">
+          </div>
+          <div class="portfolio-content">
+            <span class="portfolio-category">E-Commerce Deportivo</span>
+            <h3>⚽ Tienda Leskchamps</h3>
+            <p>Un sitio pensado para amantes del deporte, con un enfoque dinámico y visual que resalta la energía y la pasión por el fútbol. La estructura facilita la navegación y la experiencia de compra.</p>
+            <div class="portfolio-metrics">
+              <div class="metric">
+                <i class="fas fa-futbol metric-icon"></i>
+                <div>
+                  <div class="metric-value">+200%</div>
+                  <div class="metric-label">Tráfico</div>
+                </div>
+              </div>
+              <div class="metric">
+                <i class="fas fa-shopping-cart metric-icon"></i>
+                <div>
+                  <div class="metric-value">+120%</div>
+                  <div class="metric-label">Conversiones</div>
+                </div>
+              </div>
+            </div>
+            <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #e2e8f0;">
+              <strong>Características:</strong> Catálogo deportivo, Galerías de productos, Carrito de compras
+            </div>
+          </div>
+        </div>
+
+        <!-- Proyecto 3: Pilili -->
+        <div class="portfolio-card">
+          <div class="portfolio-image">
+            <img src="https://images.unsplash.com/photo-1558326567-98ae2405596b?w=600" alt="Tienda de Postres Pilili">
+          </div>
+          <div class="portfolio-content">
+            <span class="portfolio-category">Landing Page</span>
+            <h3>🍰 Tienda de Postres Pilili</h3>
+            <p>Una landing page minimalista y cálida, diseñada para transmitir confianza y cercanía. El objetivo: que cada visitante sienta la calidad artesanal detrás de cada producto.</p>
+            <div class="portfolio-metrics">
+              <div class="metric">
+                <i class="fas fa-heart metric-icon"></i>
+                <div>
+                  <div class="metric-value">+95%</div>
+                  <div class="metric-label">Satisfacción</div>
+                </div>
+              </div>
+              <div class="metric">
+                <i class="fas fa-phone metric-icon"></i>
+                <div>
+                  <div class="metric-value">+100%</div>
+                  <div class="metric-label">Pedidos</div>
+                </div>
+              </div>
+            </div>
+            <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #e2e8f0;">
+              <strong>Características:</strong> Diseño minimalista, Galería de productos, Botón de pedidos
+            </div>
+          </div>
+        </div>
+
+        <!-- Proyecto 4: Agencia de Fotos de Fútbol -->
+        <div class="portfolio-card">
+          <div class="portfolio-image">
+            <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=600" alt="Agencia de Fotos de Fútbol">
+          </div>
+          <div class="portfolio-content">
+            <span class="portfolio-category">Web Fotográfica</span>
+            <h3>📸 Agencia de Fotos de Fútbol</h3>
+            <p>Un espacio digital para mostrar talento y creatividad, con galerías visuales que capturan la emoción del deporte. La página está pensada para atraer tanto a jugadores como a clubes que buscan servicios profesionales.</p>
+            <div class="portfolio-metrics">
+              <div class="metric">
+                <i class="fas fa-camera metric-icon"></i>
+                <div>
+                  <div class="metric-value">+300%</div>
+                  <div class="metric-label">Visibilidad</div>
+                </div>
+              </div>
+              <div class="metric">
+                <i class="fas fa-handshake metric-icon"></i>
+                <div>
+                  <div class="metric-value">+50</div>
+                  <div class="metric-label">Clientes nuevos</div>
+                </div>
+              </div>
+            </div>
+            <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #e2e8f0;">
+              <strong>Características:</strong> Galerías dinámicas, Portafolio visual, Diseño deportivo
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section style="padding: 4rem 0; background: white;">
+    <div class="container">
+      <div class="section-header">
+        <h2>Lo que dicen nuestros <span>clientes</span></h2>
+        <p>Testimonios de empresas que confiaron en nosotros</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-text">"Trabajar con Nathaniel fue una experiencia muy clara y cercana. Me explicó cada paso y me dio confianza en todo el proceso. Se nota la dedicación y el compromiso en su trabajo."</p>
+          <div class="testimonial-author">Milka Rivero</div>
+          <div class="testimonial-company">Almajo</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-text">"Lo que más destaco es la transparencia y el profesionalismo. Supo entender lo que necesitaba y me acompaño con soluciones prácticas y bien pensadas. Recomiendo su servicio sin dudas."</p>
+          <div class="testimonial-author">Alex Lescano</div>
+          <div class="testimonial-company">Leskchamps</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-text">"Nathaniel no solo diseñó la página, también me ayudó a entender cómo aprovecharla mejor. Su trato es humano y paciente, y eso marca la diferencia. Sentí que realmente se preocupó por mi proyecto."</p>
+          <div class="testimonial-author">Camila Lima</div>
+          <div class="testimonial-company">Pilili</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>¿Listo para tu próximo proyecto?</h2>
+      <p>Contáctanos y transformemos tu idea en realidad</p>
+      <a href="index.html#contacto" class="cta-btn">
+        Solicitar Presupuesto
+        <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">NTEC</a>
+          <p>Soluciones tecnológicas que transforman tu negocio</p>
+        </div>
+        <div>
+          <h3>Enlaces</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="portafolio.html">Portafolio</a></li>
+            <li><a href="serviciotecnico.html">Servicio Técnico</a></li>
+            <li><a href="index.html#contacto">Contacto</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Servicios</h3>
+          <ul class="footer-links">
+            <li><a href="index.html#servicios">Desarrollo Web</a></li>
+            <li><a href="index.html#servicios">E-Commerce</a></li>
+            <li><a href="index.html#servicios">Marketing Digital</a></li>
+            <li><a href="index.html#servicios">Soporte Técnico</a></li>
+          </ul>
+        </div>
+        <div class="newsletter">
+          <h3>Newsletter</h3>
+          <p>Suscríbete para recibir ofertas</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault()">
+            <input type="email" placeholder="Tu email">
+            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 NTEC. Todos los derechos reservados.</div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
