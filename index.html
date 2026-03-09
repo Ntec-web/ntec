@@ -25,10 +25,11 @@
   <header id="header">
     <div class="container">
       <div class="header-content">
-        <a href="#inicio" class="logo">NTEC</a>
+        <a href="#inicio" class="logo"><video src="logo.mp4" autoplay loop muted playsinline style="height: 40px; width: auto;"></video></a>
         <nav>
           <ul>
             <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#precios">Planes</a></li>
             <li><a href="servicios.html">Servicios</a></li>
             <li><a href="portafolio.html">Portafolio</a></li>
             <li><a href="serviciotecnico.html">Servicio Técnico</a></li>
@@ -39,9 +40,6 @@
         <button class="mobile-menu-btn" onclick="toggleMenu()">
           <i class="fas fa-bars"></i>
         </button>
-        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Cambiar tema">
-          <i class="fas fa-moon" id="theme-icon"></i>
-        </button>
       </div>
     </div>
   </header>
@@ -50,6 +48,7 @@
   <div class="mobile-menu" id="mobileMenu">
     <ul>
       <li><a href="#inicio" onclick="toggleMenu()">Inicio</a></li>
+      <li><a href="#precios" onclick="toggleMenu()">Precios</a></li>
       <li><a href="servicios.html" onclick="toggleMenu()">Servicios</a></li>
       <li><a href="portafolio.html" onclick="toggleMenu()">Portafolio</a></li>
       <li><a href="serviciotecnico.html" onclick="toggleMenu()">Servicio Técnico</a></li>
@@ -64,7 +63,7 @@
     <div class="container">
       <div class="hero-content">
         <div class="hero-text">
-          <h1>Creamos páginas web <span>rápidas, seguras</span> y adaptadas a tu negocio</h1>
+          <h1 style="background: linear-gradient(135deg, #2563eb, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Creamos páginas web <span>rápidas, seguras</span> y adaptadas a tu negocio</h1>
           <p>Diseño y desarrollo web pensado para que tu negocio crezca: rápido, seguro y adaptado a vos.</p>
           <div class="hero-buttons">
             <a href="#contacto" class="btn btn-primary">
@@ -74,7 +73,7 @@
           </div>
         </div>
         <div class="hero-image">
-          <img src="https://images.unsplash.com/photo-1759884247199-eceeff174430?w=800" alt="Workspace moderno">
+          <img src="videoui.gif" alt="Demo interactiva" class="hero-gif">
         </div>
       </div>
     </div>
@@ -84,16 +83,16 @@
   <section id="servicios">
     <div class="container">
       <div class="section-header">
-        <h2>Nuestros <span>Servicios</span></h2>
-        <p>Soluciones digitales completas para llevar tu negocio al siguiente nivel</p>
-        <p style="margin-top: 1rem; font-size: 1.1rem;">En NTEC transformo ideas en herramientas digitales que potencian tu marca. Cada servicio está pensado para resolver problemas concretos y abrir nuevas oportunidades de crecimiento.</p>
+        <h2 style="background: linear-gradient(135deg, #2563eb, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Nuestros <span>Servicios</span></h2>
+        <p>Soluciones digitales pensadas para hacer crecer tu negocio</p>
+        <p style="margin-top: 1rem; font-size: 1.1rem;">En NTEC convierto tus ideas en herramientas digitales que realmente suman a tu marca. Cada servicio nace de escuchar lo que necesitás y está diseñado para resolver desafíos concretos, abrir oportunidades y acompañarte en el camino de crecimiento.</p>
       </div>
       <div class="services-grid">
         <div class="service-card">
           <div class="service-icon blue">
             <i class="fas fa-globe"></i>
           </div>
-          <h3>🌐 Desarrollo Web</h3>
+          <h3>Desarrollo Web</h3>
           <p>Creo sitios corporativos, landing pages y aplicaciones modernas que combinan diseño atractivo con rendimiento técnico.</p>
           <ul class="service-list">
             <li>Diseño responsive: tu página se adapta a cualquier dispositivo</li>
@@ -105,7 +104,7 @@
           <div class="service-icon purple">
             <i class="fas fa-shopping-cart"></i>
           </div>
-          <h3>🛒 E-Commerce</h3>
+          <h3>E-Commerce</h3>
           <p>Construyo tiendas online completas, con pasarelas de pago integradas y gestión sencilla.</p>
           <ul class="service-list">
             <li>Mercado Pago, Stripe y PayPal</li>
@@ -116,7 +115,7 @@
           <div class="service-icon green">
             <i class="fas fa-bullhorn"></i>
           </div>
-          <h3>📈 Marketing Digital</h3>
+          <h3>Marketing Digital</h3>
           <p>Diseño estrategias que combinan SEO, redes sociales y campañas publicitarias para aumentar tu visibilidad.</p>
           <ul class="service-list">
             <li>SEO on-page y contenido estratégico</li>
@@ -128,7 +127,7 @@
           <div class="service-icon orange">
             <i class="fas fa-mobile-alt"></i>
           </div>
-          <h3>📱 Diseño Responsive</h3>
+          <h3>Diseño Responsive</h3>
           <p>Interfaces pensadas para la experiencia del usuario.</p>
           <ul class="service-list">
             <li>Mobile-first: tu web prioriza móviles</li>
@@ -140,7 +139,7 @@
           <div class="service-icon indigo">
             <i class="fas fa-search"></i>
           </div>
-          <h3>🔍 Optimización SEO</h3>
+          <h3>Optimización SEO</h3>
           <p>Posicionamiento orgánico que te permite competir sin depender solo de la publicidad paga.</p>
           <ul class="service-list">
             <li>Keywords research y link building</li>
@@ -152,7 +151,7 @@
           <div class="service-icon teal">
             <i class="fas fa-headset"></i>
           </div>
-          <h3>🛠️ Soporte Técnico</h3>
+          <h3>Soporte Técnico</h3>
           <p>No solo creo tu página, también la mantengo viva y segura.</p>
           <ul class="service-list">
             <li>Monitoreo 24/7 y backups diarios</li>
@@ -168,17 +167,17 @@
   <section id="portafolio">
     <div class="container">
       <div class="section-header">
-        <h2>Nuestro <span>Portafolio</span></h2>
+        <h2 style="background: linear-gradient(135deg, #2563eb, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Nuestro <span>Portafolio</span></h2>
         <p>Proyectos que transformaron negocios</p>
       </div>
       <div class="portfolio-grid">
         <div class="portfolio-card">
           <div class="portfolio-image">
-            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600" alt="Tienda de Ropa y Alquiler Almajo">
+            <img src="almajo.jpg" alt="Tienda de Ropa y Alquiler Almajo">
           </div>
           <div class="portfolio-content">
             <span class="portfolio-category">E-Commerce</span>
-            <h3>👗 Tienda de Ropa y Alquiler Almajo</h3>
+            <h3>Tienda de Ropa y Alquiler Almajo</h3>
             <p>Plataforma simple y clara para mostrar productos. El diseño transmite elegancia y practicidad.</p>
             <div class="portfolio-metrics">
               <div class="metric">
@@ -200,7 +199,7 @@
         </div>
         <div class="portfolio-card">
           <div class="portfolio-image">
-            <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600" alt="Tienda de Championes y Ropa Deportiva Leskchamps">
+            <img src="leskchamps.jpg" alt="Tienda de Championes y Ropa Deportiva Leskchamps">
           </div>
           <div class="portfolio-content">
             <span class="portfolio-category">E-Commerce Deportivo</span>
@@ -226,12 +225,12 @@
         </div>
         <div class="portfolio-card">
           <div class="portfolio-image">
-            <img src="https://images.unsplash.com/photo-1558326567-98ae2405596b?w=600" alt="Tienda de Postres Pilili">
+            <img src="Empanadas Congeladas (1).png" alt="Deltano Empanadas">
           </div>
           <div class="portfolio-content">
-            <span class="portfolio-category">Landing Page</span>
-            <h3>🍰 Tienda de Postres Pilili</h3>
-            <p>Landing page minimalista y cálida diseñada para transmitir confianza y cercanía artesanal.</p>
+            <span class="portfolio-category">E-Commerce</span>
+            <h3>Deltano Empanadas</h3>
+            <p>E-commerce completo para venta de empanadas artesanales con sistema de pedidos y gestión de inventario.</p>
             <div class="portfolio-metrics">
               <div class="metric">
                 <i class="fas fa-heart metric-icon"></i>
@@ -269,7 +268,7 @@
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
             </div>
-            <p class="testimonial-text">"Trabajar con Nathaniel fue una experiencia muy clara y cercana. Me explicó cada paso y me dio confianza en todo el proceso. Se nota la dedicación y el compromiso en su trabajo."</p>
+            <p class="testimonial-text">"Trabajar con él fue una experiencia clara y cercana. Me explicó cada paso y me dio confianza en todo el proceso. Se nota la dedicación y el compromiso en su trabajo."</p>
             <div class="testimonial-author">Milka Rivero</div>
             <div class="testimonial-company">Almajo</div>
           </div>
@@ -281,7 +280,7 @@
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
             </div>
-            <p class="testimonial-text">"Lo que más destaco es la transparencia y el profesionalismo. Supo entender lo que necesitaba y me accompagnó con soluciones prácticas y bien pensadas. Recomiendo su servicio sin dudas."</p>
+            <p class="testimonial-text">"Lo que más destaco es la transparencia y el profesionalismo. Supo entender lo que necesitaba y me acompañó con soluciones prácticas y bien pensadas. Recomiendo su servicio sin dudas."</p>
             <div class="testimonial-author">Alex Lescano</div>
             <div class="testimonial-company">Leskchamps</div>
           </div>
@@ -293,10 +292,94 @@
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
             </div>
-            <p class="testimonial-text">"Nathaniel no solo diseñó la página, también me ayudó a entender cómo aprovecharla mejor. Su trato es humano y paciente, y eso marca la diferencia. Sentí que realmente se preocupó por mi proyecto."</p>
-            <div class="testimonial-author">Camila Lima</div>
-            <div class="testimonial-company">Pilili</div>
+            <p class="testimonial-text">"No solo diseñó la página, también me ayudó a entender cómo aprovecharla mejor. Su trato humano y paciente marca la diferencia. Sentí que realmente se preocupó por mi proyecto."</p>
+            <div class="testimonial-author">Giuliano Dilavello</div>
+            <div class="testimonial-company">Deltano Empanadas</div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="precios" style="padding: 5rem 0; background: #f8fafc;">
+    <div class="container">
+      <div class="section-header">
+        <h2 style="background: linear-gradient(135deg, #2563eb, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Nuestros <span>Planes</span></h2>
+        <p>Planes diseñados para cada tipo de negocio</p>
+        <p style="margin-top: 1rem; font-size: 1.1rem;">Todos los precios incluyen diseño personalizado, dominio gratis por 1 año, hosting y certificado SSL. El pago se divide en 2 cuotas: 50% al inicio y 50% al entrega.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; max-width: 1400px; margin: 0 auto;">
+        <!-- Plan Landing Page -->
+        <div style="background: white; border-radius: 1rem; padding: 1.25rem; border: 1px solid #e2e8f0; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0,0,0,0.05);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.15)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.05)';">
+          <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; color: #0f172a;">Landing Page – $4.000 UYU</h3>
+          <div style="font-size: 0.75rem; color: #16a34a; margin-bottom: 0.75rem;">Mantenimiento: $1.500/mes</div>
+          <ul style="list-style: none; padding: 0; margin: 0 0 0.75rem 0; font-size: 0.75rem; color: #64748b;">
+            <li style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.35rem;"><i class="fas fa-check" style="color: #22c55e; font-size: 0.65rem;"></i> Presencia online inmediata</li>
+            <li style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.35rem;"><i class="fas fa-check" style="color: #22c55e; font-size: 0.65rem;"></i> Diseño adaptable a móviles</li>
+            <li style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.35rem;"><i class="fas fa-check" style="color: #22c55e; font-size: 0.65rem;"></i> Contacto directo vía WhatsApp y formulario</li>
+            <li style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.35rem;"><i class="fas fa-check" style="color: #22c55e; font-size: 0.65rem;"></i> Dominio + hosting + SSL por 1 año</li>
+            <li style="display: flex; align-items: center; gap: 0.4rem;"><i class="fas fa-check" style="color: #22c55e; font-size: 0.65rem;"></i> Tutorial guiado y asistencia personalizada</li>
+          </ul>
+          <p style="font-size: 0.7rem; color: #64748b; font-style: italic; margin-bottom: 0.75rem;">👉 Perfecto para quienes recién comienzan y quieren estar visibles sin complicaciones.</p>
+          <a href="#contacto" style="display: block; text-align: center; background: linear-gradient(135deg, #22c55e, #16a34a); color: white; padding: 0.6rem; border-radius: 0.5rem; text-decoration: none; font-weight: 600; font-size: 0.8rem; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(34, 197, 94, 0.3);" onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 4px 12px rgba(34, 197, 94, 0.5)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 2px 8px rgba(34, 197, 94, 0.3)';">Consultar</a>
+        </div>
+
+        <!-- Plan Web Estándar -->
+        <div style="background: white; border-radius: 1rem; padding: 1.25rem; border: 1px solid #e2e8f0; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0,0,0,0.05);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.15)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.05)';">
+          <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; color: #0f172a;">Web Estándar – $7.000 UYU</h3>
+          <div style="font-size: 0.75rem; color: #2563eb; margin-bottom: 0.75rem;">Mantenimiento: $2.000/mes</div>
+          <ul style="list-style: none; padding: 0; margin: 0 0 0.75rem 0; font-size: 0.75rem; color: #64748b;">
+            <li style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.35rem;"><i class="fas fa-check" style="color: #3b82f6; font-size: 0.65rem;"></i> 5 secciones para mostrar tu negocio con más detalle</li>
+            <li style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.35rem;"><i class="fas fa-check" style="color: #3b82f6; font-size: 0.65rem;"></i> Correos corporativos incluidos</li>
+            <li style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.35rem;"><i class="fas fa-check" style="color: #3b82f6; font-size: 0.65rem;"></i> SEO básico para aparecer en Google</li>
+            <li style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.35rem;"><i class="fas fa-check" style="color: #3b82f6; font-size: 0.65rem;"></i> Dominio + hosting + SSL por 1 año</li>
+            <li style="display: flex; align-items: center; gap: 0.4rem;"><i class="fas fa-check" style="color: #3b82f6; font-size: 0.65rem;"></i> Formularios automáticos y soporte continuo</li>
+          </ul>
+          <p style="font-size: 0.7rem; color: #64748b; font-style: italic; margin-bottom: 0.75rem;">👉 Ideal para empresas que buscan profesionalizar su presencia digital.</p>
+          <a href="#contacto" style="display: block; text-align: center; background: linear-gradient(135deg, #3b82f6, #2563eb); color: white; padding: 0.6rem; border-radius: 0.5rem; text-decoration: none; font-weight: 600; font-size: 0.8rem; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);" onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 4px 12px rgba(59, 130, 246, 0.5)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 2px 8px rgba(59, 130, 246, 0.3)';">Consultar</a>
+        </div>
+
+        <!-- Plan Web de Servicios -->
+        <div style="background: white; border-radius: 1rem; padding: 1.25rem; border: 1px solid #e2e8f0; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0,0,0,0.05);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.15)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.05)';">
+          <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; color: #0f172a;">Web de Servicios – $10.000 UYU</h3>
+          <div style="font-size: 0.75rem; color: #7c3aed; margin-bottom: 0.75rem;">Mantenimiento: $2.500/mes</div>
+          <ul style="list-style: none; padding: 0; margin: 0 0 0.75rem 0; font-size: 0.75rem; color: #64748b;">
+            <li style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.35rem;"><i class="fas fa-check" style="color: #8b5cf6; font-size: 0.65rem;"></i> Todo lo de Web Estándar</li>
+            <li style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.35rem;"><i class="fas fa-check" style="color: #8b5cf6; font-size: 0.65rem;"></i> Sección dedicada para cada servicio</li>
+            <li style="display: flex; align-items: center; gap: 0.4rem;"><i class="fas fa-check" style="color: #8b5cf6; font-size: 0.65rem;"></i> Estructura más completa y organizada</li>
+          </ul>
+          <p style="font-size: 0.7rem; color: #64748b; font-style: italic; margin-bottom: 0.75rem;">👉 Pensada para negocios que ofrecen múltiples servicios y necesitan claridad para sus clientes.</p>
+          <a href="#contacto" style="display: block; text-align: center; background: linear-gradient(135deg, #8b5cf6, #7c3aed); color: white; padding: 0.6rem; border-radius: 0.5rem; text-decoration: none; font-weight: 600; font-size: 0.8rem; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(139, 92, 246, 0.3);" onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 4px 12px rgba(139, 92, 246, 0.5)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 2px 8px rgba(139, 92, 246, 0.3)';">Consultar</a>
+        </div>
+
+        <!-- Plan e-Commerce Básica -->
+        <div style="background: white; border-radius: 1rem; padding: 1.25rem; border: 2px solid #f59e0b; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0,0,0,0.05);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.15)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.05)';">
+          <div style="font-size: 0.65rem; font-weight: 600; color: #f59e0b; text-transform: uppercase; margin-bottom: 0.25rem;">Recomendado</div>
+          <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; color: #0f172a;">e-Commerce Básica – $15.000 UYU</h3>
+          <div style="font-size: 0.75rem; color: #d97706; margin-bottom: 0.75rem;">Mantenimiento: $3.500/mes</div>
+          <ul style="list-style: none; padding: 0; margin: 0 0 0.75rem 0; font-size: 0.75rem; color: #64748b;">
+            <li style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.35rem;"><i class="fas fa-check" style="color: #f59e0b; font-size: 0.65rem;"></i> Catálogo ilimitado de productos</li>
+            <li style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.35rem;"><i class="fas fa-check" style="color: #f59e0b; font-size: 0.65rem;"></i> Carrito y checkout integrado</li>
+            <li style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.35rem;"><i class="fas fa-check" style="color: #f59e0b; font-size: 0.65rem;"></i> Medios de pago locales</li>
+            <li style="display: flex; align-items: center; gap: 0.4rem;"><i class="fas fa-check" style="color: #f59e0b; font-size: 0.65rem;"></i> SEO básico y soporte continuo</li>
+          </ul>
+          <p style="font-size: 0.7rem; color: #64748b; font-style: italic; margin-bottom: 0.75rem;">👉 Para quienes quieren vender online de forma sencilla y segura.</p>
+          <a href="#contacto" style="display: block; text-align: center; background: linear-gradient(135deg, #f59e0b, #d97706); color: white; padding: 0.6rem; border-radius: 0.5rem; text-decoration: none; font-weight: 600; font-size: 0.8rem; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);" onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 4px 12px rgba(245, 158, 11, 0.5)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 2px 8px rgba(245, 158, 11, 0.3)';">Consultar</a>
+        </div>
+
+        <!-- Plan e-Commerce Avanzada -->
+        <div style="background: white; border-radius: 1rem; padding: 1.25rem; border: 1px solid #e2e8f0; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0,0,0,0.05);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.15)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.05)';">
+          <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; color: #0f172a;">e-Commerce Avanzada – $20.000 UYU</h3>
+          <div style="font-size: 0.75rem; color: #dc2626; margin-bottom: 0.75rem;">Mantenimiento: $5.000/mes</div>
+          <ul style="list-style: none; padding: 0; margin: 0 0 0.75rem 0; font-size: 0.75rem; color: #64748b;">
+            <li style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.35rem;"><i class="fas fa-check" style="color: #ef4444; font-size: 0.65rem;"></i> Todo lo de e-Commerce Básica</li>
+            <li style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.35rem;"><i class="fas fa-check" style="color: #ef4444; font-size: 0.65rem;"></i> Filtros avanzados y fichas completas</li>
+            <li style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.35rem;"><i class="fas fa-check" style="color: #ef4444; font-size: 0.65rem;"></i> Multimoneda y productos relacionados</li>
+            <li style="display: flex; align-items: center; gap: 0.4rem;"><i class="fas fa-check" style="color: #ef4444; font-size: 0.65rem;"></i> Reportes mensuales y diseño personalizado</li>
+          </ul>
+          <p style="font-size: 0.7rem; color: #64748b; font-style: italic; margin-bottom: 0.75rem;">👉 La opción para negocios que buscan escalar y optimizar su tienda digital.</p>
+          <a href="#contacto" style="display: block; text-align: center; background: linear-gradient(135deg, #ef4444, #dc2626); color: white; padding: 0.6rem; border-radius: 0.5rem; text-decoration: none; font-weight: 600; font-size: 0.8rem; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);" onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 4px 12px rgba(239, 68, 68, 0.5)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 2px 8px rgba(239, 68, 68, 0.3)';">Consultar</a>
         </div>
       </div>
     </div>
@@ -307,7 +390,7 @@
     <div class="container">
       <div class="about-content">
         <div class="about-text">
-          <h2>Sobre <span>NTEC</span></h2>
+          <h2 style="background: linear-gradient(135deg, #2563eb, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Sobre <span>NTEC</span></h2>
           <p>Soy Nathaniel, creador de NTEC, un emprendimiento nacido en Uruguay con la convicción de que cada negocio merece una presencia digital que refleje su esencia y potencie su crecimiento.</p>
           <p>Mi camino comenzó con la curiosidad por entender cómo la tecnología podía transformar ideas en experiencias reales. Con el tiempo, esa curiosidad se convirtió en pasión: diseñar páginas web que no solo sean visualmente atractivas, sino también funcionales, seguras y capaces de generar resultados.</p>
           <p>En NTEC no trabajo con fórmulas prefabricadas. Cada proyecto lo abordo como un desafío único: escucho la historia de la marca, analizo sus necesidades y construyo soluciones a medida. Mi objetivo es que cada cliente sienta que su página web es más que un producto: es una herramienta estratégica que transmite confianza, conecta con su audiencia y abre nuevas oportunidades.</p>
@@ -321,36 +404,36 @@
 
       <!-- Values -->
       <div class="values-section">
-        <h3>Nuestros Valores</h3>
-        <p>Los principios que guían cada proyecto y cada relación con nuestros clientes</p>
+        <h3 style="background: linear-gradient(135deg, #2563eb, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Nuestros Valores</h3>
+        <p class="values-subtitle">Los principios que guían cada proyecto</p>
         <div class="values-grid">
           <div class="value-card">
             <div class="value-icon red">
               <i class="fas fa-handshake"></i>
             </div>
-            <h4>🤝 Confianza</h4>
-            <p>Cada proyecto comienza con la transparencia. Creo en relaciones honestas, donde el cliente sabe exactamente qué esperar y cómo avanzamos. La confianza no se construye con promesas vacías, sino con resultados claros y comunicación abierta.</p>
+            <h3>Confianza</h3>
+            <p>Relaciones honestas y transparencia total. Sabrás en todo momento cómo avanza tu proyecto.</p>
           </div>
           <div class="value-card">
             <div class="value-icon yellow">
               <i class="fas fa-lightbulb"></i>
             </div>
-            <h4>💡 Innovación</h4>
-            <p>El mundo digital cambia todos los días, y mi compromiso es estar siempre un paso adelante. Utilizo tecnologías de vanguardia y soluciones creativas para que cada negocio tenga una presencia moderna, competitiva y preparada para el futuro.</p>
+            <h3>Innovación</h3>
+            <p>Tecnologías de vanguardia y soluciones creativas para una presencia moderna y competitiva.</p>
           </div>
           <div class="value-card">
             <div class="value-icon blue">
               <i class="fas fa-heart"></i>
             </div>
-            <h4>👂 Cercanía</h4>
-            <p>No soy una agencia distante: trabajo de manera personalizada, escuchando cada necesidad y acompañando a mis clientes en todo el proceso. La cercanía me permite entender mejor cada proyecto y convertirlo en una solución que realmente conecta con su público.</p>
+            <h3>Cercanía</h3>
+            <p>Trabajo personalizado, escuchándote en cada paso para crear soluciones que conectan con tu público.</p>
           </div>
           <div class="value-card">
             <div class="value-icon purple">
               <i class="fas fa-star"></i>
             </div>
-            <h4>🌟 Excelencia</h4>
-            <p>La calidad no es negociable. Desde el diseño hasta el soporte técnico, cada detalle importa. Mi objetivo es que cada entrega supere expectativas y se convierta en una herramienta que aporte valor real al negocio.</p>
+            <h3>Excelencia</h3>
+            <p>Calidad en cada detalle. Mi meta es superar expectativas y aportar valor real a tu negocio.</p>
           </div>
         </div>
       </div>
@@ -361,39 +444,39 @@
   <section id="contacto">
     <div class="container">
       <div class="section-header">
-        <h2>¿Hablamos de tu <span>proyecto</span>?</h2>
+        <h2 style="background: linear-gradient(135deg, #2563eb, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">¿Hablamos de tu <span>proyecto</span>?</h2>
         <p>Solicita un presupuesto sin compromiso o escríbenos para discutir tu idea</p>
       </div>
       <div class="contact-grid">
-        <div class="contact-form">
-          <form id="contactForm" onsubmit="handleSubmit(event)">
-            <div class="form-group">
-              <label for="name">Nombre completo</label>
-              <input type="text" id="name" name="name" required placeholder="Tu nombre">
+        <!-- iPhone Mockup with Form -->
+        <div class="iphone-mockup">
+          <div class="iphone-frame">
+            <div class="iphone-notch"></div>
+            <div class="iphone-screen">
+              <div class="app-header-simulated">
+                <i class="fas fa-rocket"></i>
+                <span>NTEC</span>
+              </div>
+              <div class="app-content-simulated">
+                <h3>¡Hablemos!</h3>
+                <p>Cuéntanos sobre tu proyecto</p>
+                <form id="contactForm" onsubmit="handleSubmit(event)">
+                  <div class="form-group-simulated">
+                    <input type="text" id="name" required placeholder="Tu nombre">
+                  </div>
+                  <div class="form-group-simulated">
+                    <input type="email" id="email" required placeholder="tu@email.com">
+                  </div>
+                  <div class="form-group-simulated">
+                    <textarea id="message" required placeholder="¿En qué puedo ayudarte?"></textarea>
+                  </div>
+                  <a href="https://wa.me/59896616638?text=Hola,%20me%20interesa%20tu%20servicio" target="_blank" class="btn-submit-simulated">
+                    <i class="fab fa-whatsapp"></i> Enviar mensaje
+                  </a>
+                </form>
+                <p class="app-response-time"><i class="fas fa-check-circle"></i> Respondemos en menos de 24h</p>
+              </div>
             </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" required placeholder="tu@email.com">
-            </div>
-            <div class="form-group">
-              <label for="phone">Teléfono (opcional)</label>
-              <input type="tel" id="phone" name="phone" placeholder="+598 96 616 638">
-            </div>
-            <div class="form-group">
-              <label for="message">Mensaje</label>
-              <textarea id="message" name="message" required placeholder="Cuéntanos sobre tu proyecto..."></textarea>
-            </div>
-            <button type="submit" class="btn-submit">
-              <i class="fas fa-paper-plane"></i> Enviar mensaje
-            </button>
-          </form>
-          <div class="payment-methods">
-            <h4>Medios de contacto:</h4>
-            <span>Email</span>
-            <span>WhatsApp</span>
-            <span>Teléfono</span>
-            <span>Email</span>
-            <p>Respondemos todas las consultas en menos de 24 horas hábiles</p>
           </div>
         </div>
         <div class="contact-info">
@@ -443,7 +526,7 @@
             </div>
           </div>
           <div class="response-card">
-            <h3>🚀 Respuesta Rápida</h3>
+            <h3>Respuesta Rápida</h3>
             <p>Respondemos todas las consultas en menos de 24 horas hábiles</p>
           </div>
         </div>
@@ -466,6 +549,7 @@
         <div>
           <h3>Enlaces Rápidos</h3>
           <ul class="footer-links">
+            <li><a href="index.html#precios">Precios</a></li>
             <li><a href="index.html">Inicio</a></li>
             <li><a href="servicios.html">Servicios</a></li>
             <li><a href="portafolio.html">Portafolio</a></li>
@@ -510,5 +594,15 @@
       </div>
     </div>
   </footer>
+
+<!-- Landbot Chat Widget - Reemplaza YOUR_LANDBOT_ID con tu ID de Landbot -->
+<div class="landbot-container" style="position: fixed; bottom: 24px; right: 24px; z-index: 9999;"></div>
+<script src="https://static.landbot.io/landbot-3/landbot.js"></script>
+<script>
+  var landbot = new Landbot.Container({
+    container: '.landbot-container',
+    configUrl: 'https://landbot.io/u/YOUR_LANDBOT_ID/index.json'
+  });
+</script>
 </body>
 </html>

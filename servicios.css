@@ -1,0 +1,263 @@
+/* Page Header */
+.page-header {
+  padding: 150px 0 80px;
+  background: linear-gradient(135deg, #eff6ff 0%, #f5f3ff 50%, #fdf2f8 100%);
+  text-align: center;
+}
+
+.page-header h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin-bottom: 1rem;
+}
+
+.page-header p {
+  font-size: 1.25rem;
+  color: #64748b;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* CTA Section */
+.cta-section {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  text-align: center;
+}
+
+.cta-section h2 {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.cta-section p {
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: white;
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Servicios Page Effects */
+.service-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.service-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.service-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.03), rgba(124, 58, 237, 0.03));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.service-section:hover::before {
+  opacity: 1;
+}
+
+.service-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Service Cards Hover */
+.service-detail-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid transparent;
+}
+
+.service-detail-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border-color: rgba(37, 99, 235, 0.2);
+}
+
+/* Feature Items */
+.feature-item {
+  transition: all 0.3s ease;
+  border-radius: 12px;
+}
+
+.feature-item:hover {
+  transform: translateX(10px);
+  background: #f0fdf4 !important;
+}
+
+/* Image Hover Effect */
+.service-image-container {
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.service-image-container img {
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-image-container:hover img {
+  transform: scale(1.05);
+}
+
+/* Tags/Pills Hover */
+.service-tag {
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.service-tag:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+/* List Items */
+.service-list-item {
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+.service-list-item:hover {
+  padding-left: 1rem !important;
+  background: rgba(124, 58, 237, 0.05) !important;
+}
+
+/* Alternate Background Sections */
+.bg-alt {
+  background: #f8fafc;
+}
+
+
+
+/* Icon Circles */
+.icon-circle {
+  transition: all 0.3s ease;
+}
+
+.icon-circle:hover {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 10px 30px rgba(234, 88, 12, 0.3);
+}
+
+/* Section Title Animation */
+.section-title {
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+
+.service-section:hover .section-title::after {
+  width: 100%;
+}
+
+/* Grid Items */
+.grid-feature-item {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.grid-feature-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(5, 150, 105, 0.15);
+}
+
+/* CTA Button Enhancement */
+.cta-section .cta-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section .cta-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.cta-section .cta-btn:hover::before {
+  left: 100%;
+}
+
+/* Scroll Progress for Services */
+.service-section:nth-child(odd) {
+  transition-delay: 0.1s;
+}
+
+.service-section:nth-child(even) {
+  transition-delay: 0.2s;
+}
+
+/* Support Cards */
+.support-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.support-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1) !important;
+}
+
+.support-card ul li {
+  transition: all 0.3s ease;
+}
+
+.support-card:hover ul li {
+  padding-left: 0.5rem;
+}
+
+/* Alternating Section Delays */
+.service-section:nth-of-type(1) { transition-delay: 0s; }
+.service-section:nth-of-type(2) { transition-delay: 0.1s; }
+.service-section:nth-of-type(3) { transition-delay: 0.2s; }
+.service-section:nth-of-type(4) { transition-delay: 0.3s; }
+.service-section:nth-of-type(5) { transition-delay: 0.4s; }
+.service-section:nth-of-type(6) { transition-delay: 0.5s; }

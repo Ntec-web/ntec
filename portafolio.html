@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="portafolio.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="animacion.js" defer></script>
   
@@ -39,9 +40,6 @@
         <button class="mobile-menu-btn" onclick="toggleMenu()">
           <i class="fas fa-bars"></i>
         </button>
-        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Cambiar tema">
-          <i class="fas fa-moon" id="theme-icon"></i>
-        </button>
       </div>
     </div>
   </header>
@@ -61,7 +59,7 @@
   <!-- Page Header -->
   <section class="page-header">
     <div class="container">
-      <h1>Nuestro Portafolio</h1>
+      <h1 style="background: linear-gradient(135deg, #2563eb, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Nuestro Portafolio</h1>
       <p>Proyectos que transformaron negocios y generan resultados reales</p>
     </div>
   </section>
@@ -82,16 +80,16 @@
   <!-- Portfolio Grid -->
   <section id="portafolio" style="padding: 4rem 0;">
     <div class="container">
-      <div class="portfolio-grid">
-        <!-- Proyecto 1: Almajo -->
-        <div class="portfolio-card">
+      <div class="portfolio-featured-grid">
+        <!-- Proyecto 1: Almajo (Featured - Grande) -->
+        <a href="javascript:void(0)" class="portfolio-card featured" id="almajo" onclick="mostrarProyecto('proyecto-almajo')">
           <div class="portfolio-image">
-            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600" alt="Tienda de Ropa y Alquiler Almajo">
+            <img src="almajo.jpg" alt="Tienda de Ropa y Alquiler Almajo">
           </div>
           <div class="portfolio-content">
             <span class="portfolio-category">E-Commerce</span>
-            <h3>👗 Tienda de Ropa y Alquiler Almajo</h3>
-            <p>Una plataforma simple y clara para mostrar productos y facilitar el contacto con clientes. El diseño transmite elegancia y practicidad, adaptado a un público que busca estilo y accesibilidad.</p>
+            <h3>Tienda de Ropa y Alquiler Almajo</h3>
+            <p>Una plataforma simple y clara para mostrar productos y facilitar el contacto con clientes.</p>
             <div class="portfolio-metrics">
               <div class="metric">
                 <i class="fas fa-arrow-up metric-icon"></i>
@@ -108,113 +106,178 @@
                 </div>
               </div>
             </div>
-            <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #e2e8f0;">
-              <strong>Características:</strong> Catálogo de productos, WhatsApp contacto, Diseño responsivo
+          </div>
+          <div class="portfolio-overlay">
+            <div class="portfolio-overlay-content">
+              <i class="fas fa-external-link-alt"></i>
+              <span>Ver Proyecto</span>
             </div>
           </div>
-        </div>
+        </a>
 
         <!-- Proyecto 2: Leskchamps -->
-        <div class="portfolio-card">
+        <a href="javascript:void(0)" class="portfolio-card small" onclick="mostrarProyecto('proyecto-leskchamps')">
           <div class="portfolio-image">
-            <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600" alt="Tienda de Championes y Ropa Deportiva Leskchamps">
+            <img src="leskchamps.jpg" alt="Tienda de Championes y Ropa Deportiva Leskchamps">
           </div>
           <div class="portfolio-content">
             <span class="portfolio-category">E-Commerce Deportivo</span>
             <h3>⚽ Tienda Leskchamps</h3>
-            <p>Un sitio pensado para amantes del deporte, con un enfoque dinámico y visual que resalta la energía y la pasión por el fútbol. La estructura facilita la navegación y la experiencia de compra.</p>
-            <div class="portfolio-metrics">
-              <div class="metric">
-                <i class="fas fa-futbol metric-icon"></i>
-                <div>
-                  <div class="metric-value">+200%</div>
-                  <div class="metric-label">Tráfico</div>
-                </div>
-              </div>
-              <div class="metric">
-                <i class="fas fa-shopping-cart metric-icon"></i>
-                <div>
-                  <div class="metric-value">+120%</div>
-                  <div class="metric-label">Conversiones</div>
-                </div>
-              </div>
-            </div>
-            <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #e2e8f0;">
-              <strong>Características:</strong> Catálogo deportivo, Galerías de productos, Carrito de compras
+          </div>
+          <div class="portfolio-overlay">
+            <div class="portfolio-overlay-content">
+              <i class="fas fa-external-link-alt"></i>
+              <span>Ver</span>
             </div>
           </div>
-        </div>
+        </a>
 
-        <!-- Proyecto 3: Pilili -->
-        <div class="portfolio-card">
+        <!-- Proyecto 3: Deltano Empanadas -->
+        <a href="javascript:void(0)" class="portfolio-card small" onclick="mostrarProyecto('proyecto-deltano')">
           <div class="portfolio-image">
-            <img src="https://images.unsplash.com/photo-1558326567-98ae2405596b?w=600" alt="Tienda de Postres Pilili">
+            <img src="Empanadas Congeladas (1).png" alt="Deltano Empanadas">
           </div>
           <div class="portfolio-content">
             <span class="portfolio-category">Landing Page</span>
-            <h3>🍰 Tienda de Postres Pilili</h3>
-            <p>Una landing page minimalista y cálida, diseñada para transmitir confianza y cercanía. El objetivo: que cada visitante sienta la calidad artesanal detrás de cada producto.</p>
-            <div class="portfolio-metrics">
-              <div class="metric">
-                <i class="fas fa-heart metric-icon"></i>
-                <div>
-                  <div class="metric-value">+95%</div>
-                  <div class="metric-label">Satisfacción</div>
-                </div>
-              </div>
-              <div class="metric">
-                <i class="fas fa-phone metric-icon"></i>
-                <div>
-                  <div class="metric-value">+100%</div>
-                  <div class="metric-label">Pedidos</div>
-                </div>
+            <h3>Deltano Empanadas</h3>
+          </div>
+          <div class="portfolio-overlay">
+            <div class="portfolio-overlay-content">
+              <i class="fas fa-external-link-alt"></i>
+              <span>Ver</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- Proyecto Almajo Expandido -->
+      <div id="proyecto-almajo" class="portfolio-card proyecto-expandido">
+        <div class="portfolio-image" style="height: 400px;">
+          <img src="almajo.jpg" alt="Tienda de Ropa y Alquiler Almajo" style="height: 100%;">
+        </div>
+        <div class="portfolio-content">
+          <span class="portfolio-category">E-Commerce</span>
+          <h3>Tienda de Ropa y Alquiler Almajo</h3>
+          <p>Una plataforma simple y clara para mostrar productos y facilitar el contacto con clientes. El diseño transmite elegancia y practicidad, adaptado a un público que busca estilo y accesibilidad.</p>
+          <div class="portfolio-metrics">
+            <div class="metric">
+              <i class="fas fa-arrow-up metric-icon"></i>
+              <div>
+                <div class="metric-value">+150%</div>
+                <div class="metric-label">Visitas</div>
               </div>
             </div>
-            <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #e2e8f0;">
-              <strong>Características:</strong> Diseño minimalista, Galería de productos, Botón de pedidos
+            <div class="metric">
+              <i class="fas fa-shopping-bag metric-icon"></i>
+              <div>
+                <div class="metric-value">+80%</div>
+                <div class="metric-label">Consultas</div>
+              </div>
             </div>
+          </div>
+          <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #e2e8f0;">
+            <strong>Características:</strong> Catálogo de productos, WhatsApp contacto, Diseño responsivo
           </div>
         </div>
+      </div>
 
-        <!-- Proyecto 4: Agencia de Fotos de Fútbol -->
-        <div class="portfolio-card">
-          <div class="portfolio-image">
-            <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=600" alt="Agencia de Fotos de Fútbol">
+      <!-- Proyecto Leskchamps Expandido -->
+      <div id="proyecto-leskchamps" class="portfolio-card proyecto-expandido">
+        <div class="portfolio-image" style="height: 400px;">
+          <img src="leskchamps.jpg" alt="Tienda Leskchamps" style="height: 100%;">
+        </div>
+        <div class="portfolio-content">
+          <span class="portfolio-category">E-Commerce Deportivo</span>
+          <h3>⚽ Tienda Leskchamps</h3>
+          <p>Una tienda online especializada en championes y ropa deportiva. Diseño dinámico y moderno pensado para un público joven y activo.</p>
+          <div class="portfolio-metrics">
+            <div class="metric">
+              <i class="fas fa-arrow-up metric-icon"></i>
+              <div>
+                <div class="metric-value">+120%</div>
+                <div class="metric-label">Visitas</div>
+              </div>
+            </div>
+            <div class="metric">
+              <i class="fas fa-shopping-bag metric-icon"></i>
+              <div>
+                <div class="metric-value">+65%</div>
+                <div class="metric-label">Ventas</div>
+              </div>
+            </div>
           </div>
-          <div class="portfolio-content">
-            <span class="portfolio-category">Web Fotográfica</span>
-            <h3>📸 Agencia de Fotos de Fútbol</h3>
-            <p>Un espacio digital para mostrar talento y creatividad, con galerías visuales que capturan la emoción del deporte. La página está pensada para atraer tanto a jugadores como a clubes que buscan servicios profesionales.</p>
-            <div class="portfolio-metrics">
-              <div class="metric">
-                <i class="fas fa-camera metric-icon"></i>
-                <div>
-                  <div class="metric-value">+300%</div>
-                  <div class="metric-label">Visibilidad</div>
-                </div>
-              </div>
-              <div class="metric">
-                <i class="fas fa-handshake metric-icon"></i>
-                <div>
-                  <div class="metric-value">+50</div>
-                  <div class="metric-label">Clientes nuevos</div>
-                </div>
+          <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #e2e8f0;">
+            <strong>Características:</strong> Catálogo de productos, Carrito de compras, WhatsApp contacto
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto Deltano Empanadas Expandido -->
+      <div id="proyecto-deltano" class="portfolio-card proyecto-expandido">
+        <div class="portfolio-image" style="height: 400px;">
+          <img src="Empanadas Congeladas (1).png" alt="Deltano Empanadas" style="height: 100%;">
+        </div>
+        <div class="portfolio-content">
+          <span class="portfolio-category">Landing Page</span>
+          <h3>Deltano Empanadas</h3>
+          <p>Landing page atractiva y funcional para un negocio de empanadas. Diseño appetitoso que destaca los productos y facilita los pedidos.</p>
+          <div class="portfolio-metrics">
+            <div class="metric">
+              <i class="fas fa-arrow-up metric-icon"></i>
+              <div>
+                <div class="metric-value">+95%</div>
+                <div class="metric-label">Visitas</div>
               </div>
             </div>
-            <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #e2e8f0;">
-              <strong>Características:</strong> Galerías dinámicas, Portafolio visual, Diseño deportivo
+            <div class="metric">
+              <i class="fas fa-phone metric-icon"></i>
+              <div>
+                <div class="metric-value">+70%</div>
+                <div class="metric-label">Pedidos</div>
+              </div>
             </div>
+          </div>
+          <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #e2e8f0;">
+            <strong>Características:</strong> Menú de productos, WhatsApp para pedidos, Diseño responsivo
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <script>
+    function mostrarProyecto(id) {
+      // Ocultar todos los proyectos
+      document.querySelectorAll('.proyecto-expandido').forEach(function(el) {
+        el.style.display = 'none';
+      });
+      
+      // Mostrar el proyecto seleccionado
+      var proyecto = document.getElementById(id);
+      if (proyecto) {
+        proyecto.style.display = 'block';
+        // Scroll suave hacia el proyecto
+        setTimeout(function() {
+          proyecto.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      }
+    }
+    
+    // Verificar si hay un hash en la URL al cargar
+    window.addEventListener('load', function() {
+      var hash = window.location.hash.substring(1);
+      if (hash) {
+        mostrarProyecto(hash);
+      }
+    });
+  </script>
+
   <!-- Testimonials -->
   <section style="padding: 4rem 0; background: white;">
     <div class="container">
       <div class="section-header">
-        <h2>Lo que dicen nuestros <span>clientes</span></h2>
+        <h2 style="background: linear-gradient(135deg, #2563eb, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Lo que dicen nuestros <span>clientes</span></h2>
         <p>Testimonios de empresas que confiaron en nosotros</p>
       </div>
       <div class="testimonials-grid">
@@ -250,9 +313,9 @@
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
           </div>
-          <p class="testimonial-text">"Nathaniel no solo diseñó la página, también me ayudó a entender cómo aprovecharla mejor. Su trato es humano y paciente, y eso marca la diferencia. Sentí que realmente se preocupó por mi proyecto."</p>
-          <div class="testimonial-author">Camila Lima</div>
-          <div class="testimonial-company">Pilili</div>
+          <p class="testimonial-text">"Mi proyecto quedó mejor de lo que esperaba. Nathaniel entendió exactly lo que necesitaba y lo entregó en tiempo y forma. Totalmente recomendado."</p>
+          <div class="testimonial-author">Giuliano</div>
+          <div class="testimonial-company">Deltano Empanadas</div>
         </div>
       </div>
     </div>
@@ -261,7 +324,7 @@
   <!-- CTA Section -->
   <section class="cta-section">
     <div class="container">
-      <h2>¿Listo para tu próximo proyecto?</h2>
+      <h2 style="background: linear-gradient(135deg, #2563eb, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">¿Listo para tu próximo proyecto?</h2>
       <p>Contáctanos y transformemos tu idea en realidad</p>
       <a href="index.html#contacto" class="cta-btn">
         Solicitar Presupuesto
@@ -311,5 +374,15 @@
       </div>
     </div>
   </footer>
+
+<!-- Landbot Chat Widget - Reemplaza YOUR_LANDBOT_ID con tu ID de Landbot -->
+<div class="landbot-container" style="position: fixed; bottom: 24px; right: 24px; z-index: 9999;"></div>
+<script src="https://static.landbot.io/landbot-3/landbot.js"></script>
+<script>
+  var landbot = new Landbot.Container({
+    container: '.landbot-container',
+    configUrl: 'https://landbot.io/u/YOUR_LANDBOT_ID/index.json'
+  });
+</script>
 </body>
 </html>

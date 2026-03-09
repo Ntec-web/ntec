@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="servicios.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="animacion.js" defer></script>
   
@@ -39,9 +40,6 @@
         <button class="mobile-menu-btn" onclick="toggleMenu()">
           <i class="fas fa-bars"></i>
         </button>
-        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Cambiar tema">
-          <i class="fas fa-moon" id="theme-icon"></i>
-        </button>
       </div>
     </div>
   </header>
@@ -61,18 +59,18 @@
   <!-- Page Header -->
   <section class="page-header">
     <div class="container">
-      <h1>Nuestros Servicios</h1>
+      <h1 style="background: linear-gradient(135deg, #2563eb, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Nuestros Servicios</h1>
       <p>Soluciones digitales completas para impulsar tu negocio al siguiente nivel</p>
     </div>
   </section>
 
   <!-- Desarrollo Web -->
-  <section style="padding: 5rem 0;">
+  <section class="service-section" style="padding: 5rem 0;">
     <div class="container">
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
         <div>
           <div style="color: #2563eb; font-weight: 600; margin-bottom: 0.5rem;">DESARROLLO WEB</div>
-          <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; color: #1a1a2e;">Creamos sitios web <span style="color: #2563eb;">a medida</span></h2>
+          <h2 class="section-title" style="font-size: 2.5rem; margin-bottom: 1.5rem; color: #1a1a2e;">Creamos sitios web <span style="color: #2563eb;">a medida</span></h2>
           <p style="color: #64748b; font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
             Cada negocio es único, y tu sitio web debería reflejar exactamente eso. No usamos plantillas genéricas que hacen que todas las páginas se vean iguales. En cambio, diseñamos y desarrollamos soluciones personalizadas que capturan la esencia de tu marca.
           </p>
@@ -80,10 +78,10 @@
             Desde landing pages convertidoras hasta sistemas web complejos, tenemos la experiencia para hacer realidad tu visión digital.
           </p>
           <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-            <span style="background: #eff6ff; color: #2563eb; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem;">Diseño Responsive</span>
-            <span style="background: #eff6ff; color: #2563eb; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem;">SEO Optimizado</span>
-            <span style="background: #eff6ff; color: #2563eb; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem;">Carga Rápida</span>
-            <span style="background: #eff6ff; color: #2563eb; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem;">Código Limpio</span>
+            <span class="service-tag" style="background: #eff6ff; color: #2563eb; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem;">Diseño Responsive</span>
+            <span class="service-tag" style="background: #eff6ff; color: #2563eb; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem;">SEO Optimizado</span>
+            <span class="service-tag" style="background: #eff6ff; color: #2563eb; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem;">Carga Rápida</span>
+            <span class="service-tag" style="background: #eff6ff; color: #2563eb; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem;">Código Limpio</span>
           </div>
         </div>
         <div>
@@ -94,7 +92,7 @@
   </section>
 
   <!-- E-Commerce -->
-  <section style="padding: 5rem 0; background: #f8fafc;">
+  <section class="service-section bg-alt" style="padding: 5rem 0;">
     <div class="container">
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
         <div>
@@ -110,19 +108,19 @@
             Integra las pasarelas de pago más populares de Uruguay y Latinoamérica para que tus clientes paguen como prefieran.
           </p>
           <ul style="list-style: none; padding: 0; margin-bottom: 2rem;">
-            <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.75rem;">
+            <li class="service-list-item" style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.75rem;">
               <i class="fas fa-check" style="color: #7c3aed;"></i>
               <span>Mercado Pago integrado</span>
             </li>
-            <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.75rem;">
+            <li class="service-list-item" style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.75rem;">
               <i class="fas fa-check" style="color: #7c3aed;"></i>
               <span>Stripe & PayPal para pagos internacionales</span>
             </li>
-            <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.75rem;">
+            <li class="service-list-item" style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.75rem;">
               <i class="fas fa-check" style="color: #7c3aed;"></i>
               <span>Gestión de inventario en tiempo real</span>
             </li>
-            <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.75rem;">
+            <li class="service-list-item" style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.75rem;">
               <i class="fas fa-check" style="color: #7c3aed;"></i>
               <span>Panel administrativo intuitivo</span>
             </li>
@@ -133,7 +131,7 @@
   </section>
 
   <!-- Marketing Digital -->
-  <section style="padding: 5rem 0;">
+  <section class="service-section" style="padding: 5rem 0;">
     <div class="container">
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
         <div>
@@ -215,7 +213,7 @@
   </section>
 
   <!-- SEO -->
-  <section style="padding: 5rem 0;">
+  <section class="service-section bg-alt" style="padding: 5rem 0;">
     <div class="container">
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
         <div>
@@ -258,7 +256,7 @@
   </section>
 
   <!-- Soporte Técnico -->
-  <section style="padding: 5rem 0; background: #f8fafc;">
+  <section class="service-section bg-alt" style="padding: 5rem 0;">
     <div class="container">
       <div style="text-align: center; max-width: 800px; margin: 0 auto 4rem;">
         <div style="color: #0891b2; font-weight: 600; margin-bottom: 0.5rem;">SOPORTE TÉCNICO</div>
@@ -268,7 +266,7 @@
         </p>
       </div>
       <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
-        <div style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
+        <div class="support-card" style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
           <div style="color: #0891b2; font-size: 2rem; margin-bottom: 1rem;">
             <i class="fas fa-clock"></i>
           </div>
@@ -280,7 +278,7 @@
             <li style="padding: 0.25rem 0;"><i class="fas fa-check" style="color: #0891b2; margin-right: 0.5rem;"></i> Recuperación automática</li>
           </ul>
         </div>
-        <div style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
+        <div class="support-card" style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
           <div style="color: #0891b2; font-size: 2rem; margin-bottom: 1rem;">
             <i class="fas fa-shield-alt"></i>
           </div>
@@ -292,7 +290,7 @@
             <li style="padding: 0.25rem 0;"><i class="fas fa-check" style="color: #0891b2; margin-right: 0.5rem;"></i> Escaneo de malware diario</li>
           </ul>
         </div>
-        <div style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
+        <div class="support-card" style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
           <div style="color: #0891b2; font-size: 2rem; margin-bottom: 1rem;">
             <i class="fas fa-sync"></i>
           </div>
@@ -311,7 +309,7 @@
   <!-- CTA -->
   <section class="cta-section">
     <div class="container">
-      <h2>¿Listo para transformar tu presencia digital?</h2>
+      <h2 style="background: linear-gradient(135deg, #2563eb, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">¿Listo para transformar tu presencia digital?</h2>
       <p>Cuéntanos sobre tu proyecto y te creamos una propuesta personalizada</p>
       <a href="index.html#contacto" class="cta-btn">
         Solicitar Presupuesto
@@ -360,5 +358,38 @@
       </div>
     </div>
   </footer>
+
+  <!-- Scroll Animation Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.service-section').forEach(section => {
+        observer.observe(section);
+      });
+    });
+  </script>
+
+<!-- Landbot Chat Widget - Reemplaza YOUR_LANDBOT_ID con tu ID de Landbot -->
+<div class="landbot-container" style="position: fixed; bottom: 24px; right: 24px; z-index: 9999;"></div>
+<script src="https://static.landbot.io/landbot-3/landbot.js"></script>
+<script>
+  var landbot = new Landbot.Container({
+    container: '.landbot-container',
+    configUrl: 'https://landbot.io/u/YOUR_LANDBOT_ID/index.json'
+  });
+</script>
 </body>
 </html>

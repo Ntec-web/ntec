@@ -526,38 +526,6 @@ window.addEventListener('scroll', function() {
   }
 });
 
-// Theme toggle
-function toggleTheme() {
-  const body = document.body;
-  const themeIcon = document.getElementById('theme-icon');
-  
-  body.classList.toggle('dark-mode');
-  
-  if (body.classList.contains('dark-mode')) {
-    themeIcon.classList.remove('fa-moon');
-    themeIcon.classList.add('fa-sun');
-    localStorage.setItem('theme', 'dark');
-  } else {
-    themeIcon.classList.remove('fa-sun');
-    themeIcon.classList.add('fa-moon');
-    localStorage.setItem('theme', 'light');
-  }
-}
-
-// Check saved theme on load
-document.addEventListener('DOMContentLoaded', function() {
-  const savedTheme = localStorage.getItem('theme');
-  const themeIcon = document.getElementById('theme-icon');
-  
-  if (savedTheme === 'dark') {
-    document.body.classList.add('dark-mode');
-    if (themeIcon) {
-      themeIcon.classList.remove('fa-moon');
-      themeIcon.classList.add('fa-sun');
-    }
-  }
-});
-
 // Mobile menu toggle
 function toggleMenu() {
   const mobileMenu = document.getElementById('mobileMenu');
@@ -607,8 +575,8 @@ const chatWidget = `
             <i class="fas fa-comments"></i>
           </div>
           <div class="chat-title">
-            <div class="chat-title-text">Chat en Vivo</div>
-            <div class="chat-subtitle">Respuesta inmediata</div>
+            <div class="chat-title-text">Asistente NTEC</div>
+            <div class="chat-subtitle">¡Conversemos!</div>
           </div>
         </div>
         <div class="chat-header-actions">
@@ -621,18 +589,20 @@ const chatWidget = `
       <div class="chat-messages" id="chat-messages">
         <div class="chat-message agent">
           <div class="chat-bubble">
-            <p>¡Hola! 👋 Soy asistente virtual. ¿En qué puedo ayudarte hoy?</p>
+            <p>¡Hola! 👋 Soy el asistente virtual de NTEC.</p>
+            <p style="margin-top: 8px;">¿En qué puedo ayudarte hoy? Podés contarme sobre tu proyecto o hacerme preguntas.</p>
             <span class="chat-time">Ahora</span>
           </div>
         </div>
       </div>
 
-      <!-- Quick Replies -->
-      <div class="chat-quick-replies">
-        <button class="quick-reply" data-text="💰 Solicitar presupuesto">💰 Solicitar presupuesto</button>
-        <button class="quick-reply" data-text="📅 Agendar reunión">📅 Agendar reunión</button>
-        <button class="quick-reply" data-text="📞 Contactar por WhatsApp">📞 Contactar por WhatsApp</button>
-        <button class="quick-reply" data-text="ℹ️ Más información">ℹ️ Más información</button>
+      <!-- Quick Replies - Initial -->
+      <div class="chat-quick-replies" id="initial-replies">
+        <button class="quick-reply" data-action="plans">📋 Ver planes y precios</button>
+        <button class="quick-reply" data-action="about">ℹ️ ¿Qué es NTEC?</button>
+        <button class="quick-reply" data-action="services">💻 ¿Qué servicios ofrecen?</button>
+        <button class="quick-reply" data-action="contact">📞 Quiero contactar</button>
+        <button class="quick-reply" data-action="chat">💬 Solo quiero hablar</button>
       </div>
 
       <!-- Input -->
@@ -696,14 +666,133 @@ chatMinimizeBtn.addEventListener('click', function() {
   }
 });
 
-// Quick replies
-quickReplies.forEach(function(btn) {
-  btn.addEventListener('click', function() {
-    const text = this.getAttribute('data-text');
-    chatInput.value = text;
-    sendMessage(text);
-  });
+// Quick replies - Action selection
+const actionResponses = {
+  'plans': {
+    response: '¡Perfecto! Aquí te cuento sobre mis planes:',
+    showPlans: true
+  },
+  'about': {
+    response: `<p>NTEC es un emprendimiento individual fundado por Nathaniel en Uruguay. 📍</p>
+      <p style="margin-top: 8px;">Me especializo en crear sitios web personalizados que reflejan la esencia de cada negocio.</p>
+      <p style="margin-top: 8px;">Lo que me diferencia? No solo entrego webs, sino que acompaño a mis clientes en todo el proceso, enseñándoles a usarlas y brindándoles soporte continuo.</p>
+      <p style="margin-top: 8px;">¿Te gustaría ver los planes disponibles?</p>`,
+    showPlans: null
+  },
+  'services': {
+    response: `<p>En NTECofferimos varios servicios: 🌐</p>
+      <ul style="margin-top: 8px; margin-bottom: 8px; padding-left: 20px;">
+        <li>🖥️ <strong>Desarrollo Web</strong> - Landing pages, webs corporativas, e-commerce</li>
+        <li>📱 <strong>Apps Mobile</strong> - Aplicaciones para iOS y Android</li>
+        <li>🎨 <strong>Diseño Gráfico</strong> - Logos, branding, identidades visuales</li>
+        <li>📈 <strong>Marketing Digital</strong> - SEO, redes sociales, publicidad</li>
+        <li>💻 <strong>Servicio Técnico</strong> - Reparación y mantenimiento de computadoras</li>
+      </ul>
+      <p>¿Sobre algún servicio específico querés saber más?</p>`,
+    showPlans: null
+  },
+  'contact': {
+    response: `<p>¡Excelente! 📞</p>
+      <p style="margin-top: 8px;">Podés contactarme de varias formas:</p>
+      <ul style="margin-top: 8px; margin-bottom: 8px; padding-left: 20px;">
+        <li>💬 <strong>WhatsApp:</strong> Escribime directamente</li>
+        <li>📧 <strong>Email:</strong> ntec@ejemplo.com</li>
+        <li>📝 <strong>Formulario:</strong> Abajo en la web</li>
+      </ul>
+      <p style="margin-top: 8px;">¿Cuál preferís?</p>`,
+    showPlans: null
+  },
+  'chat': {
+    response: `<p>¡Me encant charlar! 😄</p>
+      <p style="margin-top: 8px;">Contame, ¿cómo estás hoy? ¿Hay algo en lo que pueda ayudarte, aunque sea para despejar dudas sobre sitios web o tecnología?</p>
+      <p style="margin-top: 8px;">No hay presión de comprar nada, estoy aquí para ayudar. 👂</p>`,
+    showPlans: null
+  }
+};
+
+// Chat state
+let chatState = 'initial'; // initial, chatting, showing_plans
+
+// Quick replies handler
+document.body.addEventListener('click', function(e) {
+  if (e.target.classList.contains('quick-reply') && e.target.getAttribute('data-action')) {
+    const action = e.target.getAttribute('data-action');
+    handleAction(action);
+  }
 });
+
+function handleAction(action) {
+  const actionData = actionResponses[action];
+  if (!actionData) return;
+  
+  // Add user selection message
+  const btnText = document.querySelector(`[data-action="${action}"]`).textContent;
+  addMessage(btnText, 'user');
+  
+  // Hide initial quick replies
+  const initialReplies = document.getElementById('initial-replies');
+  if (initialReplies) {
+    initialReplies.style.display = 'none';
+  }
+  
+  // Show typing
+  showTyping();
+  
+  setTimeout(function() {
+    hideTyping();
+    addMessage(actionData.response, 'agent');
+    
+    if (actionData.showPlans === true) {
+      chatState = 'showing_plans';
+      showPlanOptions();
+    } else if (actionData.showPlans === null) {
+      chatState = 'chatting';
+      showContinueChattingOptions();
+    }
+  }, 800);
+}
+
+function showContinueChattingOptions() {
+  setTimeout(function() {
+    const optionsHtml = `
+      <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px;">
+        <button class="quick-reply" data-action="plans" style="padding: 8px 12px;">📋 Ver planes</button>
+        <button class="quick-reply" data-action="contact" style="padding: 8px 12px;">📞 Contactar</button>
+        <button class="quick-reply" data-action="chat" style="padding: 8px 12px;">💬 Seguir hablando</button>
+      </div>
+    `;
+    addMessage(optionsHtml, 'agent');
+  }, 300);
+}
+
+function showPlanDetails(planKey) {
+  const plan = planResponses[planKey];
+  
+  // Add user message
+  addMessage(plan.title, 'user');
+  
+  // Build response message
+  let responseHtml = `<p style="font-weight: 600; font-size: 1.1rem; margin-bottom: 8px;">${plan.title}</p>`;
+  responseHtml += `<p style="font-size: 1.5rem; font-weight: 700; color: #2563eb; margin-bottom: 12px;">${plan.price}</p>`;
+  responseHtml += `<p style="margin-bottom: 12px;">${plan.description}</p>`;
+  responseHtml += `<p style="font-weight: 600; margin-bottom: 8px;">🎯 Incluye:</p>`;
+  responseHtml += `<ul style="margin-bottom: 12px; padding-left: 20px;">`;
+  plan.includes.forEach(item => {
+    responseHtml += `<li style="margin-bottom: 4px;">${item}</li>`;
+  });
+  responseHtml += `</ul>`;
+  responseHtml += `<p style="font-style: italic; color: #64748b; margin-bottom: 16px;">${plan.maintenance}</p>`;
+  responseHtml += `<p style="margin-bottom: 12px;"><strong>💡 Plus NTEC:</strong> No solo te entregamos la web, te enseñamos a usarla y te acompañamos en el proceso.</p>`;
+  responseHtml += `<button class="quick-reply" onclick="window.open('https://wa.me/59898765432', '_blank')" style="background: linear-gradient(135deg, #25D366, #128C7E); color: white; padding: 12px 24px; border-radius: 8px; border: none; cursor: pointer; font-weight: 600; width: 100%;">💬 Consultar ahora</button>`;
+  
+  // Show typing indicator
+  showTyping();
+  
+  setTimeout(function() {
+    hideTyping();
+    addMessage(responseHtml, 'agent');
+  }, 1000);
+}
 
 // Send message
 chatForm.addEventListener('submit', function(e) {
@@ -719,21 +808,179 @@ function sendMessage(text) {
   addMessage(text, 'user');
   chatInput.value = '';
 
+  // Hide initial quick replies if visible
+  const initialReplies = document.getElementById('initial-replies');
+  if (initialReplies) {
+    initialReplies.style.display = 'none';
+  }
+
   // Show typing indicator
   showTyping();
 
-  // Simulate response
+  // Process message through conversation engine
   setTimeout(function() {
     hideTyping();
+    
+    const response = processMessage(text);
+    addMessage(response.text, 'agent');
+    
+    // Handle state changes
+    if (response.showPlans) {
+      chatState = 'showing_plans';
+      setTimeout(showPlanOptions, 500);
+    } else if (response.continueChat) {
+      chatState = 'chatting';
+      setTimeout(showContinueChattingOptions, 500);
+    }
+  }, 1000);
+}
+
+// Conversational engine
+function processMessage(text) {
+  const lowerText = text.toLowerCase().trim();
+  
+  // Greetings
+  if (lowerText.match(/^(hola|buenos|buenas|hey|hi|hello|qué tal|cómo estás)/i)) {
+    return {
+      text: `<p>¡Hola! 👋 ¡Qué bueno charlar contigo!</p>
+        <p style="margin-top: 8px;">¿En qué puedo ayudarte hoy? Podés contarme sobre tu proyecto o simplemente conversamos.</p>`,
+      continueChat: true
+    };
+  }
+  
+  // How are you / casual talk
+  if (lowerText.match(/cómo estás|cómo te va|bien|y vos|estás bien/i)) {
     const responses = [
-      '¡Gracias por tu mensaje! Un agente te responderá pronto.',
-      'Entiendo tu consulta. ¿Podrías darme más detalles?',
-      'Perfecto, déjame verificar eso para ti.',
-      '¡Excelente pregunta! Te conectaré con un especialista.',
+      `<p>¡Muy bien, gracias por preguntar! 😊</p>
+        <p style="margin-top: 8px;">Aquí esperando para ayudarte con tu proyecto web. ¿Y vos, cómo estás?</p>`,
+      `<p>¡Genial! 🎉 Aquí tengo muchas ganas de ayudarte.</p>
+        <p style="margin-top: 8px;">Contame, ¿qué te trae por aquí hoy?</p>`,
+      `<p>¡Perfecto! ✨ Estuve trabajando en proyectos muy interesantes.</p>
+        <p style="margin-top: 8px;">¿Te puedo ayudar con algo específico o preferís que charlemos un poco?</p>`
     ];
-    const randomResponse = responses[Math.floor(Math.random() * responses.length)];
-    addMessage(randomResponse, 'agent');
-  }, 1500);
+    return {
+      text: responses[Math.floor(Math.random() * responses.length)],
+      continueChat: true
+    };
+  }
+  
+  // Thanks / gratitude
+  if (lowerText.match(/gracias|te agradezco|muchas gracias|thanks|thank you/i)) {
+    return {
+      text: `<p>¡De nada! 😊 Me gusta poder ayudar.</p>
+        <p style="margin-top: 8px;">Si tenés más preguntas o querés avanzar con tu proyecto, aquí estoy.</p>`,
+      continueChat: true
+    };
+  }
+  
+  // Questions about prices/plans
+  if (lowerText.match(/precio|costo|cuánto|cuál|precios|presupuesto|valor|cuánto sale|plan|tarifa/i)) {
+    return {
+      text: `<p>¡Perfecto! Te cuento sobre los planes que tengo disponibles 📋</p>
+        <p style="margin-top: 8px;">¿Cuál se adapta mejor a lo que necesitás?</p>`,
+      showPlans: true
+    };
+  }
+  
+  // Questions about web development
+  if (lowerText.match(/web|página|sitio|desarrollo|crear|hacer|necesito|quiero/i)) {
+    return {
+      text: `<p>¡Excelente! 🌐 Me encanta hablar de proyectos web.</p>
+        <p style="margin-top: 8px;">Tengo varias opciones según lo que necesites. ¿Querés ver los planes o preferís que te pregunte más sobre tu idea?</p>`,
+      continueChat: true
+    };
+  }
+  
+  // Questions about NTEC / who are you
+  if (lowerText.match(/qué es ntec|quién sos|quién eres|sobre ti|con quién hablo|empresa|emprendimiento/i)) {
+    return {
+      text: `<p>¡Buena pregunta! 😄</p>
+        <p style="margin-top: 8px;">Soy el asistente de NTEC, un emprendimiento individual de desarrollo web en Uruguay.🏎️</p>
+        <p style="margin-top: 8px;">Mi fundador Nathaniel crea sitios web personalizados para negocios como el tuyo. Lo que nos hace diferentes es que acompañamos a cada cliente en todo el proceso, enseñándoles a usar su web.</p>
+        <p style="margin-top: 8px;">¿Querés saber más o ver los planes?</p>`,
+      continueChat: true
+    };
+  }
+  
+  // Contact request
+  if (lowerText.match(/contactar|whatsapp|escribir|hablar|llamar|comunicar|redes|email|correo/i)) {
+    return {
+      text: `<p>¡Claro que sí! 📞</p>
+        <p style="margin-top: 8px;">Podés escribirme por WhatsApp directamente o dejarme tu mensaje aquí.</p>
+        <p style="margin-top: 8px;">¿Cuál preferís?</p>`,
+      continueChat: true
+    };
+  }
+  
+  // Questions about services
+  if (lowerText.match(/servicio|qué hacen|ofrecen|hacen|producto/i)) {
+    return {
+      text: `<p>En NTECofferimos varios servicios 💻</p>
+        <ul style="margin-top: 8px; margin-bottom: 8px; padding-left: 20px;">
+          <li>🖥️ Desarrollo Web (landings, corporativas, e-commerce)</li>
+          <li>📱 Apps Mobile</li>
+          <li>🎨 Diseño Gráfico</li>
+          <li>📈 Marketing Digital</li>
+          <li>💻 Servicio Técnico</li>
+        </ul>
+        <p>¿Sobre alguno querés saber más?</p>`,
+      continueChat: true
+    };
+  }
+  
+  // Goodbye
+  if (lowerText.match(/adiós|bye|nos vemos| chau|hasta luego|luego|me voy|me retiro/i)) {
+    return {
+      text: `<p>¡Chao! 👋 Fue un placer charlar contigo.</p>
+        <p style="margin-top: 8px;">Cuando quieras volver a hablar o avanzar con tu proyecto, aquí estaré. ¡Que te vaya muy bien! 🚀</p>`,
+      continueChat: false
+    };
+  }
+  
+  // Questions about timeframe / delivery
+  if (lowerText.match(/cuánto tiempo|tarda|cuando|plazo|entrega|cuándo/i)) {
+    return {
+      text: `<p>¡Buena pregunta! ⏱️</p>
+        <p style="margin-top: 8px;">El tiempo depende del tipo de proyecto:</p>
+        <ul style="margin-top: 8px; margin-bottom: 8px; padding-left: 20px;">
+          <li>🖥️ Landing Page: 3-5 días</li>
+          <li>🌐 Web Estándar: 1-2 semanas</li>
+          <li>🛒 e-Commerce: 2-4 semanas</li>
+        </ul>
+        <p style="margin-top: 8px;">¿Querés ver los planes con más detalle?</p>`,
+      showPlans: true
+    };
+  }
+  
+  // Questions about maintenance
+  if (lowerText.match(/mantenimiento|soporte|actualizar|actualización|hosting|dominio/i)) {
+    return {
+      text: `<p>¡Sí! Ofresco planes de mantenimiento 📦</p>
+        <p style="margin-top: 8px;">Incluyen:</p>
+        <ul style="margin-top: 8px; margin-bottom: 8px; padding-left: 20px;">
+          <li>🌐 Hosting y dominio incluidos</li>
+          <li>🔄 Actualizaciones de contenido</li>
+          <li>🛡️ Seguridad y backups</li>
+          <li>📞 Soporte prioritario</li>
+        </ul>
+        <p style="mt-2">Cada plan tiene su propio mantenimiento. ¿Querés ver los detalles?</p>`,
+      showPlans: true
+    };
+  }
+  
+  // Default responses for casual chat
+  const casualResponses = [
+    `<p>¡Interesante! 😄 Contame más sobre eso.</p>
+      <p style="margin-top: 8px;">¿Hay algo específico sobre desarrollo web en lo que pueda ayudarte?</p>`,
+    `<p>¡Entendido! 👍 ¿Te gustaría ver los planes que tengo disponibles?</p>`,
+    `<p>¡Perfecto! 📋 ¿Querés que te muestre las opciones de páginas web que tengo?</p>`,
+    `<p>¡Genial! 🎯 ¿Tenés alguna idea de qué tipo de web necesitás?</p>`
+  ];
+  
+  return {
+    text: casualResponses[Math.floor(Math.random() * casualResponses.length)],
+    continueChat: true
+  };
 }
 
 function addMessage(text, sender) {
@@ -744,12 +991,105 @@ function addMessage(text, sender) {
   messageDiv.className = 'chat-message ' + sender;
   messageDiv.innerHTML = `
     <div class="chat-bubble">
-      <p>${text}</p>
+      ${text}
       <span class="chat-time">${time}</span>
     </div>
   `;
   chatMessages.appendChild(messageDiv);
   chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+// Plan responses
+const planResponses = {
+  'landing': {
+    title: '🖥️ Landing Page',
+    price: 'desde $4.000 USD',
+    description: 'La Landing Page es ideal si querés empezar con presencia online rápida y económica. Perfecta para promociones, eventos o productos específicos.',
+    includes: ['Dominio y hosting incluidos', 'Diseño profesional', 'WhatsApp directo', 'Formulario de contacto', 'Optimizada para móviles'],
+    maintenance: 'Mantenimiento desde $50 USD/mes'
+  },
+  'estandar': {
+    title: '🌐 Web Estándar',
+    price: 'desde $7.000 USD',
+    description: 'La Web Estándar es perfecta para negocios que necesitan una presencia online completa con múltiples páginas y secciones.',
+    includes: ['Hasta 5 páginas', 'Diseño personalizado', 'Formularios de contacto', 'Galería de imágenes', 'Integración con redes sociales'],
+    maintenance: 'Mantenimiento desde $80 USD/mes'
+  },
+  'servicios': {
+    title: '📋 Web de Servicios',
+    price: 'desde $10.000 USD',
+    description: 'La Web de Servicios está pensada para negocios que ofrecen varias prestaciones, con secciones dedicadas a cada servicio que ofrecés.',
+    includes: ['Catálogo de servicios', 'Sistema de citas (opcional)', 'Portafolio de proyectos', 'Testimonios de clientes', 'Blog integrado'],
+    maintenance: 'Mantenimiento desde $100 USD/mes'
+  },
+  'ecommerce-basica': {
+    title: '🛒 e-Commerce Básica',
+    price: 'desde $15.000 USD',
+    description: 'La e-Commerce Básica es ideal para empezar a vender online con una tienda simple pero funcional y efectiva.',
+    includes: ['Catálogo de productos', 'Carrito de compras', 'Pasarela de pagos básica', 'Panel de administración', 'Hasta 50 productos'],
+    maintenance: 'Mantenimiento desde $150 USD/mes'
+  },
+  'ecommerce-avanzada': {
+    title: '🚀 e-Commerce Avanzada',
+    price: 'desde $20.000 USD',
+    description: 'La e-Commerce Avanzada es para negocios que necesitan una tienda online completa con funciones avanzadas de venta.',
+    includes: ['Catálogo ilimitado', 'Múltiples pasarelas de pago', 'Sistema de inventario', 'Cupones y descuentos', 'Análisis de ventas', 'Integración con envíos'],
+    maintenance: 'Mantenimiento desde $200 USD/mes'
+  }
+};
+
+function showPlanDetails(planKey) {
+  const plan = planResponses[planKey];
+  
+  // Add user message
+  const btnText = document.querySelector(`[data-plan="${planKey}"]`).textContent;
+  addMessage(btnText, 'user');
+  
+  // Build response message
+  let responseHtml = `<p style="font-weight: 600; font-size: 1.1rem; margin-bottom: 8px;">${plan.title}</p>`;
+  responseHtml += `<p style="font-size: 1.5rem; font-weight: 700; color: #2563eb; margin-bottom: 12px;">${plan.price}</p>`;
+  responseHtml += `<p style="margin-bottom: 12px;">${plan.description}</p>`;
+  responseHtml += `<p style="font-weight: 600; margin-bottom: 8px;">🎯 Incluye:</p>`;
+  responseHtml += `<ul style="margin-bottom: 12px; padding-left: 20px;">`;
+  plan.includes.forEach(item => {
+    responseHtml += `<li style="margin-bottom: 4px;">${item}</li>`;
+  });
+  responseHtml += `</ul>`;
+  responseHtml += `<p style="font-style: italic; color: #64748b; margin-bottom: 16px;">${plan.maintenance}</p>`;
+  responseHtml += `<p style="margin-bottom: 12px;"><strong>💡 Plus NTEC:</strong> No solo te entregamos la web, te enseñamos a usarla y te acompañamos en el proceso.</p>`;
+  responseHtml += `<button class="quick-reply" onclick="window.open('https://wa.me/59898765432', '_blank')" style="background: linear-gradient(135deg, #25D366, #128C7E); color: white; padding: 12px 24px; border-radius: 8px; border: none; cursor: pointer; font-weight: 600; width: 100%;">💬 Consultar ahora</button>`;
+  
+  // Show typing indicator
+  showTyping();
+  
+  setTimeout(function() {
+    hideTyping();
+    addMessage(responseHtml, 'agent');
+    setTimeout(showContinueChattingOptions, 500);
+  }, 800);
+}
+
+function showPlanOptions() {
+  const planOptionsHtml = `
+    <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 8px;">
+      <button class="quick-reply" data-plan="landing" style="text-align: left; padding: 10px 12px;">🖥️ Landing Page - $4.000 USD</button>
+      <button class="quick-reply" data-plan="estandar" style="text-align: left; padding: 10px 12px;">🌐 Web Estándar - $7.000 USD</button>
+      <button class="quick-reply" data-plan="servicios" style="text-align: left; padding: 10px 12px;">📋 Web de Servicios - $10.000 USD</button>
+      <button class="quick-reply" data-plan="ecommerce-basica" style="text-align: left; padding: 10px 12px;">🛒 e-Commerce Básica - $15.000 USD</button>
+      <button class="quick-reply" data-plan="ecommerce-avanzada" style="text-align: left; padding: 10px 12px;">🚀 e-Commerce Avanzada - $20.000 USD</button>
+    </div>
+  `;
+  addMessage(planOptionsHtml, 'agent');
+  
+  // Attach event listeners
+  document.querySelectorAll('.quick-reply[data-plan]').forEach(function(btn) {
+    btn.onclick = function() {
+      const plan = this.getAttribute('data-plan');
+      if (plan && planResponses[plan]) {
+        showPlanDetails(plan);
+      }
+    };
+  });
 }
 
 function showTyping() {
