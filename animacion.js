@@ -783,7 +783,7 @@ function showPlanDetails(planKey) {
   responseHtml += `</ul>`;
   responseHtml += `<p style="font-style: italic; color: #64748b; margin-bottom: 16px;">${plan.maintenance}</p>`;
   responseHtml += `<p style="margin-bottom: 12px;"><strong>💡 Plus NTEC:</strong> No solo te entregamos la web, te enseñamos a usarla y te acompañamos en el proceso.</p>`;
-  responseHtml += `<button class="quick-reply" onclick="window.open('https://wa.me/59898765432', '_blank')" style="background: linear-gradient(135deg, #25D366, #128C7E); color: white; padding: 12px 24px; border-radius: 8px; border: none; cursor: pointer; font-weight: 600; width: 100%;">💬 Consultar ahora</button>`;
+  responseHtml += `<button class="quick-reply" onclick="window.open('https://wa.me/59896616638', '_blank')" style="background: linear-gradient(135deg, #25D366, #128C7E); color: white; padding: 12px 24px; border-radius: 8px; border: none; cursor: pointer; font-weight: 600; width: 100%;">💬 Consultar ahora</button>`;
   
   // Show typing indicator
   showTyping();
@@ -1057,7 +1057,7 @@ function showPlanDetails(planKey) {
   responseHtml += `</ul>`;
   responseHtml += `<p style="font-style: italic; color: #64748b; margin-bottom: 16px;">${plan.maintenance}</p>`;
   responseHtml += `<p style="margin-bottom: 12px;"><strong>💡 Plus NTEC:</strong> No solo te entregamos la web, te enseñamos a usarla y te acompañamos en el proceso.</p>`;
-  responseHtml += `<button class="quick-reply" onclick="window.open('https://wa.me/59898765432', '_blank')" style="background: linear-gradient(135deg, #25D366, #128C7E); color: white; padding: 12px 24px; border-radius: 8px; border: none; cursor: pointer; font-weight: 600; width: 100%;">💬 Consultar ahora</button>`;
+  responseHtml += `<button class="quick-reply" onclick="window.open('https://wa.me/59896616638', '_blank')" style="background: linear-gradient(135deg, #25D366, #128C7E); color: white; padding: 12px 24px; border-radius: 8px; border: none; cursor: pointer; font-weight: 600; width: 100%;">💬 Consultar ahora</button>`;
   
   // Show typing indicator
   showTyping();
@@ -1072,11 +1072,11 @@ function showPlanDetails(planKey) {
 function showPlanOptions() {
   const planOptionsHtml = `
     <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 8px;">
-      <button class="quick-reply" data-plan="landing" style="text-align: left; padding: 10px 12px;">🖥️ Landing Page - $4.000 USD</button>
-      <button class="quick-reply" data-plan="estandar" style="text-align: left; padding: 10px 12px;">🌐 Web Estándar - $7.000 USD</button>
-      <button class="quick-reply" data-plan="servicios" style="text-align: left; padding: 10px 12px;">📋 Web de Servicios - $10.000 USD</button>
-      <button class="quick-reply" data-plan="ecommerce-basica" style="text-align: left; padding: 10px 12px;">🛒 e-Commerce Básica - $15.000 USD</button>
-      <button class="quick-reply" data-plan="ecommerce-avanzada" style="text-align: left; padding: 10px 12px;">🚀 e-Commerce Avanzada - $20.000 USD</button>
+      <button class="quick-reply" data-plan="landing" style="text-align: left; padding: 10px 12px;">🖥️ Landing Page - $4.000 UYU</button>
+      <button class="quick-reply" data-plan="estandar" style="text-align: left; padding: 10px 12px;">🌐 Web Estándar - $7.000 UYU</button>
+      <button class="quick-reply" data-plan="servicios" style="text-align: left; padding: 10px 12px;">📋 Web de Servicios - $10.000 UYU</button>
+      <button class="quick-reply" data-plan="ecommerce-basica" style="text-align: left; padding: 10px 12px;">🛒 e-Commerce Básica - $15.000 UYU</button>
+      <button class="quick-reply" data-plan="ecommerce-avanzada" style="text-align: left; padding: 10px 12px;">🚀 e-Commerce Avanzada - $20.000 UYU</button>
     </div>
   `;
   addMessage(planOptionsHtml, 'agent');
