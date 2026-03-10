@@ -696,7 +696,7 @@ const actionResponses = {
       <p style="margin-top: 8px;">Podés contactarme de varias formas:</p>
       <ul style="margin-top: 8px; margin-bottom: 8px; padding-left: 20px;">
         <li>💬 <strong>WhatsApp:</strong> Escribime directamente</li>
-        <li>📧 <strong>Email:</strong> ntec@ejemplo.com</li>
+        <li>📧 <strong>Email:</strong> nservice7ech@gmail.com</li>
         <li>📝 <strong>Formulario:</strong> Abajo en la web</li>
       </ul>
       <p style="margin-top: 8px;">¿Cuál preferís?</p>`,
@@ -1003,38 +1003,38 @@ function addMessage(text, sender) {
 const planResponses = {
   'landing': {
     title: '🖥️ Landing Page',
-    price: 'desde $4.000 USD',
+    price: 'desde $4.000 UYU',
     description: 'La Landing Page es ideal si querés empezar con presencia online rápida y económica. Perfecta para promociones, eventos o productos específicos.',
     includes: ['Dominio y hosting incluidos', 'Diseño profesional', 'WhatsApp directo', 'Formulario de contacto', 'Optimizada para móviles'],
-    maintenance: 'Mantenimiento desde $50 USD/mes'
+    maintenance: 'Mantenimiento desde $1500 UYU/mes'
   },
   'estandar': {
     title: '🌐 Web Estándar',
-    price: 'desde $7.000 USD',
+    price: 'desde $7.000 UYU',
     description: 'La Web Estándar es perfecta para negocios que necesitan una presencia online completa con múltiples páginas y secciones.',
     includes: ['Hasta 5 páginas', 'Diseño personalizado', 'Formularios de contacto', 'Galería de imágenes', 'Integración con redes sociales'],
-    maintenance: 'Mantenimiento desde $80 USD/mes'
+    maintenance: 'Mantenimiento desde $2000 UYU/mes'
   },
   'servicios': {
     title: '📋 Web de Servicios',
-    price: 'desde $10.000 USD',
+    price: 'desde $10.000 UYU',
     description: 'La Web de Servicios está pensada para negocios que ofrecen varias prestaciones, con secciones dedicadas a cada servicio que ofrecés.',
     includes: ['Catálogo de servicios', 'Sistema de citas (opcional)', 'Portafolio de proyectos', 'Testimonios de clientes', 'Blog integrado'],
-    maintenance: 'Mantenimiento desde $100 USD/mes'
+    maintenance: 'Mantenimiento desde $2500 UYU/mes'
   },
   'ecommerce-basica': {
     title: '🛒 e-Commerce Básica',
-    price: 'desde $15.000 USD',
+    price: 'desde $15.000 UYU',
     description: 'La e-Commerce Básica es ideal para empezar a vender online con una tienda simple pero funcional y efectiva.',
     includes: ['Catálogo de productos', 'Carrito de compras', 'Pasarela de pagos básica', 'Panel de administración', 'Hasta 50 productos'],
-    maintenance: 'Mantenimiento desde $150 USD/mes'
+    maintenance: 'Mantenimiento desde $3500 UYU/mes'
   },
   'ecommerce-avanzada': {
     title: '🚀 e-Commerce Avanzada',
-    price: 'desde $20.000 USD',
+    price: 'desde $20.000 UYU',
     description: 'La e-Commerce Avanzada es para negocios que necesitan una tienda online completa con funciones avanzadas de venta.',
     includes: ['Catálogo ilimitado', 'Múltiples pasarelas de pago', 'Sistema de inventario', 'Cupones y descuentos', 'Análisis de ventas', 'Integración con envíos'],
-    maintenance: 'Mantenimiento desde $200 USD/mes'
+    maintenance: 'Mantenimiento desde $5000 UYU/mes'
   }
 };
 
