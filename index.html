@@ -302,84 +302,103 @@
   </section>
 
   <!-- Pricing Section -->
-  <section id="precios" style="padding: 5rem 0; background: #f8fafc;">
+  <section id="precios" style="padding: 4rem 0; background: linear-gradient(180deg, #f8fafc 0%, #eff6ff 100%);">
     <div class="container">
       <div class="section-header">
         <h2 style="background: linear-gradient(135deg, #2563eb, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Nuestros <span>Planes</span></h2>
         <p>Planes diseñados para cada tipo de negocio</p>
-        <p style="margin-top: 1rem; font-size: 1.1rem;">Todos los precios incluyen diseño personalizado, dominio gratis por 1 año, hosting y certificado SSL. El pago se divide en 2 cuotas: 50% al inicio y 50% al entrega.</p>
+        <p style="margin-top: 1rem; font-size: 1rem; color: #64748b;">Todos los precios incluyen diseño personalizado, dominio gratis por 1 año, hosting y certificado SSL. El pago se divide en 2 cuotas: 50% al inicio y 50% a la entrega.</p>
       </div>
-      <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; max-width: 1400px; margin: 0 auto;">
+      <div class="pricing-grid">
         <!-- Plan Landing Page -->
-        <div style="background: white; border-radius: 1rem; padding: 1.25rem; border: 1px solid #e2e8f0; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0,0,0,0.05);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.15)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.05)';">
-          <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; color: #0f172a;">Landing Page – $4.000 UYU</h3>
-          <div style="font-size: 0.75rem; color: #16a34a; margin-bottom: 0.75rem;">Mantenimiento: $1.500/mes</div>
-          <ul style="list-style: none; padding: 0; margin: 0 0 0.75rem 0; font-size: 0.75rem; color: #64748b;">
-            <li style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.35rem;"><i class="fas fa-check" style="color: #22c55e; font-size: 0.65rem;"></i> Presencia online inmediata</li>
-            <li style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.35rem;"><i class="fas fa-check" style="color: #22c55e; font-size: 0.65rem;"></i> Diseño adaptable a móviles</li>
-            <li style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.35rem;"><i class="fas fa-check" style="color: #22c55e; font-size: 0.65rem;"></i> Contacto directo vía WhatsApp y formulario</li>
-            <li style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.35rem;"><i class="fas fa-check" style="color: #22c55e; font-size: 0.65rem;"></i> Dominio + hosting + SSL por 1 año</li>
-            <li style="display: flex; align-items: center; gap: 0.4rem;"><i class="fas fa-check" style="color: #22c55e; font-size: 0.65rem;"></i> Tutorial guiado y asistencia personalizada</li>
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3>Landing Page</h3>
+            <div class="pricing-price">$4.000</div>
+            <div class="pricing-maintenance">Mantenimiento: $1.500/mes</div>
+          </div>
+          <ul class="pricing-features">
+            <li>1 pagina con secciones basicas</li>
+            <li>Dominio y hosting por 1 ano + SSL</li>
+            <li>Diseno responsive</li>
+            <li>Formulario de contacto + WhatsApp</li>
+            <li>Links a redes sociales</li>
+            <li>Tutorial y asistencia personalizada</li>
           </ul>
-          <p style="font-size: 0.7rem; color: #64748b; font-style: italic; margin-bottom: 0.75rem;">👉 Perfecto para quienes recién comienzan y quieren estar visibles sin complicaciones.</p>
-          <a href="#contacto" style="display: block; text-align: center; background: linear-gradient(135deg, #22c55e, #16a34a); color: white; padding: 0.6rem; border-radius: 0.5rem; text-decoration: none; font-weight: 600; font-size: 0.8rem; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(34, 197, 94, 0.3);" onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 4px 12px rgba(34, 197, 94, 0.5)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 2px 8px rgba(34, 197, 94, 0.3)';">Consultar</a>
+          <a href="#contacto" class="pricing-btn pricing-btn-green">Consultar</a>
         </div>
 
-        <!-- Plan Web Estándar -->
-        <div style="background: white; border-radius: 1rem; padding: 1.25rem; border: 1px solid #e2e8f0; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0,0,0,0.05);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.15)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.05)';">
-          <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; color: #0f172a;">Web Estándar – $7.000 UYU</h3>
-          <div style="font-size: 0.75rem; color: #2563eb; margin-bottom: 0.75rem;">Mantenimiento: $2.000/mes</div>
-          <ul style="list-style: none; padding: 0; margin: 0 0 0.75rem 0; font-size: 0.75rem; color: #64748b;">
-            <li style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.35rem;"><i class="fas fa-check" style="color: #3b82f6; font-size: 0.65rem;"></i> 5 secciones para mostrar tu negocio con más detalle</li>
-            <li style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.35rem;"><i class="fas fa-check" style="color: #3b82f6; font-size: 0.65rem;"></i> Correos corporativos incluidos</li>
-            <li style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.35rem;"><i class="fas fa-check" style="color: #3b82f6; font-size: 0.65rem;"></i> SEO básico para aparecer en Google</li>
-            <li style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.35rem;"><i class="fas fa-check" style="color: #3b82f6; font-size: 0.65rem;"></i> Dominio + hosting + SSL por 1 año</li>
-            <li style="display: flex; align-items: center; gap: 0.4rem;"><i class="fas fa-check" style="color: #3b82f6; font-size: 0.65rem;"></i> Formularios automáticos y soporte continuo</li>
+        <!-- Plan Web Estandar -->
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3>Web Estandar</h3>
+            <div class="pricing-price">$7.000</div>
+            <div class="pricing-maintenance">Mantenimiento: $2.000/mes</div>
+          </div>
+          <ul class="pricing-features">
+            <li>5 secciones individuales</li>
+            <li>2 cuentas de correo</li>
+            <li>SEO basico</li>
+            <li>Formularios automaticos</li>
+            <li>Diseno responsive</li>
+            <li>Tutoriales y asistencia</li>
           </ul>
-          <p style="font-size: 0.7rem; color: #64748b; font-style: italic; margin-bottom: 0.75rem;">👉 Ideal para empresas que buscan profesionalizar su presencia digital.</p>
-          <a href="#contacto" style="display: block; text-align: center; background: linear-gradient(135deg, #3b82f6, #2563eb); color: white; padding: 0.6rem; border-radius: 0.5rem; text-decoration: none; font-weight: 600; font-size: 0.8rem; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);" onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 4px 12px rgba(59, 130, 246, 0.5)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 2px 8px rgba(59, 130, 246, 0.3)';">Consultar</a>
+          <a href="#contacto" class="pricing-btn pricing-btn-blue">Consultar</a>
         </div>
 
         <!-- Plan Web de Servicios -->
-        <div style="background: white; border-radius: 1rem; padding: 1.25rem; border: 1px solid #e2e8f0; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0,0,0,0.05);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.15)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.05)';">
-          <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; color: #0f172a;">Web de Servicios – $10.000 UYU</h3>
-          <div style="font-size: 0.75rem; color: #7c3aed; margin-bottom: 0.75rem;">Mantenimiento: $2.500/mes</div>
-          <ul style="list-style: none; padding: 0; margin: 0 0 0.75rem 0; font-size: 0.75rem; color: #64748b;">
-            <li style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.35rem;"><i class="fas fa-check" style="color: #8b5cf6; font-size: 0.65rem;"></i> Todo lo de Web Estándar</li>
-            <li style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.35rem;"><i class="fas fa-check" style="color: #8b5cf6; font-size: 0.65rem;"></i> Sección dedicada para cada servicio</li>
-            <li style="display: flex; align-items: center; gap: 0.4rem;"><i class="fas fa-check" style="color: #8b5cf6; font-size: 0.65rem;"></i> Estructura más completa y organizada</li>
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3>Web de Servicios</h3>
+            <div class="pricing-price">$10.000</div>
+            <div class="pricing-maintenance">Mantenimiento: $2.500/mes</div>
+          </div>
+          <ul class="pricing-features">
+            <li>5 secciones + seccion por servicio</li>
+            <li>Estructura mas completa</li>
+            <li>Incluye todo lo de Web Estandar</li>
+            <li>Ideal para negocios de servicios</li>
+            <li>Diseno responsive</li>
+            <li>Tutoriales y asistencia</li>
           </ul>
-          <p style="font-size: 0.7rem; color: #64748b; font-style: italic; margin-bottom: 0.75rem;">👉 Pensada para negocios que ofrecen múltiples servicios y necesitan claridad para sus clientes.</p>
-          <a href="#contacto" style="display: block; text-align: center; background: linear-gradient(135deg, #8b5cf6, #7c3aed); color: white; padding: 0.6rem; border-radius: 0.5rem; text-decoration: none; font-weight: 600; font-size: 0.8rem; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(139, 92, 246, 0.3);" onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 4px 12px rgba(139, 92, 246, 0.5)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 2px 8px rgba(139, 92, 246, 0.3)';">Consultar</a>
+          <a href="#contacto" class="pricing-btn pricing-btn-purple">Consultar</a>
         </div>
 
-        <!-- Plan e-Commerce Básica -->
-        <div style="background: white; border-radius: 1rem; padding: 1.25rem; border: 2px solid #f59e0b; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0,0,0,0.05);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.15)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.05)';">
-          <div style="font-size: 0.65rem; font-weight: 600; color: #f59e0b; text-transform: uppercase; margin-bottom: 0.25rem;">Recomendado</div>
-          <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; color: #0f172a;">e-Commerce Básica – $15.000 UYU</h3>
-          <div style="font-size: 0.75rem; color: #d97706; margin-bottom: 0.75rem;">Mantenimiento: $3.500/mes</div>
-          <ul style="list-style: none; padding: 0; margin: 0 0 0.75rem 0; font-size: 0.75rem; color: #64748b;">
-            <li style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.35rem;"><i class="fas fa-check" style="color: #f59e0b; font-size: 0.65rem;"></i> Catálogo ilimitado de productos</li>
-            <li style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.35rem;"><i class="fas fa-check" style="color: #f59e0b; font-size: 0.65rem;"></i> Carrito y checkout integrado</li>
-            <li style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.35rem;"><i class="fas fa-check" style="color: #f59e0b; font-size: 0.65rem;"></i> Medios de pago locales</li>
-            <li style="display: flex; align-items: center; gap: 0.4rem;"><i class="fas fa-check" style="color: #f59e0b; font-size: 0.65rem;"></i> SEO básico y soporte continuo</li>
+        <!-- Plan e-Commerce Basica (RECOMENDADA) -->
+        <div class="pricing-card pricing-card-featured">
+          <div class="pricing-badge">Recomendada</div>
+          <div class="pricing-header">
+            <h3>e-Commerce Basica</h3>
+            <div class="pricing-price">$15.000</div>
+            <div class="pricing-maintenance">Mantenimiento: $3.500/mes</div>
+          </div>
+          <ul class="pricing-features">
+            <li>Productos ilimitados</li>
+            <li>Carrito y checkout</li>
+            <li>Medios de pago y categorias</li>
+            <li>2 cuentas de correo</li>
+            <li>SEO basico</li>
+            <li>Tutoriales y asistencia</li>
           </ul>
-          <p style="font-size: 0.7rem; color: #64748b; font-style: italic; margin-bottom: 0.75rem;">👉 Para quienes quieren vender online de forma sencilla y segura.</p>
-          <a href="#contacto" style="display: block; text-align: center; background: linear-gradient(135deg, #f59e0b, #d97706); color: white; padding: 0.6rem; border-radius: 0.5rem; text-decoration: none; font-weight: 600; font-size: 0.8rem; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);" onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 4px 12px rgba(245, 158, 11, 0.5)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 2px 8px rgba(245, 158, 11, 0.3)';">Consultar</a>
+          <a href="#contacto" class="pricing-btn pricing-btn-orange">Consultar</a>
         </div>
 
         <!-- Plan e-Commerce Avanzada -->
-        <div style="background: white; border-radius: 1rem; padding: 1.25rem; border: 1px solid #e2e8f0; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0,0,0,0.05);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.15)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.05)';">
-          <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; color: #0f172a;">e-Commerce Avanzada – $20.000 UYU</h3>
-          <div style="font-size: 0.75rem; color: #dc2626; margin-bottom: 0.75rem;">Mantenimiento: $5.000/mes</div>
-          <ul style="list-style: none; padding: 0; margin: 0 0 0.75rem 0; font-size: 0.75rem; color: #64748b;">
-            <li style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.35rem;"><i class="fas fa-check" style="color: #ef4444; font-size: 0.65rem;"></i> Todo lo de e-Commerce Básica</li>
-            <li style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.35rem;"><i class="fas fa-check" style="color: #ef4444; font-size: 0.65rem;"></i> Filtros avanzados y fichas completas</li>
-            <li style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.35rem;"><i class="fas fa-check" style="color: #ef4444; font-size: 0.65rem;"></i> Multimoneda y productos relacionados</li>
-            <li style="display: flex; align-items: center; gap: 0.4rem;"><i class="fas fa-check" style="color: #ef4444; font-size: 0.65rem;"></i> Reportes mensuales y diseño personalizado</li>
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3>e-Commerce Avanzada</h3>
+            <div class="pricing-price">$20.000</div>
+            <div class="pricing-maintenance">Mantenimiento: $5.000/mes</div>
+          </div>
+          <ul class="pricing-features">
+            <li>Filtros y fichas completas</li>
+            <li>Multimoneda y productos relacionados</li>
+            <li>5 cuentas de correo</li>
+            <li>Diseno personalizado</li>
+            <li>Reportes mensuales</li>
+            <li>Todo lo de e-Commerce Basica</li>
           </ul>
-          <p style="font-size: 0.7rem; color: #64748b; font-style: italic; margin-bottom: 0.75rem;">👉 La opción para negocios que buscan escalar y optimizar su tienda digital.</p>
-          <a href="#contacto" style="display: block; text-align: center; background: linear-gradient(135deg, #ef4444, #dc2626); color: white; padding: 0.6rem; border-radius: 0.5rem; text-decoration: none; font-weight: 600; font-size: 0.8rem; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);" onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 4px 12px rgba(239, 68, 68, 0.5)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 2px 8px rgba(239, 68, 68, 0.3)';">Consultar</a>
+          <a href="#contacto" class="pricing-btn pricing-btn-red">Consultar</a>
         </div>
       </div>
     </div>
