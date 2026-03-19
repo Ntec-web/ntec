@@ -348,6 +348,22 @@ nav a:hover {
   border-radius: 50%;
 }
 
+/* Portfolio Card Link */
+.portfolio-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-card-link:hover {
+  transform: translateY(-5px);
+}
+
+.portfolio-card-link:hover .portfolio-card {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
 /* Portfolio */
 #portafolio {
   padding: 6rem 0;
