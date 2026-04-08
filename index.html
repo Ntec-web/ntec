@@ -3,38 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NTEC - Soluciones Tecnológicas</title>
+  <title>NTEC - Tu socio en transformación digital</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="animacion.js" defer></script>
-  
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-94QZW9NE5T');
-  </script>
 </head>
 <body>
   <!-- Header -->
   <header id="header">
     <div class="container">
       <div class="header-content">
-        <a href="#inicio" class="logo"><img src="Ntec (3).png" alt="NTEC" style="height: 40px; width: auto; border-radius: 8px;"></a>
-        <nav>
+        <a href="#inicio" class="logo">
+          <img src="Ntec (3).png" alt="NTEC">
+        </a>
+        <nav class="desktop-nav">
           <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#precios">Planes</a></li>
-            <li><a href="servicios.html">Servicios</a></li>
-            <li><a href="portafolio.html">Portafolio</a></li>
-            <li><a href="serviciotecnico.html">Servicio Técnico</a></li>
-            <li><a href="nosotros.html">Nosotros</a></li>
-            <li><a href="index.html#contacto">Contacto</a></li>
+            <li><a href="#problema">El Problema</a></li>
+            <li><a href="#solucion">Cómo ayudo</a></li>
+            <li><a href="#estrategias">Estrategias</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#planes">Planes</a></li>
+            <li><a href="#contacto" class="btn-nav">Hablar ahora</a></li>
           </ul>
         </nav>
         <button class="mobile-menu-btn" onclick="toggleMenu()">
@@ -46,616 +38,700 @@
 
   <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobileMenu">
-    <ul>
-      <li><a href="#inicio" onclick="toggleMenu()">Inicio</a></li>
-      <li><a href="#precios" onclick="toggleMenu()">Precios</a></li>
-      <li><a href="servicios.html" onclick="toggleMenu()">Servicios</a></li>
-      <li><a href="portafolio.html" onclick="toggleMenu()">Portafolio</a></li>
-      <li><a href="serviciotecnico.html" onclick="toggleMenu()">Servicio Técnico</a></li>
-      <li><a href="nosotros.html" onclick="toggleMenu()">Nosotros</a></li>
-      <li><a href="index.html#contacto" onclick="toggleMenu()">Contacto</a></li>
-    </ul>
+    <div class="mobile-menu-content">
+      <a href="#problema" onclick="toggleMenu()">El Problema</a>
+      <a href="#solucion" onclick="toggleMenu()">Cómo ayudo</a>
+      <a href="#estrategias" onclick="toggleMenu()">Estrategias</a>
+      <a href="#proyectos" onclick="toggleMenu()">Proyectos</a>
+      <a href="#planes" onclick="toggleMenu()">Planes</a>
+      <a href="#contacto" onclick="toggleMenu()">Hablar ahora</a>
+    </div>
   </div>
 
-  <!-- Hero Section -->
-  <section id="inicio">
+  <!-- 1. HERO - El Hook -->
+  <section id="inicio" class="hero">
     <div class="hero-bg"></div>
+    <div class="hero-container">
+      <div class="hero-text">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          Transforma tu negocio
+        </div>
+        <h1>
+          <span class="line">¿Tu negocio merece</span>
+          <span class="line highlight">más clientes?</span>
+        </h1>
+        <p class="hero-subtitle">El 78% de los clientes buscan en Google antes de comprar. Si no estás ahí, ellos van a tu competencia.</p>
+        
+        <div class="hero-cta">
+          <a href="#problema" class="btn-primary">
+            <span>Descubrir cómo</span>
+            <i class="fas fa-arrow-down"></i>
+          </a>
+          <a href="https://wa.me/59896616638?text=Hola,%20quiero%20consultar" target="_blank" class="btn-secondary">
+            <i class="fab fa-whatsapp"></i>
+            <span>Chatear ahora</span>
+          </a>
+        </div>
+
+        <p class="hero-trust">
+          <i class="fas fa-check-circle"></i> 
+          <span> respuesta en menos de 24h</span>
+        </p>
+      </div>
+
+      <div class="hero-visual">
+        <div class="visual-card card-1">
+          <i class="fas fa-users"></i>
+          <span>Clientes</span>
+        </div>
+        <div class="visual-card card-2">
+          <i class="fas fa-chart-pie"></i>
+          <span>Crecimiento</span>
+        </div>
+        <div class="visual-card card-3">
+          <i class="fas fa-trophy"></i>
+          <span>Resultados</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-hint" onclick="document.getElementById('problema').scrollIntoView({behavior: 'smooth'})">
+      <span>Continuar</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <!-- 2. EL PROBLEMA - Por qué necesitas actuar -->
+  <section id="problema" class="section-problem">
     <div class="container">
-      <div class="hero-content">
-        <div class="hero-text">
-          <h1 style="background: linear-gradient(135deg, #2563eb, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Creamos páginas web <span>rápidas, seguras</span> y adaptadas a tu negocio</h1>
-          <p>Diseño y desarrollo web pensado para que tu negocio crezca: rápido, seguro y adaptado a vos.</p>
-          <div class="hero-buttons">
-            <a href="#contacto" class="btn btn-primary">
-              Solicitar Presupuesto
-              <i class="fas fa-arrow-right"></i>
-            </a>
+      <div class="section-intro">
+        <span class="step-indicator">Paso 1</span>
+        <h2>¿Por qué <span class="highlight">estás perdiendo</span> clientes?</h2>
+        <p class="intro-text">Esto es lo que pasa cuando tu negocio no tiene presencia online...</p>
+      </div>
+
+      <div class="problems-grid">
+        <div class="problem-card scroll-reveal">
+          <div class="problem-icon"><i class="fas fa-search-minus"></i></div>
+          <div class="problem-content">
+            <h3>No te encuentran</h3>
+            <p>Tus clientes potenciales te buscan pero van a tu competencia. Cada día perdés ventas sin saberlo.</p>
           </div>
+          <div class="problem-number">01</div>
         </div>
-        <div class="hero-image">
-          <img src="videoui.gif" alt="Demo interactiva" class="hero-gif">
+
+        <div class="problem-card scroll-reveal">
+          <div class="problem-icon"><i class="fas fa-laptop-code"></i></div>
+          <div class="problem-content">
+            <h3>Tu web parece antigua</h3>
+            <p>Los clientes desconfían de negocios con páginas web desactualizadas. Tu imagen dice "no me importa".</p>
+          </div>
+          <div class="problem-number">02</div>
         </div>
+
+        <div class="problem-card scroll-reveal">
+          <div class="problem-icon"><i class="fas fa-money-bill-wave"></i></div>
+          <div class="problem-content">
+            <h3>Invierte sin resultados</h3>
+            <p> Gastás en publicidad pero no convierte. El problema no es el presupuesto, es la web.</p>
+          </div>
+          <div class="problem-number">03</div>
+        </div>
+
+        <div class="problem-card scroll-reveal">
+          <div class="problem-icon"><i class="fas fa-user-clock"></i></div>
+          <div class="problem-content">
+            <h3>Estás solo</h3>
+            <p>Desarrolladores que entregan y desaparecen. Necesitás un socio que te acompañe siempre.</p>
+          </div>
+          <div class="problem-number">04</div>
+        </div>
+      </div>
+
+      <div class="section-cta scroll-reveal">
+        <div class="cta-message">
+          <p><strong>La buena noticia:</strong> esto tiene solución y es más fácil de lo que pensás.</p>
+        </div>
+        <a href="#solucion" class="btn-next-section">
+          Ver cómo lo resuelvo <i class="fas fa-arrow-down"></i>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Services Section -->
-  <section id="servicios">
+  <!-- 3. LA SOLUCIÓN - Cómo trabajo -->
+  <section id="solucion" class="section-solution">
     <div class="container">
-      <div class="section-header">
-        <h2 style="background: linear-gradient(135deg, #2563eb, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Nuestros <span>Servicios</span></h2>
-        <p>Soluciones digitales pensadas para hacer crecer tu negocio</p>
-        <p style="margin-top: 1rem; font-size: 1.1rem;">En NTEC convierto tus ideas en herramientas digitales que realmente suman a tu marca. Cada servicio nace de escuchar lo que necesitás y está diseñado para resolver desafíos concretos, abrir oportunidades y acompañarte en el camino de crecimiento.</p>
+      <div class="section-intro">
+        <span class="step-indicator">Paso 2</span>
+        <h2>¿Cómo <span class="highlight">transformamos</span> tu negocio?</h2>
+        <p class="intro-text">No solo hago webs. Creo estrategias digitales que generan resultados reales.</p>
       </div>
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon blue">
-            <i class="fas fa-globe"></i>
+
+      <div class="process-steps">
+        <div class="step scroll-reveal">
+          <div class="step-header">
+            <span class="step-num">01</span>
+            <div class="step-icon"><i class="fas fa-ear-listen"></i></div>
           </div>
-          <h3>Desarrollo Web</h3>
-          <p>Creo sitios corporativos, landing pages y aplicaciones modernas que combinan diseño atractivo con rendimiento técnico.</p>
-          <ul class="service-list">
-            <li>Diseño responsive: tu página se adapta a cualquier dispositivo</li>
-            <li>Optimización SEO: pensada para que te encuentren en Google</li>
-            <li>Carga ultrarrápida y código limpio</li>
-          </ul>
+          <h3>Escuchamos</h3>
+          <p>Entiendo tu negocio, objetivos y desafíos antes de crear algo.</p>
         </div>
-        <div class="service-card">
-          <div class="service-icon purple">
-            <i class="fas fa-shopping-cart"></i>
+
+        <div class="step-arrow"><i class="fas fa-arrow-right"></i></div>
+
+        <div class="step scroll-reveal">
+          <div class="step-header">
+            <span class="step-num">02</span>
+            <div class="step-icon"><i class="fas fa-pen-ruler"></i></div>
           </div>
-          <h3>E-Commerce</h3>
-          <p>Construyo tiendas online completas, con pasarelas de pago integradas y gestión sencilla.</p>
-          <ul class="service-list">
-            <li>Mercado Pago, Stripe y PayPal</li>
-            <li>Gestión de inventario y panel administrativo</li>
-          </ul>
+          <h3>Diseñamos</h3>
+          <p>Creo una web que genera confianza y hace que los clientes quieran trabajar contigo.</p>
         </div>
-        <div class="service-card">
-          <div class="service-icon green">
-            <i class="fas fa-bullhorn"></i>
+
+        <div class="step-arrow"><i class="fas fa-arrow-right"></i></div>
+
+        <div class="step scroll-reveal">
+          <div class="step-header">
+            <span class="step-num">03</span>
+            <div class="step-icon"><i class="fas fa-rocket"></i></div>
           </div>
-          <h3>Marketing Digital</h3>
-          <p>Diseño estrategias que combinan SEO, redes sociales y campañas publicitarias para aumentar tu visibilidad.</p>
-          <ul class="service-list">
-            <li>SEO on-page y contenido estratégico</li>
-            <li>Google Ads y redes sociales</li>
-            <li>Analytics: medición constante</li>
-          </ul>
+          <h3>Ejecutamos</h3>
+          <p>Tu web lista en tiempo récord, optimizada para convertir visitantes en clientes.</p>
         </div>
-        <div class="service-card">
-          <div class="service-icon orange">
-            <i class="fas fa-mobile-alt"></i>
+
+        <div class="step-arrow"><i class="fas fa-arrow-right"></i></div>
+
+        <div class="step scroll-reveal">
+          <div class="step-header">
+            <span class="step-num">04</span>
+            <div class="step-icon"><i class="fas fa-hand-holding-heart"></i></div>
           </div>
-          <h3>Diseño Responsive</h3>
-          <p>Interfaces pensadas para la experiencia del usuario.</p>
-          <ul class="service-list">
-            <li>Mobile-first: tu web prioriza móviles</li>
-            <li>UX optimizada y accesibilidad</li>
-            <li>Performance: velocidad y fluidez</li>
-          </ul>
+          <h3>Acompañamos</h3>
+          <p>Te enseño a usar tu web y estoy ahí cuando necesitás cambios o mejoras.</p>
         </div>
-        <div class="service-card">
-          <div class="service-icon indigo">
-            <i class="fas fa-search"></i>
-          </div>
-          <h3>Optimización SEO</h3>
-          <p>Posicionamiento orgánico que te permite competir sin depender solo de la publicidad paga.</p>
-          <ul class="service-list">
-            <li>Keywords research y link building</li>
-            <li>Content strategy: contenido que conecta</li>
-            <li>Reportes mensuales</li>
-          </ul>
+      </div>
+
+      <div class="section-cta scroll-reveal">
+        <div class="cta-message">
+          <p>Esto es lo que <strong>incluye tu proyecto</strong>...</p>
         </div>
-        <div class="service-card">
-          <div class="service-icon teal">
-            <i class="fas fa-headset"></i>
-          </div>
-          <h3>Soporte Técnico</h3>
-          <p>No solo creo tu página, también la mantengo viva y segura.</p>
-          <ul class="service-list">
-            <li>Monitoreo 24/7 y backups diarios</li>
-            <li>Actualizaciones constantes</li>
-            <li>Soporte prioritario</li>
-          </ul>
-        </div>
+        <a href="#incluye" class="btn-next-section">
+          Ver todo lo que obtienes <i class="fas fa-arrow-down"></i>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Portfolio Section -->
-  <section id="portafolio">
+  <!-- 4. QUÉ INCLUYE -->
+  <section id="incluye" class="section-includes">
     <div class="container">
-      <div class="section-header">
-        <h2 style="background: linear-gradient(135deg, #2563eb, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Nuestro <span>Portafolio</span></h2>
-        <p>Proyectos que transformaron negocios</p>
-      </div>
-      <div class="portfolio-grid">
-        <a href="https://nathanielrivero225-creator.github.io/almajo/" target="_blank" class="portfolio-card-link">
-          <div class="portfolio-card">
-            <div class="portfolio-image">
-              <img src="almajo.jpg" alt="Tienda de Ropa y Alquiler Almajo">
-            </div>
-            <div class="portfolio-content">
-              <span class="portfolio-category">E-Commerce</span>
-              <h3>Tienda de Ropa y Alquiler Almajo</h3>
-              <p>Plataforma simple y clara para mostrar productos. El diseño transmite elegancia y practicidad.</p>
-              <div class="portfolio-metrics">
-                <div class="metric">
-                  <i class="fas fa-arrow-up metric-icon"></i>
-                  <div>
-                    <div class="metric-value">+150%</div>
-                    <div class="metric-label">Visitas</div>
-                  </div>
-                </div>
-                <div class="metric">
-                  <i class="fas fa-shopping-bag metric-icon"></i>
-                  <div>
-                    <div class="metric-value">+80%</div>
-                    <div class="metric-label">Consultas</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </a>
-        <a href="https://nathanielrivero225-creator.github.io/Leskchamps/" target="_blank" class="portfolio-card-link">
-          <div class="portfolio-card">
-            <div class="portfolio-image">
-              <img src="leskchamps.jpg" alt="Tienda de Championes y Ropa Deportiva Leskchamps">
-            </div>
-            <div class="portfolio-content">
-              <span class="portfolio-category">E-Commerce Deportivo</span>
-              <h3>⚽ Tienda Leskchamps</h3>
-              <p>Sitio dinámico para amantes del deporte, con enfoque visual que resalta la energía y pasión por el fútbol.</p>
-              <div class="portfolio-metrics">
-                <div class="metric">
-                  <i class="fas fa-futbol metric-icon"></i>
-                  <div>
-                    <div class="metric-value">+200%</div>
-                    <div class="metric-label">Tráfico</div>
-                  </div>
-                </div>
-                <div class="metric">
-                  <i class="fas fa-shopping-cart metric-icon"></i>
-                  <div>
-                    <div class="metric-value">+120%</div>
-                    <div class="metric-label">Conversiones</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </a>
-        <a href="https://empandas.github.io/Del-Tano/" target="_blank" class="portfolio-card-link">
-          <div class="portfolio-card">
-            <div class="portfolio-image">
-              <img src="Empanadas Congeladas (1).png" alt="Deltano Empanadas">
-            </div>
-            <div class="portfolio-content">
-              <span class="portfolio-category">E-Commerce</span>
-              <h3>Deltano Empanadas</h3>
-              <p>E-commerce completo para venta de empanadas artesanales con sistema de pedidos y gestión de inventario.</p>
-              <div class="portfolio-metrics">
-                <div class="metric">
-                  <i class="fas fa-heart metric-icon"></i>
-                  <div>
-                    <div class="metric-value">+95%</div>
-                    <div class="metric-label">Satisfacción</div>
-                  </div>
-                </div>
-                <div class="metric">
-                  <i class="fas fa-phone metric-icon"></i>
-                  <div>
-                    <div class="metric-value">+100%</div>
-                    <div class="metric-label">Pedidos</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </a>
-        <a href="https://nathanielrivero225-creator.github.io/agencia/" target="_blank" class="portfolio-card-link">
-          <div class="portfolio-card">
-            <div class="portfolio-image">
-              <img src="Captura de pantalla 2026-03-19 174608.png" alt="Charrua Visuals">
-            </div>
-            <div class="portfolio-content">
-              <span class="portfolio-category">Agencia de Fotografía</span>
-              <h3>📸 Charrua Visuals</h3>
-              <p>Agencia de fotografía profesional con portafolio visual dinámico y diseño moderno.</p>
-              <div class="portfolio-metrics">
-                <div class="metric">
-                  <i class="fas fa-camera metric-icon"></i>
-                  <div>
-                    <div class="metric-value">+180%</div>
-                    <div class="metric-label">Visitas</div>
-                  </div>
-                </div>
-                <div class="metric">
-                  <i class="fas fa-images metric-icon"></i>
-                  <div>
-                    <div class="metric-value">+150%</div>
-                    <div class="metric-label">Exposiciones</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </a>
+      <div class="section-intro">
+        <span class="step-indicator">Paso 3</span>
+        <h2>¿Qué <span class="highlight">obtienes</span>?</h2>
+        <p class="intro-text">Todo lo que necesitás para tener una presencia online profesional</p>
       </div>
 
-      <!-- Ver más proyectos -->
-      <div style="text-align: center; margin-top: 3rem;">
-        <a href="portafolio.html" class="btn btn-primary">Ver todos los proyectos <i class="fas fa-arrow-right"></i></a>
-      </div>
-
-      <!-- Testimonials -->
-      <div class="testimonials-section">
-        <h3>Lo que dicen nuestros clientes</h3>
-        <div class="testimonials-grid">
-          <div class="testimonial-card">
-            <div class="testimonial-stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <p class="testimonial-text">"Trabajar con él fue una experiencia clara y cercana. Me explicó cada paso y me dio confianza en todo el proceso. Se nota la dedicación y el compromiso en su trabajo."</p>
-            <div class="testimonial-author">Milka Rivero</div>
-            <div class="testimonial-company">Almajo</div>
-          </div>
-          <div class="testimonial-card">
-            <div class="testimonial-stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <p class="testimonial-text">"Lo que más destaco es la transparencia y el profesionalismo. Supo entender lo que necesitaba y me acompañó con soluciones prácticas y bien pensadas. Recomiendo su servicio sin dudas."</p>
-            <div class="testimonial-author">Alex Lescano</div>
-            <div class="testimonial-company">Leskchamps</div>
-          </div>
-          <div class="testimonial-card">
-            <div class="testimonial-stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <p class="testimonial-text">"No solo diseñó la página, también me ayudó a entender cómo aprovecharla mejor. Su trato humano y paciente marca la diferencia. Sentí que realmente se preocupó por mi proyecto."</p>
-            <div class="testimonial-author">Giuliano Dilavello</div>
-            <div class="testimonial-company">Deltano Empanadas</div>
-          </div>
+      <div class="includes-grid">
+        <div class="include-item scroll-reveal">
+          <i class="fas fa-globe"></i>
+          <h4>Web Profesional</h4>
+          <p>Diseño moderno y único</p>
         </div>
+        <div class="include-item scroll-reveal">
+          <i class="fas fa-mobile-alt"></i>
+          <h4>Perfecto en móvil</h4>
+          <p>Se ve bien en todo</p>
+        </div>
+        <div class="include-item scroll-reveal">
+          <i class="fas fa-search"></i>
+          <h4>SEO Básico</h4>
+          <p>Te encuentran en Google</p>
+        </div>
+        <div class="include-item scroll-reveal">
+          <i class="fas fa-shield-alt"></i>
+          <h4>SSL Seguro</h4>
+          <p>Certificado incluido</p>
+        </div>
+        <div class="include-item scroll-reveal">
+          <i class="fas fa-server"></i>
+          <h4>Dominio + Hosting</h4>
+          <p>1 año incluido</p>
+        </div>
+        <div class="include-item scroll-reveal">
+          <i class="fas fa-book-open"></i>
+          <h4>Tutorial</h4>
+          <p>Te enseño a usarlo</p>
+        </div>
+      </div>
+
+      <div class="section-cta scroll-reveal">
+        <div class="cta-message">
+          <p><strong>¿Y si querés ir más allá?</strong> Complementá tu web con estrategias digitales para redes sociales...</p>
+        </div>
+        <a href="#estrategias" class="btn-next-section">
+          Ver estrategias digitales <i class="fas fa-arrow-down"></i>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Pricing Section -->
-  <section id="precios" style="padding: 4rem 0; background: linear-gradient(180deg, #f8fafc 0%, #eff6ff 100%);">
+  <!-- 5. ESTRATEGIAS DIGITALES -->
+  <section id="estrategias" class="section-strategies">
     <div class="container">
-      <div class="section-header">
-        <h2 style="background: linear-gradient(135deg, #2563eb, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Nuestros <span>Planes</span></h2>
-        <p>Planes diseñados para cada tipo de negocio</p>
-        <p style="margin-top: 1rem; font-size: 1rem; color: #64748b;">Todos los precios incluyen diseño personalizado, dominio gratis por 1 año, hosting y certificado SSL. El pago se divide en 2 cuotas: 50% al inicio y 50% a la entrega.</p>
+      <div class="section-intro">
+        <span class="step-indicator">Paso 4</span>
+        <h2>Estrategias<span class="highlight">Digitales</span></h2>
+        <p class="intro-text">Una vez que tenés tu web, potenciá tu marca en redes sociales con campañas y contenido profesional</p>
       </div>
+
+      <div class="strategies-grid">
+        <div class="strategy-card scroll-reveal">
+          <div class="strategy-icon"><i class="fas fa-bullhorn"></i></div>
+          <h4>Campañas Ads</h4>
+          <p>Creación y gestión de campañas publicitarias en Instagram y Meta Ads para generar leads y ventas</p>
+          <ul class="strategy-features">
+            <li><i class="fas fa-check"></i> Segmentación audience</li>
+            <li><i class="fas fa-check"></i> Copywriting persuasivo</li>
+            <li><i class="fas fa-check"></i> Reportes de resultados</li>
+          </ul>
+        </div>
+
+        <div class="strategy-card scroll-reveal">
+          <div class="strategy-icon"><i class="fas fa-video"></i></div>
+          <h4>Edición de Video</h4>
+          <p>Videos profesionales para reels, stories y contenido comercial que captar la atención</p>
+          <ul class="strategy-features">
+            <li><i class="fas fa-check"></i> Reels y videos cortos</li>
+            <li><i class="fas fa-check"></i> Motion graphics</li>
+            <li><i class="fas fa-check"></i> Videos promocionales</li>
+          </ul>
+        </div>
+
+        <div class="strategy-card scroll-reveal">
+          <div class="strategy-icon"><i class="fas fa-pen-fancy"></i></div>
+          <h4>Contenido Visual</h4>
+          <p>Diseño de feed, plantillas y elementos gráficos para mantener una marca coherente</p>
+          <ul class="strategy-features">
+            <li><i class="fas fa-check"></i> Diseño de feed</li>
+            <li><i class="fas fa-check"></i> Plantillas para stories</li>
+            <li><i class="fas fa-check"></i> Posts comerciales</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section-cta scroll-reveal">
+        <div class="cta-message">
+          <p><strong>¿Querés potenciar tu presencia en redes?</strong> Escribime y te cuento cómo ayudarte...</p>
+        </div>
+        <a href="#contacto" class="btn-next-section">
+          Consultar ahora <i class="fas fa-arrow-down"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. PROYECTOS -->
+  <section id="proyectos" class="section-projects">
+    <div class="container">
+      <div class="section-intro">
+        <span class="step-indicator">Paso 5</span>
+        <h2>Proyectos que<span class="highlight"> funcionan</span></h2>
+        <p class="intro-text">Empresas como la tuya ya transformaron su presencia online</p>
+      </div>
+
+      <div class="projects-grid">
+        <a href="https://nathanielrivero225-creator.github.io/almajo/" target="_blank" class="project-card scroll-reveal">
+          <div class="project-img">
+            <img src="almajo.jpg" alt="Almajo">
+            <div class="project-link"><i class="fas fa-external-link-alt"></i></div>
+          </div>
+          <div class="project-info">
+            <span class="project-cat">E-Commerce</span>
+            <h3>Almajo</h3>
+            <p>Tienda de ropa y alquiler</p>
+            <span class="project-result"><i class="fas fa-arrow-trend-up"></i> +150% visitas</span>
+          </div>
+        </a>
+
+        <a href="https://nathanielrivero225-creator.github.io/Leskchamps/" target="_blank" class="project-card scroll-reveal">
+          <div class="project-img">
+            <img src="leskchamps.jpg" alt="Leskchamps">
+            <div class="project-link"><i class="fas fa-external-link-alt"></i></div>
+          </div>
+          <div class="project-info">
+            <span class="project-cat">Tienda Deportivo</span>
+            <h3>Leskchamps</h3>
+            <p>Calzado y ropa deportiva</p>
+            <span class="project-result"><i class="fas fa-arrow-trend-up"></i> +200% tráfico</span>
+          </div>
+        </a>
+
+        <a href="https://empandas.github.io/Del-Tano/" target="_blank" class="project-card scroll-reveal">
+          <div class="project-img">
+            <img src="Empanadas Congeladas (1).png" alt="Deltano">
+            <div class="project-link"><i class="fas fa-external-link-alt"></i></div>
+          </div>
+          <div class="project-info">
+            <span class="project-cat">E-Commerce</span>
+            <h3>Deltano</h3>
+            <p>Empanadas artesanales</p>
+            <span class="project-result"><i class="fas fa-arrow-trend-up"></i> +100% pedidos</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="section-cta scroll-reveal">
+        <div class="cta-message">
+          <p>Mirá lo que <strong>otros clientes dicen</strong> de trabajar conmigo...</p>
+        </div>
+        <a href="#testimonios" class="btn-next-section">
+          Ver testimonios <i class="fas fa-arrow-down"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. TESTIMONIOS -->
+  <section id="testimonios" class="section-testimonials">
+    <div class="container">
+      <div class="section-intro">
+        <span class="step-indicator">Paso 6</span>
+        <h2>Lo que dicen<span class="highlight"> mis clientes</span></h2>
+        <p class="intro-text">Empresas que ya transformaron su negocio</p>
+      </div>
+
+      <div class="testimonials-wrapper">
+        <div class="testimonial-card scroll-reveal">
+          <div class="testimonial-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-text">"Me explicó cada paso con paciencia. No solo me entregó una web, me enseñó a usarla. Eso no tiene precio."</p>
+          <div class="testimonial-author">
+            <strong>Milka Rivero</strong>
+            <span>Almajo</span>
+          </div>
+        </div>
+
+        <div class="testimonial-card scroll-reveal">
+          <div class="testimonial-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-text">"La transparencia fue lo que me convenció. Siempre supo explicarme qué se hacía y por qué. Recomendable 100%."</p>
+          <div class="testimonial-author">
+            <strong>Alex Lescano</strong>
+            <span>Leskchamps</span>
+          </div>
+        </div>
+
+        <div class="testimonial-card scroll-reveal">
+          <div class="testimonial-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-text">"No es solo un desarrollador, es un socio. Me ayuda a pensar estrategias y siempre está disponible para mejoras."</p>
+          <div class="testimonial-author">
+            <strong>Giuliano Dilavello</strong>
+            <span>Deltano Empanadas</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-cta scroll-reveal">
+        <div class="cta-message">
+          <p>Ahora, <strong>elige el plan</strong> que mejor se adapte a tus necesidades...</p>
+        </div>
+        <a href="#planes" class="btn-next-section">
+          Ver planes <i class="fas fa-arrow-down"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. PLANES -->
+  <section id="planes" class="section-pricing">
+    <div class="container">
+      <div class="section-intro">
+        <span class="step-indicator">Paso 7</span>
+        <h2>Inversión<span class="highlight"> accesible</span></h2>
+        <p class="intro-text">Planes claros sin costos ocultos. Todos incluyen dominio, hosting y SSL.</p>
+      </div>
+
       <div class="pricing-grid">
-        <!-- Plan Landing Page -->
-        <div class="pricing-card">
+        <div class="pricing-card scroll-reveal">
           <div class="pricing-header">
             <h3>Landing Page</h3>
-            <div class="pricing-price">$4.000</div>
-            <div class="pricing-maintenance">Mantenimiento: $1.500/mes</div>
+            <p class="plan-desc">Ideal para negocios que necesitan una sola página para generar leads y ventas</p>
+            <div class="price">$4.000</div>
+            <span class="price-sub">+ $1.500/mes</span>
           </div>
           <ul class="pricing-features">
-            <li>1 pagina con secciones basicas</li>
-            <li>Dominio y hosting por 1 ano + SSL</li>
-            <li>Diseno responsive</li>
-            <li>Formulario de contacto + WhatsApp</li>
-            <li>Links a redes sociales</li>
-            <li>Tutorial y asistencia personalizada</li>
+            <li><i class="fas fa-check"></i> 1 página web profesional</li>
+            <li><i class="fas fa-check"></i> Dominio .com/.uy incluido (1 año)</li>
+            <li><i class="fas fa-check"></i> Hosting SSD de alta velocidad</li>
+            <li><i class="fas fa-check"></i> Certificado SSL (seguro)</li>
+            <li><i class="fas fa-check"></i> Diseño responsive (celular y PC)</li>
           </ul>
-          <a href="#contacto" class="pricing-btn pricing-btn-green">Consultar</a>
+          <div class="pricing-extra" style="display: none;">
+            <ul class="pricing-features">
+              <li><i class="fas fa-check"></i> Formulario de contacto</li>
+              <li><i class="fas fa-check"></i> Botón flotante de WhatsApp</li>
+              <li><i class="fas fa-check"></i> Optimización SEO básica</li>
+              <li><i class="fas fa-check"></i> Integración con Google Maps</li>
+              <li><i class="fas fa-check"></i> Tutorial personalizado</li>
+            </ul>
+          </div>
+          <button class="btn-show-more" onclick="togglePricing(this)">Ver más <i class="fas fa-chevron-down"></i></button>
+          <a href="#contacto" class="btn-pricing">Elegir Plan</a>
         </div>
 
-        <!-- Plan Web Estandar -->
-        <div class="pricing-card">
+        <div class="pricing-card featured scroll-reveal">
+          <div class="pricing-badge">Más Popular</div>
           <div class="pricing-header">
-            <h3>Web Estandar</h3>
-            <div class="pricing-price">$7.000</div>
-            <div class="pricing-maintenance">Mantenimiento: $2.000/mes</div>
+            <h3>Web Estándar</h3>
+            <p class="plan-desc">Perfecto para negocios que necesitan varias páginas y presencia profesional</p>
+            <div class="price">$7.000</div>
+            <span class="price-sub">+ $2.000/mes</span>
           </div>
           <ul class="pricing-features">
-            <li>5 secciones individuales</li>
-            <li>2 cuentas de correo</li>
-            <li>SEO basico</li>
-            <li>Formularios automaticos</li>
-            <li>Diseno responsive</li>
-            <li>Tutoriales y asistencia</li>
+            <li><i class="fas fa-check"></i> Hasta 5 páginas</li>
+            <li><i class="fas fa-check"></i> Dominio .com/.uy incluido (1 año)</li>
+            <li><i class="fas fa-check"></i> Hosting SSD premium</li>
+            <li><i class="fas fa-check"></i> 2 cuentas de correo profesionales</li>
+            <li><i class="fas fa-check"></i> Diseño responsive completo</li>
           </ul>
-          <a href="#contacto" class="pricing-btn pricing-btn-blue">Consultar</a>
+          <div class="pricing-extra" style="display: none;">
+            <ul class="pricing-features">
+              <li><i class="fas fa-check"></i> Certificado SSL (seguro)</li>
+              <li><i class="fas fa-check"></i> SEO avanzado (meta tags, sitemap)</li>
+              <li><i class="fas fa-check"></i> Formularios automáticos</li>
+              <li><i class="fas fa-check"></i> Blog integrado</li>
+              <li><i class="fas fa-check"></i> Estadísticas de visitas</li>
+              <li><i class="fas fa-check"></i> Soporte prioritario</li>
+            </ul>
+          </div>
+          <button class="btn-show-more" onclick="togglePricing(this)">Ver más <i class="fas fa-chevron-down"></i></button>
+          <a href="#contacto" class="btn-pricing primary">Elegir Plan</a>
         </div>
 
-        <!-- Plan Web de Servicios -->
-        <div class="pricing-card">
+        <div class="pricing-card scroll-reveal">
           <div class="pricing-header">
-            <h3>Web de Servicios</h3>
-            <div class="pricing-price">$10.000</div>
-            <div class="pricing-maintenance">Mantenimiento: $2.500/mes</div>
+            <h3>E-Commerce</h3>
+            <p class="plan-desc">Para negocios que quieren vender productos online las 24 horas</p>
+            <div class="price">$15.000</div>
+            <span class="price-sub">+ $3.500/mes</span>
           </div>
           <ul class="pricing-features">
-            <li>5 secciones + seccion por servicio</li>
-            <li>Estructura mas completa</li>
-            <li>Incluye todo lo de Web Estandar</li>
-            <li>Ideal para negocios de servicios</li>
-            <li>Diseno responsive</li>
-            <li>Tutoriales y asistencia</li>
+            <li><i class="fas fa-check"></i> Productos ilimitados</li>
+            <li><i class="fas fa-check"></i> Tienda online profesional</li>
+            <li><i class="fas fa-check"></i> Carrito de compras</li>
+            <li><i class="fas fa-check"></i> Pasarelas de pago</li>
+            <li><i class="fas fa-check"></i> Dominio .com/.uy incluido (1 año)</li>
           </ul>
-          <a href="#contacto" class="pricing-btn pricing-btn-purple">Consultar</a>
+          <div class="pricing-extra" style="display: none;">
+            <ul class="pricing-features">
+              <li><i class="fas fa-check"></i> Hosting de alto rendimiento</li>
+              <li><i class="fas fa-check"></i> Certificado SSL (seguro)</li>
+              <li><i class="fas fa-check"></i> Panel administrativo</li>
+              <li><i class="fas fa-check"></i> Gestión de inventario</li>
+              <li><i class="fas fa-check"></i> Órdenes de compra automáticas</li>
+              <li><i class="fas fa-check"></i> Capacitación completa</li>
+            </ul>
+          </div>
+          <button class="btn-show-more" onclick="togglePricing(this)">Ver más <i class="fas fa-chevron-down"></i></button>
+          <a href="#contacto" class="btn-pricing">Elegir Plan</a>
         </div>
+      </div>
 
-        <!-- Plan e-Commerce Basica (RECOMENDADA) -->
-        <div class="pricing-card pricing-card-featured">
-          <div class="pricing-badge">Recomendada</div>
-          <div class="pricing-header">
-            <h3>e-Commerce Basica</h3>
-            <div class="pricing-price">$15.000</div>
-            <div class="pricing-maintenance">Mantenimiento: $3.500/mes</div>
-          </div>
-          <ul class="pricing-features">
-            <li>Productos ilimitados</li>
-            <li>Carrito y checkout</li>
-            <li>Medios de pago y categorias</li>
-            <li>2 cuentas de correo</li>
-            <li>SEO basico</li>
-            <li>Tutoriales y asistencia</li>
-          </ul>
-          <a href="#contacto" class="pricing-btn pricing-btn-orange">Consultar</a>
+      <div class="section-cta scroll-reveal">
+        <div class="cta-message">
+          <p><strong>¿Aún tenés dudas?</strong> Escribime y te ayudo a elegir el mejor plan para tu negocio...</p>
         </div>
+        <a href="#contacto" class="btn-next-section">
+          Ir a contacto <i class="fas fa-arrow-down"></i>
+        </a>
+      </div>
+    </div>
+  </section>
 
-        <!-- Plan e-Commerce Avanzada -->
-        <div class="pricing-card">
-          <div class="pricing-header">
-            <h3>e-Commerce Avanzada</h3>
-            <div class="pricing-price">$20.000</div>
-            <div class="pricing-maintenance">Mantenimiento: $5.000/mes</div>
-          </div>
-          <ul class="pricing-features">
-            <li>Filtros y fichas completas</li>
-            <li>Multimoneda y productos relacionados</li>
-            <li>5 cuentas de correo</li>
-            <li>Diseno personalizado</li>
-            <li>Reportes mensuales</li>
-            <li>Todo lo de e-Commerce Basica</li>
-          </ul>
-          <a href="#contacto" class="pricing-btn pricing-btn-red">Consultar</a>
+  <!-- 8. CTA FINAL -->
+  <section class="section-cta-final">
+    <div class="container">
+      <div class="cta-box">
+        <div class="cta-icon"><i class="fas fa-rocket"></i></div>
+        <h2>¿Listo para<span class="highlight"> transformar</span> tu negocio?</h2>
+        <p>Cada día que esperás es un día perdiendo clientes. Tu competencia ya está online. Es tu momento.</p>
+        <div class="cta-actions">
+          <a href="https://wa.me/59896616638?text=Hola,%20quiero%20un%20presupuesto" target="_blank" class="btn-whatsapp-cta">
+            <i class="fab fa-whatsapp"></i>
+            <span>Escribir ahora</span>
+          </a>
+        </div>
+        <span class="cta-note">Sin compromiso. Respondemos en menos de 24h.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- MINI RESUMEN -->
+  <section class="section-mini-summary">
+    <div class="container">
+      <div class="section-intro">
+        <h2>¿Por qué<span class="highlight"> trabajar conmigo</span>?</h2>
+      </div>
+      <div class="summary-grid">
+        <div class="summary-item scroll-reveal">
+          <div class="summary-num">01</div>
+          <h4>Web única</h4>
+          <p>Diseños personalizados, no plantillas genéricas</p>
+        </div>
+        <div class="summary-item scroll-reveal">
+          <div class="summary-num">02</div>
+          <h4>Responsive</h4>
+          <p>Perfecto en celular, tablet y PC</p>
+        </div>
+        <div class="summary-item scroll-reveal">
+          <div class="summary-num">03</div>
+          <h4>SEO incluido</h4>
+          <p>Tu negocio aparece en Google</p>
+        </div>
+        <div class="summary-item scroll-reveal">
+          <div class="summary-num">04</div>
+          <h4>Acompañamiento</h4>
+          <p>Te enseño a usar tu web</p>
+        </div>
+        <div class="summary-item scroll-reveal">
+          <div class="summary-num">05</div>
+          <h4>Respuesta rápida</h4>
+          <p>Menos de 24h garantizado</p>
+        </div>
+        <div class="summary-item scroll-reveal">
+          <div class="summary-num">06</div>
+          <h4>Estrategias Digitales</h4>
+          <p>Campañas y contenido opcional</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- About Section -->
-  <section id="nosotros">
+  <!-- 9. CONTACTO - El final del journey -->
+  <section id="contacto" class="section-contact">
     <div class="container">
-      <div class="about-content">
-        <div class="about-text">
-          <h2 style="background: linear-gradient(135deg, #2563eb, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Sobre <span>NTEC</span></h2>
-          <p>Soy Nathaniel, creador de NTEC, un emprendimiento nacido en Uruguay con la convicción de que cada negocio merece una presencia digital que refleje su esencia y potencie su crecimiento.</p>
-          <p>Mi camino comenzó con la curiosidad por entender cómo la tecnología podía transformar ideas en experiencias reales. Con el tiempo, esa curiosidad se convirtió en pasión: diseñar páginas web que no solo sean visualmente atractivas, sino también funcionales, seguras y capaces de generar resultados.</p>
-          <p>En NTEC no trabajo con fórmulas prefabricadas. Cada proyecto lo abordo como un desafío único: escucho la historia de la marca, analizo sus necesidades y construyo soluciones a medida. Mi objetivo es que cada cliente sienta que su página web es más que un producto: es una herramienta estratégica que transmite confianza, conecta con su audiencia y abre nuevas oportunidades.</p>
-          <p>Aunque mi emprendimiento está en crecimiento y mi cartera de clientes aún es pequeña, cada experiencia ha sido una oportunidad para demostrar que la dedicación, el detalle y la transparencia pueden marcar la diferencia. Lo que ofrezco no es cantidad, sino calidad: un acompañamiento cercano, soluciones claras y un compromiso real con el éxito de quienes confían en mí.</p>
-          <p>NTEC es el reflejo de mi visión: unir tecnología, diseño y marketing para que cada negocio, sin importar su tamaño, pueda destacarse en el mundo digital.</p>
+      <div class="section-intro">
+        <span class="step-indicator final-step">Último paso</span>
+        <h2>Hablemos de <span class="highlight">tu proyecto</span></h2>
+        <p class="intro-text">Ahora es tu turno. Contame sobre tu negocio y te propongo una solución.</p>
+      </div>
+
+      <div class="contact-wrapper">
+        <div class="contact-options">
+          <a href="https://wa.me/59896616638" target="_blank" class="contact-option whatsapp">
+            <div class="option-icon"><i class="fab fa-whatsapp"></i></div>
+            <div class="option-text">
+              <h4>WhatsApp</h4>
+              <p>+598 96 616 638</p>
+            </div>
+            <i class="fas fa-chevron-right"></i>
+          </a>
+
+          <a href="mailto:nservice7ech@gmail.com" class="contact-option email">
+            <div class="option-icon"><i class="fas fa-envelope"></i></div>
+            <div class="option-text">
+              <h4>Email</h4>
+              <p>nservice7ech@gmail.com</p>
+            </div>
+            <i class="fas fa-chevron-right"></i>
+          </a>
+
+<a href="https://www.instagram.com/ntec.uy/" target="_blank" class="contact-option instagram">
+            <div class="option-icon"><i class="fab fa-instagram"></i></div>
+            <div class="option-text">
+              <span class="option-label">Instagram</span>
+              <span class="option-value">@ntec.uy</span>
+            </div>
+          </a>
         </div>
-        <div class="about-image">
-          <img src="https://images.unsplash.com/photo-1739298061740-5ed03045b280?w=800" alt="Equipo trabajando">
+
+        <div class="contact-form">
+          <form onsubmit="handleSubmit(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <input type="text" id="form-nombre" name="nombre" placeholder="Tu nombre" required>
+              </div>
+              <div class="form-group">
+                <input type="email" id="form-email" name="email" placeholder="Tu email" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <select id="form-servicio" name="servicio">
+                <option value="">¿Qué servicio te interesa?</option>
+                <option value="Landing Page">Landing Page</option>
+                <option value="Web Estándar">Web Estándar</option>
+                <option value="E-Commerce">E-Commerce</option>
+                <option value="Otro">Otro</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <textarea id="form-proyecto" name="proyecto" placeholder="Cuéntame sobre tu proyecto..." rows="4"></textarea>
+            </div>
+            <button type="submit" class="btn-submit">
+              <i class="fab fa-whatsapp"></i>
+              Enviar mensaje
+            </button>
+          </form>
         </div>
       </div>
 
-      <!-- Values -->
-      <div class="values-section">
-        <h3 style="background: linear-gradient(135deg, #2563eb, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Nuestros Valores</h3>
-        <p class="values-subtitle">Los principios que guían cada proyecto</p>
-        <div class="values-grid">
-          <div class="value-card">
-            <div class="value-icon red">
-              <i class="fas fa-handshake"></i>
-            </div>
-            <h3>Confianza</h3>
-            <p>Relaciones honestas y transparencia total. Sabrás en todo momento cómo avanza tu proyecto.</p>
-          </div>
-          <div class="value-card">
-            <div class="value-icon yellow">
-              <i class="fas fa-lightbulb"></i>
-            </div>
-            <h3>Innovación</h3>
-            <p>Tecnologías de vanguardia y soluciones creativas para una presencia moderna y competitiva.</p>
-          </div>
-          <div class="value-card">
-            <div class="value-icon blue">
-              <i class="fas fa-heart"></i>
-            </div>
-            <h3>Cercanía</h3>
-            <p>Trabajo personalizado, escuchándote en cada paso para crear soluciones que conectan con tu público.</p>
-          </div>
-          <div class="value-card">
-            <div class="value-icon purple">
-              <i class="fas fa-star"></i>
-            </div>
-            <h3>Excelencia</h3>
-            <p>Calidad en cada detalle. Mi meta es superar expectativas y aportar valor real a tu negocio.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contacto">
-    <div class="container">
-      <div class="section-header">
-        <h2 style="background: linear-gradient(135deg, #2563eb, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">¿Hablamos de tu <span>proyecto</span>?</h2>
-        <p>Solicita un presupuesto sin compromiso o escríbenos para discutir tu idea</p>
-      </div>
-      <div class="contact-grid">
-        <!-- iPhone Mockup with Form -->
-        <div class="iphone-mockup">
-          <div class="iphone-frame">
-            <div class="iphone-notch"></div>
-            <div class="iphone-screen">
-              <div class="app-header-simulated">
-                <i class="fas fa-rocket"></i>
-                <span>NTEC</span>
-              </div>
-              <div class="app-content-simulated">
-                <h3>¡Hablemos!</h3>
-                <p>Cuéntanos sobre tu proyecto</p>
-                <form id="contactForm" onsubmit="handleSubmit(event)">
-                  <div class="form-group-simulated">
-                    <input type="text" id="name" required placeholder="Tu nombre">
-                  </div>
-                  <div class="form-group-simulated">
-                    <input type="email" id="email" required placeholder="tu@email.com">
-                  </div>
-                  <div class="form-group-simulated">
-                    <textarea id="message" required placeholder="¿En qué puedo ayudarte?"></textarea>
-                  </div>
-                  <a href="https://wa.me/59896616638?text=Hola,%20me%20interesa%20tu%20servicio" target="_blank" class="btn-submit-simulated">
-                    <i class="fab fa-whatsapp"></i> Enviar mensaje
-                  </a>
-                </form>
-                <p class="app-response-time"><i class="fas fa-check-circle"></i> Respondemos en menos de 24h</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="contact-info">
-          <div class="contact-card">
-            <h3>Información de Contacto</h3>
-            <div class="contact-item">
-              <div class="contact-item-icon">
-                <i class="fas fa-phone"></i>
-              </div>
-              <div>
-                <div class="contact-item-label">Teléfono / WhatsApp</div>
-                <div class="contact-item-value">+598 96 616 638</div>
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="contact-item-icon">
-                <i class="fas fa-envelope"></i>
-              </div>
-              <div>
-                <div class="contact-item-label">Email</div>
-                <div class="contact-item-value">nservice7ech@gmail.com</div>
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="contact-item-icon">
-                <i class="fab fa-instagram"></i>
-              </div>
-              <div>
-                <div class="contact-item-label">Instagram</div>
-                <div class="contact-item-value"><a href="https://instagram.com/nservice7ech" target="_blank" style="color: inherit; text-decoration: none; word-break: break-all;">@nservice7ech</a></div>
-              </div>
-            </div>
-          </div>
-          <div class="schedule-card">
-            <h3>Horario de Atención</h3>
-            <div class="schedule-item">
-              <span>Lunes a Viernes</span>
-              <span>9:00 - 22:00</span>
-            </div>
-            <div class="schedule-item">
-              <span>Sábados</span>
-              <span>10:00 - 14:00</span>
-            </div>
-            <div class="schedule-item closed">
-              <span>Domingos</span>
-              <span>Cerrado</span>
-            </div>
-          </div>
-          <div class="response-card">
-            <h3>Respuesta Rápida</h3>
-            <p>Respondemos todas las consultas en menos de 24 horas hábiles</p>
-          </div>
-        </div>
+      <div class="contact-schedule">
+        <h4><i class="fas fa-clock"></i> Horario de atención</h4>
+        <p>24 horas, los 7 días de la semana</p>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer>
+  <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="#inicio" class="logo">NTEC</a>
-          <p>Soluciones tecnológicas que transforman tu negocio</p>
-          <div class="footer-contact">
-            <i class="fas fa-envelope"></i>
-            <a href="mailto:nservice7ech@gmail.com">nservice7ech@gmail.com</a>
+          <img src="Ntec (3).png" alt="NTEC">
+          <p>Tu socio en transformación digital</p>
+        </div>
+        <div class="footer-links">
+          <h4>Navegación</h4>
+          <a href="#problema">El Problema</a>
+          <a href="#solucion">Cómo ayudo</a>
+          <a href="#estrategias">Estrategias</a>
+          <a href="#proyectos">Proyectos</a>
+          <a href="#planes">Planes</a>
+        </div>
+        <div class="footer-links">
+          <h4>Servicios</h4>
+          <a href="#estrategias">Estrategias Digitales</a>
+          <a href="#">Desarrollo Web</a>
+          <a href="#">E-Commerce</a>
+          <a href="#">SEO</a>
+          <a href="#">Mantenimiento</a>
+        </div>
+        <div class="footer-social">
+          <h4>Seguinos</h4>
+          <div class="social-links">
+            <a href="https://www.instagram.com/ntec.uy/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@ntec02" target="_blank"><i class="fab fa-tiktok"></i></a>
           </div>
         </div>
-        <div>
-          <h3>Enlaces Rápidos</h3>
-          <ul class="footer-links">
-            <li><a href="index.html#precios">Precios</a></li>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="servicios.html">Servicios</a></li>
-            <li><a href="portafolio.html">Portafolio</a></li>
-            <li><a href="serviciotecnico.html">Servicio Técnico</a></li>
-            <li><a href="nosotros.html">Nosotros</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3>Servicios</h3>
-          <ul class="footer-links">
-            <li><a href="servicios.html">Desarrollo Web</a></li>
-            <li><a href="serviciotecnico.html">Servicio Técnico</a></li>
-            <li><a href="servicios.html">Marketing Digital</a></li>
-            <li><a href="servicios.html">SEO</a></li>
-            <li><a href="servicios.html">Transformación Digital</a></li>
-            <li><a href="servicios.html">Infraestructura IT</a></li>
-          </ul>
-        </div>
-        <div class="newsletter">
-          <h3>Newsletter</h3>
-          <p>Suscríbete para recibir tips, tendencias y ofertas exclusivas</p>
-          <form class="newsletter-form" onsubmit="event.preventDefault()">
-            <input type="email" placeholder="Tu email">
-            <button type="submit"><i class="fas fa-paper-plane"></i></button>
-          </form>
-        </div>
-      </div>
-      <div class="social-links">
-        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
       </div>
       <div class="footer-bottom">
-        <div>© 2026 NTEC. Todos los derechos reservados.</div>
-        <div class="footer-legal">
-          <a href="#">Política de Privacidad</a>
-          <a href="#">Términos y Condiciones</a>
-          <a href="#">Política de Cookies</a>
-        </div>
+        <p>© 2026 NTEC. Todos los derechos reservados.</p>
       </div>
     </div>
   </footer>
 
-<!-- Landbot Chat Widget - Reemplaza YOUR_LANDBOT_ID con tu ID de Landbot -->
-<div class="landbot-container" style="position: fixed; bottom: 24px; right: 24px; z-index: 9999;"></div>
-<script src="https://static.landbot.io/landbot-3/landbot.js"></script>
-<script>
-  var landbot = new Landbot.Container({
-    container: '.landbot-container',
-    configUrl: 'https://landbot.io/u/YOUR_LANDBOT_ID/index.json'
-  });
-</script>
+  <!-- Progress Bar -->
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/59896616638?text=Hola,%20quiero%20consultar" target="_blank" class="float-whatsapp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 </body>
 </html>
