@@ -1490,6 +1490,14 @@ header {
   .step-arrow {
     display: none;
   }
+
+  .summary-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .strategies-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
   
   .projects-grid,
   .testimonials-wrapper,
@@ -1524,7 +1532,7 @@ header {
     gap: 1rem;
   }
   
-  .stat-divider { display: none; }
+  .stat_divider { display: none; }
   
   .problems-grid,
   .includes-grid {
@@ -1551,5 +1559,29 @@ header {
   
   .social-links {
     justify-content: center;
+  }
+
+  .summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .strategies-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonials-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-box {
+    padding: 2rem;
   }
 }
