@@ -269,6 +269,14 @@ header .logo {
   max-width: min(200px, 46vw);
 }
 
+.logo {
+  max-width: 200px;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  border-radius: 10px;
+}
+
 header .logo img {
   display: block;
   max-height: 44px;
