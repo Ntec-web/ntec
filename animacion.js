@@ -1,14 +1,18 @@
 // ==================== SCROLL REVEAL ANIMATION ====================
 function initScrollReveal() {
+  const revealItems = document.querySelectorAll('.scroll-reveal');
+  if (!revealItems.length) return;
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
       }
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
   
-  document.querySelectorAll('.scroll-reveal').forEach(el => {
+  revealItems.forEach(el => {
     observer.observe(el);
   });
 }
@@ -56,6 +60,7 @@ window.addEventListener('scroll', function() {
 // ==================== MOBILE MENU TOGGLE ====================
 function toggleMenu() {
   const mobileMenu = document.getElementById('mobileMenu');
+  if (!mobileMenu) return;
   mobileMenu.classList.toggle('active');
 }
 
@@ -90,12 +95,17 @@ function handleSubmit(event) {
 // ==================== SMOOTH SCROLL ====================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
+    const href = this.getAttribute('href');
+    if (!href || href === '#') return;
+
+    const target = document.querySelector(href);
+    if (!target) return;
+
     e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      document.getElementById('mobileMenu').classList.remove('active');
-    }
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (mobileMenu) mobileMenu.classList.remove('active');
   });
 });
 
