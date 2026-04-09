@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="NTEC - Desarrollo web profesional, estrategias digitales y soluciones de transformación digital para tu negocio. Landing pages, E-commerce y más.">
-  
+  <meta name="description" content="NTEC: Agencia de desarrollo web en Uruguay. Creamos landing pages, tiendas online y estrategias digitales que convierten visitantes en clientes. ¡Impulsa tu negocio hoy!">
+  <meta name="keywords" content="desarrollo web, landing page, e-commerce, tienda online, SEO, marketing digital, agencia web, Uruguay">
+
   <!-- Open Graph / Redes Sociales -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="NTEC - Tu socio en transformación digital">
@@ -13,26 +14,68 @@
   <meta property="og:url" content="https://ntec.uy">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://ntec.uy/">
-  
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA_MEASUREMENT_ID');
+  </script>
+
   <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "NTEC",
-    "description": "Desarrollo web profesional y estrategias digitales en Uruguay",
-    "url": "https://ntec.uy",
-    "telephone": "+59896616638",
-    "email": "nservice7ech@gmail.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "UY"
-    },
-    "sameAs": [
-      "https://www.instagram.com/ntec.uy/",
-      "https://www.tiktok.com/@ntec02"
-    ],
-    "priceRange": "$$"
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "NTEC",
+        "description": "Agencia de desarrollo web profesional y estrategias digitales en Uruguay. Especialistas en landing pages, e-commerce, SEO y marketing digital.",
+        "url": "https://ntec.uy",
+        "telephone": "+59896616638",
+        "email": "nservice7ech@gmail.com",
+        "logo": "https://ntec.uy/Ntec (3).png",
+        "sameAs": [
+          "https://www.instagram.com/ntec.uy/",
+          "https://www.tiktok.com/@ntec02"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "name": "NTEC - Tu socio en transformación digital",
+        "url": "https://ntec.uy",
+        "description": "Desarrollo web profesional, estrategias digitales y soluciones de transformación digital para tu negocio. Landing pages, E-commerce y más.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "NTEC"
+        },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://ntec.uy/search?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "LocalBusiness",
+        "name": "NTEC",
+        "description": "Desarrollo web profesional y estrategias digitales en Uruguay",
+        "url": "https://ntec.uy",
+        "telephone": "+59896616638",
+        "email": "nservice7ech@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "UY"
+        },
+        "sameAs": [
+          "https://www.instagram.com/ntec.uy/",
+          "https://www.tiktok.com/@ntec02"
+        ],
+        "priceRange": "$$",
+        "serviceType": ["Desarrollo Web", "E-commerce", "SEO", "Marketing Digital"]
+      }
+    ]
   }
   </script>
   
@@ -105,7 +148,7 @@
             <span>Descubrir cómo</span>
             <i class="fas fa-arrow-down" aria-hidden="true"></i>
           </a>
-          <a href="https://wa.me/59896616638?text=Hola,%20quiero%20consultar" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+          <a href="https://wa.me/59896616638?text=Hola,%20quiero%20consultar" target="_blank" rel="noopener noreferrer" class="btn-secondary" onclick="gtag('event', 'click', { event_category: 'engagement', event_label: 'whatsapp_hero' });">
             <i class="fab fa-whatsapp" aria-hidden="true"></i>
             <span>Chatear ahora</span>
           </a>
@@ -519,7 +562,7 @@
             </ul>
           </div>
           <button class="btn-show-more" onclick="togglePricing(this)">Ver más <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
-          <a href="#contacto" class="btn-pricing">Elegir Plan</a>
+          <a href="#contacto" class="btn-pricing" onclick="gtag('event', 'click', { event_category: 'engagement', event_label: 'elegir_plan' });">Elegir Plan</a>
         </div>
 
         <div class="pricing-card featured scroll-reveal">
@@ -576,7 +619,7 @@
             </ul>
           </div>
           <button class="btn-show-more" onclick="togglePricing(this)">Ver más <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
-          <a href="#contacto" class="btn-pricing">Elegir Plan</a>
+          <a href="#contacto" class="btn-pricing" onclick="gtag('event', 'click', { event_category: 'engagement', event_label: 'elegir_plan' });">Elegir Plan</a>
         </div>
       </div>
 
@@ -640,7 +683,7 @@
         <h2>¿Listo para<span class="highlight"> transformar</span> tu negocio?</h2>
         <p>Cada día que esperás es un día perdiendo clientes. Tu competencia ya está online. Es tu momento.</p>
         <div class="cta-actions">
-          <a href="https://wa.me/59896616638?text=Hola,%20quiero%20un%20presupuesto" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-cta">
+          <a href="https://wa.me/59896616638?text=Hola,%20quiero%20un%20presupuesto" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-cta" onclick="gtag('event', 'click', { event_category: 'engagement', event_label: 'whatsapp_cta' });">
             <i class="fab fa-whatsapp" aria-hidden="true"></i>
             <span>Escribir ahora</span>
           </a>
@@ -689,7 +732,7 @@
         </div>
 
         <div class="contact-form">
-          <form onsubmit="handleSubmit(event)">
+          <form onsubmit="gtag('event', 'submit', { event_category: 'form', event_label: 'contact' }); handleSubmit(event);">
             <div class="form-row">
               <div class="form-group">
                 <label for="form-nombre" class="visually-hidden">Tu nombre</label>
@@ -771,7 +814,7 @@
   <div class="progress-bar" id="progressBar"></div>
 
   <!-- Floating WhatsApp -->
-  <a href="https://wa.me/59896616638?text=Hola,%20quiero%20consultar" target="_blank" rel="noopener noreferrer" class="float-whatsapp">
+  <a href="https://wa.me/59896616638?text=Hola,%20quiero%20consultar" target="_blank" rel="noopener noreferrer" class="float-whatsapp" onclick="gtag('event', 'click', { event_category: 'engagement', event_label: 'whatsapp_float' });">
     <i class="fab fa-whatsapp" aria-hidden="true"></i>
   </a>
 </body>
