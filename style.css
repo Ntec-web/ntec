@@ -484,7 +484,7 @@ header {
 
 .about-profile {
   display: grid;
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: minmax(220px, 300px) minmax(0, 1fr);
   align-items: center;
   gap: 1.4rem;
   margin: 0 auto 1.4rem;
@@ -505,6 +505,10 @@ header {
 
 .about-profile-content h3 {
   margin-bottom: 0.5rem;
+}
+
+.about-profile-content {
+  min-width: 0;
 }
 
 .about-profile-content p + p {
@@ -1323,7 +1327,22 @@ header {
   }
 
   .about-profile {
-    grid-template-columns: 240px 1fr;
+    grid-template-columns: minmax(200px, 240px) minmax(0, 1fr);
+    gap: 1.1rem;
+  }
+}
+
+@media (max-width: 920px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: inline-block;
+  }
+
+  .header-content {
+    min-height: 52px;
   }
 }
 
@@ -1338,6 +1357,7 @@ header {
 
   .hero {
     padding-top: 110px;
+    min-height: auto;
   }
 
   .hero-visual {
@@ -1376,6 +1396,7 @@ header {
   .about-profile {
     grid-template-columns: 1fr;
     text-align: center;
+    margin-bottom: 1rem;
   }
 
   .about-profile-photo {
@@ -1417,6 +1438,16 @@ header {
     padding: 64px 0;
   }
 
+  .problem-number {
+    font-size: 2rem;
+  }
+
+  .btn-next-section {
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+  }
+
   .intro-text,
   .cta-message p {
     font-size: 1rem;
@@ -1430,6 +1461,11 @@ header {
 
   .hero h1 {
     font-size: 1.85rem;
+  }
+
+  .hero-badge {
+    font-size: 0.8rem;
+    padding: 0.45rem 0.8rem;
   }
 
   .hero-subtitle {
@@ -1469,8 +1505,22 @@ header {
     padding: 1rem;
   }
 
+  .about-profile-photo {
+    max-width: 240px;
+  }
+
+  .about-profile-note {
+    font-size: 0.88rem;
+  }
+
   .price {
     font-size: 1.95rem;
+  }
+
+  .btn-primary,
+  .btn-secondary,
+  .btn-whatsapp-cta {
+    width: 100%;
   }
 
   .section-problem,
