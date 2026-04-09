@@ -260,9 +260,22 @@ header {
   gap: 1rem;
 }
 
-.logo img {
+/* Logo: tamaño acotado siempre (evita imagen enorme si falla otra regla o el PNG es muy grande) */
+header .logo {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  line-height: 0;
+  max-width: min(200px, 46vw);
+}
+
+header .logo img {
+  display: block;
+  max-height: 44px;
+  max-width: 100%;
   width: auto;
-  height: 44px;
+  height: auto;
+  object-fit: contain;
   border-radius: 10px;
 }
 
@@ -1133,9 +1146,17 @@ header {
   margin-bottom: 1.5rem;
 }
 
+.footer-brand {
+  max-width: 100%;
+}
+
 .footer-brand img {
+  display: block;
+  max-height: 44px;
+  max-width: min(200px, 70vw);
   width: auto;
-  height: 44px;
+  height: auto;
+  object-fit: contain;
   margin-bottom: 0.7rem;
   border-radius: 10px;
 }
