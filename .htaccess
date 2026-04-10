@@ -1,13 +1,5 @@
 # Activar mod_rewrite
 RewriteEngine On
 
-# Forzar HTTPS
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-# Redirigir siempre a dominio sin www
-RewriteCond %{HTTP_HOST} ^www\.serviciontec\.com [NC]
-RewriteRule ^(.*)$ https://serviciontec.com/$1 [L,R=301]
-
 # Prioridad de archivos: primero HTML
 DirectoryIndex index.html
