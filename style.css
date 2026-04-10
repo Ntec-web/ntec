@@ -273,7 +273,6 @@ header .logo {
   max-width: 200px;
   height: auto;
   display: block;
-  margin: 20px auto;
   border-radius: 10px;
 }
 
@@ -1158,15 +1157,8 @@ header .logo img {
   max-width: 100%;
 }
 
-.footer-brand img {
-  display: block;
-  max-height: 44px;
-  max-width: min(200px, 70vw);
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  margin-bottom: 0.7rem;
-  border-radius: 10px;
+.footer-brand .logo {
+  margin: 20px auto 0.7rem auto;
 }
 
 .footer-brand p,
