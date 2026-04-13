@@ -13,7 +13,7 @@
   <meta property="og:title" content="NTEC - Tu socio en transformación digital">
   <meta property="og:description" content="Desarrollo web profesional, estrategias digitales y soluciones de transformación digital para tu negocio.">
    <meta property="og:url" content="https://ntec.uy">
-   <meta property="og:image" content="https://ntec.uy/Ntec.png">
+    <meta property="og:image" content="yo.JPG">
    <meta name="twitter:card" content="summary_large_image">
 
 
@@ -84,6 +84,8 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'; this.onload=null;">
   <link rel="stylesheet" href="style.css" media="all">
   <style>html { scroll-behavior: smooth; }</style>
+  <script src="https://unpkg.com/gsap@3.12.2/dist/gsap.min.js"></script>
+  <script src="https://unpkg.com/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
    <script src="animacion.js" defer></script>
   <script>
     // Active nav highlight
@@ -91,21 +93,28 @@
       const sections = document.querySelectorAll('section[id]');
       const navLinks = document.querySelectorAll('.desktop-nav a[href^="#"]');
 
+      let ticking = false;
       window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(section => {
-          const sectionTop = section.offsetTop - 100;
-          if (window.pageYOffset >= sectionTop) {
-            current = section.getAttribute('id');
-          }
-        });
+        if (!ticking) {
+          requestAnimationFrame(() => {
+            let current = '';
+            sections.forEach(section => {
+              const sectionTop = section.offsetTop - 100;
+              if (window.pageYOffset >= sectionTop) {
+                current = section.getAttribute('id');
+              }
+            });
 
-        navLinks.forEach(link => {
-          link.classList.remove('active');
-          if (link.getAttribute('href').substring(1) === current) {
-            link.classList.add('active');
-          }
-        });
+            navLinks.forEach(link => {
+              link.classList.remove('active');
+              if (link.getAttribute('href').substring(1) === current) {
+                link.classList.add('active');
+              }
+            });
+            ticking = false;
+          });
+          ticking = true;
+        }
       });
     });
   </script>
@@ -116,7 +125,7 @@
     <div class="container">
       <div class="header-content">
       <div class="logo">
-        <img src="ntec-logo.webp" alt="NTEC" width="200" height="50">
+        <span>NTEC</span>
       </div>
         <nav class="desktop-nav">
           <ul>
@@ -210,7 +219,7 @@
       </div>
 
       <div class="problems-grid">
-      <div class="problem-card scroll-reveal">
+      <div class="problem-card scroll-reveal visible">
         <div class="problem-icon"><i class="fas fa-eye-slash" aria-hidden="true"></i></div>
         <div class="problem-content">
           <h3>Invisibilidad Digital</h3>
@@ -219,7 +228,7 @@
         <div class="problem-number">01</div>
       </div>
 
-      <div class="problem-card scroll-reveal">
+      <div class="problem-card scroll-reveal visible">
         <div class="problem-icon"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i></div>
         <div class="problem-content">
           <h3>Falta de Autoridad</h3>
@@ -228,7 +237,7 @@
         <div class="problem-number">02</div>
       </div>
 
-      <div class="problem-card scroll-reveal">
+      <div class="problem-card scroll-reveal visible">
         <div class="problem-icon"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
         <div class="problem-content">
           <h3>Fugas de Presupuesto</h3>
@@ -237,7 +246,7 @@
         <div class="problem-number">03</div>
       </div>
 
-      <div class="problem-card scroll-reveal">
+      <div class="problem-card scroll-reveal visible">
         <div class="problem-icon"><i class="fas fa-user-friends" aria-hidden="true"></i></div>
         <div class="problem-content">
           <h3>Falta de Respaldo</h3>
@@ -496,39 +505,48 @@
       </div>
 
       <div class="testimonials-wrapper">
-        <div class="testimonial-card scroll-reveal">
+        <div class="testimonial-card">
           <div class="testimonial-badge">Autonomía</div>
           <div class="testimonial-stars">
             <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i>
           </div>
           <p class="testimonial-text">"Me explicó cada paso con paciencia. No solo me entregó una web, me enseñó a usarla. Eso no tiene precio."</p>
           <div class="testimonial-author">
-            <strong>Milka Rivero</strong>
-            <span>Almajo</span>
+            <img src="almajo.jpg" alt="Almajo" width="40" height="40" style="border-radius: 50%; margin-right: 0.5rem;">
+            <div>
+              <strong>Milka Rivero</strong>
+              <span>Almajo</span>
+            </div>
           </div>
         </div>
 
-        <div class="testimonial-card scroll-reveal">
+        <div class="testimonial-card">
           <div class="testimonial-badge">Estrategia</div>
           <div class="testimonial-stars">
             <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i>
           </div>
           <p class="testimonial-text">"La transparencia fue lo que me convenció. Siempre supo explicarme qué se hacía y por qué. Recomendable 100%."</p>
           <div class="testimonial-author">
-            <strong>Alex Lescano</strong>
-            <span>Leskchamps</span>
+            <img src="leskchamps.jpg" alt="Leskchamps" width="40" height="40" style="border-radius: 50%; margin-right: 0.5rem;">
+            <div>
+              <strong>Alex Lescano</strong>
+              <span>Leskchamps</span>
+            </div>
           </div>
         </div>
 
-        <div class="testimonial-card scroll-reveal">
+        <div class="testimonial-card">
           <div class="testimonial-badge">Acompañamiento</div>
           <div class="testimonial-stars">
             <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i>
           </div>
           <p class="testimonial-text">"No es solo un desarrollador, es un socio. Me ayuda a pensar estrategias y siempre está disponible para mejoras."</p>
           <div class="testimonial-author">
-            <strong>Giuliano Dilavello</strong>
-            <span>Deltano Empanadas</span>
+            <img src="proyecto-deltano-empanadas.webp" alt="Deltano Empanadas" width="40" height="40" style="border-radius: 50%; margin-right: 0.5rem; object-fit: cover;">
+            <div>
+              <strong>Giuliano Dilavello</strong>
+              <span>Deltano Empanadas</span>
+            </div>
           </div>
         </div>
       </div>
@@ -752,7 +770,7 @@
     <div class="container">
       <div class="footer-grid">
       <div class="footer-brand">
-        <img src="ntec-logo.webp" alt="Logo NTEC" width="200" height="50" class="logo">
+        <span class="logo">NTEC</span>
         <p>Tu socio en transformación digital</p>
         <p><i class="fas fa-envelope" aria-hidden="true"></i> hola@serviciontec.com</p>
         <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Montevideo, Uruguay | Soporte local garantizado.</p>
