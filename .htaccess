@@ -3,3 +3,8 @@ RewriteEngine On
 
 # Prioridad de archivos: primero HTML
 DirectoryIndex index.html
+
+# Cache headers for static files
+<filesMatch "\.(jpg|jpeg|png|webp|css|js)$">
+  Header set Cache-Control "max-age=31536000, public"
+</filesMatch>
