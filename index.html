@@ -83,7 +83,32 @@
    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'; this.onload=null;">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'; this.onload=null;">
   <link rel="stylesheet" href="style.css" media="all">
+  <style>html { scroll-behavior: smooth; }</style>
    <script src="animacion.js" defer></script>
+  <script>
+    // Active nav highlight
+    document.addEventListener('DOMContentLoaded', function() {
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.desktop-nav a[href^="#"]');
+
+      window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop - 100;
+          if (window.pageYOffset >= sectionTop) {
+            current = section.getAttribute('id');
+          }
+        });
+
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href').substring(1) === current) {
+            link.classList.add('active');
+          }
+        });
+      });
+    });
+  </script>
 </head>
 <body>
   <!-- Header -->
@@ -136,11 +161,10 @@
           Presencia digital
         </div>
         <h1>
-          <span class="line">Transforma tu presencia</span>
-          <span class="line highlight">digital</span>
+          <span class="line">Tu negocio online en Uruguay,</span>
+          <span class="line highlight">listo en 7 días.</span>
         </h1>
-        <p class="hero-subtitle">Tu negocio online en Uruguay, listo en 7 días.</p>
-        <p class="hero-body">Diseñamos sitios web enfocados en conversión para que aparezcas en Google y conviertas visitas en ventas desde el primer mes.</p>
+        <p class="hero-subtitle">Diseño sitios web que convierten visitas en clientes. Simple, rápido y profesional.</p>
 
         <div class="hero-cta">
           <a href="#planes" class="btn-primary">
@@ -158,7 +182,7 @@
       <div class="hero-visual">
         <div class="visual-card card-1">
           <i class="fas fa-rocket" aria-hidden="true"></i>
-          <span>+50 Proyectos lanzados</span>
+          <span>Webs que convierten</span>
         </div>
         <div class="visual-card card-2">
           <i class="fas fa-search" aria-hidden="true"></i>
@@ -181,7 +205,7 @@
   <section id="problema" class="section-problem">
     <div class="container">
        <div class="section-intro">
-         <h2>¿Por qué <span class="highlight">estás perdiendo</span> clientes?</h2>
+          <h2>¿Por qué <span class="highlight">estás perdiendo</span> clientes?</h2>
         <p class="intro-text">Esto es lo que pasa cuando tu negocio no tiene presencia online...</p>
       </div>
 
@@ -190,7 +214,7 @@
         <div class="problem-icon"><i class="fas fa-eye-slash" aria-hidden="true"></i></div>
         <div class="problem-content">
           <h3>Invisibilidad Digital</h3>
-          <p>Tus clientes te buscan en Google, pero encuentran a tu competencia. Cada clic perdido es una venta que se lleva otro.</p>
+          <p>Tus clientes te buscan en <strong>Google</strong>, pero encuentran a tu competencia. Cada clic perdido es una venta que se lleva otro.</p>
         </div>
         <div class="problem-number">01</div>
       </div>
@@ -199,7 +223,7 @@
         <div class="problem-icon"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i></div>
         <div class="problem-content">
           <h3>Falta de Autoridad</h3>
-          <p>Una web desactualizada genera desconfianza. Si tu sitio no se ve profesional, el cliente asume que tu servicio tampoco lo es.</p>
+          <p>Una web desactualizada genera <strong>desconfianza</strong>. Si tu sitio no se ve <strong>profesional</strong>, el cliente asume que tu servicio tampoco lo es.</p>
         </div>
         <div class="problem-number">02</div>
       </div>
@@ -208,7 +232,7 @@
         <div class="problem-icon"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
         <div class="problem-content">
           <h3>Fugas de Presupuesto</h3>
-          <p>Pagar publicidad para enviar tráfico a una web que no convierte es tirar dinero. El problema suele ser el embudo, no el anuncio.</p>
+          <p>Pagar <strong>publicidad</strong> para enviar tráfico a una web que no convierte es tirar dinero. El problema suele ser el <strong>embudo</strong>, no el anuncio.</p>
         </div>
         <div class="problem-number">03</div>
       </div>
@@ -217,7 +241,7 @@
         <div class="problem-icon"><i class="fas fa-user-friends" aria-hidden="true"></i></div>
         <div class="problem-content">
           <h3>Falta de Respaldo</h3>
-          <p>El típico "te entrego y desaparezco". Necesitás un socio técnico que responda cuando el negocio lo necesita.</p>
+          <p>El típico "te entrego y desaparezco". Necesitás un <strong>socio técnico</strong> que responda cuando el negocio lo necesita.</p>
         </div>
         <div class="problem-number">04</div>
       </div>
@@ -239,7 +263,7 @@
     <div class="container">
        <div class="section-intro">
          <h2>¿Cómo <span class="highlight">transformamos</span> tu negocio?</h2>
-        <p class="intro-text">No solo hago webs. Creo estrategias digitales claras para que tu negocio tenga presencia profesional y mejores oportunidades de venta.</p>
+        <p class="intro-text">No solo hago <strong>webs</strong>. Creo <strong>estrategias digitales</strong> claras para que tu negocio tenga <strong>presencia profesional</strong> y mejores <strong>oportunidades de venta</strong>.</p>
       </div>
 
       <div class="process-steps">
@@ -302,39 +326,39 @@
     <div class="container">
        <div class="section-intro">
          <h2>¿Qué <span class="highlight">obtienes</span>?</h2>
-        <p class="intro-text">Todo lo que necesitás para tener una presencia online profesional</p>
+        <p class="intro-text">Todo lo que necesitás para tener una <strong>presencia online profesional</strong></p>
       </div>
 
       <div class="includes-grid">
         <div class="include-item scroll-reveal">
           <i class="fas fa-globe" aria-hidden="true"></i>
           <h3>Web de Alta Conversión</h3>
-          <p>Diseño moderno y único, estructurado para guiar al usuario hacia la compra o el contacto.</p>
+          <p>Diseño <strong>moderno</strong> y <strong>único</strong>, estructurado para guiar al usuario hacia la <strong>compra</strong> o el contacto.</p>
         </div>
         <div class="include-item scroll-reveal">
           <i class="fas fa-mobile-alt" aria-hidden="true"></i>
           <h3>Experiencia Mobile-First</h3>
-          <p>Tu sitio funcionará a la perfección en celulares, que es desde donde te busca el 90% de los uruguayos.</p>
+          <p>Tu sitio funcionará a la <strong>perfección</strong> en celulares, que es desde donde te busca el <strong>90%</strong> de los uruguayos.</p>
         </div>
         <div class="include-item scroll-reveal">
           <i class="fas fa-search" aria-hidden="true"></i>
           <h3>Visibilidad en Google</h3>
-          <p>Configuración SEO inicial para que tu negocio empiece a escalar posiciones en los resultados de búsqueda.</p>
+          <p>Configuración <strong>SEO</strong> inicial para que tu negocio empiece a escalar <strong>posiciones</strong> en los resultados de búsqueda.</p>
         </div>
         <div class="include-item scroll-reveal">
           <i class="fas fa-shield-alt" aria-hidden="true"></i>
           <h3>Seguridad y Confianza</h3>
-          <p>Certificado SSL incluido para proteger los datos de tus clientes y mejorar tu prestigio ante Google.</p>
+          <p>Certificado <strong>SSL</strong> incluido para proteger los datos de tus clientes y mejorar tu prestigio ante <strong>Google</strong>.</p>
         </div>
         <div class="include-item scroll-reveal">
           <i class="fas fa-server" aria-hidden="true"></i>
           <h3>Infraestructura Completa</h3>
-          <p>Nos encargamos del Dominio (.com o .com.uy) y el Hosting por el primer año. Sin vueltas.</p>
+          <p>Nos encargamos del <strong>Dominio</strong> (.com o .com.uy) y el <strong>Hosting</strong> por el primer año. Sin vueltas.</p>
         </div>
         <div class="include-item scroll-reveal">
           <i class="fas fa-book-open" aria-hidden="true"></i>
           <h3>Autonomía Total</h3>
-          <p>Incluye un videotutorial personalizado para que gestiones tus textos y fotos sin pagar extras por mantenimiento básico.</p>
+          <p>Incluye un <strong>videotutorial personalizado</strong> para que gestiones tus textos y fotos sin pagar extras por mantenimiento básico.</p>
         </div>
       </div>
 
@@ -354,14 +378,14 @@
     <div class="container">
        <div class="section-intro">
          <h2>Estrategias<span class="highlight">Digitales</span></h2>
-        <p class="intro-text">Una vez que tenés tu web, potenciá tu marca en redes sociales con campañas y contenido profesional</p>
+        <p class="intro-text">Una vez que tenés tu web, potenciá tu marca en <strong>redes sociales</strong> con campañas y contenido <strong>profesional</strong></p>
       </div>
 
       <div class="strategies-grid">
         <div class="strategy-card scroll-reveal">
           <div class="strategy-icon"><i class="fas fa-bullhorn" aria-hidden="true"></i></div>
           <h3>Campañas Ads</h3>
-          <p>Genera leads y ventas con publicidad dirigida en Instagram y Facebook. Alcanza al público perfecto para tu negocio uruguayo.</p>
+          <p>Genera <strong>leads</strong> y ventas con <strong>publicidad dirigida</strong> en Instagram y Facebook. Alcanza al público perfecto para tu negocio uruguayo.</p>
           <ul class="strategy-features">
             <li><i class="fas fa-check" aria-hidden="true"></i> Segmentación precisa de audience</li>
             <li><i class="fas fa-check" aria-hidden="true"></i> Copy persuasivo que convierte</li>
@@ -372,7 +396,7 @@
         <div class="strategy-card scroll-reveal">
           <div class="strategy-icon"><i class="fas fa-video" aria-hidden="true"></i></div>
           <h3>Edición de Video</h3>
-          <p>Videos profesionales que multiplican el engagement en redes. Reels virales y contenido que destaca en el feed.</p>
+          <p>Videos <strong>profesionales</strong> que multiplican el engagement en redes. Reels <strong>virales</strong> y contenido que destaca en el feed.</p>
           <ul class="strategy-features">
             <li><i class="fas fa-check" aria-hidden="true"></i> Reels y videos cortos optimizados</li>
             <li><i class="fas fa-check" aria-hidden="true"></i> Motion graphics impactantes</li>
@@ -534,7 +558,7 @@
         <div class="pricing-card scroll-reveal">
           <div class="pricing-header">
             <h3>Plan Lanzamiento</h3>
-            <p class="plan-desc">Tu web lista en 7 días<br>Ideal para emprendedores que necesitan presencia online rápida y efectiva.</p>
+            <p class="plan-desc">Tu web lista en <strong>7 días</strong><br>Ideal para emprendedores que necesitan <strong>presencia online</strong> rápida y efectiva.</p>
             <div class="price">$6.900 UYU</div>
             <span class="price-sub">+ $1.500 UYU/mes</span>
           </div>
@@ -557,7 +581,7 @@
           <div class="pricing-badge">Recomendado</div>
           <div class="pricing-header">
             <h3>Plan Crecimiento</h3>
-            <p class="plan-desc">Expandí tu negocio con más páginas y SEO<br>Perfecto para emprendimientos en expansión que necesitan mostrar más servicios y atraer clientes desde Google.</p>
+            <p class="plan-desc">Expandí tu negocio con más páginas y <strong>SEO</strong><br>Perfecto para emprendimientos en expansión que necesitan mostrar más servicios y atraer clientes desde <strong>Google</strong>.</p>
             <div class="price">$12.500 UYU</div>
             <span class="price-sub">+ $2.000 UYU/mes</span>
           </div>
@@ -579,7 +603,7 @@
         <div class="pricing-card scroll-reveal">
           <div class="pricing-header">
             <h3>Plan Escala</h3>
-            <p class="plan-desc">Vendé tus productos online las 24 horas<br>Para negocios que quieren una tienda completa con carrito y pagos integrados.</p>
+            <p class="plan-desc">Vendé tus productos <strong>online</strong> las 24 horas<br>Para negocios que quieren una tienda completa con carrito y pagos integrados.</p>
             <div class="price">$22.000 – $28.000 UYU</div>
             <span class="price-sub">+ $3.500 UYU/mes</span>
           </div>
