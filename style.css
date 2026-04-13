@@ -395,7 +395,7 @@ header .logo img {
   width: 100%;
   height: auto;
   max-width: 200px;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
   border-radius: var(--radius);
   box-shadow: var(--shadow-md);
@@ -636,7 +636,7 @@ header .logo img {
   width: 100%;
   height: auto;
   max-width: 300px;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
   border-radius: 16px;
   border: 1px solid #e2e8f0;
@@ -1458,7 +1458,6 @@ header .logo img {
   width: 60px;
   height: 60px;
   object-fit: cover;
-  aspect-ratio: 1 / 1;
 }
 
 .footer-brand p,
