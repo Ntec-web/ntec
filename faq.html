@@ -1,585 +1,535 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Resuelve tus dudas sobre desarrollo web en Uruguay. Preguntas frecuentes sobre precios, procesos, soporte y SEO con NTEC.">
-  <meta name="keywords" content="FAQ desarrollo web, preguntas frecuentes NTEC, precios web Uruguay, soporte web">
-  <meta name="robots" content="index, follow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ — Nathaniel Rivero | NTEC</title>
+<meta name="description" content="Preguntas frecuentes sobre desarrollo web en Uruguay. Todo lo que necesitás saber antes de tu proyecto web.">
+<meta property="og:title" content="FAQ — NTEC">
+<meta property="og:description" content="Respondemos lo que necesitás saber antes de empezar tu proyecto web.">
+<meta property="og:image" content="https://serviciontec.com/yo.jpg">
+<meta property="og:url" content="https://serviciontec.com/faq.html">
+<link rel="icon" href="Ntec.png" type="image/png">
 
-  <!-- Open Graph / Redes Sociales -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="FAQ — NTEC Diseño Web Uruguay">
-  <meta property="og:description" content="Todo lo que querés saber antes de empezar tu proyecto web. Respuestas claras sobre precios, procesos y soporte.">
-  <meta property="og:url" content="https://serviciontec.com/faq.html">
-     <meta property="og:image" content="https://serviciontec.com/yo.jpg">
-  <meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
 
-  <!-- Google Analytics - loaded after page load -->
-  <script>
-    window.addEventListener('load', function() {
-      var script = document.createElement('script');
-      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-94QZW9NE5T';
-      script.async = true;
-      document.head.appendChild(script);
-      script.onload = function() {
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-94QZW9NE5T');
-      };
-    });
-  </script>
+<!-- GA4 -->
+<script>
+  window.addEventListener('load', function() {
+    var s = document.createElement('script');
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-94QZW9NE5T';
+    s.async = true;
+    document.head.appendChild(s);
+    s.onload = function() {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-94QZW9NE5T');
+    };
+  });
+</script>
 
-  <!-- Schema.org JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "name": "NTEC",
-        "description": "Agencia de desarrollo web profesional y estrategias digitales en Uruguay. Especialistas en landing pages, e-commerce, SEO y marketing digital.",
-        "url": "https://serviciontec.com",
-        "telephone": "+59896616638",
-        "email": "hola@serviciontec.com",
-        "logo": "https://serviciontec.com/Ntec.png",
-        "sameAs": [
-          "https://www.instagram.com/ntec.uy/",
-          "https://www.tiktok.com/@ntec02"
-        ]
-      },
-      {
-        "@type": "WebSite",
-        "name": "FAQ — NTEC Diseño Web Uruguay",
-        "url": "https://serviciontec.com/faq.html",
-        "description": "Preguntas frecuentes sobre desarrollo web profesional en Uruguay con NTEC.",
-        "publisher": {
-          "@type": "Organization",
-          "name": "NTEC"
-        }
-      }
-    ]
-  }
-  </script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
-  <!-- Favicon -->
-  <link rel="icon" href="Ntec.png" type="image/png">
+:root{
+  --bg:#0D0D0D;
+  --bg2:#141414;
+  --bg3:#1A1A1A;
+  --warm:#1C1812;
+  --warm2:#221E14;
+  --border:rgba(255,255,255,0.07);
+  --border2:rgba(255,255,255,0.12);
+  --gold:#D4A853;
+  --gold2:#F0C878;
+  --text:#F0EDE8;
+  --text2:#A09890;
+  --text3:#605850;
+  --green:#4CAF7D;
+  --green-bg:rgba(76,175,125,0.1);
+  --serif:'Lora',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+}
 
-  <title>FAQ — NTEC Diseño Web Uruguay</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'; this.onload=null;">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'; this.onload=null;">
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--sans);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
 
-    <link rel="preload" href="dist/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <script src="animacion.js" defer></script>
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  height:60px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 24px;
+  background:rgba(13,13,13,0.88);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+}
+.nav-logo{
+  font-family:var(--sans);
+  font-size:17px;
+  font-weight:500;
+  color:var(--text);
+  text-decoration:none;
+  letter-spacing:-0.2px;
+}
+.nav-logo span{color:var(--gold)}
+.nav-right{display:flex;align-items:center;gap:16px}
+.nav-right a{
+  font-size:13px;
+  color:var(--text2);
+  text-decoration:none;
+  transition:color .15s;
+}
+.nav-right a:hover{color:var(--text)}
+.nav-right a.active{color:var(--text);font-weight:500}
+.nav-cta{
+  font-size:13px;
+  font-weight:500;
+  background:var(--gold);
+  color:#0D0D0D;
+  padding:7px 18px;
+  border-radius:100px;
+  text-decoration:none;
+  transition:opacity .15s;
+}
+.nav-cta:hover{opacity:.88;color:#0D0D0D}
+
+/* HERO */
+.hero{
+  min-height:56vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:100px 24px 60px;
+  text-align:center;
+}
+.hero-eyebrow{
+  font-size:11px;
+  font-weight:500;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:20px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.hero-eyebrow::before{
+  content:'';
+  width:20px;
+  height:1px;
+  background:var(--gold);
+  opacity:.6;
+  display:block;
+}
+h1.hero-title{
+  font-family:var(--serif);
+  font-size:clamp(32px,5vw,56px);
+  font-weight:500;
+  line-height:1.1;
+  letter-spacing:-.5px;
+  color:var(--text);
+  margin-bottom:16px;
+}
+.hero-sub-title{
+  font-size:16px;
+  color:var(--text2);
+  max-width:520px;
+  margin:0 auto 0;
+  line-height:1.7;
+}
+
+/* FAQ */
+.faq-section{
+  max-width:720px;
+  margin:0 auto;
+  padding:0 24px 80px;
+}
+.faq-group{
+  margin-bottom:48px;
+}
+.faq-group-title{
+  font-family:var(--serif);
+  font-size:18px;
+  font-weight:500;
+  color:var(--text);
+  margin-bottom:20px;
+  padding-bottom:12px;
+  border-bottom:1px solid var(--border);
+}
+.faq-item{
+  border-bottom:1px solid var(--border);
+}
+.faq-q{
+  width:100%;
+  background:none;
+  border:none;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 0;
+  cursor:pointer;
+  text-align:left;
+}
+.faq-q-text{
+  font-size:15px;
+  font-weight:500;
+  color:var(--text);
+  font-family:var(--sans);
+  padding-right:16px;
+}
+.faq-toggle{
+  width:24px;
+  height:24px;
+  flex-shrink:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:transform .2s;
+}
+.faq-toggle svg{width:16px;height:16px;stroke:var(--text2)}
+.faq-item.open .faq-toggle{transform:rotate(45deg)}
+.faq-a{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height .3s ease,padding .3s ease;
+}
+.faq-item.open .faq-a{
+  max-height:320px;
+  padding-bottom:20px;
+}
+.faq-a-text{
+  font-size:14px;
+  color:var(--text2);
+  line-height:1.75;
+}
+
+/* CTA */
+.cta-section{
+  padding:80px 24px;
+  text-align:center;
+  background:var(--warm);
+  border-top:1px solid var(--border);
+}
+h2.cta-title{
+  font-family:var(--serif);
+  font-size:clamp(24px,4vw,40px);
+  font-weight:500;
+  line-height:1.2;
+  color:var(--text);
+  margin-bottom:16px;
+}
+.cta-sub{
+  font-size:15px;
+  color:var(--text2);
+  max-width:430px;
+  margin:0 auto 28px;
+}
+.btn-wa{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  background:#25D366;
+  color:#fff;
+  font-size:14px;
+  font-weight:500;
+  padding:14px 24px;
+  border-radius:12px;
+  text-decoration:none;
+  transition:opacity .15s;
+}
+.btn-wa:hover{opacity:.92}
+.cta-note{
+  display:block;
+  font-size:12px;
+  color:var(--text3);
+  margin-top:16px;
+}
+
+/* FOOTER */
+footer{
+  background:var(--bg2);
+  border-top:1px solid var(--border);
+  padding:36px 24px;
+  text-align:center;
+}
+.footer-logo{
+  font-size:16px;
+  font-weight:500;
+  color:var(--text);
+  margin-bottom:8px;
+}
+.footer-logo span{color:var(--gold)}
+.footer-sub{
+  font-size:12px;
+  color:var(--text3);
+  margin-bottom:16px;
+}
+.footer-links{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+.footer-links a{
+  font-size:12px;
+  color:var(--text3);
+  text-decoration:none;
+  transition:color .15s;
+}
+.footer-links a:hover{color:var(--text2)}
+
+/* FLOATING WA */
+.float-wa{
+  position:fixed;
+  bottom:24px;
+  right:20px;
+  z-index:300;
+  width:54px;
+  height:54px;
+  border-radius:50%;
+  background:#25D366;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 4px 20px rgba(37,211,102,0.35);
+  text-decoration:none;
+  animation:wapulse 3s ease-in-out infinite;
+}
+.float-wa:hover{transform:scale(1.08)}
+.float-wa svg{width:26px;height:26px}
+@keyframes wapulse{
+  0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.35)}
+  50%{box-shadow:0 4px 36px rgba(37,211,102,0.55)}
+}
+
+@media(max-width:700px){
+  .nav-right a:not(.nav-cta){display:none}
+}
+</style>
 </head>
 <body>
 
-<!-- Header -->
-<header id="header">
-  <div class="container">
-    <div class="header-content">
-      <a href="index.html" class="logo">
-        <span>NTEC</span>
-      </a>
-      <nav class="desktop-nav">
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="nosotros.html">Nosotros</a></li>
-          <li><a href="index.html#problema">El Problema</a></li>
-          <li><a href="index.html#solucion">Cómo ayudo</a></li>
-          <li><a href="index.html#estrategias">Estrategias</a></li>
-          <li><a href="index.html#proyectos">Proyectos</a></li>
-          <li class="active"><a href="faq.html">FAQ</a></li>
-          <li><a href="index.html#planes">Planes</a></li>
-          <li><a href="index.html#contacto" class="btn-nav">Hablar ahora</a></li>
-        </ul>
-      </nav>
-      <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Abrir menú">
-        <i class="fas fa-bars" aria-hidden="true"></i>
-      </button>
-    </div>
+<nav>
+  <a href="index.html" class="nav-logo">N<span>.</span>TEC</a>
+  <div class="nav-right">
+    <a href="index.html">Inicio</a>
+    <a href="nosotros.html">Nosotros</a>
+    <a href="blog/blog.html">Blog</a>
+    <a href="faq.html" class="active">FAQ</a>
+    <a href="index.html#planes">Planes</a>
+    <a href="https://wa.me/59896616638?text=Hola,%20quiero%20consultar" class="nav-cta">Hablemos</a>
   </div>
-</header>
+</nav>
 
-<!-- Mobile Menu -->
-<div class="mobile-menu" id="mobileMenu">
-  <div class="mobile-menu-content">
-    <a href="index.html" onclick="toggleMenu()">Inicio</a>
-    <a href="nosotros.html" onclick="toggleMenu()">Nosotros</a>
-     <a href="index.html#problema" onclick="toggleMenu()">El Problema</a>
-     <a href="index.html#solucion" onclick="toggleMenu()">Cómo ayudo</a>
-     <a href="index.html#estrategias" onclick="toggleMenu()">Estrategias</a>
-     <a href="index.html#proyectos" onclick="toggleMenu()">Proyectos</a>
-     <a href="faq.html" onclick="toggleMenu()" class="active">FAQ</a>
-     <a href="index.html#planes" onclick="toggleMenu()">Planes</a>
-     <a href="index.html#contacto" onclick="toggleMenu()">Hablar ahora</a>
-  </div>
-</div>
-
-<!-- Hero -->
 <section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-container">
-    <div class="hero-text">
-      <div class="hero-badge">
-        <span class="badge-dot"></span>
-        Preguntas Frecuentes
-      </div>
-      <h1>
-        <span class="line">Todo lo que</span>
-        <span class="line highlight">querés saber</span>
-      </h1>
-      <p class="hero-subtitle">Estas son las preguntas reales que nos hacen nuestros clientes. Respuestas claras, sin vueltas.</p>
-
-      <div class="hero-cta">
-        <a href="#faq" class="btn-primary">
-          <span>Ver preguntas</span>
-          <i class="fas fa-arrow-down" aria-hidden="true"></i>
-        </a>
-      </div>
-
-      <p class="hero-trust">
-        <i class="fas fa-check-circle" aria-hidden="true"></i>
-        <span> Actualizado 2024</span>
-      </p>
-    </div>
-
-    <div class="hero-visual">
-      <div class="visual-card card-1">
-        <i class="fas fa-question-circle" aria-hidden="true"></i>
-        <span>Preguntas</span>
-      </div>
-      <div class="visual-card card-2">
-        <i class="fas fa-lightbulb" aria-hidden="true"></i>
-        <span>Respuestas</span>
-      </div>
-      <div class="visual-card card-3">
-        <i class="fas fa-users" aria-hidden="true"></i>
-        <span>Clientes</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="scroll-hint" onclick="document.getElementById('faq').scrollIntoView({behavior: 'smooth'})">
-    <span>Explorar</span>
-    <i class="fas fa-chevron-down"></i>
-  </div>
+  <div class="hero-eyebrow">FAQ</div>
+  <h1 class="hero-title">Preguntas frecuentes</h1>
+  <p class="hero-sub-title">Respondemos lo que necesitás saber antes de empezar. Si no encontrás tu respuesta, escribime directamente.</p>
 </section>
 
-<!-- FAQ Section -->
-<section id="faq" class="section-problem">
-  <div class="container">
-    <div class="section-intro">
-      <span class="step-indicator">Preguntas Frecuentes</span>
-      <h2>Resuelve tus <span class="highlight">dudas</span></h2>
-      <p class="intro-text">Filtra por categoría para encontrar lo que buscás.</p>
-    </div>
+<section class="faq-section">
 
-    <!-- FILTROS -->
-    <nav class="faq-nav" aria-label="Filtrar por categoría">
-      <button class="cat-pill active" onclick="filter('all', this)">Todas</button>
-      <button class="cat-pill" onclick="filter('precios', this)">Precios</button>
-      <button class="cat-pill" onclick="filter('proceso', this)">Proceso</button>
-      <button class="cat-pill" onclick="filter('tecnico', this)">Técnico</button>
-      <button class="cat-pill" onclick="filter('seo', this)">SEO</button>
-      <button class="cat-pill" onclick="filter('soporte', this)">Soporte</button>
-    </nav>
+  <div class="faq-group">
+    <h2 class="faq-group-title">Precios e inversión</h2>
 
-    <!-- PREGUNTAS -->
-    <main class="faq-body">
-
-  <!-- PRECIOS -->
-  <div class="faq-group" data-cat="precios">
-    <div class="group-label">
-      <div class="group-icon" style="background:#FFF8E1"><i class="fas fa-dollar-sign"></i></div>
-      <span class="group-name">Precios e inversión</span>
-    </div>
-
-    <div class="faq-page-item">
-      <button class="faq-q" aria-expanded="false">
+    <div class="faq-item">
+      <button class="faq-q">
         <span class="faq-q-text">¿Cuánto cuesta hacer una página web?</span>
-        <span class="faq-toggle" aria-hidden="true">
-          <svg viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </span>
+        <span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
       </button>
-      <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a">
-        El precio varía según la complejidad, pero mis planes comienzan en $6.900 UYU. No es un gasto, es una inversión en un activo que trabaja para vos 24/7.
-      </div></div></div>
+      <div class="faq-a">
+        <p class="faq-a-text">Depende de lo que necesites. Una web simple no cuesta lo mismo que una con varias páginas o funciones más avanzadas. Mis planes arrancan en $6.900 UYU, y si me contás tu caso te digo cuál te conviene.</p>
+      </div>
     </div>
 
-    <div class="faq-page-item">
-      <button class="faq-q" aria-expanded="false">
+    <div class="faq-item">
+      <button class="faq-q">
         <span class="faq-q-text">¿Hay que pagar todo por adelantado?</span>
-        <span class="faq-toggle" aria-hidden="true">
-          <svg viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </span>
+        <span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
       </button>
-      <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a">
-        No. Trabajo con una seña del 50% para comenzar y el 50% restante se abona una vez que la web está terminada y aprobada por vos.
-      </div></div></div>
+      <div class="faq-a">
+        <p class="faq-a-text">No. Trabajo con una seña para empezar y el resto se abona cuando la web está lista y aprobada por vos.</p>
+      </div>
     </div>
 
-    <div class="faq-page-item">
-      <button class="faq-q" aria-expanded="false">
+    <div class="faq-item">
+      <button class="faq-q">
         <span class="faq-q-text">¿Por qué hay un costo mensual además del precio inicial?</span>
-        <span class="faq-toggle" aria-hidden="true">
-          <svg viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </span>
+        <span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
       </button>
-      <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a">
-        El pago mensual cubre el hosting premium, la renovación del certificado SSL (seguridad) y el soporte técnico. Es lo que garantiza que tu web vuele, sea segura y esté siempre online sin que vos tengas que tocar un solo código.
-      </div></div></div>
-    </div>
-
-    <div class="faq-page-item">
-      <button class="faq-q" aria-expanded="false">
-        <span class="faq-q-text">¿Vale la pena invertir en una web si tengo redes sociales?</span>
-        <span class="faq-toggle" aria-hidden="true">
-          <svg viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </span>
-      </button>
-      <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a">
-        Las redes son prestadas; la web es tuya. En Instagram sos uno más; en tu web, sos el dueño. Una web te da profesionalismo y permite que te encuentren en Google cuando alguien busca soluciones, no solo cuando alguien hace scroll.
-      </div></div></div>
+      <div class="faq-a">
+        <p class="faq-a-text">Ese valor cubre hosting, mantenimiento básico y soporte técnico. Es lo que permite que la web siga funcionando bien, segura y online.</p>
+      </div>
     </div>
   </div>
 
-  <!-- PROCESO -->
-  <div class="faq-group" data-cat="proceso">
-    <div class="group-label">
-      <div class="group-icon" style="background:#E8F5E9"><i class="fas fa-cogs"></i></div>
-      <span class="group-name">Proceso y tiempos</span>
-    </div>
+  <div class="faq-group">
+    <h2 class="faq-group-title">Proceso y tiempos</h2>
 
-    <div class="faq-page-item">
-      <button class="faq-q" aria-expanded="false">
+    <div class="faq-item">
+      <button class="faq-q">
         <span class="faq-q-text">¿Cuánto tiempo tarda en estar lista mi web?</span>
-        <span class="faq-toggle" aria-hidden="true">
-          <svg viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </span>
+        <span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
       </button>
-      <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a">
-        Para los planes Lanzamiento y Crecimiento, el compromiso es de 7 días hábiles una vez entregado el contenido. Me enfoco en la ejecución rápida para que no pierdas ventas.
-      </div></div></div>
+      <div class="faq-a">
+        <p class="faq-a-text">Una web simple puede estar lista en 7 días hábiles si ya tenemos claro el contenido y los objetivos. Si el proyecto es más grande, te digo el tiempo estimado antes de empezar.</p>
+      </div>
     </div>
 
-    <div class="faq-page-item">
-      <button class="faq-q" aria-expanded="false">
+    <div class="faq-item">
+      <button class="faq-q">
         <span class="faq-q-text">¿Qué necesito tener listo antes de empezar?</span>
-        <span class="faq-toggle" aria-hidden="true">
-          <svg viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </span>
+        <span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
       </button>
-      <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a">
-        Solo necesito tu logo, los textos básicos y las fotos de tus productos o servicios. Si no tenés esto, no te preocupes, yo te ayudo a estructurarlo.
-      </div></div></div>
+      <div class="faq-a">
+        <p class="faq-a-text">Idealmente, tu logo, textos, fotos y una idea básica de lo que querés mostrar. Si todavía no lo tenés todo, te ayudo a ordenarlo.</p>
+      </div>
     </div>
 
-    <div class="faq-page-item">
-      <button class="faq-q" aria-expanded="false">
+    <div class="faq-item">
+      <button class="faq-q">
         <span class="faq-q-text">¿Puedo ver cómo va quedando antes de que esté terminada?</span>
-        <span class="faq-toggle" aria-hidden="true">
-          <svg viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </span>
+        <span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
       </button>
-      <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a">
-        Sí, siempre. Te compartimos un link de previsualización durante el proceso para que puedas ver cómo va quedando en tiempo real y hacernos cambios antes de la entrega final.<br><br>
-        Incluimos <strong>hasta 3 rondas de revisiones</strong> sin costo adicional. Queremos que el resultado te represente de verdad.
-      </div></div></div>
-    </div>
-
-    <div class="faq-page-item">
-      <button class="faq-q" aria-expanded="false">
-        <span class="faq-q-text">¿Usan plantillas o diseñan desde cero?</span>
-        <span class="faq-toggle" aria-hidden="true">
-          <svg viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </span>
-      </button>
-      <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a">
-        Cada web que hacemos es diseñada desde cero para tu negocio. No usamos templates genéricos de Wix o WordPress que se ven iguales para todos.<br><br>
-        Esto importa porque <strong>tu web es la primera impresión que da tu negocio</strong>. Si usa el mismo template que otros 10.000 negocios en el mundo, no te diferenciás en nada.
-      </div></div></div>
+      <div class="faq-a">
+        <p class="faq-a-text">Sí. Te comparto avances para que revises el rumbo del proyecto y podamos ajustar a tiempo si hace falta.</p>
+      </div>
     </div>
   </div>
 
-  <!-- TÉCNICO -->
-  <div class="faq-group" data-cat="tecnico">
-    <div class="group-label">
-      <div class="group-icon" style="background:#E3F2FD"><i class="fas fa-tools"></i></div>
-      <span class="group-name">Aspectos técnicos</span>
-    </div>
+  <div class="faq-group">
+    <h2 class="faq-group-title">Aspectos técnicos</h2>
 
-    <div class="faq-page-item">
-      <button class="faq-q" aria-expanded="false">
+    <div class="faq-item">
+      <button class="faq-q">
         <span class="faq-q-text">¿Voy a poder modificar cosas yo mismo en la web?</span>
-        <span class="faq-toggle" aria-hidden="true">
-          <svg viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </span>
+        <span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
       </button>
-      <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a">
-        Sí. Al finalizar, te entrego un videotutorial personalizado donde te enseño a cambiar fotos, textos o precios de forma simple. No vas a depender de mí para cambios básicos.
-      </div></div></div>
+      <div class="faq-a">
+        <p class="faq-a-text">Sí. Según el tipo de web, te dejo una guía o videotutorial para que puedas hacer cambios básicos sin depender de nadie.</p>
+      </div>
     </div>
 
-    <div class="faq-page-item">
-      <button class="faq-q" aria-expanded="false">
+    <div class="faq-item">
+      <button class="faq-q">
         <span class="faq-q-text">¿La web se ve bien en el celular?</span>
-        <span class="faq-toggle" aria-hidden="true">
-          <svg viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </span>
+        <span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
       </button>
-      <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a">
-        Siempre. Todas nuestras webs son <strong>responsive</strong> — se adaptan perfectamente a celular, tablet y computadora. De hecho, primero diseñamos pensando en el celular, que es desde donde el 70%+ de la gente navega hoy.<br><br>
-        Antes de entregar la web la probamos en múltiples dispositivos y pantallas.
-      </div></div></div>
+      <div class="faq-a">
+        <p class="faq-a-text">Sí, todas las webs están pensadas para verse bien en celular, tablet y desktop.</p>
+      </div>
     </div>
 
-    <div class="faq-page-item">
-      <button class="faq-q" aria-expanded="false">
-        <span class="faq-q-text">¿Qué pasa si quiero agregar más páginas o funciones después?</span>
-        <span class="faq-toggle" aria-hidden="true">
-          <svg viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </span>
-      </button>
-      <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a">
-        Sin problema. Las webs que hacemos están pensadas para crecer con tu negocio. Podés contactarnos en cualquier momento para agregar páginas nuevas, secciones, formularios, integrar sistemas de reservas, y mucho más.<br><br>
-        Los clientes con plan mensual tienen <strong>soporte prioritario</strong> y descuentos en modificaciones.
-      </div></div></div>
-    </div>
-
-    <div class="faq-page-item">
-      <button class="faq-q" aria-expanded="false">
+    <div class="faq-item">
+      <button class="faq-q">
         <span class="faq-q-text">¿La web es mía o dependo de ustedes?</span>
-        <span class="faq-toggle" aria-hidden="true">
-          <svg viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </span>
+        <span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
       </button>
-      <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a">
-        La web es 100% tuya. El dominio se registra a tu nombre. Si mañana decidís irte (que espero que no), te llevás tu web completa. La libertad es parte de mi transparencia.
-      </div></div></div>
+      <div class="faq-a">
+        <p class="faq-a-text">La web es tuya. La idea es que tengas control y no dependas de mí para seguir usándola.</p>
+      </div>
     </div>
   </div>
 
-  <!-- SEO -->
-  <div class="faq-group" data-cat="seo">
-    <div class="group-label">
-      <div class="group-icon" style="background:#F3E5F5"><i class="fas fa-search"></i></div>
-      <span class="group-name">SEO y visibilidad en Google</span>
-    </div>
+  <div class="faq-group">
+    <h2 class="faq-group-title">SEO y visibilidad</h2>
 
-    <div class="faq-page-item">
-      <button class="faq-q" aria-expanded="false">
-        <span class="faq-q-text">¿Mi web va a aparecer en Google desde el primer día?</span>
-        <span class="faq-toggle" aria-hidden="true">
-          <svg viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </span>
+    <div class="faq-item">
+      <button class="faq-q">
+        <span class="faq-q-text">¿Mi web va a aparecer en Google?</span>
+        <span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
       </button>
-      <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a">
-        Google tarda unos días en "rastrear" sitios nuevos. Yo realizo la configuración inicial (SEO Básico) para que ese proceso sea lo más rápido posible, pero el posicionamiento real es un camino de constancia.
-      </div></div></div>
+      <div class="faq-a">
+        <p class="faq-a-text">Sí, la web se prepara para que Google pueda encontrarla e indexarla correctamente. Igual, aparecer y posicionarse depende también de la competencia y del tiempo.</p>
+      </div>
     </div>
 
-    <div class="faq-page-item">
-      <button class="faq-q" aria-expanded="false">
-        <span class="faq-q-text">¿Qué diferencia hay entre SEO básico y SEO avanzado?</span>
-        <span class="faq-toggle" aria-hidden="true">
-          <svg viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </span>
-      </button>
-      <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a">
-        El <strong>SEO básico</strong> (incluido en todos los planes) cubre la base técnica: configuración correcta de títulos, meta descripciones, URLs amigables, velocidad de carga y que Google pueda leer tu web sin problemas.<br><br>
-        El <strong>SEO avanzado</strong> (plan Web Estándar en adelante) agrega: investigación de palabras clave específicas para tu rubro, optimización de cada página para búsquedas concretas, sitemap dinámico, datos estructurados y seguimiento con Google Search Console.
-      </div></div></div>
-    </div>
-
-    <div class="faq-page-item">
-      <button class="faq-q" aria-expanded="false">
+    <div class="faq-item">
+      <button class="faq-q">
         <span class="faq-q-text">¿Garantizan que voy a estar en el primer lugar de Google?</span>
-        <span class="faq-toggle" aria-hidden="true">
-          <svg viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </span>
+        <span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
       </button>
-      <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a">
-        Nadie honesto puede garantizar el puesto #1 (solo Google lo decide), pero lo que sí te garantizo es que tu web tendrá la estructura técnica perfecta para competir por esos primeros lugares.
-      </div></div></div>
+      <div class="faq-a">
+        <p class="faq-a-text">No. Nadie serio puede garantizar eso. Lo que sí hago es dejar tu web bien preparada desde la parte técnica para que tenga una base sólida de posicionamiento.</p>
+      </div>
     </div>
   </div>
 
-  <!-- SOPORTE -->
-  <div class="faq-group" data-cat="soporte">
-    <div class="group-label">
-      <div class="group-icon" style="background:#E8F5E9"><i class="fas fa-life-ring"></i></div>
-      <span class="group-name">Soporte y acompañamiento</span>
-    </div>
+  <div class="faq-group">
+    <h2 class="faq-group-title">Soporte</h2>
 
-    <div class="faq-page-item">
-      <button class="faq-q" aria-expanded="false">
+    <div class="faq-item">
+      <button class="faq-q">
         <span class="faq-q-text">¿Qué pasa si la web se rompe o cae?</span>
-        <span class="faq-toggle" aria-hidden="true">
-          <svg viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </span>
+        <span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
       </button>
-      <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a">
-        Al estar bajo mi plan de mantenimiento, yo me encargo de las copias de seguridad y la restauración inmediata. Nunca vas a estar solo frente a un problema técnico.
-      </div></div></div>
+      <div class="faq-a">
+        <p class="faq-a-text">Si pasa algo, me escribís y lo revisamos. El soporte está para que no quedes solo si surge un problema técnico.</p>
+      </div>
     </div>
 
-    <div class="faq-page-item">
-      <button class="faq-q" aria-expanded="false">
-        <span class="faq-q-text">¿Pueden hacer la web aunque yo esté en el interior del país?</span>
-        <span class="faq-toggle" aria-hidden="true">
-          <svg viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </span>
+    <div class="faq-item">
+      <button class="faq-q">
+        <span class="faq-q-text">¿Cómo empiezo?</span>
+        <span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
       </button>
-      <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a">
-        Perfectamente. Todo el proceso se hace de forma remota por WhatsApp, videollamada y email. Trabajamos con clientes en todo Uruguay — no hace falta reunirse en persona para hacer un trabajo de calidad.
-      </div></div></div>
+      <div class="faq-a">
+        <p class="faq-a-text">Escribime por WhatsApp y contame qué tenés en mente. Con eso te digo si te puedo ayudar y cuál sería el mejor camino.</p>
+      </div>
     </div>
-
-    <div class="faq-page-item">
-      <button class="faq-q" aria-expanded="false">
-        <span class="faq-q-text">¿Trabajan con cualquier tipo de negocio?</span>
-        <span class="faq-toggle" aria-hidden="true">
-          <svg viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </span>
-      </button>
-      <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a">
-        Sí. Hemos trabajado con tiendas de ropa, restaurantes, negocios de alimentos, marcas deportivas y más. Si tenés un negocio que vende algo — ya sea un producto o un servicio — podemos hacer una web que lo represente bien y atraiga clientes.
-        <div class="highlight-box">
-          No importa el tamaño: trabajamos con emprendedores que recién arrancan y con negocios ya establecidos que quieren actualizarse.
-        </div>
-      </div></div></div>
-    </div>
-
-    <div class="faq-page-item">
-      <button class="faq-q" aria-expanded="false">
-        <span class="faq-q-text">¿Cómo empiezo? ¿Qué hago primero?</span>
-        <span class="faq-toggle" aria-hidden="true">
-          <svg viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </span>
-      </button>
-      <div class="faq-a-wrap"><div class="faq-a-inner"><div class="faq-a">
-        Muy simple. Mandanos un WhatsApp contándonos de tu negocio. Sin formularios largos, sin presentaciones formales. En menos de 24 horas te respondemos con una propuesta concreta adaptada a tu caso.<br><br>
-        La primera consulta no tiene ningún costo ni compromiso.
-        <a href="https://wa.me/59896616638?text=Hola,%20quiero%20empezar%20con%20mi%20web" class="cta-inline">Escribinos ahora →</a>
-      </div></div></div>
-    </div>
-
   </div>
 
-  </main>
-
-  </div>
 </section>
 
-<!-- CTA FINAL -->
-<section class="section-cta-final">
-  <div class="container">
-    <div class="cta-box">
-      <div class="cta-icon"><i class="fas fa-question" aria-hidden="true"></i></div>
-      <h2>¿Tu pregunta<br>no está <span class="highlight">acá?</span></h2>
-      <p>Sé que delegar la imagen de tu negocio no es fácil. Si tenés una duda muy específica o un miedo que no leés acá, escribime. Soy Nathaniel, y te voy a responder de emprendedor a emprendedor.</p>
-      <div class="cta-actions">
-        <a href="https://wa.me/59896616638?text=Hola,%20tengo%20una%20consulta%20sobre%20mi%20proyecto%20web" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-cta" onclick="gtag('event', 'click', { event_category: 'engagement', event_label: 'whatsapp_faq' });">
-          <i class="fab fa-whatsapp" aria-hidden="true"></i>
-          <span>Hacer mi pregunta</span>
-        </a>
-      </div>
-      <span class="cta-note">Sin compromiso. Respuesta en menos de 24h.</span>
-    </div>
-  </div>
+<section class="cta-section">
+  <h2 class="cta-title">¿Tu pregunta no está acá?</h2>
+  <p class="cta-sub">Escribime directamente. Respondo en menos de 24 horas.</p>
+  <a href="https://wa.me/59896616638?text=Hola,%20tengo%20una%20pregunta%20sobre%20mi%20proyecto" class="btn-wa">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Escribir por WhatsApp
+  </a>
+  <span class="cta-note">Respondo en menos de 24 horas</span>
 </section>
 
-<!-- Footer -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <span class="logo">NTEC</span>
-        <p>Tu socio en transformación digital</p>
-      </div>
-      <div class="footer-links">
-        <h3>Navegación</h3>
-        <a href="index.html">Inicio</a>
-        <a href="nosotros.html">Nosotros</a>
-        <a href="index.html#problema">El Problema</a>
-        <a href="index.html#solucion">Cómo ayudo</a>
-        <a href="index.html#estrategias">Estrategias en Internet</a>
-        <a href="index.html#proyectos">Proyectos</a>
-        <a href="faq.html">FAQ</a>
-        <a href="index.html#planes">Planes</a>
-      </div>
-      <div class="footer-links">
-        <h3>Servicios</h3>
-        <a href="index.html#estrategias">Estrategias Digitales</a>
-        <a href="index.html#planes">Desarrollo Web</a>
-        <a href="index.html#planes">E-Commerce</a>
-        <a href="index.html#incluye">SEO</a>
-        <a href="index.html#contacto">Mantenimiento</a>
-      </div>
-      <div class="footer-social">
-        <h3>Seguinos</h3>
-        <div class="social-links">
-          <a href="https://www.instagram.com/ntec.uy/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-          <a href="https://www.tiktok.com/@ntec02" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok" aria-hidden="true"></i></a>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2026 NTEC. Todos los derechos reservados.</p>
-    </div>
+<footer>
+  <div class="footer-logo">N<span>.</span>TEC</div>
+  <div class="footer-sub">Tu socio en transformación digital · hola@serviciontec.com</div>
+  <div class="footer-links">
+    <a href="index.html">Inicio</a>
+    <a href="nosotros.html">Nosotros</a>
+    <a href="blog/blog.html">Blog</a>
+    <a href="faq.html">FAQ</a>
+    <a href="https://www.instagram.com/ntec.uy/" target="_blank" rel="noopener noreferrer">@ntec.uy</a>
+    <a href="https://www.tiktok.com/@ntec02" target="_blank" rel="noopener noreferrer">TikTok</a>
   </div>
 </footer>
 
-<!-- Progress Bar -->
-<div class="progress-bar" id="progressBar"></div>
-
-<!-- Floating WhatsApp -->
-<a href="https://wa.me/59896616638?text=Hola,%20quiero%20consultar" target="_blank" rel="noopener noreferrer" class="float-whatsapp" onclick="gtag('event', 'click', { event_category: 'engagement', event_label: 'whatsapp_float' });" aria-label="Chatear por WhatsApp">
-  <i class="fab fa-whatsapp"></i>
+<a href="https://wa.me/59896616638?text=Hola,%20quiero%20consultar" class="float-wa" aria-label="Chatear por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
-<!-- Back to Top Button -->
-<button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="back-to-top" aria-label="Volver arriba">
-  <i class="fas fa-arrow-up"></i>
-</button>
-
 <script>
-  // Accordion
   document.querySelectorAll('.faq-q').forEach(btn => {
     btn.addEventListener('click', () => {
-      const item = btn.closest('.faq-page-item');
+      const item = btn.closest('.faq-item');
       const isOpen = item.classList.contains('open');
-
-      // Close all in same group
-      item.closest('.faq-group').querySelectorAll('.faq-page-item.open').forEach(el => {
+      item.closest('.faq-group').querySelectorAll('.faq-item.open').forEach(el => {
         el.classList.remove('open');
-        el.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
       });
-
-      if (!isOpen) {
-        item.classList.add('open');
-        btn.setAttribute('aria-expanded', 'true');
-      }
+      if (!isOpen) item.classList.add('open');
     });
   });
-
-  // Category filter
-  function filter(cat, el) {
-    document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
-    el.classList.add('active');
-
-    document.querySelectorAll('.faq-group').forEach(g => {
-      if (cat === 'all') {
-        g.classList.remove('hidden');
-      } else {
-        g.classList.toggle('hidden', g.dataset.cat !== cat);
-      }
-    });
-  }
 </script>
 </body>
 </html>
