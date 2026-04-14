@@ -83,7 +83,7 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'; this.onload=null;">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'; this.onload=null;">
 
-    <link rel="stylesheet" href="dist/style.css" media="all">
+    <link rel="preload" href="dist/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <style>html { scroll-behavior: smooth; }</style>
    <script src="https://unpkg.com/gsap@3.12.2/dist/gsap.min.js" defer></script>
    <script src="https://unpkg.com/gsap@3.12.2/dist/ScrollTrigger.min.js" defer></script>
@@ -216,7 +216,7 @@
     <div class="container">
       <div class="about-profile">
           <div class="about-profile-photo">
-            <img src="perfil.webp" alt="Foto de Nathaniel, fundador de NTEC" loading="lazy" width="200" height="250">
+            <img src="perfil.webp" alt="Foto de Nathaniel, fundador de NTEC" width="200" height="250" fetchpriority="high">
           </div>
         <div class="about-profile-content">
           <h2>Soy Nathaniel Rivero, desarrollador web</h2>
@@ -736,13 +736,20 @@
   <i class="fas fa-arrow-up"></i>
 </button>
 
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-94QZW9NE5T"></script>
+  <!-- Google Analytics - loaded after page load -->
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-94QZW9NE5T');
+    window.addEventListener('load', function() {
+      var script = document.createElement('script');
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-94QZW9NE5T';
+      script.async = true;
+      document.head.appendChild(script);
+      script.onload = function() {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-94QZW9NE5T');
+      };
+    });
   </script>
 </body>
 </html>

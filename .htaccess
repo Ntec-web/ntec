@@ -5,6 +5,18 @@ RewriteEngine On
 DirectoryIndex index.html
 
 # Cache headers for static files
-<filesMatch "\.(jpg|jpeg|png|webp|css|js)$">
-  Header set Cache-Control "max-age=31536000, public"
-</filesMatch>
+<IfModule mod_headers.c>
+  <filesMatch "\.(jpg|jpeg|png|webp|css|js)$">
+    Header set Cache-Control "max-age=31536000, public"
+  </filesMatch>
+</IfModule>
+
+# Fallback with Expires
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+</IfModule>

@@ -14,13 +14,20 @@
      <meta property="og:image" content="https://serviciontec.com/yo.jpg">
   <meta name="twitter:card" content="summary_large_image">
 
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-94QZW9NE5T"></script>
+  <!-- Google Analytics - loaded after page load -->
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-94QZW9NE5T');
+    window.addEventListener('load', function() {
+      var script = document.createElement('script');
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-94QZW9NE5T';
+      script.async = true;
+      document.head.appendChild(script);
+      script.onload = function() {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-94QZW9NE5T');
+      };
+    });
   </script>
 
   <!-- Schema.org JSON-LD -->
@@ -68,7 +75,7 @@
    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'; this.onload=null;">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'; this.onload=null;">
 
-    <link rel="stylesheet" href="dist/style.css" media="all">
+    <link rel="preload" href="dist/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <script src="animacion.js" defer></script>
 </head>
 <body>
