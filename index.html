@@ -939,6 +939,18 @@ footer{
 document.querySelector('.back-to-top').addEventListener('click', () => {
   window.scrollTo({top: 0, behavior: 'smooth'});
 });
+
+// Reveal on scroll
+const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in');
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
 </script>
 
 <div id="sticky-cta" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:250;padding:12px 16px;background:var(--bg2);border-top:1px solid var(--border);backdrop-filter:blur(10px)">
