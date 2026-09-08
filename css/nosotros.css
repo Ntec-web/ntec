@@ -1,0 +1,59 @@
+/* ============================================================
+   NTEC — Nosotros (especifico de nosotros.html)
+   Carga DESPUES de css/theme.css
+   ============================================================ */
+
+/* HERO: variante con fotografia mas ancha y sin photo-tag */
+.hero {
+  min-height: 84svh;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  padding-top: 60px;
+}
+.hero-content {
+  padding: 72px 48px;
+}
+.hero-eyebrow {
+  margin-bottom: 18px;
+}
+h1.hero-title {
+  font-size: clamp(32px, 4vw, 54px);
+  line-height: 1.08;
+  letter-spacing: -.6px;
+  margin-bottom: 16px;
+}
+.hero-subtitle {
+  font-size: 15px;
+  color: var(--text2);
+  line-height: 1.8;
+  max-width: 560px;
+  margin-bottom: 28px;
+}
+.hero-body {
+  max-width: 560px;
+  line-height: 1.85;
+}
+.hero-chips {
+  margin-top: 28px;
+}
+.btn-primary-gold {
+  margin-top: 32px;
+}
+.body-text {
+  max-width: 620px;
+}
+
+/* MOBILE (aditivo sobre theme.css: hero mas alto) */
+@media (max-width: 700px) {
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .hero-photo {
+    height: 68vw;
+    min-height: 300px;
+  }
+  .hero-content {
+    padding: 36px 20px 48px;
+  }
+}

@@ -4,15 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Diseño Web en Uruguay | NTEC - Diseño Web Profesional</title>
-<meta name="description" content="Páginas web profesionales para emprendedores en Uruguay. Web lista en 7 días desde $6.900. Sin intermediarios. Hablá directo con el desarrollador.">
+<meta name="description" content="Páginas web profesionales para emprendedores en Uruguay. Web lista en 7 días desde $4.000. Sin intermediarios. Hablá directo con el desarrollador.">
 <meta name="keywords" content="diseño web Uruguay, desarrollo web Montevideo, páginas web profesionales, tienda online Uruguay, SEO Google, marketing digital Uruguay">
 <meta property="og:title" content="NTEC — Tu socio en transformación digital">
 <meta property="og:description" content="Tu negocio online, sin vueltas. Desarrollo web profesional en Uruguay.">
+<meta property="og:type" content="website">
 <meta property="og:image" content="https://serviciontec.com/yo.jpg">
 <meta property="og:url" content="https://serviciontec.com/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NTEC — Tu socio en transformación digital">
+<meta name="twitter:description" content="Tu negocio online, sin vueltas. Desarrollo web profesional en Uruguay.">
+<meta name="twitter:image" content="https://serviciontec.com/yo.jpg">
+<meta name="robots" content="index, follow">
 <meta name="geo.region" content="UY">
 <meta name="geo.placename" content="Montevideo">
-<meta name="telephone" content="+59896616638">
+<meta name="telephone" content="+59891835731">
 <meta http-equiv="Cache-Control" content="max-age=31536000">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>N</text></svg>" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,7 +35,7 @@
       "name": "NTEC",
       "description": "Desarrollo web profesional en Uruguay. Páginas web que convierten visitantes en clientes.",
       "url": "https://serviciontec.com",
-      "telephone": "+59896616638",
+      "telephone": "+59891835731",
       "email": "hola@serviciontec.com",
       "logo": "https://serviciontec.com/Ntec.png",
       "sameAs": [
@@ -46,7 +52,7 @@
       "name": "NTEC",
       "description": "Desarrollo web profesional en Uruguay",
       "url": "https://serviciontec.com/",
-      "telephone": "+59896616638",
+      "telephone": "+59891835731",
       "address": {
         "@type": "PostalAddress",
         "addressCountry": "UY"
@@ -77,558 +83,29 @@
   });
 </script>
 
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --bg:#0D0D0D;
-  --bg2:#141414;
-  --bg3:#1A1A1A;
-  --warm:#1C1812;
-  --warm2:#221E14;
-  --border:rgba(255,255,255,0.07);
-  --border2:rgba(255,255,255,0.12);
-  --gold:#D4A853;
-  --gold2:#F0C878;
-  --text:#F0EDE8;
-  --text2:#A09890;
-  --text3:#605850;
-  --green:#4CAF7D;
-  --green-bg:rgba(76,175,125,0.1);
-  --red:#E57373;
-  --serif:'Lora', Georgia, serif;
-  --sans:'DM Sans', system-ui, sans-serif;
-}
-html{scroll-behavior:smooth}
-body{
-  background:var(--bg);
-  color:var(--text);
-  font-family:var(--sans);
-  font-size:16px;
-  line-height:1.6;
-  -webkit-font-smoothing:antialiased;
-  overflow-x:hidden;
-}
 
-/* NAV */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:200;
-  height:60px;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:0 24px;
-  background:rgba(13,13,13,0.88);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid var(--border);
-}
-.nav-logo{
-  font-family:var(--sans);font-size:17px;font-weight:500;
-  color:var(--text);text-decoration:none;letter-spacing:-0.2px;
-}
-.nav-logo span{color:var(--gold)}
-.nav-right{display:flex;align-items:center;gap:16px}
-.nav-right a{font-size:13px;color:var(--text2);text-decoration:none;transition:color .15s}
-.nav-right a:hover{color:var(--text)}
-.nav-right a.active{color:var(--text);font-weight:500}
-.nav-cta{
-  font-size:13px;font-weight:500;
-  background:oklch(60% 0.2 40);color:#0D0D0D;
-  padding:7px 18px;border-radius:100px;
-  text-decoration:none;transition:opacity .15s;
-}
-.nav-cta:hover{opacity:.88;color:#0D0D0D}
-.nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:4px}
-.nav-toggle span{display:block;width:20px;height:2px;background:var(--text);margin:5px 0;transition:.2s}
+<link rel="stylesheet" href="css/theme.css">
 
-/* HERO */
-.hero{
-  min-height:100svh;
-  display:grid;
-  grid-template-columns:52% 48%;
-  padding-top:60px;
-  position:relative;
-}
-.hero-photo{
-  position:relative;
-  background:var(--warm);
-  overflow:hidden;
-}
-.hero-photo img{
-  width:100%;height:100%;
-  object-fit:cover;object-position:center top;
-  display:block;
-}
-.hero-photo::after{
-  content:'';
-  position:absolute;inset:0;
-  background:linear-gradient(to right,transparent 60%,var(--bg) 100%);
-  pointer-events:none;
-}
-.hero-photo::before{
-  content:'';
-  position:absolute;bottom:0;left:0;right:0;height:40%;
-  background:linear-gradient(to top,var(--bg) 0%,transparent 100%);
-  z-index:1;pointer-events:none;
-}
-.photo-tag{
-  position:absolute;bottom:28px;left:24px;z-index:2;
-  background:rgba(13,13,13,0.75);
-  backdrop-filter:blur(10px);
-  border:1px solid var(--border2);
-  border-radius:12px;
-  padding:10px 16px;
-  display:flex;align-items:center;gap:10px;
-}
-.photo-tag-dot{
-  width:8px;height:8px;border-radius:50%;
-  background:var(--green);
-  box-shadow:0 0 0 3px var(--green-bg);
-  flex-shrink:0;
-  animation:pulse 2.5s ease-in-out infinite;
-}
-@keyframes pulse{0%,100%{box-shadow:0 0 0 3px var(--green-bg)}50%{box-shadow:0 0 0 6px transparent}}
-.photo-tag-text{font-size:12px;color:var(--text2);line-height:1.35}
-.photo-tag-text strong{display:block;font-size:13px;font-weight:500;color:var(--text)}
-.hero-content{
-  display:flex;flex-direction:column;justify-content:center;
-  padding:60px 48px 60px 40px;
-  position:relative;
-}
-.hero-eyebrow{
-  font-size:11px;font-weight:500;
-  letter-spacing:.14em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:20px;
-  display:flex;align-items:center;gap:10px;
-}
-.hero-eyebrow::before{
-  content:'';width:20px;height:1px;
-  background:var(--gold);opacity:.6;display:block;
-}
-h1.hero-title{
-  font-family:var(--serif);
-  font-size:clamp(30px,3.5vw,50px);
-  font-weight:500;line-height:1.1;
-  letter-spacing:-.5px;
-  color:var(--text);margin-bottom:10px;
-}
-h1.hero-title em{
-  font-style:italic;font-weight:400;
-  color:var(--gold2);
-}
-.hero-sub-title{
-  font-family:var(--serif);
-  font-size:clamp(14px,1.5vw,18px);
-  font-style:italic;color:var(--text2);
-  margin-bottom:28px;font-weight:400;
-}
-.hero-body{
-  font-size:15px;color:var(--text2);
-  font-weight:300;line-height:1.8;
-  max-width:420px;margin-bottom:32px;
-}
-.hero-body strong{color:var(--text);font-weight:500}
-.hero-chips{
-  display:flex;gap:8px;flex-wrap:wrap;margin-bottom:36px;
-}
-.chip{
-  display:inline-flex;align-items:center;gap:7px;
-  border:1px solid var(--border2);
-  border-radius:100px;padding:6px 14px;
-  font-size:12px;color:var(--text2);
-  background:var(--bg2);
-}
-.chip-icon{width:14px;height:14px;flex-shrink:0}
-.btn-primary-gold{
-  display:inline-flex;align-items:center;gap:10px;
-  background:var(--gold);color:#0D0D0D;
-  font-family:var(--sans);font-size:14px;font-weight:500;
-  padding:14px 24px;border-radius:12px;
-  text-decoration:none;width:fit-content;
-  transition:opacity .15s,transform .15s;
-}
-.btn-primary-gold:hover{opacity:.9;transform:translateY(-1px)}
-.btn-primary-gold svg{width:15px;height:15px;flex-shrink:0}
-
-/* SEPARATORS */
-.sep-text{
-  display:flex;align-items:center;gap:16px;
-  padding:0 24px;max-width:900px;margin:72px auto 0;
-}
-.sep-line{flex:1;height:1px;background:var(--border)}
-.sep-label{
-  font-size:11px;letter-spacing:.12em;
-  text-transform:uppercase;color:var(--text3);
-  white-space:nowrap;
-}
-
-/* SECTIONS */
-.section{padding:72px 24px;max-width:900px;margin:0 auto}
-.eyebrow{
-  font-size:11px;font-weight:500;letter-spacing:.12em;
-  text-transform:uppercase;color:var(--gold);
-  margin-bottom:14px;display:flex;align-items:center;gap:8px;
-}
-.eyebrow::before{
-  content:'';width:16px;height:1px;background:var(--gold);opacity:.6;display:block;
-}
-h2.title{
-  font-family:var(--serif);
-  font-size:clamp(24px,3.5vw,40px);
-  font-weight:500;line-height:1.1;
-  letter-spacing:-.5px;color:var(--text);
-  margin-bottom:20px;
-}
-h2.title em{font-style:italic;font-weight:400;color:var(--text2)}
-.body-text{
-  font-size:15px;color:var(--text2);
-  font-weight:300;line-height:1.85;
-  max-width:580px;
-}
-.body-text strong{color:var(--text);font-weight:500}
-.body-text+.body-text{margin-top:14px}
-
-/* PROBLEM */
-.problem-wrap{
-  margin-top:48px;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:2px;
-  border-radius:20px;
-  overflow:hidden;
-  background:var(--border);
-  border:1px solid var(--border);
-}
-.problem-item{
-  background:var(--bg2);
-  padding:32px 24px 36px;
-  position:relative;
-  transition:background .2s;
-}
-.problem-item:hover{background:var(--warm2)}
-.problem-num{
-  font-family:var(--serif);
-  font-size:42px;font-weight:500;
-  color:var(--border2);
-  line-height:1;margin-bottom:12px;
-}
-.problem-title{
-  font-size:15px;font-weight:500;color:var(--text);
-  margin-bottom:8px;
-}
-.problem-body{
-  font-size:13px;color:var(--text2);
-  font-weight:300;line-height:1.7;
-}
-
-/* STEPS */
-.steps-wrap{
-  margin-top:48px;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:24px;
-}
-.step-item{
-  text-align:center;
-  position:relative;
-}
-.step-num{
-  font-family:var(--serif);
-  font-size:48px;font-weight:500;
-  color:var(--gold);
-  opacity:.4;
-  line-height:1;margin-bottom:8px;
-}
-.step-title{
-  font-size:15px;font-weight:500;color:var(--text);
-  margin-bottom:8px;
-}
-.step-body{
-  font-size:13px;color:var(--text2);
-  line-height:1.6;
-}
-
-/* FEATURES */
-.features-wrap{
-  margin-top:48px;
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:2px;
-  border-radius:20px;
-  overflow:hidden;
-  background:var(--border);
-  border:1px solid var(--border);
-}
-.feature-item{
-  background:var(--bg2);
-  padding:32px 24px 36px;
-  position:relative;
-  transition:background .2s;
-}
-.feature-item:hover{background:var(--warm2)}
-.feature-icon{
-  width:28px;height:28px;margin-bottom:16px;color:var(--gold);
-}
-.feature-title{
-  font-size:15px;font-weight:500;color:var(--text);
-  margin-bottom:8px;
-}
-.feature-body{
-  font-size:13px;color:var(--text2);
-  font-weight:300;line-height:1.7;
-}
-
-/* TESTIMONIALS */
-.testi-section{
-  background:var(--warm);
-  padding:72px 24px;
-  border-top:1px solid var(--border);
-  border-bottom:1px solid var(--border);
-}
-.testi-wrap{
-  max-width:700px;margin:0 auto;
-  display:flex;align-items:center;gap:40px;
-  background:var(--bg2);
-  border-radius:20px;
-  padding:32px;
-}
-.testi-avatar{
-  width:80px;height:80px;border-radius:50%;
-  object-fit:cover;
-  border:3px solid var(--gold);
-  flex-shrink:0;
-}
-.testi-content{flex:1}
-.testi-stars{display:flex;gap:2px;margin-bottom:12px}
-.testi-stars svg{width:16px;height:16px;color:var(--gold)}
-.testi-quote{
-  font-family:var(--serif);
-  font-size:16px;
-  font-style:italic;
-  color:var(--text);
-  line-height:1.7;
-  margin-bottom:16px;
-}
-.testi-author{
-  font-size:13px;
-  color:var(--text2);
-}
-.testi-author strong{
-  color:var(--text);
-  display:block;
-}
-
-/* PRICING */
-.pricing-wrap{
-  margin-top:48px;
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:2px;
-  border-radius:20px;
-  overflow:hidden;
-  background:var(--border);
-  border:1px solid var(--border);
-  max-width:800px;margin:48px auto 0;
-}
-.pricing-card{
-  background:var(--bg2);
-  padding:36px 28px;
-  position:relative;
-}
-.pricing-card.featured{
-  background:linear-gradient(135deg,var(--warm2) 0%,var(--bg2) 100%);
-}
-.pricing-badge{
-  position:absolute;top:16px;right:16px;
-  font-size:10px;font-weight:500;
-  letter-spacing:.1em;text-transform:uppercase;
-  background:var(--gold);color:#0D0D0D;
-  padding:4px 10px;border-radius:100px;
-}
-.pricing-name{
-  font-family:var(--serif);
-  font-size:20px;font-weight:500;color:var(--text);
-  margin-bottom:8px;
-}
-.pricing-desc{
-  font-size:13px;color:var(--text2);margin-bottom:20px;
-  line-height:1.6;
-}
-.pricing-price{
-  font-size:32px;font-weight:500;color:var(--text);
-  margin-bottom:4px;
-}
-.pricing-sub{
-  font-size:12px;color:var(--text3);margin-bottom:24px;
-}
-.pricing-features{
-  list-style:none;padding:0;margin-bottom:24px;
-}
-.pricing-features li{
-  font-size:13px;color:var(--text2);
-  padding:8px 0;
-  border-bottom:1px solid var(--border);
-  display:flex;align-items:center;gap:10px;
-}
-.pricing-features li::before{
-  content:'✓';color:var(--green);font-weight:500;
-}
-.btn-pricing{
-  display:block;
-  background:var(--gold);color:#0D0D0D;
-  font-size:14px;font-weight:500;
-  padding:14px 24px;border-radius:12px;
-  text-decoration:none;text-align:center;
-  transition:opacity .15s;
-}
-.btn-pricing:hover{opacity:.9}
-
-/* CTA */
-.cta-section{
-  padding:80px 24px 100px;
-  text-align:center;
-  position:relative;
-  overflow:hidden;
-}
-.cta-section::before{
-  content:'';
-  position:absolute;top:0;left:50%;transform:translateX(-50%);
-  width:1px;height:80px;
-  background:linear-gradient(to bottom,transparent,var(--gold));
-  opacity:.3;
-}
-.cta-section::after{
-  content:'';
-  position:absolute;
-  width:400px;height:400px;
-  border-radius:50%;
-  background:radial-gradient(circle,rgba(212,168,83,0.04) 0%,transparent 70%);
-  top:50%;left:50%;transform:translate(-50%,-50%);
-  pointer-events:none;
-}
-h2.cta-title{
-  font-family:var(--serif);
-  font-size:clamp(28px,5vw,52px);
-  font-weight:500;line-height:1.1;
-  letter-spacing:-.8px;color:var(--text);
-  margin-bottom:16px;position:relative;z-index:1;
-}
-h2.cta-title em{font-style:italic;color:var(--gold2)}
-.cta-sub{
-  font-size:16px;color:var(--text2);font-weight:300;
-  line-height:1.7;max-width:440px;margin:0 auto 40px;
-  position:relative;z-index:1;
-}
-.btn-wa{
-  display:inline-flex;align-items:center;gap:12px;
-  background:#25D366;color:#fff;
-  font-family:var(--sans);font-size:15px;font-weight:500;
-  padding:16px 28px;border-radius:14px;
-  text-decoration:none;
-  transition:opacity .15s,transform .15s;
-  position:relative;z-index:1;
-}
-.btn-wa:hover{opacity:.92;transform:translateY(-1px)}
-.btn-wa svg{width:20px;height:20px;flex-shrink:0}
-.cta-note{
-  display:block;font-size:12px;color:var(--text3);
-  margin-top:16px;position:relative;z-index:1;
-}
-
-/* FOOTER */
-footer{
-  background:var(--bg2);
-  border-top:1px solid var(--border);
-  padding:36px 24px;
-  text-align:center;
-}
-.footer-logo{
-  font-family:var(--sans);font-size:16px;font-weight:500;
-  color:var(--text);margin-bottom:8px;
-}
-.footer-logo span{color:var(--gold)}
-.footer-sub{font-size:12px;color:var(--text3);margin-bottom:16px}
-.footer-links{display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
-.footer-links a{font-size:12px;color:var(--text3);text-decoration:none;transition:color .15s}
-.footer-links a:hover{color:var(--text2)}
-
-/* FLOATING WA */
-.float-wa{
-  position:fixed;bottom:24px;right:20px;z-index:300;
-  width:54px;height:54px;border-radius:50%;
-  background:#25D366;display:flex;align-items:center;justify-content:center;
-  box-shadow:0 4px 20px rgba(37,211,102,0.35);
-  text-decoration:none;
-  animation:wapulse 3s ease-in-out infinite;
-  transition:transform .15s;
-}
-.float-wa:hover{transform:scale(1.08)}
-.float-wa svg{width:26px;height:26px}
-@keyframes wapulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.35)}50%{box-shadow:0 4px 36px rgba(37,211,102,0.55)}}
-
-/* BACK TO TOP */
-.back-to-top{
-  position:fixed;bottom:90px;right:20px;z-index:299;
-  width:44px;height:44px;border-radius:50%;
-  background:var(--bg2);border:1px solid var(--border);
-  display:flex;align-items:center;justify-content:center;
-  cursor:pointer;opacity:0;transition:opacity .3s;
-}
-.back-to-top.visible{opacity:1}
-.back-to-top svg{width:18px;height:18px;color:var(--text2)}
-.back-to-top:hover{background:var(--bg3)}
-
-/* REVEAL */
-.reveal{opacity:0;transform:translateY(32px);transition:opacity .65s ease,transform .65s ease;will-change:opacity,transform}
-.reveal.in{opacity:1;transform:none}
-.reveal-left{opacity:0;transform:translateX(-40px);transition:opacity .65s ease,transform .65s ease;will-change:opacity,transform}
-.reveal-left.in{opacity:1;transform:none}
-.reveal-right{opacity:0;transform:translateX(40px);transition:opacity .65s ease,transform .65s ease}
-.reveal-right.in{opacity:1;transform:none}
-
-/* MOBILE */
-@media(max-width:700px){
-  .hero{grid-template-columns:1fr;min-height:auto;padding-top:60px}
-  .hero-photo{height:55vw;min-height:220px;max-height:320px}
-  .hero-photo img{object-position:50% 35%}
-  .hero-photo::after,.hero-photo::before{display:none}
-  .hero-content{padding:32px 20px 48px}
-  .hero-title{font-size:28px;line-height:1.15}
-  .hero-sub-title{font-size:15px}
-  .hero-body{font-size:14px;margin-bottom:24px}
-  .hero-chips{gap:6px;margin-bottom:28px}
-  .chip{padding:5px 12px;font-size:11px}
-  .photo-tag{bottom:16px;left:16px;padding:8px 12px}
-  .photo-tag-text{font-size:11px}
-  .photo-tag-text strong{font-size:12px}
-  .testi-wrap{flex-direction:column;text-align:center}
-  .features-wrap{grid-template-columns:1fr}
-  .problem-wrap{grid-template-columns:1fr}
-  .steps-wrap{grid-template-columns:1fr;gap:32px}
-  .pricing-wrap{grid-template-columns:1fr}
-  .nav-toggle{display:block}
-  nav{background:#0D0D0D;border-bottom:1px solid var(--border);backdrop-filter:none}
-  .nav-right{position:fixed;top:60px;left:0;right:0;bottom:0;background:#0D0D0D;z-index:100;flex-direction:column;align-items:flex-start;padding:24px;gap:0;transform:translateX(100%);transition:transform .3s}
-  .nav-right.open{transform:translateX(0)}
-  .nav-right a{padding:12px 0;font-size:16px;border-bottom:1px solid var(--border);display:block;color:var(--text)}
-  .nav-right a:hover{color:var(--gold)}
-  .nav-right .nav-cta{width:100%;text-align:center;margin-top:16px;background:var(--gold);color:#0D0D0D}
-}
-</style>
 </head>
 <body>
 
 <nav>
   <a href="index.html" class="nav-logo">N<span>.</span>TEC</a>
-  <button class="nav-toggle" aria-label="Menú">
+  <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-navegacion">
     <span></span><span></span><span></span>
   </button>
-  <div class="nav-right">
+  <div class="nav-right" id="menu-navegacion">
     <a href="index.html" class="active">Inicio</a>
     <a href="nosotros.html">Nosotros</a>
     <a href="blog/blog.html">Blog</a>
     <a href="faq.html">FAQ</a>
     <a href="#planes">Planes</a>
-    <a href="https://wa.me/59896616638?text=Hola,%20quiero%20consultar%20mi%20web" class="nav-cta">Hablemos</a>
+    <a href="#contacto">Contacto</a>
+    <a href="https://wa.me/59891835731?text=Hola,%20quiero%20consultar%20mi%20web" class="nav-cta">Hablemos</a>
   </div>
 </nav>
+
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
 <!-- HERO -->
 <section class="hero">
@@ -655,14 +132,14 @@ footer{
     </p>
 
     <div class="hero-chips">
-      <span class="chip"><svg class="chip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> Web en 7 días</span>
-      <span class="chip"><svg class="chip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Sin intermediarios</span>
-      <span class="chip"><svg class="chip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Soporte post-publicación</span>
+      <span class="chip"><svg class="chip-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> Web en 7 días</span>
+      <span class="chip"><svg class="chip-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Sin intermediarios</span>
+      <span class="chip"><svg class="chip-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Soporte post-publicación</span>
     </div>
 
     <a href="#planes" class="btn-primary-gold">
       ¿Listo para tener tu web?
-      <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </a>
     <a href="#solucion" style="display:inline-block;margin-left:16px;margin-top:16px;font-size:14px;color:var(--text2);text-decoration:none;">Ver el proceso →</a>
   </div>
@@ -815,38 +292,53 @@ footer{
   </div>
 
   <p style="text-align:center;margin-top:32px;font-size:14px;color:var(--text2)">
-    ¿Querés potenciarte en redes? <a href="https://wa.me/59896616638?text=Hola,%20quiero%20info%20sobre%20estrategias%20en%20redes" style="color:var(--gold)">Hablamos</a>
+    ¿Querés potenciarte en redes? <a href="https://wa.me/59891835731?text=Hola,%20quiero%20info%20sobre%20estrategias%20en%20redes" style="color:var(--accent)">Hablamos</a>
   </p>
 </section>
 
-<!-- RESEÑAS -->
-<section class="testi-section">
-  <div style="text-align:center;margin-bottom:32px">
-    <div class="eyebrow" style="justify-content:center">Lo que dicen mis clientes</div>
-  </div>
-  <div class="testi-wrap reveal">
-    <img src="mati.webp" alt="Cliente Charrúa Fotografía - diseño web profesional Uruguay" class="testi-avatar" width="80" height="80" loading="lazy">
-    <div class="testi-content">
-      <div class="testi-stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-      <p class="testi-quote">"Excelente atención y profesionalismo. Mi web quedó exactamente como la imaginaba. Recomiendo 100%."</p>
-      <div class="testi-author">
-        <strong>Mathias Bentancor</strong>
-        Charrúa Fotografía
+<!-- PROYECTOS (pendiente de completar) -->
+<!--
+<section class="section reveal-right" id="proyectos">
+  <div class="eyebrow">Portafolio</div>
+  <h2 class="title">Ejemplos de <em>mi trabajo</em>.</h2>
+  <p class="body-text">Estos son ejemplos de webs que hice y están en vivo. Cada uno muestra una forma distinta de presentar un negocio, según lo que necesita. Tocá para verlos.</p>
+  <div class="projects-wrap">
+    <a href="https://nathanielrivero225-creator.github.io/almajo/" target="_blank" rel="noopener" class="project-card">
+      <div class="project-thumb">
+        <img src="almajo.jpg" alt="Almajo — tienda de ropa y alquiler" width="480" height="270" loading="lazy">
+        <span class="project-tag">E-Commerce</span>
       </div>
-    </div>
-  </div>
-  <div class="testi-wrap reveal" style="margin-top:24px">
-    <img src="giuli.webp" alt="Cliente Deltano Empanadas - diseño web Montevideo" class="testi-avatar" width="80" height="80" loading="lazy">
-    <div class="testi-content">
-      <div class="testi-stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-      <p class="testi-quote">"No es solo un desarrollador, es un socio. Me ayuda a pensar en estrategias y siempre está disponible para mejoras."</p>
-      <div class="testi-author">
-        <strong>Giuliano Dilavello</strong>
-        Deltano Empanadas
+      <div class="project-body">
+        <div class="project-name">Almajo <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <p class="project-desc">Ejemplo de tienda online: catálogo de productos, pedidos por WhatsApp y diseño limpio para vender.</p>
+        <div class="project-result"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> Vista previa del sitio</div>
       </div>
-    </div>
+    </a>
+    <a href="https://nathanielrivero225-creator.github.io/Leskchamps/" target="_blank" rel="noopener" class="project-card">
+      <div class="project-thumb">
+        <img src="leskchamps.jpg" alt="Leskchamps — calzado y ropa deportiva" width="480" height="270" loading="lazy">
+        <span class="project-tag">Tienda deportiva</span>
+      </div>
+      <div class="project-body">
+        <div class="project-name">Leskchamps <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <p class="project-desc">Ejemplo de tienda deportiva: foco en producto, navegación simple y botones de contacto visibles.</p>
+        <div class="project-result"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> Vista previa del sitio</div>
+      </div>
+    </a>
+    <a href="https://empandas.github.io/Del-Tano/" target="_blank" rel="noopener" class="project-card">
+      <div class="project-thumb">
+        <img src="proyecto-deltano-empanadas.webp" alt="Deltano — empanadas artesanales" width="480" height="270" loading="lazy">
+        <span class="project-tag">E-Commerce</span>
+      </div>
+      <div class="project-body">
+        <div class="project-name">Deltano <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <p class="project-desc">Ejemplo de web de restaurante: menú online, presentación del producto y pedidos directos.</p>
+        <div class="project-result"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> Vista previa del sitio</div>
+      </div>
+    </a>
   </div>
 </section>
+-->
 
 <!-- PLANES -->
 <div class="sep-text reveal-left">
@@ -864,8 +356,7 @@ footer{
       <div class="pricing-badge">Más elegido</div>
       <div class="pricing-name">Presencia</div>
       <p class="pricing-desc">Tu primera web lista en 7 días. Ideal para emprendedores que necesitan presencia online rápida.</p>
-      <div class="pricing-price">$6.900</div>
-      <div class="pricing-sub">+ $1.500 mensual</div>
+      <div class="pricing-price">$4.000</div>
       <ul class="pricing-features">
         <li>Web profesional diseñada para captar clientes</li>
         <li>Dominio .com/.uy por 1 año</li>
@@ -874,14 +365,28 @@ footer{
         <li>Diseño responsive</li>
         <li>Botón de WhatsApp</li>
       </ul>
-      <a href="https://wa.me/59896616638?text=Hola,%20quiero%20el%20plan%20Presencia" class="btn-pricing">Elegir plan</a>
+      <a href="https://wa.me/59891835731?text=Hola,%20quiero%20el%20plan%20Presencia" class="btn-pricing">Elegir plan</a>
+    </div>
+
+    <div class="pricing-card">
+      <div class="pricing-name">Avance</div>
+      <p class="pricing-desc">Más páginas, email y mejor posicionamiento. Ideal para negocios que quieren dar el próximo paso y escalar.</p>
+      <div class="pricing-price">$7.500</div>
+      <ul class="pricing-features">
+        <li>Hasta 3 páginas optimizadas</li>
+        <li>Dominio .com/.uy por 1 año</li>
+        <li>Hosting SSD rápido y seguro</li>
+        <li>1 cuenta de email</li>
+        <li>Optimización SEO básica</li>
+        <li>Certificado SSL</li>
+      </ul>
+      <a href="https://wa.me/59891835731?text=Hola,%20quiero%20el%20plan%20Avance" class="btn-pricing">Elegir plan</a>
     </div>
 
     <div class="pricing-card">
       <div class="pricing-name">Crecimiento</div>
       <p class="pricing-desc">Más páginas y mejor posicionamiento. Ideal para negocios que ya tienen clientes y quieren escalar.</p>
       <div class="pricing-price">$12.500</div>
-      <div class="pricing-sub">+ $2.000 mensual</div>
       <ul class="pricing-features">
         <li>Hasta 5 páginas optimizadas</li>
         <li>Dominio .com/.uy por 1 año</li>
@@ -890,24 +395,87 @@ footer{
         <li>Optimización SEO avanzada</li>
         <li>Blog para novedades</li>
       </ul>
-      <a href="https://wa.me/59896616638?text=Hola,%20quiero%20el%20plan%20Crecimiento" class="btn-pricing">Elegir plan</a>
+      <a href="https://wa.me/59891835731?text=Hola,%20quiero%20el%20plan%20Crecimiento" class="btn-pricing">Elegir plan</a>
     </div>
   </div>
 
   <p style="text-align:center;margin-top:24px;font-size:13px;color:var(--text3)">
-    ¿Necesitás algo personalizado? <a href="https://wa.me/59896616638?text=Hola,%20quiero%20cotizar%20mi%20proyecto" style="color:var(--gold)">Hablemos</a>
+    ¿Necesitás algo personalizado? <a href="https://wa.me/59891835731?text=Hola,%20quiero%20cotizar%20mi%20proyecto" style="color:var(--accent)">Hablemos</a>
   </p>
 </section>
 
+<!-- CONTACTO -->
+<div class="sep-text reveal-left">
+  <div class="sep-line"></div>
+  <span class="sep-label">Contacto</span>
+  <div class="sep-line"></div>
+</div>
+
+<section class="section reveal-right" id="contacto">
+  <div class="eyebrow">Hablemos</div>
+  <h2 class="title">Contame <em>de tu proyecto</em>.</h2>
+  <p class="body-text">Completá el formulario y te respondo por WhatsApp con una propuesta clara, sin compromiso.</p>
+
+  <div class="contact-wrap">
+    <div class="contact-info">
+      <h3>Respondo en menos de 24 horas</h3>
+      <p>Trabajo directo, sin intermediarios. Tu consulta llega directo a mí y te doy una respuesta honesta sobre cómo puedo ayudarte.</p>
+      <div class="contact-direct">
+        <a href="https://wa.me/59891835731?text=Hola,%20Nathaniel,%20te%20escribo%20desde%20la%20web">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          +598 96 616 638
+        </a>
+        <a href="mailto:hola@serviciontec.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+          hola@serviciontec.com
+        </a>
+        <a href="https://www.instagram.com/ntec.uy/" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          @ntec.uy
+        </a>
+      </div>
+    </div>
+
+    <form class="contact-form" id="contact-form">
+      <div class="form-row">
+        <div class="field">
+          <label for="cf-nombre">Nombre</label>
+          <input type="text" id="cf-nombre" name="nombre" placeholder="Tu nombre" required>
+        </div>
+        <div class="field">
+          <label for="cf-servicio">¿Qué necesitás?</label>
+          <select id="cf-servicio" name="servicio">
+            <option value="Web nueva">Web nueva</option>
+            <option value="Tienda online">Tienda online</option>
+            <option value="Mejorar mi web actual">Mejorar mi web actual</option>
+            <option value="Campañas en redes">Campañas en redes</option>
+            <option value="Edición de video">Edición de video</option>
+            <option value="Otra consulta">Otra consulta</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label for="cf-mensaje">Contame de tu proyecto</label>
+        <textarea id="cf-mensaje" name="mensaje" placeholder="¿Qué negocio tenés? ¿Qué querés lograr?" required></textarea>
+      </div>
+      <button type="submit" class="btn-form">
+        Enviar por WhatsApp
+        <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <p class="form-note">Se abrirá WhatsApp con tu mensaje listo. Sin compromiso.</p>
+    </form>
+  </div>
+</section>
+
 <!-- CTA FINAL -->
-<button class="nav-toggle" aria-label="Menú">
+<section class="cta-section">
   <h2 class="cta-title">
     ¿Hablamos<br><em>15 minutos</em>?
   </h2>
   <p class="cta-sub">
     Contame qué necesitás. Te digo si te puedo ayudar, cómo lo haría y cuánto costaría. Sin compromiso, sin venderte nada que no necesitás.
   </p>
-  <a href="https://wa.me/59896616638?text=Hola%20Nathaniel,%20quiero%20hablar%20sobre%20mi%20proyecto" class="btn-wa">
+  <a href="https://wa.me/59891835731?text=Hola%20Nathaniel,%20quiero%20hablar%20sobre%20mi%20proyecto" class="btn-wa">
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     Escribime por WhatsApp ahora
   </a>
@@ -919,24 +487,31 @@ footer{
   <div class="footer-sub">Tu socio en transformación digital · hola@serviciontec.com</div>
   <div class="footer-links">
     <a href="nosotros.html">Nosotros</a>
+    <a href="blog/blog.html">Blog</a>
     <a href="faq.html">FAQ</a>
     <a href="https://www.instagram.com/ntec.uy/" target="_blank" rel="noopener noreferrer">@ntec.uy</a>
     <a href="https://www.tiktok.com/@ntec02" target="_blank" rel="noopener noreferrer">TikTok</a>
   </div>
 </footer>
 
-<a href="https://wa.me/59896616638?text=Hola,%20quiero%20consultar%20sobre%20mi%20proyecto" class="float-wa" aria-label="Chatear por WhatsApp">
+<a href="https://wa.me/59891835731?text=Hola,%20quiero%20consultar%20sobre%20mi%20proyecto" class="float-wa" aria-label="Chatear por WhatsApp">
   <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
 <button class="back-to-top" aria-label="Volver arriba">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
 </button>
 
 <script>
 document.querySelector('.back-to-top').addEventListener('click', () => {
   window.scrollTo({top: 0, behavior: 'smooth'});
 });
+
+// Nav background on scroll
+const navEl = document.querySelector('nav');
+const onScrollNav = () => navEl.classList.toggle('scrolled', window.scrollY > 40);
+window.addEventListener('scroll', onScrollNav, { passive: true });
+onScrollNav();
 
 // Reveal on scroll
 const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
@@ -951,16 +526,46 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
 
 // Mobile nav toggle
-document.querySelector('.nav-toggle').addEventListener('click', () => {
-  document.querySelector('.nav-right').classList.toggle('open');
+const navToggle = document.querySelector('.nav-toggle');
+const navRight = document.querySelector('.nav-right');
+navToggle.addEventListener('click', () => {
+  const open = navRight.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', String(open));
+  navToggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
 });
 document.querySelectorAll('.nav-right a').forEach(link => {
-  link.addEventListener('click', () => document.querySelector('.nav-right').classList.remove('open'));
+  link.addEventListener('click', () => {
+    navRight.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.setAttribute('aria-label', 'Abrir menú');
+  });
+});
+
+// Scroll progress bar
+const scrollProgress = document.getElementById('scrollProgress');
+const updateProgress = () => {
+  const total = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = total > 0 ? (window.scrollY / total) * 100 : 0;
+  scrollProgress.style.width = pct + '%';
+};
+window.addEventListener('scroll', updateProgress, { passive: true });
+updateProgress();
+
+// Contact form -> WhatsApp
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const nombre = document.getElementById('cf-nombre').value.trim();
+  const servicio = document.getElementById('cf-servicio').value;
+  const mensaje = document.getElementById('cf-mensaje').value.trim();
+  const texto = 'Hola Nathaniel, soy ' + nombre + '.%0A%0A' +
+    'Necesito: ' + servicio + '.%0A' +
+    'Mi idea: ' + mensaje;
+  window.open('https://wa.me/59891835731?text=' + texto, '_blank');
 });
 </script>
 
 <div id="sticky-cta" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:250;padding:12px 16px;background:var(--bg2);border-top:1px solid var(--border);backdrop-filter:blur(10px)">
-  <a href="https://wa.me/59896616638?text=Hola%20Nathaniel" style="display:block;background:var(--gold);color:#0D0D0D;text-align:center;padding:14px;border-radius:12px;font-weight:500;font-size:14px;text-decoration:none">Quiero mi web — desde $6.900</a>
+  <a href="https://wa.me/59891835731?text=Hola%20Nathaniel" style="display:block;background:var(--accent);color:#fff;text-align:center;padding:14px;border-radius:12px;font-weight:500;font-size:14px;text-decoration:none">Quiero mi web — desde $4.000</a>
 </div>
 
 <script>

@@ -1,0 +1,164 @@
+/* ============================================================
+   NTEC — FAQ (especifico de faq.html)
+   Carga DESPUES de css/theme.css
+   ============================================================ */
+
+/* HERO centrado (a diferencia del hero de 2 columnas del index) */
+.hero {
+  min-height: 56vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 24px 60px;
+  text-align: center;
+}
+.hero-eyebrow {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.hero-eyebrow::before {
+  content: '';
+  width: 20px;
+  height: 1px;
+  background: var(--accent);
+  opacity: .6;
+  display: block;
+}
+h1.hero-title {
+  font-family: var(--serif);
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -.5px;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+.hero-sub-title {
+  font-size: 16px;
+  color: var(--text2);
+  max-width: 520px;
+  margin: 0 auto 0;
+  line-height: 1.7;
+}
+
+/* FAQ */
+.faq-section {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 24px 80px;
+}
+.faq-group {
+  margin-bottom: 48px;
+}
+.faq-group-title {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.faq-item {
+  border-bottom: 1px solid var(--border);
+}
+.faq-q {
+  width: 100%;
+  background: none;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  cursor: pointer;
+  text-align: left;
+}
+.faq-q-text {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text);
+  font-family: var(--sans);
+  padding-right: 16px;
+}
+.faq-toggle {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform .2s;
+}
+.faq-toggle svg { width: 16px; height: 16px; stroke: var(--text2); }
+.faq-item.open .faq-toggle { transform: rotate(45deg); }
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .3s ease, padding .3s ease;
+}
+.faq-item.open .faq-a {
+  max-height: 320px;
+  padding-bottom: 20px;
+}
+.faq-a-text {
+  font-size: 14px;
+  color: var(--text2);
+  line-height: 1.75;
+}
+
+/* CTA (variante con fondo warm) */
+.cta-section {
+  padding: 80px 24px;
+  text-align: center;
+  background: var(--warm);
+  border-top: 1px solid var(--border);
+}
+h2.cta-title {
+  font-family: var(--serif);
+  font-size: clamp(24px, 4vw, 40px);
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+.cta-sub {
+  font-size: 15px;
+  color: var(--text2);
+  max-width: 430px;
+  margin: 0 auto 28px;
+}
+.btn-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #25D366;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 14px 24px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: opacity .15s;
+}
+.btn-wa:hover { opacity: .92; }
+.cta-note {
+  display: block;
+  font-size: 12px;
+  color: var(--text3);
+  margin-top: 16px;
+}
+
+/* MOBILE (aditivo sobre theme.css) */
+@media (max-width: 700px) {
+  .hero { padding: 80px 16px 40px; min-height: auto; }
+  .faq-group { padding: 0; }
+  .faq-item { padding: 16px 0; }
+}
