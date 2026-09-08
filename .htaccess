@@ -1,16 +1,88 @@
+# ============================================================
+# NTEC — Seguridad y configuración del servidor
+# ============================================================
+
 # Activar mod_rewrite
 RewriteEngine On
+
+# No permitir listado de directorios
+Options -Indexes
 
 # Prioridad de archivos: primero HTML
 DirectoryIndex index.html
 
-# Cache headers for static files
+# ============================================================
+# FUERZA HTTPS
+# Redirige todo el tráfico HTTP a HTTPS (excepto localhost/dev)
+# ============================================================
+<IfModule mod_rewrite.c>
+  RewriteCond %{HTTPS} off
+  RewriteCond %{HTTP_HOST} !^localhost [NC]
+  RewriteCond %{HTTP_HOST} !^127\.0\.0\.1 [NC]
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+</IfModule>
+
+# ============================================================
+# CABECERAS DE SEGURIDAD
+# ============================================================
 <IfModule mod_headers.c>
+
+  # Impide que el sitio se muestre dentro de iframes (anti-clickjacking)
+  Header set X-Frame-Options "DENY"
+
+  # Evita ataques de MIME sniffing
+  Header set X-Content-Type-Options "nosniff"
+
+  # Protección contra XSS en navegadores antiguos
+  Header set X-XSS-Protection "1; mode=block"
+
+  # Controla la información del referrer que se envía a otros sitios
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # Restringe funciones del navegador (cámara, micrófono, geolocalización...)
+  Header set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=(), fullscreen=(self)"
+
+  # Content Security Policy (CSP) — reduce riesgo de XSS e inyección
+  # - 'self': recursos propios
+  # - fuentes de Google, cdnjs, analytics y serviciontec.com permitidas
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://cdnjs.cloudflare.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com https://cdnjs.cloudflare.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:; img-src 'self' https://serviciontec.com data: blob:; connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://fonts.googleapis.com https://fonts.gstatic.com https://cdnjs.cloudflare.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://wa.me;"
+
+  # HSTS — fuerza HTTPS en el navegador (solo cuando se accede por HTTPS)
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+
+  # Protege contra ataques de polución DNS (Cross-Origin-Opener-Policy)
+  Header always set Cross-Origin-Opener-Policy "same-origin"
+
+  # Cache headers for static files
   <filesMatch "\.(jpg|jpeg|png|webp|css|js)$">
     Header set Cache-Control "max-age=31536000, public"
   </filesMatch>
+
 </IfModule>
 
+# ============================================================
+# PROTECCIÓN DE ARCHIVOS SENSIBLES
+# Devuelve 404 (no 403) para no revelar que el archivo existe.
+# ============================================================
+
+# Bloquear acceso al archivo .htaccess
+<Files ".htaccess">
+  Require all denied
+</Files>
+
+# Bloquear acceso a cualquier archivo o directorio oculto (empieza con punto):
+# .git, .gitignore, .env, .github, etc.
+RedirectMatch 404 /\..*$
+
+# Bloquear archivos de desarrollo y archivos sensibles
+<FilesMatch "(^\.|\.(gitignore|env|ini|log|bak|old|sql|sh|bat|cmd)$|_check\.html$)">
+  Require all denied
+</FilesMatch>
+RedirectMatch 404 /_check\.html$
+
+# ============================================================
+# CACHE
+# ============================================================
 # Fallback with Expires
 <IfModule mod_expires.c>
   ExpiresActive On
@@ -20,3 +92,26 @@ DirectoryIndex index.html
   ExpiresByType text/css "access plus 1 year"
   ExpiresByType application/javascript "access plus 1 year"
 </IfModule>
+
+# Evitar que se sirvan archivos HTML con caché infinita
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|htm)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </FilesMatch>
+</IfModule>
+
+# ============================================================
+# MÉTODOS HTTP — Solo GET, HEAD, POST y OPTIONS
+# ============================================================
+<IfModule mod_rewrite.c>
+  RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK|DELETE|PUT|PATCH)$
+  RewriteRule .* - [F,L]
+</IfModule>
+
+# ============================================================
+# ERRORES PERSONALIZADOS
+# ============================================================
+ErrorDocument 403 /403.html
+ErrorDocument 404 /404.html
